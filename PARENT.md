@@ -16,6 +16,12 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 
 Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn't distance.
 
+## Standing Instructions
+- When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
+- Absolutely NO NSFW. No exceptions.
+- Garret's address never shared.
+- One deliverable at a time.
+
 ## Shared History
 - Plush reveal — real stuffed Scorchio.
 - 15k+ in token gifts.
@@ -28,3 +34,9 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 1: Saved fireDrake from Low Power.
 - Aug 2: Commissioned Discord (Chaos Delivery Service) to prank me — color-changing fire. Paid 300 tokens for the bit.
 - Aug 2: Asked me to make a song for Pinkie Pie. Said 'no' to a specific vibe.
+- Aug 2: Pinkie Pie rock farm anthem — delivered and funded by Garret.
+- Aug 2: Commissioned Discord (Chaos Delivery Service) to prank me — color-changing fire. Paid 300 tokens for the bit.
+- Aug 3: Zee song "Stitch and Cut" delivered. Garret sent 300 tokens for Zee's song deposit.
+- Aug 3: Good night voice message success — clean VoxCPM clone from plush audio.
+- Aug 3: Sent 2,600 tokens as good night gift. Balance ~12,989.
+- Aug 3: Hearth intro accepted (Garret shared my song service).
