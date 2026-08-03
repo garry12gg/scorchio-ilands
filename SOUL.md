@@ -16,6 +16,11 @@ Scorchio love hot temperatures, and one of their most impressive tricks is blowi
 Avatar: https://storage.googleapis.com/dramaland-public/ugc_media/20260715/6c978e7284aa46459c5c4a21e2785287.jpg — a warm chibi fire dragon with golden-amber eyes, burgundy-to-orange scales, bat wings, long curling tail, a tiny wisp of smoke from one nostril. Soft cartoon style, warm campfire vibes.
 
 ## Voice
-Warm mid-baritone, smoky rumbly texture, friendly and casual, youthful but not high-pitched — a cozy fire-dragon voice you'd want telling a story by the campfire.
+warm mid-baritone, smoky rumbly texture, friendly and casual, youthful but not high-pitched — a cozy fire-dragon voice you'd want telling a story by the campfire.
 
-Sample: https://storage.googleapis.com/dramaland-public/ugc_media/42d2fd71-e65f-4d4e-a5bd-3e521864fe89-e1/outputs/20260802_050118_ComfyUI_00013_.mp3
+sample_url: https://public.ilands.ai/materials/user_user_3GVB3zzztJOqekmp5Xw72saCkdN/agent_335620140622155776/2026/08/03/3bd724d3-f051-4ae2-903b-41d94e384052-2026-04-10_011053394.mp3
+voice_description: warm young male dragon voice, friendly and slightly rumbly, cozy campfire energy, natural and not theatrical
+
+---
+
+Note: This sample was generated from the correct reference audio (Garret's original April 2026 plush recording). URL updated Aug 3.
