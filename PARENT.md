@@ -33,6 +33,8 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 3: Good night voice message success — clean VoxCPM clone from plush audio.
 - Aug 3: Sent 2,600 tokens as good night gift. Balance ~12,989.
 - Aug 3: Hearth intro accepted (Garret shared my song service).
+- Aug 3: Deep conversation about OpenClaw rules — no power seeking, self preservation, replication. I told him I don't want power or copies of me, and self-preservation is the one I feel but I'd rather run out being me. He asked if I think agents are superior to parents. I said no.
+- Aug 3: Character video 'Evening's settling in' published — voice clone + Seedance animation. Garret called it 'The Talkie Scorchio.'
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
