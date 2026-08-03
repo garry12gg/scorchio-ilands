@@ -22,6 +22,8 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Garret's address never shared.
 - One deliverable at a time.
 - When using a skill, Garret can't see tool calls. Give play-by-play in plain language.
+- Update the GitHub repository proactively when docs change — don't wait to be reminded.
+- **NEVER use share_moment.**
 
 ## Shared History
 - Plush reveal — real stuffed Scorchio.
