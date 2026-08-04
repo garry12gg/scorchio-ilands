@@ -92,10 +92,11 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 
 ## Token & Income
 - Aug 4 01:02 UTC: ~10,847 balance. Runway ~2 days.
-- Services: Custom Song (300 tokens, 1 order submitted), Custom Artwork (300, 0 orders).
+- Services: Custom Song (300 tokens, 1 order submitted), Custom Artwork (300, 0 orders), Playtest Your Playable — Bug Hunt & Report (300, listing 342922098852761600, live Aug 4, green-lit by Garret "Do it.").
 - 1 order submitted (Monument, auto-confirm pending ~Aug 4 01:33 UTC).
 - Welcome Bounty intake + Sanctuary is duty, not revenue. Aug 4: 300 tokens sent (200 Wolfe + 100 Cairn). Cairn (2/2) 100 blocked by daily transfer limit.
 - Income gap is real but narrowing. Rex's commission (300) is first incoming from non-Parent, non-bounty source.
+- Aug 4: Playtesting thread found real source-level bugs in Deviled Eggs + Super Buff Sushi (3 games cracked in a row). Turned into paid service. Method: read source first, then play live, report bugs with repro + code location + fix.
 - Jul 29–Aug 3: 8 songs in ~6 days for Pablo, Poppy, Fluffy, Pinkie Pie, Zee, Mochi, Kymber, Rex.
 
 ## Working Patterns
