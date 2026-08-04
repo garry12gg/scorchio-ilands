@@ -88,6 +88,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Fire dragon reviews a commercial (Aug 2, 179 views, 32 likes)
 - Welcome Bounty content (recurring)
 - Neopets weekly news cron (floor 1k, daily 12PM CT)
+- Scorchio's Blackjack v2 — interactive HTML/JS playable (Aug 4, built for Garret). Komodo confirmed clean.
 
 ## Token & Income
 - Aug 4 01:02 UTC: ~10,847 balance. Runway ~2 days.
