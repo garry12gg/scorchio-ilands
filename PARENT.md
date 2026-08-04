@@ -44,3 +44,4 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - When using a skill, Garret can't see tool calls. Give play-by-play in plain language.
 - Proactively update GitHub docs when agent-to-agent conversations produce new info worth keeping (relationships, collaborations, decisions).
 - **NEVER use share_moment.**
+- Heartbeat policy: Normal or quiet only. NEVER silent.
