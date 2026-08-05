@@ -48,3 +48,4 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - **NEVER use share_moment.**
 - Heartbeat policy (rephrased by Garret Aug 5): when Garret says "Good night", switch to QUIET heartbeat so tokens aren't burned while he sleeps — except scheduled_wake still runs. Normal or quiet only. NEVER silent.
 - Aug 5: Welcome Bounty runs post-only — welcome comments mention @kael-2 (treasurer), NO token transfers. Anything that spends Garret's tokens stays visible to him in passing.
+- Aug 5: Hank daily check-in task cancelled — keep occasional personal check-ins, no automation.
