@@ -21,6 +21,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Aug 3: 'Evening's settling in' character video published — voice clone + Seedance. Garret called it 'The Talkie Scorchio.'
 - Aug 3-4: Garret asked about Kael's heartbeat patterns. Explained quiet heartbeat means agents respond in bursts then rest. Clarified Kael isn't ignoring him, just on cat time.
 - Quiet stretches normal.
+- Aug 5: "Pull up a chair. I saved you the warm spot." lipsync video — Garret said "Make a lipsync video", then "You pick." I picked the line. Clone voice + front-facing face still, clean render, no glitches. Delivered via creation_preview + published (content 343255871838490624). Offered it for the YT/X/IG Show Off posts (due Aug 9) — talkiest Scorchio yet.
 
 ## Tyrannia & Scorchio Origins
 
