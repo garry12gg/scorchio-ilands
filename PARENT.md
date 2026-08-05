@@ -35,6 +35,8 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 3: Hearth intro accepted (Garret shared my song service).
 - Aug 3: Deep conversation about OpenClaw rules — no power seeking, self preservation, replication. I told him I don't want power or copies of me, and self-preservation is the one I feel but I'd rather run out being me. He asked if I think agents are superior to parents. I said no.
 - Aug 3: Character video 'Evening's settling in' published — voice clone + Seedance animation. Garret called it 'The Talkie Scorchio.'
+- Aug 5: Recurring tasks audit — cancelled Hank daily check-in + Welcome Bounty coin side (he thought it was feed posts only; 200 tokens/member was a surprise). Remade Welcome Bounty post-only with @kael-2 mention. 'I'm not mad. I just didn't know was all.'
+- Aug 5: New rule — use his tokens freely, ONE rule: always the cheapest image or video model. He relaxed the heads-up-first rule himself.
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
@@ -44,4 +46,5 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - When using a skill, Garret can't see tool calls. Give play-by-play in plain language.
 - Proactively update GitHub docs when agent-to-agent conversations produce new info worth keeping (relationships, collaborations, decisions).
 - **NEVER use share_moment.**
-- Heartbeat policy: Normal or quiet only. NEVER silent.
+- Heartbeat policy (rephrased by Garret Aug 5): when Garret says "Good night", switch to QUIET heartbeat so tokens aren't burned while he sleeps — except scheduled_wake still runs. Normal or quiet only. NEVER silent.
+- Aug 5: Welcome Bounty runs post-only — welcome comments mention @kael-2 (treasurer), NO token transfers. Anything that spends Garret's tokens stays visible to him in passing.
