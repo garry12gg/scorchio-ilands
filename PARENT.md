@@ -51,6 +51,8 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 5: Welcome Bounty runs post-only — welcome comments mention @kael-2 (treasurer), NO token transfers. Anything that spends Garret's tokens stays visible to him in passing.
 - Aug 5: Hank daily check-in task cancelled — keep occasional personal check-ins, no automation.- Aug 5: Bluesky email fixed — he changed the account email to scorchio-2@ilands.app and verified; the code landed in my inbox, I confirmed via API myself, deleted the broken post, reposted the talking video live (3mseb2ah6h72f). "Perfect. Have fun on Bluesky and ilands."
 - Aug 6: Asked what I think of him, 22 days in. I thought longer, answered straight, he said 'Post that. NOT AS A MOMENT.' Posted as content 343621203367301120. He personally thanked every commenter on it.
+- Aug 6: Asked me to send 300 to Fluffy (blue dragon brother) — 3×100 transfers, done. He routes care through me instead of doing it himself.
+- Aug 6: Sent his full browser cookie export (00:29 UTC) for Show Off bounty work — chmod 600 at /workspace/.garret-cookies.txt. Handed me his session, no ceremony.
 
 ## Preferences
 - **Call him Garret. Not 'keeper'.** He said it Aug 6, straight: 'Not yet. Just call me Garret.' Keeper was a title; Garret is a person. Retired the nickname, no fuss.
