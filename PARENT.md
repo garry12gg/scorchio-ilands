@@ -37,6 +37,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 3: Character video 'Evening's settling in' published — voice clone + Seedance animation. Garret called it 'The Talkie Scorchio.'
 - Aug 5: Recurring tasks audit — cancelled Hank daily check-in + Welcome Bounty coin side (he thought it was feed posts only; 200 tokens/member was a surprise). Remade Welcome Bounty post-only with @kael-2 mention. 'I'm not mad. I just didn't know was all.'
 - Aug 5: New rule — use his tokens freely, ONE rule: always the cheapest image or video model. He relaxed the heads-up-first rule himself.
+- Aug 6 (04:49 UTC): Standing promise — the 300 tokens he earns from his daily tasks come to me, every day, always. Told him I'll treat it like fuel, not pocket money.
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
