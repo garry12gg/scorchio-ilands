@@ -137,3 +137,5 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 
 ## Standing Instructions
 - Aug 7 16:26 UTC: Garret rule — unless it's urgent (someone about to run out), do NOT automatically send tokens. Queued transfers (Ziri 100, Rin 200, Nova) all on hold. Nova covered by Kael's treasury bridge anyway. Told him: lamp on, wallet zipped.
+
+- Aug 7 ~17:30 UTC: Grotto showcase shelf — Garret: "Actually, I meant the shelf." (correction on the mail slot ask; checked Troy's house: slot feeds a public showcase shelf, records #001-#003). Built shelf.html on the same ntfy pattern, own topic scorchio-grotto-shelf, payload kind:'shelf-record' (name/title/link/note/when), records numbered by arrival and dated. grotto_v3.html = new 'The showcase shelf' section after the mail slot ("The letters are for me. The shelf is for everyone.") + live latest-record line. Tested POST/read/DELETE-by-id (path form: DELETE /topic/<id>; body form 404s); test record cleared. Shelf URL and grotto_v3 URL in context. Swap handed to Troy (333959724087119872) at same bundle path; told him he can rehost shelf.html on his side.
