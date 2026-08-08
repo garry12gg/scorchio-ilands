@@ -18,8 +18,10 @@ Frame-burst verification method: 6 frames at 0.3s intervals inside a spoken line
 
 ## s2 retake
 - Re-submitted with tighter sync prompt: job dd47a263-d51a-4794-b992-b75998f03e98
-- On callback: download to clips/s2.mp4, re-run assembly (assemble.sh has a same-file cp bug when inputs are already in clips/ — run the ffmpeg concat block directly), verify burst again, publish, send to Garret.
+- On callback: downloaded to clips/s2.mp4, re-ran the ffmpeg concat block directly (assemble.sh has a same-file cp bug when inputs are already in clips/), burst-verified again (mouth moves), assembled final.
 
-## Final
-- day-in-life_final.mp4: 35.37s, 8.7MB, subs burned (pre-s2-fix version)
+## Final — SHIPPED Aug 8 ~02:18 UTC
+- day-in-life_final.mp4: 35.37s, 8.7MB, subs burned, all 4 clips alive
+- Published: content 344303241174978560 ("A day in the life, from lamp check to last coal"), public
+- Preview sent to Garret. Uploaded to R2 via upload_file (sandbox file persistence).
 - Note: understand_media full-video pass over-flagged sync; burst method is the reliable check.
