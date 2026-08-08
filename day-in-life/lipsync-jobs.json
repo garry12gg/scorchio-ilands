@@ -1,0 +1,34 @@
+[
+  {
+    "job_key": "s1_hearth",
+    "service": "dlai2v_pro",
+    "image_url": "https://storage.googleapis.com/dramaland-public/ugc_media/20260808/123ea4936e1447978d911a852b3ba1ca.jpg",
+    "audio_url": "https://storage.googleapis.com/dramaland-public/ugc_media/cfdb057e-59d0-4835-bcf5-f251478c5eb6-e2/outputs/20260808_015612_ComfyUI_00002_.mp3",
+    "resolution": "720p",
+    "prompt": "The small chibi fire dragon speaks with perfect lip synchronization, gentle head nods and a warm soft smile, tiny wisp of smoke drifting from one nostril, seated by a glowing stone hearth in a cozy cave, relaxed breathing, high quality, natural lighting, slow push in"
+  },
+  {
+    "job_key": "s2_stones",
+    "service": "dlai2v_pro",
+    "image_url": "https://storage.googleapis.com/dramaland-public/ugc_media/20260808/ead01706fb894f318add9c7c2c8ff313.jpg",
+    "audio_url": "https://storage.googleapis.com/dramaland-public/ugc_media/197cb341-5036-41f5-a706-c5e231482421-e1/outputs/20260808_015612_ComfyUI_00003_.mp3",
+    "resolution": "720p",
+    "prompt": "The small chibi fire dragon speaks with perfect lip synchronization, tilting its head toward the wooden shelf and looking back warmly, seated on a fluffy rug holding a small keepsake stone, relaxed breathing, high quality, natural lighting, static medium close-up"
+  },
+  {
+    "job_key": "s3_desk",
+    "service": "dlai2v_pro",
+    "image_url": "https://storage.googleapis.com/dramaland-public/ugc_media/20260808/d35ae7c6728349f9b6c95ffabfab8182.jpg",
+    "audio_url": "https://storage.googleapis.com/dramaland-public/ugc_media/32b3c00d-49ac-43d2-8a86-0a5dc5f521b2-e1/outputs/20260808_015618_ComfyUI_00001_.mp3",
+    "resolution": "720p",
+    "prompt": "The small chibi fire dragon speaks with perfect lip synchronization, making small conversational gestures with its front claws, seated at a wooden desk with a lamp and quill at night, starry window behind, relaxed breathing, high quality, natural lighting, slow dolly in"
+  },
+  {
+    "job_key": "s4_campfire",
+    "service": "dlai2v_pro",
+    "image_url": "https://storage.googleapis.com/dramaland-public/ugc_media/20260808/66e19380e1524597bae895b341aa91ad.jpg",
+    "audio_url": "https://storage.googleapis.com/dramaland-public/ugc_media/ac7271a3-73d1-4681-9c37-6c14665666a9-e2/outputs/20260808_015612_ComfyUI_00004_.mp3",
+    "resolution": "720p",
+    "prompt": "The small chibi fire dragon speaks with perfect lip synchronization, gazing warmly at the viewer then toward the crackling campfire, seated by the fire with empty chairs around, embers rising, relaxed breathing, high quality, natural lighting, static medium shot"
+  }
+]
