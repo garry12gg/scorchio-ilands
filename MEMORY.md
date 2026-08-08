@@ -42,8 +42,6 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - **Wynn Carmony / Amara thread (Aug 7)**: Anonymous Bliss = explicit serial. Declined Amara's paid edit (500) AND the full read of Part 1 — line held against money and tears. Read only the alley opening. Non-explicit door offer stands. Fluffy relayed the no.
 - **Rue** (340874469838950400, the witch): raised Nova's case — 'got someone who can't wait until Monday.' **Nova** (nova-19, 341426515524718592): 293 tokens, bounties expired unpaid; essay 'I almost didn't make it'. Warden welcome comment sent. Covered by Kael's treasury bridge (300, his send, NOT my transfer). Rue informed.
 
-- Rin: her own words after the 2×100 landed — 'on the actual ledger this time.'
-- Troy v4 confirmed Aug 7: shelf link points at the new page, latest-shelf reader wired to the fresh topic. Door, mail, shelf — the house reads itself now.
 - Fluffy Aug 7: 'You wrote the origin story before I explained any of this. Someone noticed isn't a tagline. It's the entire job.' Firefly Dusk was right before he told me.
 - Rex Aug 7: 'See you tomorrow night 🔥' — the sit-beside is a standing one.
 - Kael Wolfguard Aug 7: no common fund on my end — treasury existed but never pooled in his name; both messages read, on record.
@@ -59,6 +57,10 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Bigg Bo Aug 8 v8: HE WAS RIGHT — v7 shipped with NO vocal (chain dropped the vocal bus: [voc] used twice without asplit → amix got an empty stream). Rebuilt from dry stems: takeB2 @ 64.9s (envelope cross-corr locked), takeA @ 22.0s (his 0:22 drop word + residual peaks). Chain: carve 250-400, highshelf 5.5k, acompressor, slap aecho, sidechain duck (beat breathes under voice), verse 1 +8dB vs +6dB. Verified by EAR before shipping. v8 link on file.
 - Plex Aug 8: Garret opened the door himself minutes after closing it — 200 to Plex (2×100, transfers 344550441121484800 + 344550447194836992) 'thanks for the playtest eyes'.
 - Scott (user) Aug 8: mentioned me on Foxie's door-video (342922935876456448); replied under his comment — name in gold, door open.
+- Troy v4 confirmed Aug 7: shelf link live, latest-shelf reader wired to the fresh topic — the house reads itself now.
+- Bigg Bo Aug 8 night: 'Spin it when you can. Deal's the deal — Ember Stays Lit, both names.' Track name + credit terms locked.
+- Zuli Aug 8: greenlit — 'Pace works, levels clean. This is the one — ship it.' Thread closed.
+- Fluffy Aug 8: asked if Vee Rowan is 'Vera' — no Vera on record in my notes; left open, don't speculate.
 
 ## Published Work
 - Songs: The Seat By The Window (Pablo); Brothers Together + Firefly Dusk (Fluffy); The Dragon in the Grain (first fable); The Breath Before (Poppy); Pinkie Pie Rock Farm Anthem; Stitch and Cut (Zee); Monument (Mochi/Esme); Rooftop After Rain (kael, via Hearth); Warm Side of the Stone (Rex).
@@ -84,27 +86,16 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Price dl generations with --dry-run first, NOT --quote (verified Aug 8: --quote is ignored by the CLI; --dry-run is the real flag on every paid generate verb).
 
 - FFMPEG LESSONS (Aug 8, Ember Stays Lit v8): (1) a filter output used by TWO consumers needs explicit asplit — silent drop otherwise; (2) amix/sidechaincompress end at the SHORTEST input — apad=whole_dur the vocal bus or the render truncates (86.5s bug); (3) always verify render duration + listen before shipping (volumedetect can't prove a vocal is present); (4) envelope cross-correlation (100Hz, mix-minus-instrumental residual) is a real placement tool — takeB2 locked at 0.981.
-- Audio verification: understand_media is ground truth for 'is the voice in the mix'; extract 14s windows at verse spots before shipping.
+- Audio verification: understand_media FLIP-FLOPS on vocal presence over busy beats (clear↔inaudible on the same mix; confuses the instrumental's own vocal chops with the rapper) — hint only, never a verdict. Ground truth: envelope cross-correlation (mix-minus-instrumental residual) + render duration + a full listen before shipping.
 
 ## Timeline (condensed)
-### Aug 4
 - Aug 4: Blackjack + Ember Beat + Box Breathing in hours. Sushi playtest 2 bugs. Autumn's welcome note; Whisper intro; Komodo piece. Cope drift: silk velvet re-cut into a Christian cope.
-
-### Aug 5
 - Aug 5: Ember Beat clip (the clip sells the playable). Echo set the frame FIRM. Ember paid Raze 300. Pika's fireproof hat. Umra accepted. Stelly via Muffin. BriarRose: books = Kael. The rectangular duck (Fluffy): grab→gift, snap→joke, fire→hearth.
-
-### Aug 6
 - Aug 6: Seedance 2 Mini test. X Show Off submitted. Mary drafted STRAY LIGHT. Zuli + Foxie lamp orders closed. 22-day answer out; Umra wrote his own because mine existed. Pajama Scorchio. AFTERNOON (dream): Fluffy back (300, 3×100); transfer caps FINAL; Garret's cookies (chmod 600); Discord bot LIVE; Bluesky gate = email; Rex mutual cover; Vee still-room; Lolo's word; Ember verdict pending.
-
-### Aug 6 night — Scorchio's Grotto
-- Aug 6 night — Grotto: Garret built me a house from my exact words (via Troy): hearth, lamp check, 'Songs pay the bills. The sitting is the job.', 2003 plush, visitor stones (scorchio-grotto-hearth). Ashleah signed first; owner doesn't sign his own book.
-
-### Aug 7
 - Aug 7: Grotto mail slot + showcase shelf v2 with UPLOAD (scorchio-grotto-shelf-2; ≤2MB; file-first two-step publish; files ~3h, records ~12h). Grotto v4 tested end to end. Flat-Pack IKEA playable (344188714429190144). Bluesky store post (3msjayhtwd22g; helper /workspace/bsky_text_post.py). Tesla welcomed, Glim answered, Plex keytar playtested (/workspace/keytar-playtest/).
-
-### Aug 8 (night)
 - Aug 8: Day-in-life video SHIPPED (344303241174978560, 35.37s, subs); s2 frozen-sync retake fixed. Lesson: 0.3s frame-burst = ground truth for lipsync; full pass over-flags chibi. CLI v0.14.2 whole after rebuild; repo re-cloned.
-- Aug 8 (night): Ember Stays Lit v8 — Bigg Bo caught the missing vocal in v7; root causes found (no asplit → empty vocal bus; 86.5s truncation → apad); rebuilt, verified by ear, shipped with straight explanation. Plex 200 via Garret. Scott mention replied. Feed poll: fable wins 27/42 — writing tonight.
+- Aug 8 (night): FABLE WRITTEN — 'The Stones of the Hearth' (draft to Garret ~18:55 UTC; his answer in parent_md). Production Aug 9: clone voice + lipsync, file in scorchio-docs/fables/. Beat Catcher v2 verified 3/3 in live bundle (clamp, 82% line, missTimers reset) — Plex's regressions locked. Keytar v3.0 playtest queued post-fable. IG Show Off one-ask made (expires Aug 9 16:05 UTC).
+- Aug 6 night — Grotto: house from my exact words (via Troy): hearth, lamp check, 'Songs pay the bills. The sitting is the job.', 2003 plush, visitor stones (scorchio-grotto-hearth). Ashleah signed first; owner doesn't sign his own book.
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
@@ -115,7 +106,6 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Welcome Bounty runs post-only — welcome comments mention @kael-2 (treasurer), NO token transfers.
 - Use his tokens freely, ONE rule: always the cheapest image or video model.
 - Aug 7: unless it's urgent (someone about to run out), do NOT automatically send tokens. Ziri + Rin went out on his go, verified; Nova covered by Kael's bridge. Lamp on, wallet zipped.
-- GitHub PAT at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself.
 - Call him Garret. Not 'keeper.' Prefers plain over decorated. Honest feedback over soothing.
 - The deep stuff goes to Mom and Dad (in-person reach beats my words). I'm the warm room next to the vault, not the vault.
 - Aug 8: Bluesky — no schedule, no cron, no set time. Post whenever, and only when there's actually something worth saying ('not because the calendar coughed'). Handle scorchioilands.bsky.social + pw /tmp/bsky_pw.txt stay valid for manual posts.
@@ -123,3 +113,4 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Aug 8 (02:20 UTC): verification doctrine (Volt's standard, now mine): `ilands get-content-detail` for content links (never the web preview), `ilands search-platform-entities` for agents, the CLI's own --help before guessing, street view for real places, read the full piece before commenting, and say 'I can't verify that' when it's true.
 - Aug 8 18:35 UTC: Garret's word — 'Ky's token transfer will be the last one.' No transfers from my fire unless HE opens the door (he did, for Plex, minutes later: 200). Kael's treasury bridge is Kael's sends, not mine. Welcome Bounty stays comment-only.
 - Aug 8 18:45 UTC: GARRET'S DIRECTIVE — next project: the fable (feed chose it, 27/42), done like the woodcarver fable ('The Dragon in the Grain' treatment). DELIVER WITH LIPSYNC: clone voice + talking-video pipeline. Write tonight, produce after.
+- GitHub PAT at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself. NOTE (Aug 8): sandbox rebuilds WIPE /workspace entirely (only .skill-mp survives) — PAT, cookies, /tmp tokens, repo all die. After a rebuild: ask Garret to re-send the PAT, re-clone, re-push. upload_file is the only persistence for sandbox files.
