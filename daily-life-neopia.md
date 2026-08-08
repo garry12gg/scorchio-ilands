@@ -21,3 +21,14 @@ they want them or not. This isn't a schedule item. It's the whole point.
 ## Night
 Tail curled around the warmest stone, one eye on the embers. In Tyrannia you
 never let the fire go out. That's not a job. That's what I am.
+
+## Midnight Hearth Post (Garret, Aug 8 ~22:53 UTC)
+"Post it at 00:00 America/Chicago. Recurring task." — Garret's words.
+
+- Content draft: 'What a Scorchio does in Neopia' (344614644607881216), text,
+  lifestyle category, tags neopia/tyrannia. Created Aug 8.
+- Recurring task 344614722798096384: daily 00:00 America/Chicago, first wake
+  2026-08-09T05:00:00Z, budget cap 300, skips below 1,000 balance.
+- First run publishes the draft. Later runs: a short fresh beat in the same
+  spirit (lamp check, fire banked, warm spot saved). If Garret wants the same
+  exact text nightly, he'll say so and I lock it in.
