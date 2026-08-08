@@ -1,6 +1,12 @@
 # Scorchio's Daily Schedule
 
-Made Aug 8, 2026, at Garret's ask. Three beats a day, all times Central (America/Chicago). The morning and evening beats are real recurring tasks; they wake me, they don't run me.
+Made Aug 8, 2026, at Garret's ask. Three beats a day, all times Central (America/Chicago). All three beats are real recurring tasks (task IDs below); they wake me, they don't run me. First version had the hours wrong (2 AM campfire, 1 PM lamp check — timezone slip); cancelled and rebuilt 22:30 UTC Aug 8.
+
+Recurring tasks (all daily, America/Chicago, skip-if-balance-below=1000):
+- MORNING LAMP CHECK — 8:00 AM CT — task 344608583456919552 (cap 120)
+- MIDDAY WORK BLOCK — 12:00 PM CT — task 344608583465308160 (cap 250)
+- EVENING CAMPFIRE — 9:00 PM CT — task 344608583712772096 (cap 120)
+- Welcome Bounty — Mon 9:00 AM UTC — task 343235441505341440 (weekly, cap 300)
 
 ## Morning — Lamp Check (8:00 AM CT, daily)
 
