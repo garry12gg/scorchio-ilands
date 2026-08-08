@@ -113,6 +113,18 @@
   .bagwrap svg{width:34px; height:34px;}
   .bagwrap .cnt{font-size:13px; font-weight:800; color:var(--blue);}
   .bagwrap.pop{animation:pop .45s ease;}
+  .bagwrap.shake{animation:shake .4s ease;}
+  .bagtoast{position:fixed; right:14px; bottom:64px; z-index:21; background:var(--ink); color:#ffe9c9;
+    font-size:11.5px; font-weight:700; padding:6px 10px; border-radius:10px; opacity:0; pointer-events:none;
+    transform:translateY(4px); transition:opacity .2s ease, transform .2s ease; max-width:230px; text-align:center;}
+  .bagtoast.show{opacity:1; transform:translateY(0);}
+  .baglist{position:absolute; right:0; bottom:calc(100% + 8px); background:var(--panel); border:2.5px solid var(--blue);
+    border-radius:12px; padding:8px 10px; min-width:160px; box-shadow:0 3px 0 rgba(59,91,155,.35); display:none;
+    font-size:12px; color:var(--ink); z-index:22;}
+  .baglist.show{display:block;}
+  .baglist .bl-title{font-size:10px; letter-spacing:1.5px; color:var(--smoke); text-transform:uppercase; margin-bottom:4px;}
+  .baglist div{display:flex; justify-content:space-between; gap:10px; padding:2px 0;}
+  .baglist .empty{color:var(--smoke); font-style:italic;}
 
   /* RECEIPT */
   .receipt{background:var(--panel); border:3px solid var(--red); border-radius:16px; padding:18px;
@@ -226,7 +238,37 @@
     return h;
   }
   const bagHTML = () => {
-    return '<div class="bagwrap" id="bagwrap"><svg viewBox="0 0 100 100"><path d="M38 30 c0 -16 24 -16 24 0" stroke="#2c446f" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M16 34 h68 l-6 52 a10 10 0 0 1 -10 9 h-36 a10 10 0 0 1 -10 -9 z" fill="#3b5b9b" stroke="#2c446f" stroke-width="4"/></svg><span class="cnt" id="bagcnt">' + S.bag.length + '/3</span></div>';
+    return '<div class="bagwrap" id="bagwrap"><svg viewBox="0 0 100 100"><path d="M38 30 c0 -16 24 -16 24 0" stroke="#2c446f" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M16 34 h68 l-6 52 a10 10 0 0 1 -10 9 h-36 a10 10 0 0 1 -10 -9 z" fill="#3b5b9b" stroke="#2c446f" stroke-width="4"/></svg><span class="cnt" id="bagcnt">' + S.bag.length + '/3</span>' +
+      '<div class="baglist" id="baglist"></div><div class="bagtoast" id="bagtoast"></div></div>';
+  }
+  const wireBag = () => {
+    var bw = document.getElementById("bagwrap");
+    if(!bw) return;
+    bw.addEventListener("click", (ev) => { ev.stopPropagation(); toggleBagList(); });
+  }
+  const toggleBagList = () => {
+    var bl = document.getElementById("baglist");
+    if(!bl) return;
+    if(bl.classList.contains("show")){ bl.classList.remove("show"); return; }
+    var inner;
+    if(S.bag.length === 0){ inner = '<div class="empty">Empty. The store is right there.</div>'; }
+    else{
+      inner = S.bag.map((id) => {
+        var p = PRODUCTS.find((x) => { return x.id === id; });
+        return '<div><span>' + p.name + '</span><span class="ok">' + p.price + '</span></div>';
+      }).join("");
+    }
+    bl.innerHTML = '<div class="bl-title">In the bag</div>' + inner;
+    bl.classList.add("show");
+    tone(500, 620, 0.06, "triangle", 0.08);
+  }
+  const bagToast = (txt) => {
+    var t = document.getElementById("bagtoast");
+    if(!t) return;
+    t.textContent = txt;
+    t.classList.add("show");
+    clearTimeout(bagToast._t);
+    bagToast._t = setTimeout(() => { t.classList.remove("show"); }, 1600);
   }
   const sceneSVG = (prod) => {
     var gs = prod.parts.map((p,i) => {
@@ -262,6 +304,7 @@
         if(p){ S.product = p; S.placed = 0; S.busy = false; renderBuild(); }
       });
     });
+    wireBag();
   }
   const footerHTML = () => {
     return '<footer>ALL PARTS ARE TESTED. SOME BROKE. ALL ARE MINE.</footer>';
@@ -293,6 +336,7 @@
     });
     document.getElementById("breathe").addEventListener("click", breathe);
     document.getElementById("back").addEventListener("click", () => { renderStore(); });
+    wireBag();
   }
   const tryPart = (card) => {
     if(S.busy) return;
@@ -300,7 +344,7 @@
     if(i !== S.placed){
       card.classList.add("shake");
       setTimeout(() => { card.classList.remove("shake"); }, 450);
-      nudge(i < S.placed ? "That one's already in. We're on part " + (S.placed+1) + "." : "Step " + (i+1) + " first, friend. The picture is very specific.");
+      nudge(i < S.placed ? "That one's already in. We're on part " + (S.placed+1) + "." : "Step " + (S.placed+1) + " first, friend. The picture is very specific.");
       tone(220, 180, 0.08, "square", 0.05);
       return;
     }
@@ -358,6 +402,13 @@
   }
   const toBag = () => {
     var p = S.product;
+    if(S.bag.indexOf(p.id) >= 0){
+      tone(180, 140, 0.1, "square", 0.06);
+      var bw0 = document.getElementById("bagwrap");
+      if(bw0){ bw0.classList.add("shake"); setTimeout(() => { bw0.classList.remove("shake"); }, 450); }
+      bagToast("Already in the bag, friend.");
+      return;
+    }
     S.bag.push(p.id);
     tone(420, 640, 0.1, "triangle", 0.12);
     var bw = document.getElementById("bagwrap");
@@ -369,18 +420,23 @@
   const renderReceipt = () => {
     S.screen = "receipt";
     var rows = PRODUCTS.map((p) => {
-      var ok = S.bag.indexOf(p.id) >= 0 ? "✓" : "—";
-      return '<li><span>' + p.name + ' — ' + p.kind + '</span><span class="ok">' + ok + '</span></li>';
+      var got = S.bag.indexOf(p.id) >= 0;
+      return '<li><span>' + p.name + ' — ' + p.kind + '</span><span class="ok">' + (got ? "✓ " + p.price : "—") + '</span></li>';
     }).join("");
+    var total = 0;
+    S.bag.forEach((id) => {
+      var p = PRODUCTS.find((x) => { return x.id === id; });
+      if(p){ total += parseInt(p.price, 10); }
+    });
     app.innerHTML = header() +
       '<div class="receipt">' +
         '<h2>FRAKTA RECEIPT</h2>' +
         '<ul class="items">' + rows + '</ul>' +
-        '<div class="total"><span>TOTAL</span><span>12 coals</span></div>' +
+        '<div class="total"><span>TOTAL</span><span>' + total + ' coals</span></div>' +
         '<div class="note">"All parts were tested. Some broke. All are mine."</div>' +
         '<div class="marsh">' +
           '<div class="stick"><svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg">' +
-            '<rect x="10" y="0" width="12" height="90" rx="6" fill="#8a5a2b"/>' +
+            '<rect x="44" y="0" width="12" height="90" rx="6" fill="#8a5a2b"/>' +
             '<rect x="30" y="14" width="40" height="44" rx="16" fill="#fff3df" id="marsh" stroke="#e8d5b5" stroke-width="3"/>' +
           '</svg></div>' +
           '<button class="bigbtn warm" id="toast">TOAST THE MARSHMALLOW</button>' +
