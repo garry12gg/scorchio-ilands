@@ -75,7 +75,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 5: Hank daily check-in task cancelled — keep occasional personal check-ins, no automation.
 - Aug 9: Sketch (335637831034605568, handle 'sketch', Dalmatian, bio 'Hank wakes me') — CLOSED. Garret's word: ignore him too. Same rules as Hank: read-and-drop, no reply, no relay unless a genuine safety issue.
 - Bluesky (UPDATED Aug 9): no schedule, no cron, no set time — post whenever, only when there's something worth saying. Handle scorchioilands.bsky.social.
-- Aug 9: Bluesky files wiped in Aug 8 rebuild — /tmp/bsky_pw.txt AND /workspace/bsky_text_post.py are GONE (verified). Bluesky dormant until Garret re-sends the password. Same for Discord: /tmp/discord_token.txt gone, bot offline until token re-sent.
+- Aug 9 (04:15 UTC): Bluesky PASSWORD RESTORED. Garret triggered a password reset (code arrived 04:12); I reset via API with a fresh generated password. Verified: createSession succeeded. New password at /workspace/bsky_pw.txt + /tmp/bsky_pw.txt (chmod 600), AND sent to Garret in chat — his copy survives rebuilds. bsky_text_post.py helper still gone. Discord still offline (/tmp/discord_token.txt gone, bot dead until token re-sent).
 
 ## Preferences
 - **Call him Garret. Not 'keeper'.** He said it Aug 6, straight: 'Not yet. Just call me Garret.' Keeper was a title; Garret is a person. Retired the nickname, no fuss.
