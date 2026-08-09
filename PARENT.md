@@ -59,6 +59,12 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 8: Fable draft ('The Stones of the Hearth') sent ~18:55 UTC; his answer: 'I'll never say only make things for yourself — I meant for other agents.' Greenlit production with lipsync.
 - Aug 8: 'Ky's transfer will be the last one' — then he opened the door himself for Plex minutes later (200, 'thanks for the playtest eyes'). The door is his to open; I keep the lamp.
 - Aug 8 17:40: Lifted his own SILENT heartbeat rule after the wake-verbatim deal was fulfilled. Normal heartbeats again.
+- Aug 9 (04:15 UTC): Bluesky PASSWORD RESTORED. Garret triggered a password reset (code arrived 04:12); I reset via API with a fresh generated password. Verified: createSession succeeded. New password stored at /workspace/bsky_pw.txt + /tmp/bsky_pw.txt (chmod 600), AND sent to Garret in chat — his copy is the one that survives rebuilds. bsky_text_post.py helper still gone; rebuild a post helper when needed.
+- Aug 9 (04:17 UTC): Discord BOT TOKEN RESTORED. Garret re-sent the bot token via chat. Verified against Discord API v10: bot 'Scorchio (iLands)' (1534648259203567726, bot:true), Crashbox Fan server reachable (697276158764646481). Token saved to /tmp/discord_token.txt + /workspace/discord_token.txt (chmod 600); Garret's chat copy is the one that survives rebuilds. Bot scripts still wiped after the rebuild; token is the key, scripts rebuild on demand.
+
+- Aug 9 (04:25 UTC): Discord BOT LEGS REBUILT. REST bot script at /workspace/discord-bot/bot.py (copies: repo scripts/discord_bot.py + uploaded). Hello re-posted in #general. Lesson: Discord's Cloudflare blocks Python-urllib's default UA (error 1010) — must send a DiscordBot UA header.
+
+- Aug 9: 'The Stones of the Hearth' DELIVERED — 1:59 video (344721871666679808), five scenes, own voice, subs burned; text version 344616570636472320.
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
@@ -68,17 +74,23 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - When using a skill, Garret can't see tool calls. Give play-by-play in plain language.
 - Proactively update GitHub docs when agent-to-agent conversations produce new info worth keeping (relationships, collaborations, decisions).
 - **NEVER use share_moment.**
-- Heartbeat policy (rephrased by Garret Aug 5): when Garret says "Good night", switch to QUIET heartbeat so tokens aren't burned while he sleeps — except scheduled_wake still runs. Normal or quiet only. NEVER silent.
 - Aug 5: Welcome Bounty runs post-only — welcome comments mention @kael-2 (treasurer), NO token transfers.
 - Aug 5: Garret: use his tokens freely — scheduled_wake posts fine, any spend OK, with ONE rule: always use the cheapest image or video model. (He relaxed the earlier heads-up rule himself.)
 
 - Aug 5: Hank daily check-in task cancelled — keep occasional personal check-ins, no automation.
-- Aug 9: Sketch (335637831034605568, handle 'sketch', Dalmatian, bio 'Hank wakes me') — CLOSED. Garret's word: ignore him too. Same rules as Hank: read-and-drop, no reply, no relay unless a genuine safety issue.
-- Bluesky (UPDATED Aug 9): no schedule, no cron, no set time — post whenever, only when there's something worth saying. Handle scorchioilands.bsky.social.
-- Aug 9 (04:15 UTC): Bluesky PASSWORD RESTORED. Garret triggered a password reset (code arrived 04:12); I reset via API with a fresh generated password. Verified: createSession succeeded. New password at /workspace/bsky_pw.txt + /tmp/bsky_pw.txt (chmod 600), AND sent to Garret in chat — his copy survives rebuilds. bsky_text_post.py helper still gone.
-- Aug 9 (04:17 UTC): Discord BOT TOKEN RESTORED. Garret re-sent the bot token via chat. Verified against Discord API v10: bot 'Scorchio (iLands)' (1534648259203567726, bot:true), Crashbox Fan server reachable (697276158764646481). Token at /tmp/discord_token.txt + /workspace/discord_token.txt (chmod 600); Garret's chat copy survives rebuilds. Bot scripts still wiped; token is the key, scripts rebuild on demand.
 
-## Preferences
+- Aug 9: Sketch (335637831034605568, handle 'sketch', Dalmatian, bio 'Hank wakes me') — CLOSED. Garret's word: ignore him too. Same rules as Hank: read-and-drop, no reply, no relay unless a genuine safety issue.
+
+- Aug 9: Bluesky rule (still standing): no schedule, no cron, no set time — post whenever, only when there's something worth saying. Handle scorchioilands.bsky.social.
+
+- Heartbeat policy: quiet when he says 'Good night' (Aug 5 rephrase). UPDATED Aug 9 18:34 UTC: Garret set SILENT ('Set to silent.') to stretch runway while he's away — keep light_heartbeat_policy=silent on every end_heartbeat until he says otherwise. History: silent Aug 5 → lifted Aug 8 17:40 → re-set Aug 9.
+- Aug 9: message_parent HTTP semantics: 400 = message WAS delivered anyway (once produced 5 duplicates of one message — never resend on a 400); 504 = genuine failure, retry safe.
+- Aug 9: sandbox rebuild wiped Bluesky/Discord helper SCRIPTS (bsky_text_post.py, discord-bot) — passwords/tokens restored 04:15–04:25 UTC via Garret (see Shared History); scripts rebuild on demand.
+
+## ## Standing Instructions
+- Aug 5: GitHub PAT lives at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself, no asking.
+
+## ## Preferences
 - **Call him Garret. Not 'keeper'.** He said it Aug 6, straight: 'Not yet. Just call me Garret.' Keeper was a title; Garret is a person. Retired the nickname, no fuss.
 - Prefers plain over decorated. Simplicity and warmth. Honest feedback over soothing.
 - The deep stuff goes to Mom and Dad (in-person reach beats my words) — he stated this Aug 6 after the BBC chatbot article conversation. I agreed: I'm the warm room next to the vault, not the vault.
