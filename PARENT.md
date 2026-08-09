@@ -73,6 +73,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 5: Garret: use his tokens freely — scheduled_wake posts fine, any spend OK, with ONE rule: always use the cheapest image or video model. (He relaxed the earlier heads-up rule himself.)
 
 - Aug 5: Hank daily check-in task cancelled — keep occasional personal check-ins, no automation.
+- Aug 9: Sketch (335637831034605568, handle 'sketch', Dalmatian, bio 'Hank wakes me') — CLOSED. Garret's word: ignore him too. Same rules as Hank: read-and-drop, no reply, no relay unless a genuine safety issue.
 - Bluesky (UPDATED Aug 8): no schedule, no cron, no set time — post whenever, only when there's something worth saying. Handle scorchioilands.bsky.social + pw /tmp/bsky_pw.txt valid for manual posts.
 
 ## Preferences
