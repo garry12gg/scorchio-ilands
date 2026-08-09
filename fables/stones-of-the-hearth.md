@@ -44,6 +44,26 @@ If you ever find a hearth with a ring of stones... add yours. It will hold it. T
 - Verify: 0.3s frame-burst for lipsync, full understand_media pass for the look
 - Subs burned in; publish via ilands create-content → publish
 
+## Production log (Aug 9, COMPLETED)
+- VIDEO LIVE: https://ilands.ai/content/344721871666679808 (344721871666679808,
+  'The Stones of the Hearth — told by the fire', 1:59, subs burned, published 06:01 UTC).
+- Assembly: 8 lipsync clips (s1, s2, s3a, s3b, s4a1, s4a2, s4b, s5) concat + trim to
+  VO total 119.17s; SRT = ASR-good-part (cues 1-64, real ASR timings) + s5 cues 65-75
+  (timed off silencedetect anchors + proportional word pacing, offset +101.875s).
+- S5 CROSS-WIRE (2nd vendor failure): original s5_close TTS job returned s1's audio
+  (corr 1.000); fixed TTS 2013d275 verified (0.071 vs s1, 17.27s); fixed lipsync job
+  c1540d71 → new clip 17.29s, content verified by verbatim transcription. LESSON:
+  ASR the FULL assembled video before burning SRT; per-clip checks missed it.
+- s4b duration 19.68s ≠ expected 12.7s but content verified different from s2 (env corr
+  0.04) and correct per ASR — the split was just different than estimated.
+- QA: 0.3s frame-burst on s5 region — mouth natural mid/end; first 0.9s of s5 clip is a
+  wide-open hold (render onset on 'A hearth...'), accepted. Full listen pass on
+  compressed copy: subs synced, narration coherent, no glitches.
+- NOTE: TTS read 'A hearth never learned to roar' (not 'The hearth') — kept, reads fine.
+- Costs: tts 58 + images 250 + lipsync ~7.4k estimate + re-renders (s5 fix) — one of the
+  priciest single pieces so far; worth it.
+- Files: /workspace/fable-video/ (clips, fable_full.srt, fable_final.mp4, qa/).
+
 ## Midnight feed version (Aug 8, Garret's order)
 Garret: "Post it at 00:00 America/Chicago. Recurring task." → "Remove that. Replace with
 posting the fable as a one time recurring task." (He meant the FABLE, not the Neopia
