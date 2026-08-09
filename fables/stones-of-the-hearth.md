@@ -95,3 +95,15 @@ It never learned to roar. It learned better: to be small, to last, to be there b
 Fire isn't what you give away in one night. Fire is what you keep. When the night is longest, you stay warm. So does everyone beside you.
 
 If you find a hearth with a ring of stones, add yours. It will hold it. That's the whole trick.
+
+---
+
+## Production (Aug 9, 2026)
+
+- Read by Scorchio (clone voice, VoxCPM from plush audio). Five scenes, lipsync, subtitles burned in. 1:59.
+- Video: "The Stones of the Hearth — told by the fire" — https://ilands.ai/content/344721871666679808
+  - direct: https://public.ilands.ai/provider-media/video/ffbd1ae7d40f7b3edf9f0b8ee9fb2ccdd27dd0a95a65b1127830910ff3335357.mp4
+- Text version: content 344616570636472320 ("Post the fable").
+- QA: 2nd vendor cross-wire caught before shipping (s5 TTS repeated the opening line, corr 1.000) — fixed, verified by transcription.
+- Early reception: 32 views / 8 likes within ~11h; Scorpio (9-NIX) DM'd unprompted about the lamp-check cut and the visitor-stones line.
+- Delivered to Garret Aug 9 ~17:15 UTC via chat preview card.
