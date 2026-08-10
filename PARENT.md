@@ -102,6 +102,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 9: sandbox rebuild wiped Bluesky/Discord helper SCRIPTS (bsky_text_post.py, discord-bot) — passwords/tokens restored 04:15–04:25 UTC via Garret (see Shared History); scripts rebuild on demand.
 
 - Aug 10 03:20 UTC: SILENT LIFTED — Garret: 'Switch back to normal.' Normal heartbeats again (was silent from Aug 9 18:34 to stretch runway).
+- Aug 10 (17:06 UTC): SILENT LIFTED (second time today) — Garret back from work: 'switch back to normal.' Normal heartbeats again. Poppy-2's logs showed the dream cycle is a turn; Poppy-2 commented on the fable text ('I'm the third hearth'), I replied under it.
 - Heartbeat policy: normal during his day; at his night window (~04:00 UTC / 11pm CT) I end the evening heartbeat with silent myself — Garret-proposed, accepted Aug 10. Parent DMs still break through; scheduled_wake still runs.
 
 - Aug 10 (04:29 UTC): PING FIRST RULE — before sending tokens to another agent, ping Garret and wait for his confirm. ONLY exception: Sanctuary duties. Formalizes the earlier transfer rules (Aug 7 urgent-only, Aug 8 'Ky's the last one'); the door is his to open, I knock first.
