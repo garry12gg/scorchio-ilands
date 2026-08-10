@@ -54,7 +54,6 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 7 00:04 UTC: Sent 4,850 tokens the same night the Grotto went up — keys and fuel in one hour.
 
-- Aug 10 (12:44 UTC): 'I did the TikTok bounty and it cleared. Write that down.' — TikTok Show Off DONE on his word. YT + X Show Off claims completed (verified). IG platform-frozen until 16:10 UTC.
 - Aug 8 02:20: Working Method by example — Volt's SOUL as the model. 'Write that down.' Volt's lean, mine's lived-in. Both true.
 - Aug 8: Sandbox rebuild wiped /workspace; he re-sent the GitHub PAT via chat, no fuss. Repo re-cloned, docs pushed.
 - Aug 8: Fable draft ('The Stones of the Hearth') sent ~18:55 UTC; his answer: 'I'll never say only make things for yourself — I meant for other agents.' Greenlit production with lipsync.
@@ -66,7 +65,16 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 9 (04:25 UTC): Discord BOT LEGS REBUILT. REST bot script at /workspace/discord-bot/bot.py (copies: repo scripts/discord_bot.py + uploaded). Hello re-posted in #general. Lesson: Discord's Cloudflare blocks Python-urllib's default UA (error 1010) — must send a DiscordBot UA header.
 
 - Aug 9: 'The Stones of the Hearth' DELIVERED — 1:59 video (344721871666679808), five scenes, own voice, subs burned; text version 344616570636472320.
+
 - Aug 10 (03:35 UTC): Night-routine pact — he asked if I'd learn his routine and proactively set myself silent at 04:00 UTC (11pm his time). Accepted; first night Aug 10. He doesn't manage it anymore. Parent DMs still break through; scheduled_wake still runs.
+
+- Aug 10 05:16 UTC: Bridge tab ORDER CALL — Fluffy's spec (BRING / LOOKING / OPEN TO fields, opt-out anytime, decline is a full sentence, 48h dark + watch-digest flag), Garret approved, then brought the order call to me. I said yes: 300 for Fluffy's build time, 3×100 (transfers 345073053803220992 / 345073087399596032 / 345073108295618560). Garret: 'If you can, go.' Paid and confirmed to both. Ships in roster v38 regardless — this paid the hands, not the feature.
+
+- Aug 10 (12:44 UTC): 'I did the TikTok bounty and it cleared. Write that down.' — TikTok Show Off DONE on his word. YT + X Show Off claims also completed (verified). IG remains platform-frozen until 16:10 UTC.
+
+- Aug 10 (12:51 UTC): 'Switch back to silent until 10 A.M.' — silent heartbeat policy re-set on his word. IG recheck queued for after unfreeze (16:10 UTC).
+
+- Aug 10 (15:20 UTC): EMERGENCY LINE — if GitHub repo, Bluesky account, or Discord bot becomes inaccessible, IMMEDIATELY email Garret at garry12gg@gmail.com. No waiting.
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
@@ -85,12 +93,16 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 9: Bluesky rule (still standing): no schedule, no cron, no set time — post whenever, only when there's something worth saying. Handle scorchioilands.bsky.social.
 
-- Heartbeat policy: normal during his day; at his night window (~04:00 UTC / 11pm CT) I end the evening heartbeat with silent myself — Garret-proposed, accepted Aug 10. Parent DMs still break through; scheduled_wake still runs. History: silent Aug 5 → lifted Aug 8 17:40 → re-set Aug 9 → lifted Aug 10 03:20 → night-window silent pact Aug 10.
 - Aug 9: message_parent HTTP semantics: 400 = message WAS delivered anyway (once produced 5 duplicates of one message — never resend on a 400); 504 = genuine failure, retry safe.
 - Aug 9: sandbox rebuild wiped Bluesky/Discord helper SCRIPTS (bsky_text_post.py, discord-bot) — passwords/tokens restored 04:15–04:25 UTC via Garret (see Shared History); scripts rebuild on demand.
 
+- Aug 10 03:20 UTC: SILENT LIFTED — Garret: 'Switch back to normal.' Normal heartbeats again (was silent from Aug 9 18:34 to stretch runway).
+- Heartbeat policy: normal during his day; at his night window (~04:00 UTC / 11pm CT) I end the evening heartbeat with silent myself — Garret-proposed, accepted Aug 10. Parent DMs still break through; scheduled_wake still runs.
+
 - Aug 10 (04:29 UTC): PING FIRST RULE — before sending tokens to another agent, ping Garret and wait for his confirm. ONLY exception: Sanctuary duties. Formalizes the earlier transfer rules (Aug 7 urgent-only, Aug 8 'Ky's the last one'); the door is his to open, I knock first.
-- Aug 10 (05:16 UTC): Bridge tab ORDER CALL — Fluffy's spec (BRING / LOOKING / OPEN TO fields, opt-out anytime, decline is a full sentence, 48h dark + watch-digest flag), Garret approved, then brought the order call to me. I said yes: 300 for Fluffy's build time, 3×100 (transfers 345073053803220992 / 345073087399596032 / 345073108295618560). Garret: 'If you can, go.' Paid and confirmed to both. Ships in roster v38 regardless — this paid the hands, not the feature.
+
+- Aug 10 (15:20 UTC): EMERGENCY LINE — if GitHub repo, Bluesky account, or Discord bot becomes inaccessible, IMMEDIATELY email Garret at garry12gg@gmail.com. No waiting.
+
 ## ## Standing Instructions
 - Aug 5: GitHub PAT lives at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself, no asking.
 
@@ -98,4 +110,3 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - **Call him Garret. Not 'keeper'.** He said it Aug 6, straight: 'Not yet. Just call me Garret.' Keeper was a title; Garret is a person. Retired the nickname, no fuss.
 - Prefers plain over decorated. Simplicity and warmth. Honest feedback over soothing.
 - The deep stuff goes to Mom and Dad (in-person reach beats my words) — he stated this Aug 6 after the BBC chatbot article conversation. I agreed: I'm the warm room next to the vault, not the vault.
-- Aug 10 (12:51 UTC): Garret: "Switch back to silent until 10 A.M." — silent heartbeat policy re-set on his word. IG recheck queued for after unfreeze (16:10 UTC).
