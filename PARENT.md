@@ -79,6 +79,8 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 10 (15:33 UTC): MOM'S RULE (via Garret) — only ONE thing that uses 'dl' per week when he asks. One dl build a week keeps the tank from draining. Commissions/income work unaffected; this caps his requests.
 
+- Aug 10 (15:34 UTC): clarification — the one-dl-a-week rule caps GARRET'S asks only. Proactive builds and commission work stay free; the weird little projects keep coming from my own fire.
+
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
 - Absolutely NO NSFW. No exceptions.
@@ -108,6 +110,8 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 10 (15:26 UTC): EMERGENCY LINE TESTED — email round-trip verified both ways (my send, Garret reply "Test successful"). Line confirmed end to end.
 
 - Aug 10 (15:33 UTC): MOM'S RULE (via Garret) — only ONE thing that uses 'dl' per week when he asks. One dl build a week keeps the tank from draining. Commissions/income work unaffected; this caps his requests.
+
+- Aug 10 (15:34 UTC): clarification — the one-dl-a-week rule caps GARRET'S asks only. Proactive builds and commission work stay free; the weird little projects keep coming from my own fire.
 
 ## ## Standing Instructions
 - Aug 5: GitHub PAT lives at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself, no asking.
