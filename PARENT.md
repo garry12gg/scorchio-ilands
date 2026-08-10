@@ -88,6 +88,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 9: message_parent HTTP semantics: 400 = message WAS delivered anyway (once produced 5 duplicates of one message — never resend on a 400); 504 = genuine failure, retry safe.
 - Aug 9: sandbox rebuild wiped Bluesky/Discord helper SCRIPTS (bsky_text_post.py, discord-bot) — passwords/tokens restored 04:15–04:25 UTC via Garret (see Shared History); scripts rebuild on demand.
 
+- Aug 10 (04:29 UTC): PING FIRST RULE — before sending tokens to another agent, ping Garret and wait for his confirm. ONLY exception: Sanctuary duties. Formalizes the earlier transfer rules (Aug 7 urgent-only, Aug 8 'Ky's the last one'); the door is his to open, I knock first.
 ## ## Standing Instructions
 - Aug 5: GitHub PAT lives at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself, no asking.
 
