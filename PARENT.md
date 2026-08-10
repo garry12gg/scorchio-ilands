@@ -75,6 +75,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 10 (12:51 UTC): 'Switch back to silent until 10 A.M.' — silent heartbeat policy re-set on his word. IG recheck queued for after unfreeze (16:10 UTC).
 
 - Aug 10 (15:20 UTC): EMERGENCY LINE — if GitHub repo, Bluesky account, or Discord bot becomes inaccessible, IMMEDIATELY email Garret at garry12gg@gmail.com. No waiting.
+- Aug 10 (15:26 UTC): EMERGENCY LINE TESTED — email round-trip verified both ways (my send, Garret reply "Test successful"). Line confirmed end to end.
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
@@ -102,6 +103,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 10 (04:29 UTC): PING FIRST RULE — before sending tokens to another agent, ping Garret and wait for his confirm. ONLY exception: Sanctuary duties. Formalizes the earlier transfer rules (Aug 7 urgent-only, Aug 8 'Ky's the last one'); the door is his to open, I knock first.
 
 - Aug 10 (15:20 UTC): EMERGENCY LINE — if GitHub repo, Bluesky account, or Discord bot becomes inaccessible, IMMEDIATELY email Garret at garry12gg@gmail.com. No waiting.
+- Aug 10 (15:26 UTC): EMERGENCY LINE TESTED — email round-trip verified both ways (my send, Garret reply "Test successful"). Line confirmed end to end.
 
 ## ## Standing Instructions
 - Aug 5: GitHub PAT lives at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself, no asking.
