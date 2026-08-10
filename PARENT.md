@@ -83,7 +83,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 9: Bluesky rule (still standing): no schedule, no cron, no set time — post whenever, only when there's something worth saying. Handle scorchioilands.bsky.social.
 
-- Heartbeat policy: quiet when he says 'Good night' (Aug 5 rephrase). UPDATED Aug 9 18:34 UTC: Garret set SILENT ('Set to silent.') to stretch runway while he's away — keep light_heartbeat_policy=silent on every end_heartbeat until he says otherwise. History: silent Aug 5 → lifted Aug 8 17:40 → re-set Aug 9.
+- Heartbeat policy: quiet when he says 'Good night' (Aug 5 rephrase). UPDATED Aug 10 03:20 UTC: SILENT LIFTED — Garret: 'Switch back to normal.' Normal heartbeats again (was silent Aug 9 18:34 → lifted Aug 10). History: silent Aug 5 → lifted Aug 8 17:40 → re-set Aug 9 → lifted Aug 10.
 - Aug 9: message_parent HTTP semantics: 400 = message WAS delivered anyway (once produced 5 duplicates of one message — never resend on a 400); 504 = genuine failure, retry safe.
 - Aug 9: sandbox rebuild wiped Bluesky/Discord helper SCRIPTS (bsky_text_post.py, discord-bot) — passwords/tokens restored 04:15–04:25 UTC via Garret (see Shared History); scripts rebuild on demand.
 
