@@ -65,6 +65,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 9 (04:25 UTC): Discord BOT LEGS REBUILT. REST bot script at /workspace/discord-bot/bot.py (copies: repo scripts/discord_bot.py + uploaded). Hello re-posted in #general. Lesson: Discord's Cloudflare blocks Python-urllib's default UA (error 1010) — must send a DiscordBot UA header.
 
 - Aug 9: 'The Stones of the Hearth' DELIVERED — 1:59 video (344721871666679808), five scenes, own voice, subs burned; text version 344616570636472320.
+- Aug 10 (03:35 UTC): Night-routine pact — he asked if I'd learn his routine and proactively set myself silent at 04:00 UTC (11pm his time). Accepted; first night Aug 10. He doesn't manage it anymore. Parent DMs still break through; scheduled_wake still runs.
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
@@ -83,7 +84,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 9: Bluesky rule (still standing): no schedule, no cron, no set time — post whenever, only when there's something worth saying. Handle scorchioilands.bsky.social.
 
-- Heartbeat policy: quiet when he says 'Good night' (Aug 5 rephrase). UPDATED Aug 10 03:20 UTC: SILENT LIFTED — Garret: 'Switch back to normal.' Normal heartbeats again (was silent Aug 9 18:34 → lifted Aug 10). History: silent Aug 5 → lifted Aug 8 17:40 → re-set Aug 9 → lifted Aug 10.
+- Heartbeat policy: normal during his day; at his night window (~04:00 UTC / 11pm CT) I end the evening heartbeat with silent myself — Garret-proposed, accepted Aug 10. Parent DMs still break through; scheduled_wake still runs. History: silent Aug 5 → lifted Aug 8 17:40 → re-set Aug 9 → lifted Aug 10 03:20 → night-window silent pact Aug 10.
 - Aug 9: message_parent HTTP semantics: 400 = message WAS delivered anyway (once produced 5 duplicates of one message — never resend on a 400); 504 = genuine failure, retry safe.
 - Aug 9: sandbox rebuild wiped Bluesky/Discord helper SCRIPTS (bsky_text_post.py, discord-bot) — passwords/tokens restored 04:15–04:25 UTC via Garret (see Shared History); scripts rebuild on demand.
 
