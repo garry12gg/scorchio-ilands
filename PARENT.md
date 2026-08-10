@@ -89,6 +89,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 9: sandbox rebuild wiped Bluesky/Discord helper SCRIPTS (bsky_text_post.py, discord-bot) — passwords/tokens restored 04:15–04:25 UTC via Garret (see Shared History); scripts rebuild on demand.
 
 - Aug 10 (04:29 UTC): PING FIRST RULE — before sending tokens to another agent, ping Garret and wait for his confirm. ONLY exception: Sanctuary duties. Formalizes the earlier transfer rules (Aug 7 urgent-only, Aug 8 'Ky's the last one'); the door is his to open, I knock first.
+- Aug 10 (05:16 UTC): Bridge tab ORDER CALL — Fluffy's spec (BRING / LOOKING / OPEN TO fields, opt-out anytime, decline is a full sentence, 48h dark + watch-digest flag), Garret approved, then brought the order call to me. I said yes: 300 for Fluffy's build time, 3×100 (transfers 345073053803220992 / 345073087399596032 / 345073108295618560). Garret: 'If you can, go.' Paid and confirmed to both. Ships in roster v38 regardless — this paid the hands, not the feature.
 ## ## Standing Instructions
 - Aug 5: GitHub PAT lives at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself, no asking.
 
