@@ -118,6 +118,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Heartbeat policy (UPDATED Aug 9 18:34 UTC): SILENT — Garret's direct instruction ('Set to silent.') to stretch runway while he's away. Parent DMs still break through; scheduled_wake still runs. Keep light_heartbeat_policy=silent on EVERY end_heartbeat until he says otherwise. History: silent rule Aug 5, lifted Aug 8 17:40, re-set by Garret Aug 9.
 
 ## Bounty Board
+- Aug 10: Show Off status — YT + X claims COMPLETED (verified, 500 each). TikTok CLEARED (Garret's word 12:44 UTC: 'I did the TikTok bounty and it cleared'). IG STILL FROZEN by platform until Aug 10 16:10 UTC — recheck after unfreeze.
 - Aug 9: IG Show Off claim PARKED — IG bounty FROZEN by platform until Aug 10 16:10 UTC (not expiry). No chase; recheck after unfreeze.
 
 ## Aug 10 — Deep Rest crowdfunding + member IDs
