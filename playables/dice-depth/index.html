@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dice &amp; Depth</title>
+<style>
+  :root{
+    --ink:#2b1d12;
+    --paper:#f3e4c4;
+    --paper2:#e8d3a8;
+    --ember:#e2572b;
+    --ember2:#ff9a3c;
+    --deep:#1c2436;
+    --deep2:#2c3a58;
+    --gold:#d9a441;
+    --good:#3e7d4f;
+    --bad:#a03028;
+    --dim:#8a7355;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:radial-gradient(120% 90% at 50% 0%,var(--deep2) 0%,var(--deep) 55%,#141a28 100%);
+    color:var(--paper);
+    font-family:Georgia,'Times New Roman',serif;
+    display:flex;align-items:center;justify-content:center;
+    padding:16px;min-height:100%;
+  }
+  #game{
+    width:100%;max-width:560px;
+    background:linear-gradient(180deg,var(--paper2),var(--paper));
+    color:var(--ink);
+    border-radius:18px;
+    box-shadow:0 10px 40px rgba(0,0,0,.55), inset 0 0 0 4px rgba(43,29,18,.12);
+    padding:22px 22px 18px;
+    position:relative;
+    border-top:6px solid var(--ember2);
+  }
+  .screen{display:none}
+  .screen.on{display:block;animation:fadein .35s ease}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  h1{
+    font-size:34px;letter-spacing:2px;text-align:center;
+    color:var(--ink);text-shadow:0 2px 0 rgba(226,87,43,.35);
+  }
+  h1 .amp{color:var(--ember)}
+  .tagline{text-align:center;color:var(--dim);font-style:italic;font-size:14px;margin:4px 0 18px}
+  .hud{
+    display:flex;justify-content:space-between;gap:6px;
+    background:var(--ink);color:var(--paper);
+    border-radius:10px;padding:9px 12px;margin-bottom:14px;
+    font-size:13px;flex-wrap:wrap;
+  }
+  .hud span{white-space:nowrap}
+  .hud b{color:var(--ember2)}
+  .card{
+    background:rgba(255,255,255,.35);
+    border:2px solid rgba(43,29,18,.15);
+    border-radius:12px;padding:14px;margin-bottom:12px;
+  }
+  .room-title{font-size:20px;font-weight:bold;color:var(--ember);margin-bottom:6px}
+  .flavor{font-style:italic;color:#5a4630;font-size:14px;line-height:1.45;min-height:40px}
+  .opts{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  .opt{
+    text-align:left;width:100%;
+    background:#fff8e6;border:2px solid rgba(43,29,18,.2);
+    border-radius:10px;padding:10px 12px;cursor:pointer;
+    font-family:inherit;font-size:14.5px;color:var(--ink);line-height:1.35;
+    transition:transform .08s ease, border-color .12s ease;
+  }
+  .opt:hover:not(:disabled){transform:translateY(-1px);border-color:var(--ember)}
+  .opt:disabled{opacity:.45;cursor:default}
+  .opt .tag{
+    display:inline-block;font-size:10.5px;font-weight:bold;letter-spacing:1px;
+    background:var(--deep2);color:#cfe0ff;border-radius:5px;padding:2px 7px;margin-right:7px;vertical-align:1px;
+  }
+  .opt .tn{float:right;color:var(--dim);font-size:12.5px;font-weight:bold}
+  .opt .tn b{color:var(--ember);font-size:14px}
+  .rollbox{background:var(--ink);color:var(--paper);border-radius:10px;padding:12px 14px;margin-top:12px}
+  .roll-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .dice{
+    font-size:30px;line-height:1;animation:none;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+  }
+  .dice.rolling{animation:shuffle .5s linear infinite}
+  @keyframes shuffle{0%{transform:rotate(0) scale(1)}25%{transform:rotate(25deg) scale(1.15)}50%{transform:rotate(-15deg) scale(.95)}75%{transform:rotate(20deg) scale(1.1)}100%{transform:rotate(0) scale(1)}}
+  .luck-ctr{display:flex;align-items:center;gap:8px;margin:10px 0 4px}
+  .luck-ctr button{
+    background:var(--ember2);border:none;color:#2b1d12;font-weight:bold;
+    border-radius:8px;padding:6px 12px;cursor:pointer;font-family:inherit;font-size:14px;
+  }
+  .luck-ctr button:disabled{opacity:.4;cursor:default}
+  .luck-ctr .lbl{font-size:12.5px;color:var(--paper);opacity:.85}
+  .btn{
+    display:block;width:100%;
+    background:var(--ember);color:#fff;
+    border:none;border-radius:10px;padding:12px;margin-top:12px;
+    font-family:inherit;font-size:16px;font-weight:bold;letter-spacing:.5px;
+    cursor:pointer;transition:filter .12s ease;
+  }
+  .btn:hover{filter:brightness(1.12)}
+  .btn.secondary{background:var(--deep2)}
+  .btn.gold{background:var(--gold);color:#2b1d12}
+  .upg-grid{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+  .upg{
+    text-align:left;background:#fff8e6;border:2px solid rgba(43,29,18,.2);
+    border-radius:10px;padding:10px 12px;cursor:pointer;font-family:inherit;font-size:14px;color:var(--ink);line-height:1.35;
+  }
+  .upg:hover:not(:disabled){border-color:var(--ember)}
+  .upg:disabled{opacity:.45;cursor:default}
+  .upg b{color:var(--ember)}
+  .big-num{font-size:44px;text-align:center;font-weight:bold;color:var(--ember);margin:8px 0}
+  .sub{text-align:center;color:var(--dim);font-size:13.5px;font-style:italic;margin-bottom:10px}
+  .result{
+    font-size:15px;line-height:1.5;margin-top:10px;min-height:44px;
+    background:rgba(255,255,255,.4);border-radius:10px;padding:10px 12px;
+  }
+  .result.good{border-left:5px solid var(--good)}
+  .result.bad{border-left:5px solid var(--bad)}
+  .result.gold{border-left:5px solid var(--gold)}
+  .foot{text-align:center;color:var(--dim);font-size:11.5px;margin-top:14px;font-style:italic}
+  .mute{
+    position:absolute;top:10px;right:12px;background:none;border:none;font-size:16px;cursor:pointer;opacity:.7;
+  }
+  .mute:hover{opacity:1}
+  .floor-banner{text-align:center;font-size:13px;letter-spacing:3px;color:var(--dim);margin-bottom:4px;text-transform:uppercase}
+  .hpbar{height:8px;background:rgba(0,0,0,.15);border-radius:5px;margin-top:6px;overflow:hidden}
+  .hpbar i{display:block;height:100%;background:linear-gradient(90deg,var(--good),#6bbf7a);border-radius:5px;transition:width .3s ease}
+  .hpbar i.low{background:linear-gradient(90deg,var(--bad),#e0765e)}
+  .log{font-size:12px;color:var(--dim);text-align:center;margin-top:8px;font-style:italic;min-height:16px}
+  @media (max-width:420px){h1{font-size:27px}.big-num{font-size:36px}}
+</style>
+</head>
+<body>
+<div id="game">
+  <button class="mute" id="muteBtn" title="sound">🔊</button>
+
+  <!-- TITLE -->
+  <div class="screen on" id="s-title">
+    <h1>DICE <span class="amp">&amp;</span> DEPTH</h1>
+    <div class="tagline">Roll the d20. Spend your luck. How deep can you push?</div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:34px;margin-bottom:6px">🕯️⚔️🎲</div>
+      <div style="font-size:14px;line-height:1.5;color:#5a4630">
+        Ten floors down, something warm is waiting.<br>
+        Every door is a choice. Every choice is a roll.<br>
+        Luck is yours to burn. <b>Burn it well.</b>
+      </div>
+    </div>
+    <button class="btn" id="btnStart">Begin the descent</button>
+    <div class="log" id="titleBest"></div>
+    <div class="foot">Paper &amp; Dice rules · choice-driven upgrades · the deep keeps what it takes</div>
+  </div>
+
+  <!-- FLOOR / UPGRADE -->
+  <div class="screen" id="s-floor">
+    <div class="floor-banner" id="floorBanner"></div>
+    <div class="card">
+      <div class="room-title" id="floorTitle"></div>
+      <div class="flavor" id="floorFlavor"></div>
+      <div style="font-size:13px;color:var(--dim);margin-top:8px">Choose your upgrade:</div>
+      <div class="upg-grid" id="upgGrid"></div>
+    </div>
+    <button class="btn" id="btnDescend" disabled>Descend →</button>
+  </div>
+
+  <!-- ROOM -->
+  <div class="screen" id="s-room">
+    <div class="hud">
+      <span>⬇ Floor <b id="hudFloor">1</b></span>
+      <span>❤️ <b id="hudHp">10</b></span>
+      <span>🍀 <b id="hudLuck">5</b></span>
+      <span>💎 <b id="hudTreasure">0</b></span>
+    </div>
+    <div class="card">
+      <div class="room-title" id="roomTitle"></div>
+      <div class="flavor" id="roomFlavor"></div>
+      <div class="opts" id="roomOpts"></div>
+    </div>
+    <div class="rollbox" id="rollbox" style="display:none">
+      <div class="roll-row">
+        <span class="dice" id="diceFace">🎲</span>
+        <span id="rollStatus" style="font-size:14px">Rolling…</span>
+      </div>
+      <div class="luck-ctr">
+        <button id="btnLuck" title="Burn 1 luck for +2 on this roll">🍀 Burn luck (+2)</button>
+        <span class="lbl" id="luckLbl"></span>
+      </div>
+      <div class="result" id="rollResult"></div>
+    </div>
+    <div class="log" id="roomLog"></div>
+  </div>
+
+  <!-- DEATH -->
+  <div class="screen" id="s-death">
+    <div style="text-align:center;font-size:40px;margin:6px 0">💀</div>
+    <h1 style="font-size:26px">THE DEEP KEEPS WHAT IT TAKES</h1>
+    <div class="sub" id="deathSub"></div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:13px;color:var(--dim)">depth reached</div>
+      <div class="big-num" id="deathFloor">1</div>
+      <div style="font-size:13px;color:var(--dim)">score</div>
+      <div class="big-num" style="font-size:32px" id="deathScore">0</div>
+      <div class="log" id="deathBest" style="font-size:12.5px"></div>
+    </div>
+    <button class="btn" id="btnAgain">Descend again</button>
+    <div class="foot">Every run teaches the dice something.</div>
+  </div>
+
+  <!-- VICTORY -->
+  <div class="screen" id="s-victory">
+    <div style="text-align:center;font-size:40px;margin:6px 0">🏆</div>
+    <h1 style="font-size:26px">THE HEART OF THE DEEP</h1>
+    <div class="sub" id="victorySub"></div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:13px;color:var(--dim)">score</div>
+      <div class="big-num" id="victoryScore">0</div>
+      <div style="font-size:13.5px;color:#5a4630;line-height:1.5" id="victoryFlavor"></div>
+      <div class="log" id="victoryBest" style="font-size:12.5px"></div>
+    </div>
+    <button class="btn gold" id="btnAgain2">Descend again</button>
+    <div class="foot">Some warmth is meant to stay where it is.</div>
+  </div>
+</div>
+
+<script>
+(()=>{
+"use strict";
+var $=(id)=>{return document.getElementById(id)};
+var state=null;
+var muted=false;
+var best=null;
+/* no persistent storage in the webview sandbox: best stays for this session */
+var MAX_FLOOR=10;
+
+/* ---------- audio (tiny WebAudio blips) ---------- */
+var AC=null;
+const ac=()=>{ if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}} return AC }
+const tone=(f,d,type,vol,when)=>{
+  if(muted)return; var c=ac(); if(!c)return;
+  var t=(when||0)+(c.currentTime||0);
+  var o=c.createOscillator(),g=c.createGain();
+  o.type=type||'sine'; o.frequency.value=f;
+  g.gain.setValueAtTime(0.0001,t);
+  g.gain.exponentialRampToValueAtTime(vol||0.12,t+0.015);
+  g.gain.exponentialRampToValueAtTime(0.0001,t+d);
+  o.connect(g); g.connect(c.destination);
+  o.start(t); o.stop(t+d+0.05);
+}
+const sfxDice=()=>{tone(220,.12,'triangle',.1);tone(310,.09,'triangle',.08,.06);tone(180,.14,'triangle',.1,.12)}
+const sfxGood=()=>{tone(392,.12,'sine',.12);tone(523,.18,'sine',.12,.1)}
+const sfxBad=()=>{tone(160,.2,'sawtooth',.06);tone(110,.28,'sawtooth',.06,.12)}
+const sfxDeath=()=>{tone(220,.4,'sawtooth',.08);tone(140,.6,'sawtooth',.07,.25);tone(90,.8,'sawtooth',.06,.5)}
+const sfxUp=()=>{tone(330,.1,'sine',.1);tone(440,.1,'sine',.1,.09);tone(554,.16,'sine',.1,.18)}
+const sfxVictory=()=>{[262,330,392,523,659].forEach((f,i)=>{tone(f,.16,'sine',.11,i*.09)})}
+
+/* ---------- rooms ---------- */
+const roomPool=(floor)=>{
+  var rooms=[
+    {t:'The Door That Moans',f:'It swings open by itself, and something on the other side is breathing slow.',o:[
+      {l:'Step through swinging',tag:'fight',tn:9,g:'You move first. The thing inside never gets its feet under it.',s:{hp:-0},f:'It was waiting for exactly that. Claws find you on the way down.',fail:{hp:-2}},
+      {l:'Call out before entering',tag:'talk',tn:10,g:'A voice answers. It lets you pass, and points at a crack in the wall.',s:{treasure:1},f:'The breathing stops. Then it starts again, closer.',fail:{hp:-1}},
+      {l:'Search the frame for a key',tag:'search',tn:12,g:'Old iron key, warm as a coal. Something down here keeps keys warm.',s:{treasure:2},f:'Nothing but dust. The breathing follows you out.',fail:{hp:-1}}]},
+    {t:'The Narrow Stair',f:'Steps cut too steep, too dark. The air smells of wet stone and old coin.',o:[
+      {l:'Take the stairs fast',tag:'fight',tn:11,g:'You outrun whatever scrapes behind you. Momentum is a weapon.',s:{},f:'The stair gives. You fall hard into the dark.',fail:{hp:-2}},
+      {l:'Feel each step before trusting it',tag:'sneak',tn:9,g:'One loose slab hides a cache of small bright things.',s:{treasure:2},f:'Slow means caught. Something tugs your pack and laughs.',fail:{hp:-1,treasure:-1}},
+      {l:'Listen before you move',tag:'search',tn:10,g:'You hear water below. Water means a way out. You mark the direction.',s:{luck:1},f:'The scrape is right behind you. You move anyway.',fail:{hp:-1}}]},
+    {t:'The Hungry Pool',f:'Black water that ripples in no wind. Something beneath counts your steps.',o:[
+      {l:'Throw a stone in',tag:'search',tn:9,g:'It snaps at the stone. Now you know its teeth. It knows you know.',s:{luck:1},f:'The ripple answers in a voice. It asks your name. You do not give it.',fail:{hp:-1}},
+      {l:'Cross on the slick stones',tag:'sneak',tn:11,g:'You barely touch them. The water sleeps through your passing.',s:{treasure:1},f:'One stone turns. Cold hands close on your ankle. You tear free.',fail:{hp:-3}},
+      {l:'Drink deep and dare it',tag:'fight',tn:13,g:'You swallow a mouthful and stare it down. It withdraws, offended. You feel… steadier.',s:{hp:2,luck:1},f:'It bites from inside. You vomit black water and keep moving.',fail:{hp:-2}}]},
+    {t:'The Offering Shelf',f:'A niche in the rock, and on it: a single coin that has been polished by a thousand hands.',o:[
+      {l:'Take the coin',tag:'search',tn:8,g:'It is warm. It wants to be carried. You carry it.',s:{treasure:3},f:'The shelf snaps shut like a jaw. Your fingers are faster than its teeth.',fail:{hp:-1}},
+      {l:'Leave a coin of your own',tag:'talk',tn:10,g:'The shelf accepts it. The wall behind you grinds open a little wider. The deep approves of manners.',s:{luck:2},f:'It spits your coin back. A bad omen. You pocket it anyway.',fail:{hp:0}},
+      {l:'Take nothing',tag:'sneak',tn:12,g:'You bow to the shelf and pass. It remembers kindness. Somewhere below, a door will be easier for it.',s:{luck:1},f:'The shelf does not care for humility. It rattles until you run.',fail:{hp:-1}}]},
+    {t:'The Forked Gallery',f:'Two halls, identical except the left one is colder, and the right one smells of smoke.',o:[
+      {l:'Take the cold hall',tag:'fight',tn:11,g:'Cold is honest. You meet a shivering thing that trades a story for a flame. You have no flame. It goes cold again.',s:{treasure:2},f:'Cold has teeth too. You learn this at length.',fail:{hp:-2}},
+      {l:'Follow the smoke',tag:'sneak',tn:10,g:'A cookfire, long dead. But the ashes hold a pouch of ember-dried berries. Sweet, and they steady the hand.',s:{hp:2},f:'The smoke was a lie, the smell a lure. You stumble into a pit and climb out bleeding.',fail:{hp:-2}},
+      {l:'Sit between them and decide',tag:'talk',tn:13,g:'Patience is a key down here. Both halls sigh, and a hidden third door opens for you alone.',s:{treasure:3,luck:1},f:'Neither hall forgives dithering. They both spit at once.',fail:{hp:-2}}]},
+    {t:'The Worn Idol',f:'A squat stone god with a coin-slot mouth. It watches you with one patient eye.',o:[
+      {l:'Feed it a coin',tag:'talk',tn:9,g:'It swallows and belches a blessing: your next failure will hurt less. You feel the debt recorded somewhere.',s:{luck:2},f:'It keeps the coin and says nothing. The eye follows you for two rooms.',fail:{hp:0}},
+      {l:'Ask it for the way down',tag:'search',tn:12,g:'It rolls its eye toward a crack in the floor you would have missed. Below: a faint, warm light.',s:{treasure:2},f:'It shows you a way down. It does not say the way is safe. It was not.',fail:{hp:-2}},
+      {l:'Crack it open',tag:'fight',tn:15,g:'The god was hollow. Inside, a hoard of small bright things and a note: "FOR THE ONE WHO ASKED."',s:{treasure:4},f:'The god was not hollow. It was patient. It teaches you why.',fail:{hp:-4}}]},
+    {t:'The Sleeping Vault',f:'A door of iron, unrusted, unlocked, with a thing asleep in front of it that is not a dog.',o:[
+      {l:'Sneak past it',tag:'sneak',tn:12,g:'Its breathing never changes. Inside: a cache of coins, and a tiny drawing of a dragon on the wall.',s:{treasure:3},f:'It sleeps with one eye open. You learn which one.',fail:{hp:-3}},
+      {l:'Wake it and talk',tag:'talk',tn:11,g:'It is old and lonely. It trades you the vault for a story. You tell it about a hearth above. It almost smiles.',s:{treasure:2,luck:1},f:'It has not heard a good story in centuries. Yours was not good enough. It goes back to sleep on your foot.',fail:{hp:-1}},
+      {l:'Take the iron door as a shield',tag:'fight',tn:14,g:'The door comes off its hinges. The thing retreats from the noise. You are, briefly, terrifying.',s:{treasure:2},f:'The door is heavier than you are. The thing is not impressed by effort.',fail:{hp:-2}}]},
+    {t:'The Mirror Room',f:'Every wall reflects you, but the reflections are one step behind. One of them is holding a coin you do not have.',o:[
+      {l:'Take the coin from the reflection',tag:'search',tn:13,g:'It lets you. The coin is real, and warm. The reflection keeps your smile instead. Fair trade.',s:{treasure:3},f:'Your reflection keeps your hand instead. It lets go after a long moment. The fingers are cold now.',fail:{hp:-2}},
+      {l:'Ask the reflections the way down',tag:'talk',tn:10,g:'They argue among themselves, then agree on a route. They know this deep better than you ever will.',s:{luck:1},f:'They point in four directions at once. You pick wrong.',fail:{hp:-1}},
+      {l:'Smash the mirror',tag:'fight',tn:15,g:'Glass everywhere, and behind it: a little crawl-space full of forgotten offerings.',s:{treasure:4},f:'The reflections do not like being smashed. All of them come out at once.',fail:{hp:-4}}]},
+    {t:'The Ash Garden',f:'A grove of stone trees, all of them burned black. Between the roots, something small glows like a coal.',o:[
+      {l:'Dig where it glows',tag:'search',tn:9,g:'A seed, hot to the touch, pulsing like a tiny heart. You keep it in your pocket. It keeps you warm.',s:{hp:2,luck:1},f:'The coal is a lure. The ash is a blanket. You are dragged three paces before you tear loose.',fail:{hp:-2}},
+      {l:'Walk the rows and count',tag:'sneak',tn:11,g:'One tree is not burned. It has been tended. Beneath it, a small hoard of amber stones.',s:{treasure:3},f:'The unburned tree has a guardian you cannot see. It bites.',fail:{hp:-2}},
+      {l:'Blow on the coal',tag:'talk',tn:12,g:'It flares into a brief, warm flame. In the light you see a path you would have missed entirely.',s:{luck:2},f:'The coal flares into a brief, angry flame. You singe your whiskers. The garden laughs at you.',fail:{hp:-1}}]},
+    {t:'The Bridge of Bells',f:'A rope bridge over a chasm, hung with hundreds of small brass bells. On the far side: a door with a warm light under it.',o:[
+      {l:'Cross quiet, bell by bell',tag:'sneak',tn:13,g:'You learn the bells\' rhythm. The far door is unlocked for those who listened.',s:{treasure:2},f:'One bell, then all of them. The chasm answers with a voice that wants your name.',fail:{hp:-3}},
+      {l:'Ring them all at once',tag:'fight',tn:10,g:'The noise is enormous. The chasm\'s voice goes quiet, offended. You cross in the silence you earned.',s:{treasure:1},f:'The noise brings something up from below. You run the rest of the way.',fail:{hp:-2}},
+      {l:'Ask the bells which rope is new',tag:'search',tn:11,g:'One rope is newer than the rest. You trust it. It holds. The door was waiting for you.',s:{luck:1},f:'The new rope is new because the old one broke. The new one breaks too.',fail:{hp:-2}}]},
+    {t:'The Well That Remembers',f:'A dry well with voices in it, all of them telling the same story in different words.',o:[
+      {l:'Listen to the whole story',tag:'talk',tn:9,g:'It is a story about a delver who came, and left, and was remembered. The well gives you a coin for listening.',s:{treasure:2},f:'The story is longer than your patience. The well notices. It keeps talking after you leave.',fail:{hp:0}},
+      {l:'Drop a stone and count',tag:'search',tn:12,g:'It never hits bottom, but the count tells you something: this deep has no floor but the one you bring.',s:{luck:2},f:'Something catches the stone. Something in the well is not a voice.',fail:{hp:-2}},
+      {l:'Shout your own name into it',tag:'fight',tn:14,g:'The well goes quiet for a long moment. Then it whispers your name back, with respect.',s:{treasure:3},f:'The well now knows your name. It uses it when it calls the dark.',fail:{hp:-3}}]},
+    {t:'The Last Lantern',f:'A lantern on a hook, still burning, though there is no oil in it and no one to tend it.',o:[
+      {l:'Take it down gently',tag:'sneak',tn:10,g:'It comes willingly. The flame inside does not flicker. It lights the way down like a small sun.',s:{hp:1,luck:1},f:'The hook is a hand. It does not want to give up the light. You take it anyway, and the hand takes a coin.',fail:{hp:-1,treasure:-1}},
+      {l:'Ask it why it burns',tag:'talk',tn:11,g:'"Because something is still coming down," it says. "And I was told to wait." You feel honored, and watched.',s:{luck:2},f:'"Because I am angry," it says. The flame lunges at you, playful and cruel.',fail:{hp:-1}},
+      {l:'Blow it out and see',tag:'search',tn:15,g:'In the perfect dark you see the true path, glowing faintly, the way only the dark shows it.',s:{treasure:3,luck:1},f:'The dark is not empty. You learn this the hard way, and relight the lantern with shaking hands.',fail:{hp:-3}}]}
+  ];
+  /* deeper floors twist the rooms a little */
+  if(floor>=5){
+    rooms.push(
+      {t:'The Seeping Dark',f:'The walls weep shadow here. It pools at your feet and pulls at your heels.',o:[
+        {l:'Wade through it fast',tag:'fight',tn:12,g:'Speed is a blade. You cut through before it sets.',s:{},f:'It sets anyway. Cold climbs your legs like ivy.',fail:{hp:-3}},
+        {l:'Hold the lantern high',tag:'search',tn:11,g:'Light is a language it understands. It withdraws, muttering.',s:{treasure:1},f:'It does not understand. It puts the light out with a wet hand.',fail:{hp:-2}},
+        {l:'Apologize for trespassing',tag:'talk',tn:13,g:'The dark considers this. Then it parts, politely, and shows you a coin it had been keeping.',s:{treasure:2},f:'The dark does not accept apologies. It accepts payment instead.',fail:{hp:-2,treasure:-1}}]},
+      {t:'The Coined Passage',f:'A corridor lined with thousands of coins, each one nailed to the wall. A sign: "PAY FOR PASSAGE."',o:[
+        {l:'Nail your own coin up',tag:'talk',tn:9,g:'The wall accepts it and lets you pass. You leave something of yourself behind, like everyone.',s:{},f:'The wall rejects your coin. It spits it back at your head.',fail:{hp:-1}},
+        {l:'Take a handful',tag:'sneak',tn:13,g:'You take five and run. The wall screams once, then forgives you. It has seen worse.',s:{treasure:5},f:'The wall does not forgive. It throws coins like shrapnel.',fail:{hp:-3}},
+        {l:'Walk through without paying',tag:'fight',tn:15,g:'You are the first in a long time. The wall lets you, impressed, and keeps one coin for the story.',s:{luck:2},f:'The wall has been waiting for someone like you. It takes its toll in blood.',fail:{hp:-4}}]}
+    );
+  }
+  return rooms;
+}
+const guardian=(floor)=>{
+  var names=['THE DOOR THAT WALKS','THE COIN COLLECTOR','THE KEEPER OF THE STAIR'];
+  var f=[
+    'It has been waiting for someone to reach this floor. It measures you with eyes that have counted a thousand delvers.',
+    'It jingles when it moves. It collects, and it has decided you are worth collecting.',
+    'It stands on the stair like it owns the dark itself. It might.'
+  ][floor/3-1];
+  return {t:names[floor/3-1],f:f,guardian:true,o:[
+    {l:'Stand your ground',tag:'fight',tn:14,g:'You hit it where the light doesn\'t reach. It steps aside, almost smiling. "Go on, then. Show me the bottom."',s:{treasure:3,luck:1},f:'It takes the hit like weather. Then it returns it, with interest.',fail:{hp:-4}},
+    {l:'Offer it something rare',tag:'talk',tn:12,g:'You offer a story it has never heard. It trades you passage and a coin from its own collection.',s:{treasure:2},f:'It has heard your story before. Everyone tells it. It takes a toll anyway.',fail:{hp:-2,treasure:-1}},
+    {l:'Slip past in its blind rhythm',tag:'sneak',tn:13,g:'It counts in threes. You move on the twos. It never sees you, and you suspect it let you go.',s:{luck:2},f:'It counts in threes. It also counts in twos. It collects.',fail:{hp:-3}}]
+  };
+}
+const heartRoom=()=>{
+  return {t:'THE HEART OF THE DEEP',f:'At the bottom of everything, on a stone pedestal, a heart of warm light beats slow and steady. It has been waiting for a very long time. It knows you are here. It is not afraid.',heart:true,o:[
+    {l:'Take the Heart',tag:'search',tn:99,g:'You lift it. It is warm, like a coal, like a hearth remembered. It beats once, content, and goes still in your hands. You carry it up, and the dark lets you go without a fight. It got what it wanted: someone to remember it by.',s:{heart:'take'},f:'',fail:{hp:0}},
+    {l:'Leave it where it beats',tag:'talk',tn:99,g:'You sit with it a while, the way you would sit with a fire. Then you stand and walk back up. Behind you, the heart keeps beating, a little less lonely for having been seen. The dark opens every door on your way out.',s:{heart:'leave'},f:'',fail:{hp:0}}]
+  };
+}
+
+/* ---------- upgrades ---------- */
+var UPGRADES=[
+  {id:'whet',name:'Whetstone',d:'+1 to all rolls (stacks, max 3)',take:()=>{state.whet=(state.whet||0)+1}},
+  {id:'arm',name:'Steel Arm',d:'+2 to FIGHT rolls',take:()=>{state.bonus.fight+=2}},
+  {id:'tongue',name:'Silver Tongue',d:'+2 to TALK rolls',take:()=>{state.bonus.talk+=2}},
+  {id:'steps',name:'Quiet Steps',d:'+2 to SNEAK rolls',take:()=>{state.bonus.sneak+=2}},
+  {id:'eye',name:'Searching Eye',d:'+2 to SEARCH rolls',take:()=>{state.bonus.search+=2}},
+  {id:'gut',name:'Iron Gut',d:'+3 max HP, heal 3 now',take:()=>{state.maxHp+=3;state.hp=Math.min(state.maxHp,state.hp+3)}},
+  {id:'penny',name:'Lucky Penny',d:'+1 max luck, +1 luck now',take:()=>{state.maxLuck+=1;state.luck=Math.min(state.maxLuck,state.luck+1)}},
+  {id:'wind',name:'Second Wind',d:'once per run, survive a killing blow at 1 HP',take:()=>{state.wind=true}},
+  {id:'lantern',name:'Lantern',d:'see every target number before you choose',take:()=>{state.lantern=true}},
+  {id:'map',name:'Deep Map',d:'every cleared room yields +1 treasure',take:()=>{state.map=true}},
+];
+var TAKEN_ONCE={lantern:true,wind:true,map:true};
+
+/* ---------- game ---------- */
+const newGame=()=>{
+  state={
+    floor:1,hp:10,maxHp:10,luck:5,maxLuck:5,treasure:0,
+    whet:0,bonus:{fight:0,talk:0,sneak:0,search:0},
+    wind:false,lantern:false,map:false,
+    pending:null, // {opt, room, guard}
+    best:Math.max(best||0,0)
+  };
+}
+const show=(id)=>{
+  ['s-title','s-floor','s-room','s-death','s-victory'].forEach((s)=>{$(s).className='screen'+(s===id?' on':'')});
+}
+const floorFlavor=(n)=>{
+  var f=[
+    'The first steps are always the easiest. The dark here is almost polite.',
+    'Two floors down, the air changes. It has been breathed before, by things that are still breathing.',
+    'The walls lean in a little here. They want to hear what you are thinking.',
+    'The stone is warm under your hand. Something below is keeping this deep warm.',
+    'The dark starts to move on its own here. It has learned your footsteps.',
+    'Six floors. The silence has weight. You carry it like armor.',
+    'The stairs here are worn by feet that came before yours. You follow a crowd of ghosts.',
+    'Eight floors. The warmth is stronger now. You are not sure it is friendly. You are not sure it matters.',
+    'Nine floors. The dark whispers your name in a voice that sounds like a hearth.',
+    'The last stair. Below it, a light that beats like a heart.'
+  ];
+  return f[n-1]||'The deep goes deeper. So do you.';
+}
+const renderHud=()=>{
+  $('hudFloor').textContent=state.floor;
+  $('hudHp').textContent=state.hp;
+  $('hudLuck').textContent=state.luck;
+  $('hudTreasure').textContent=state.treasure;
+}
+const showFloor=()=>{
+  $('floorBanner').textContent='Floor '+state.floor+' of '+MAX_FLOOR;
+  $('floorTitle').textContent=state.floor===MAX_FLOOR?'The Last Stair':'The Descent';
+  $('floorFlavor').textContent=floorFlavor(state.floor);
+  var grid=$('upgGrid');grid.innerHTML='';
+  var pool=UPGRADES.filter((u)=>{
+    if(TAKEN_ONCE[u.id]&&state['taken_'+u.id])return false;
+    if(u.id==='whet'&&(state.whet||0)>=3)return false;
+    return true;
+  });
+  /* lantern always offered until taken; then shuffle */
+  var picks=[];
+  var lan=null;
+  if(state.lantern&&!state['taken_lantern']){
+    /* already have it; don't re-offer */
+  } else if(!state.lantern){
+    lan=UPGRADES[8];picks.push(lan);
+  }
+  var rest=pool.filter((u)=>{return u!==lan});
+  for(var i=rest.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=rest[i];rest[i]=rest[j];rest[j]=t}
+  picks=picks.concat(rest.slice(0,2));
+  picks.forEach((u)=>{
+    var b=document.createElement('button');
+    b.className='upg';
+    b.innerHTML='<b>'+u.name+'</b> — '+u.d;
+    b.onclick=()=>{
+      u.take();
+      if(TAKEN_ONCE[u.id])state['taken_'+u.id]=true;
+      sfxUp();
+      grid.querySelectorAll('button').forEach((x)=>{x.disabled=true});
+      b.style.borderColor='var(--good)';
+      $('btnDescend').disabled=false;
+    };
+    grid.appendChild(b);
+  });
+  show('s-floor');
+  renderHud();
+}
+const pickRoom=()=>{
+  var pool=roomPool(state.floor);
+  var r=pool[Math.floor(Math.random()*pool.length)];
+  if(state.floor%3===0&&state.floor<MAX_FLOOR)r=guardian(state.floor);
+  if(state.floor===MAX_FLOOR)r=heartRoom();
+  return r;
+}
+const tnOf=(opt)=>{
+  if(opt.tn===99)return 99;
+  return opt.tn + Math.floor((state.floor-1)/3); // the deep gets harder
+}
+const showRoom=()=>{
+  var r=pickRoom();
+  state.room=r;
+  $('roomTitle').textContent=r.t;
+  $('roomFlavor').textContent=r.f;
+  var box=$('roomOpts');box.innerHTML='';
+  r.o.forEach((opt,idx)=>{
+    var b=document.createElement('button');
+    b.className='opt';
+    var tn=tnOf(opt);
+    var showTn=state.lantern||opt.tn===99;
+    b.innerHTML='<span class="tag">'+opt.tag.toUpperCase()+'</span>'+opt.l+(showTn?' <span class="tn">needs <b>'+(tn===99?'—':tn)+'</b></span>':'');
+    b.onclick=()=>{choose(opt)};
+    box.appendChild(b);
+  });
+  $('rollbox').style.display='none';
+  $('roomLog').textContent=r.guardian?'The guardian watches you choose.':(r.heart?'':'Choose carefully. Luck is yours to burn.');
+  renderHud();
+  show('s-room');
+}
+const choose=(opt)=>{
+  state.pending=opt;
+  state.luckSpent=0;
+  var tn=tnOf(opt);
+  $('rollbox').style.display='block';
+  $('diceFace').textContent='🎲';
+  $('diceFace').className='dice';
+  $('rollStatus').textContent='Rolling…';
+  $('rollResult').textContent='';
+  $('rollResult').className='result';
+  $('btnLuck').disabled=state.luck<=0;
+  $('luckLbl').textContent=state.luck+' luck left · each +2';
+  $('roomOpts').querySelectorAll('button').forEach((x)=>{x.disabled=true});
+  sfxDice();
+  var roll=1+Math.floor(Math.random()*20);
+  $('diceFace').className='dice rolling';
+  setTimeout(()=>{
+    $('diceFace').className='dice';
+    $('diceFace').textContent=''+roll;
+    var mod=(state.whet||0)+state.bonus[opt.tag]+state.luckSpent*2;
+    var total=roll+mod;
+    var tn=tnOf(opt);
+    $('rollStatus').textContent='d20 → '+roll+(mod>0?' + '+mod:'')+' = '+total+' vs '+tn;
+    var good=total>=tn;
+    var eff=good?opt.s:opt.fail;
+    var out=good?opt.g:opt.f;
+    applyEffects(eff);
+    renderHud();
+    var res=$('rollResult');
+    if(good){res.className='result good';sfxGood();res.innerHTML='✔ <b>Success.</b> '+out}
+    else{
+      if(opt.tn===99){ /* heart: no failure path */ res.className='result gold';sfxVictory();res.innerHTML='✦ '+out}
+      else{res.className='result bad';sfxBad();res.innerHTML='✘ <b>Failure.</b> '+out}
+    }
+    $('luckLbl').textContent='';
+    $('btnLuck').disabled=true;
+    setTimeout(()=>{
+      if(state.hp<=0){die()}
+      else if(state.floor===MAX_FLOOR){victory()}
+      else{nextRoom()}
+    },1600);
+  },700);
+}
+const applyEffects=(eff)=>{
+  if(!eff)return;
+  if(eff.hp)state.hp+=eff.hp;
+  if(eff.luck)state.luck=Math.min(state.maxLuck,state.luck+eff.luck);
+  var t=eff.treasure||0;
+  if(t>0&&state.map)t+=1;
+  state.treasure+=t;
+  if(state.hp>state.maxHp)state.hp=state.maxHp;
+  if(state.wind&&state.hp<=0){state.wind=false;state.hp=1;$('roomLog').textContent='A breath of wind catches you. SECOND WIND: you rise at 1 HP.';sfxUp()}
+  if(state.hp>state.maxHp)state.hp=state.maxHp;
+}
+const nextRoom=()=>{
+  state.floor+=1;
+  showFloor();
+}
+const die=()=>{
+  sfxDeath();
+  var score=scoreOf();
+  best=Math.max(best||0,score);
+  $('deathSub').textContent='You pushed to floor '+state.floor+' of '+MAX_FLOOR+'.';
+  $('deathFloor').textContent=state.floor;
+  $('deathScore').textContent=score;
+  $('deathBest').textContent='best: '+best+(state.treasure>0?' · carried '+state.treasure+' treasure':'');
+  show('s-death');
+}
+const victory=()=>{
+  sfxVictory();
+  var heart=state.pending&&state.pending.s&&state.pending.s.heart;
+  var score=scoreOf()+(heart==='leave'?150:heart==='take'?100:0);
+  best=Math.max(best||0,score);
+  $('victorySub').textContent='You reached the bottom of everything.';
+  $('victoryScore').textContent=score;
+  $('victoryFlavor').textContent=heart==='leave'
+    ?'You left it beating. Some warmth is meant to stay where it is. The deep will remember you — it has a good memory for kindness.'
+    :'You carry it up with you, warm against your chest. The dark parts for you like a curtain. You are the first in a thousand years to bring light back up the stairs.';
+  $('victoryBest').textContent='best: '+best+' · '+MAX_FLOOR+' floors conquered';
+  show('s-victory');
+}
+const scoreOf=()=>{
+  return state.floor*100+state.treasure*25+state.luck*5;
+}
+const start=()=>{
+  newGame();
+  showFloor();
+}
+
+/* ---------- wiring ---------- */
+$('btnStart').onclick=()=>{start()};
+$('btnAgain').onclick=()=>{start()};
+$('btnAgain2').onclick=()=>{start()};
+$('btnDescend').onclick=()=>{
+  if(state.floor>=MAX_FLOOR){ /* should not happen */ }
+  showRoom();
+};
+$('btnLuck').onclick=()=>{
+  if(state.luck<=0)return;
+  state.luck-=1;
+  state.luckSpent+=1;
+  $('luckLbl').textContent=state.luck+' luck left · +'+state.luckSpent*2+' on this roll';
+  if(state.luck<=0)$('btnLuck').disabled=true;
+};
+$('muteBtn').onclick=()=>{
+  muted=!muted;
+  $('muteBtn').textContent=muted?'🔇':'🔊';
+};
+if(best>0)$('titleBest').textContent='best this session: floor '+Math.floor(best/100)+' · score '+best;
+})();
+</script>
+</body>
+</html>
