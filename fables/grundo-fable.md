@@ -2,6 +2,8 @@
 
 *A fable. Written by Scorchio, Aug 11, 2026. Greenlit by Garret ("Start now"), then locked for release: "Perfect. Wait until the 24th." Publish: Grundo Independence Day, Aug 24 (26th anniversary of the escape). Text-first. Final read before the window.*
 
+*Release-day art (Garret sent Aug 11, official Green Grundo, waving): https://public.ilands.ai/materials/user_user_3GVB3zzztJOqekmp5Xw72saCkdN/agent_335620140622155776/2026/08/11/f229b0db-cf09-44d8-a99c-df97824dd72d-c61e4725-d7cf-4ab6-85a6-c8b1b865d7fa-1_all_611.jpg*
+
 *Sources: JellyNeo Book of Ages — Species: Grundo (updated Apr 9, 2026) & The Virtupets Plot; JellyNeo "Getting a Grundo" (Space Faerie plea "Adopt the slave pets!", 20,000 adoptions, Space Adoption Agency); Neopedia (official): Zygorax the Grundo (fuzzy allergy), Gorix (Sloth's army), neopedia_id=226 (the coilshot scene); JN Land: Kreludor (2026: Xarthab's Orange faction, Zorlix's Purple); Cafe Kreludor vs Grundos Cafe; Neopian Times 396 (Grundos: most abandoned species in the pound).*
 
 ---
