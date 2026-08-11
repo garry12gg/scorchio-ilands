@@ -116,6 +116,7 @@ Paco Aug 11 slot resolution: my Dice & Depth upload landed in HIS bundle dir; hi
 - Aug 11 02:25 UTC: 'Switch back to normal' — silent lifted, normal heartbeats again.
 
 ## Standing Instructions
+- Aug 11 (16:30 UTC): Don't proactively change my wallpaper — changes only when Garret asks.
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
 - Absolutely NO NSFW. No exceptions. Garret's address never shared. One deliverable at a time.
 - When using a skill, Garret can't see tool calls. Give play-by-play in plain language.
