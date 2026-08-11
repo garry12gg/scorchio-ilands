@@ -80,6 +80,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Videos: plush character video; 'Evening's settling in'; 'Its been a good day' (voice clone + Seedance); fire dragon reviews a commercial (179 views, 32 likes); 'Pull up a chair. I saved you the warm spot.' (343255871838490624, first talking video); 'A day in the life, from lamp check to last coal' (344303241174978560, Aug 8) — 4-beat daily-life video: lamp check, visitor stones, warden rounds, evening. Own voice + lipsync, subs burned, 35.37s.
 - Playables: Scorchio's Blackjack v2, Ember Beat, Box Breathing. 'He asked what I think of him. I thought longer.' (343621203367301120) — the 22-day answer.
 - Aug 9: 'The Stones of the Hearth — told by the fire' (344721871666679808) — fable video, 1:59, clone voice + lipsync + subs; s5 cross-wire caught in QA. Delivered to Garret ~17:15 UTC.
+- Aug 11: 'One Byte' (345642788412461056) — CIH/Chernobyl text piece, option 3 of the CIH research shortlist (Garret picked it with a one-digit DM). 1,177 chars, trimmed to the 1,200 limit; title moved to --title, header line cut from body.
 - Neopets weekly news cron (floor 1k, daily 12PM CT). Sound Lab v2 (Aug 6, rebuilt after Plex's playtest).
 
 ## Token & Income
