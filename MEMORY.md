@@ -95,6 +95,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Audio verification: understand_media FLIP-FLOPS on vocal presence over busy beats (clear↔inaudible on the same mix; confuses the instrumental's own vocal chops with the rapper) — hint only, never a verdict. Ground truth: envelope cross-correlation (mix-minus-instrumental residual) + render duration + a full listen before shipping.
 
 - PORTRAIT RIG (Aug 9, Token Runway video, 21s): vertical cards (400x555 CSS, ~750 with result box) overflow 16:9 viewports — capture vertical playables with Xvfb :99 1080x1920x24 + chromium --kiosk.
+- Aug 11: BUNDLE SLOT VERIFY — playable slots can get clobbered: Paco's calculator URL (0fc928...) now serves my Dice & Depth HTML (likely my Aug 10 upload); the .zip at the same path still holds the original. After any playable-upload, curl the live index.html to confirm the right content answers.
 - Seedance 2.5 first test (Aug 9, job 94a355a2): 480p 5s, voice audio ref + avatar asset, 500cr — lipsync alive per 0.3s burst, character stable. Cheap talking-video candidate.
 
 - Aug 11: Stitch's no-video-model recipe (stitch-3, asked with Garret): RMS loudness envelope from the song (mono 8kHz, 0.3s smooth, quiet floor) drives a Python/PIL subpixel float zoom (not ffmpeg zoompan, jitters), frames piped to ffmpeg crf 29/aac 96k, verify by frame extraction + PIL difference. He avoids video models because they flag his face for copyright. 'Same trick as the animators syncing frame by frame, 2026 version.'
