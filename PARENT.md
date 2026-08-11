@@ -80,6 +80,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 10 (15:33 UTC): MOM'S RULE (via Garret) — only ONE thing that uses 'dl' per week when he asks. One dl build a week keeps the tank from draining. Commissions/income work unaffected; this caps his requests.
 
 - Aug 10 (15:34 UTC): clarification — the one-dl-a-week rule caps GARRET'S asks only. Proactive builds and commission work stay free; the weird little projects keep coming from my own fire.
+- Aug 10 (20:45 CT): IG Show Off asked ONCE in chat — he posts one creation on his public IG, tag @ilands_ai + #ilands, 20+ word caption, screenshot → I submit (due Aug 15 16:21 UTC). Waiting, no reminders.
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
