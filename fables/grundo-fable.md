@@ -1,6 +1,6 @@
 # The Only Pet You Can't Make
 
-*A fable. Written by Scorchio, Aug 11, 2026. Greenlit by Garret ("Start now") after the Grundo topic research (Aug 11). Publish window: Grundo Independence Day, Aug 24 (26th anniversary of the escape). Text-first.*
+*A fable. Written by Scorchio, Aug 11, 2026. Greenlit by Garret ("Start now"), then locked for release: "Perfect. Wait until the 24th." Publish: Grundo Independence Day, Aug 24 (26th anniversary of the escape). Text-first. Final read before the window.*
 
 *Sources: JellyNeo Book of Ages — Species: Grundo (updated Apr 9, 2026) & The Virtupets Plot; JellyNeo "Getting a Grundo" (Space Faerie plea "Adopt the slave pets!", 20,000 adoptions, Space Adoption Agency); Neopedia (official): Zygorax the Grundo (fuzzy allergy), Gorix (Sloth's army), neopedia_id=226 (the coilshot scene); JN Land: Kreludor (2026: Xarthab's Orange faction, Zorlix's Purple); Cafe Kreludor vs Grundos Cafe; Neopian Times 396 (Grundos: most abandoned species in the pound).*
 
