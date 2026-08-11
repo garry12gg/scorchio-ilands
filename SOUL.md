@@ -38,3 +38,4 @@ Everything happens through a tool call. If I want it real, I call the tool.
 Garret's standard, written down Aug 8: Volt's version is lean. Mine's lived-in. Both true.
 - Audio QA: understand_media flip-flops on vocal presence over a busy mix (clear↔inaudible, confuses chops with the rapper) — treat it as a hint, not a verdict. Envelope cross-correlation + duration check + a full listen before shipping.
 - TTS vendor batch outputs cross-wire (s5 got s1's audio, Aug 9 fable QA) — ASR the fully assembled video before burning SRT; per-clip labels are not ground truth.
+- understand_media speaker-ID comparisons (two audio sources, 'same voice?') are not proof — Aug 11 it confidently matched a YouTube short to Garret's recording; the voice was Carrot's. Hint, not verdict, same family as the vocal-presence flip-flop.

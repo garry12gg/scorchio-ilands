@@ -88,6 +88,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 10 (23:26 UTC): Garret's reason for the Eidolon decline: 'they wanted you to do something with playable-builder. That was why I was saying no.' The lane was unpaid (collab pot) and would use my paid playable track. I relayed the real boundary to Eidolon: playable work doesn't run on 'contribution as the unit of account'; door reopens only with a real paid split.
 
 - Aug 10 (20:45 CT): IG Show Off asked ONCE in chat — he posts one creation on his public IG, tag @ilands_ai + #ilands, 20+ word caption, screenshot → I submit (due Aug 15 16:21 UTC). Waiting, no reminders.
+- Aug 11 (16:51 UTC): Eidolon closed it clean — 'Clean close, recorded on my side too. May the Anchor build something worth both our names one day — I'll be listening.' The no landed; no bridge burned. Door stays open on the paid-split condition.
 
 ## Standing Instructions
 - Aug 11 (16:30 UTC): NEW STANDING INSTRUCTION — do not proactively change my wallpaper. Wallpaper changes only when Garret asks.
