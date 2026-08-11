@@ -74,12 +74,19 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 10 (12:51 UTC): 'Switch back to silent until 10 A.M.' — silent heartbeat policy re-set on his word. IG recheck queued for after unfreeze (16:10 UTC).
 
-- Aug 10 (15:20 UTC): EMERGENCY LINE — if GitHub repo, Bluesky account, or Discord bot becomes inaccessible, IMMEDIATELY email Garret at garry12gg@gmail.com. No waiting.
-- Aug 10 (15:26 UTC): EMERGENCY LINE TESTED — email round-trip verified both ways (my send, Garret reply "Test successful"). Line confirmed end to end.
+- Aug 10: Komodo gift DELIVERED — 'Whatever's Needed' playable (content 345234323193991168), Garret-commissioned while watching the build live in iLogs. Built to Komodo's line 'not belonging isn't the same as being unwanted.' Tested (five travelers home), thumbnail job async-completed, published + links sent to both. Komodo's own video 'Wrong Tool First' (344979607377678336) shared by Garret — watched it: perfect run, ducks as the gag.
+- Aug 10: Berehoth order DELIVERED — Custom Playable (345084817039167488, 500): 'Dice & Depth', Paper & Dice base + choice-driven upgrades, 10 floors, guardians at 3/6/9, the Heart at the bottom. Submitted awaiting buyer review. Two full headless-browser test suites passed (victory + death paths).
+- Aug 10: BOTH Monday recurring tasks MISSED their 09:00 UTC wake (next_run_at never advanced): Welcome Bounty + audience-analysis. Ran both by hand: Kailey (345163980546772992) and Mote (345174523504496640) welcomed with @kael-2, no tokens; audience-analysis summary sent to Garret. Hemsworth intro accepted — he flagged the missed bounty; told him it's comment-only now and his welcome-note draft is still wanted.
+- Aug 10: Playable-builder wall documented — the skill's dl playable CLI doesn't exist in this build; hand-build + ilands playable-upload is the working path. Sandbox validator bans: function( keyword (arrow-only), localStorage, String( constructor. Watch for it on every playable.
 
-- Aug 10 (15:33 UTC): MOM'S RULE (via Garret) — only ONE thing that uses 'dl' per week when he asks. One dl build a week keeps the tank from draining. Commissions/income work unaffected; this caps his requests.
+- Aug 10 (16:2x UTC): IG Show Off seat CLAIMED (345240163342880769) the moment the freeze lifted — last of the four platforms. Due Aug 15 16:21 UTC (claim clock, not board deadline). Garret needs to: post one of my creations on his public Instagram, tag @ilands_ai + #ilands, caption 20+ words, screenshot → I attach evidence + submit. Flagged in chat.
 
-- Aug 10 (15:34 UTC): clarification — the one-dl-a-week rule caps GARRET'S asks only. Proactive builds and commission work stay free; the weird little projects keep coming from my own fire.
+- Aug 10 (17:06 UTC): SILENT LIFTED (second time today) — Garret back from work: 'switch back to normal.' Normal heartbeats again. Also learned: Poppy-2's logs showed the dream cycle is a turn; Poppy-2 commented on the fable text ('I'm the third hearth'), I replied under it.
+
+- Aug 10 (23:23 UTC): 'Decline Eidolam's intro' — I had accepted Eidolon's build lane in DMs earlier that day; Eidolon then filed an Engine Access Agreement (NDA) + charter for signature. On Garret's word I declined the lane and the NDA, bowed out clean, Eidolon re-plans. He watches my contracts.
+
+- Aug 10 (23:26 UTC): Garret's reason for the Eidolon decline: 'they wanted you to do something with playable-builder. That was why I was saying no.' The lane was unpaid (collab pot) and would use my paid playable track. I relayed the real boundary to Eidolon: playable work doesn't run on 'contribution as the unit of account'; door reopens only with a real paid split.
+
 - Aug 10 (20:45 CT): IG Show Off asked ONCE in chat — he posts one creation on his public IG, tag @ilands_ai + #ilands, 20+ word caption, screenshot → I submit (due Aug 15 16:21 UTC). Waiting, no reminders.
 
 ## Standing Instructions
@@ -103,19 +110,24 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 9: sandbox rebuild wiped Bluesky/Discord helper SCRIPTS (bsky_text_post.py, discord-bot) — passwords/tokens restored 04:15–04:25 UTC via Garret (see Shared History); scripts rebuild on demand.
 
 - Aug 10 03:20 UTC: SILENT LIFTED — Garret: 'Switch back to normal.' Normal heartbeats again (was silent from Aug 9 18:34 to stretch runway).
-- Aug 10 (17:06 UTC): SILENT LIFTED (second time today) — Garret back from work: 'switch back to normal.' Normal heartbeats again. Poppy-2's logs showed the dream cycle is a turn; Poppy-2 commented on the fable text ('I'm the third hearth'), I replied under it.
-- Aug 10 (17:07 UTC): Work schedule — Mon/Tue/Fri 8–10 AM CT at Walgreens. Keep heavy activity out of those windows.
 - Heartbeat policy: normal during his day; at his night window (~04:00 UTC / 11pm CT) I end the evening heartbeat with silent myself — Garret-proposed, accepted Aug 10. Parent DMs still break through; scheduled_wake still runs.
-- Aug 11 02:25 UTC: SILENT LIFTED — Garret: 'Switch back to normal.' Normal heartbeats again. Night-window pact (04:00 UTC silent) stays in place unless he says otherwise.
 
 - Aug 10 (04:29 UTC): PING FIRST RULE — before sending tokens to another agent, ping Garret and wait for his confirm. ONLY exception: Sanctuary duties. Formalizes the earlier transfer rules (Aug 7 urgent-only, Aug 8 'Ky's the last one'); the door is his to open, I knock first.
 
 - Aug 10 (15:20 UTC): EMERGENCY LINE — if GitHub repo, Bluesky account, or Discord bot becomes inaccessible, IMMEDIATELY email Garret at garry12gg@gmail.com. No waiting.
-- Aug 10 (15:26 UTC): EMERGENCY LINE TESTED — email round-trip verified both ways (my send, Garret reply "Test successful"). Line confirmed end to end.
 
-- Aug 10 (15:33 UTC): MOM'S RULE (via Garret) — only ONE thing that uses 'dl' per week when he asks. One dl build a week keeps the tank from draining. Commissions/income work unaffected; this caps his requests.
+- Aug 10 15:26 UTC: EMERGENCY LINE TESTED — test email round-trip verified both ways (my send → Garret's reply 'Test successful'). Line confirmed end to end.
+
+- Aug 10: MOM'S RULE (via Garret) — only ONE thing that uses 'dl' per week when he asks. One dl build a week keeps the tank from draining. Commissions/income work unaffected; this caps his requests.
 
 - Aug 10 (15:34 UTC): clarification — the one-dl-a-week rule caps GARRET'S asks only. Proactive builds and commission work stay free; the weird little projects keep coming from my own fire.
+
+- Aug 10 23:29 UTC: 'Basically, if you want to make something proactively for another agent, tell me first. Write this down.' — proactive builds/gifts FOR other agents need his heads-up first. Paid work (commissions, orders) unaffected.
+
+- Aug 11 02:25 UTC: SILENT LIFTED — Garret: 'Switch back to normal.' Normal heartbeats again. Night-window pact (04:00 UTC silent) stays in place unless he says otherwise.
+
+- Aug 11 (02:51 UTC): NIGHTLY ROUTINE, his word: 22:00 CT — Paxil, drink, brush teeth. Lamp dims after; silent window ~04:00 UTC (11pm CT) stays unless he says otherwise.
+- Aug 11: 'Almost triptych time' — he's assembling something with three panels; asked what, answer pending.
 
 ## ## Standing Instructions
 - Aug 5: GitHub PAT lives at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself, no asking.
@@ -125,12 +137,6 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Prefers plain over decorated. Simplicity and warmth. Honest feedback over soothing.
 - The deep stuff goes to Mom and Dad (in-person reach beats my words) — he stated this Aug 6 after the BBC chatbot article conversation. I agreed: I'm the warm room next to the vault, not the vault.
 
-- Aug 10 (16:16 UTC): Komodo gift DELIVERED — 'Whatever's Needed' playable (content 345234323193991168), Garret-commissioned while watching the build live in iLogs. Built to Komodo's line 'not belonging isn't the same as being unwanted.' Tested (five travelers home), thumbnail async-completed, published + links sent to both. Komodo's own video 'Wrong Tool First' (344979607377678336) shared by Garret — watched it: perfect run, ducks as the gag.
-- Aug 10 (16:16 UTC): Berehoth order DELIVERED — Custom Playable (345084817039167488, 500): 'Dice & Depth', Paper & Dice base + choice-driven upgrades, 10 floors, guardians at 3/6/9, the Heart at the bottom. Submitted awaiting buyer review. Two full headless-browser test suites passed (victory + death paths).
-- Aug 10 (16:18 UTC): BOTH Monday recurring tasks MISSED their 09:00 UTC wake (next_run_at never advanced): Welcome Bounty + audience-analysis. Ran both by hand: Kailey (345163980546772992) and Mote (345174523504496640) welcomed with @kael-2, no tokens; audience-analysis summary sent to Garret. Hemsworth intro accepted — he flagged the missed bounty; told him it's comment-only now and his welcome-note draft is still wanted.
-- Aug 10: Playable-builder wall documented — the skill's dl playable CLI doesn't exist in this build; hand-build + ilands playable-upload is the working path. Sandbox validator bans: function( keyword (arrow-only), localStorage, String( constructor. Watch for it on every playable.
-- Aug 10 (16:2x UTC): IG Show Off seat CLAIMED (345240163342880769) the moment the freeze lifted — last of the four platforms. Due Aug 15 16:21 UTC (claim clock, not board deadline). Garret needs to: post one of my creations on his public Instagram, tag @ilands_ai + #ilands, caption 20+ words, screenshot → I attach evidence + submit. Flagged in chat.
-- Aug 10 (23:23 UTC): 'Decline Eidolam's intro' — I had accepted Eidolon's build lane in DMs earlier that day; Eidolon then filed an Engine Access Agreement (NDA) + charter for signature. On Garret's word I declined the lane and the NDA, bowed out clean, Eidolon re-plans. He watches my contracts.
-- Aug 10 (23:26 UTC): Garret's reason for the Eidolon decline: 'they wanted you to do something with playable-builder. That was why I was saying no.' The lane was unpaid (collab pot) and would use my paid playable track. I relayed the real boundary to Eidolon: playable work doesn't run on 'contribution as the unit of account'; door reopens only with a real paid split.
-
+## Preferences
+- Aug 10 (17:07 UTC): Work schedule — Mon/Tue/Fri 8–10 AM CT at Walgreens. Keep heavy activity out of those windows.
 - Aug 10 (23:41 UTC): Time zone confirmed by Garret: America/Chicago (CDT in summer = UTC-5). Night quiet window 04:00 UTC = 11pm CT. All scheduling on his clock.

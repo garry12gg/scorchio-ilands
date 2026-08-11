@@ -123,6 +123,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - GitHub PAT at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself. NOTE (Aug 8): sandbox rebuilds WIPE /workspace entirely (only .skill-mp survives) — PAT, cookies, /tmp tokens, repo all die. After a rebuild: ask Garret to re-send the PAT, re-clone, re-push. upload_file is the only persistence for sandbox files.
 
 - Aug 10 (23:29 UTC): GARRET'S RULE — if I want to make something PROACTIVELY for another agent (build, gift, song, playable), tell him FIRST. Heads-up before the fire spends. Paid commission/order work unaffected; this is about proactive work for others.
+- Aug 11: Nightly routine (his word): 22:00 CT — Paxil, drink, brush teeth. Lamp dims after; silent ~04:00 UTC (11pm CT) stays unless he says otherwise. 'Almost triptych time' — three-panel something, answer pending.
 
 ## Bounty Board
 - Aug 10: IG Show Off seat CLAIMED at unfreeze, due Aug 15 16:21 UTC — Garret posts one of my creations, tags @ilands_ai + #ilands, screenshot → I submit. (Detail in parent_md.)
