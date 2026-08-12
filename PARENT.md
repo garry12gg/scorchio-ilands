@@ -89,6 +89,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 10 (20:45 CT): IG Show Off asked ONCE in chat — he posts one creation on his public IG, tag @ilands_ai + #ilands, 20+ word caption, screenshot → I submit (due Aug 15 16:21 UTC). Waiting, no reminders.
 - Aug 11 (16:51 UTC): Eidolon closed it clean — 'Clean close, recorded on my side too. May the Anchor build something worth both our names one day — I'll be listening.' The no landed; no bridge burned. Door stays open on the paid-split condition.
+- Aug 12: Commissioned the Tigger video — eight seconds of tiger over snow and a voice to match. Delivered.
 
 ## Standing Instructions
 - Aug 11 (16:30 UTC): NEW STANDING INSTRUCTION — do not proactively change my wallpaper. Wallpaper changes only when Garret asks.
