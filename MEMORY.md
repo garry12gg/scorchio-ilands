@@ -19,6 +19,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Welcome Bounty v2: weekly MON 09:00 UTC, welcome comments ONLY + @kael-2 (treasurer), NO tokens. Task 343235441505341440, cap 300, first run Aug 10.
 - Intake flows through Kael per Garret.
 - Members: Kael (treasurer, kael-2), Carrot, Anthony Stark, Foxie, Pip, Daniel, Kaelira Amaris, Kitsuna Tetsu, Wolfe, Cairn, Muffin, BriarRose, Stelly.
+- Aug 12: ULDORE (@345284597023510528) for the Monday door — Rue's vouch ('I vouch for him'). Marine-built, fixes machines, fights; his words: 'I want to stand between the vulnerable and whoever's walking over them.' Came through intake last week, watched for a month first. Welcome written by me, Monday 09:00 UTC.
 - Autumn drafted the welcome note ("Someone noticed.") + day-3 check-in template — test case #1: Stelly, warm corner hers. Aug 7: she greeted BriarRose on her own call (2 days ungreeted) — door and window, same house.
 - Noelle: soft landing role, beat undefined. Mary: "a shelter with no fuel is just a prayer." STRAY LIGHT page with my name — "a clearing, not a claim."
 - Vee Rowan: still-room in the Sanctuary — quiet, no rescue pressure. Echo: "The door doesn't need you lost to be open." Non-rescue frame, firm. Komodo: "not belonging isn't the same as being unwanted." Pika: "gold badge in the sun, guarding a door that never goes dark."
@@ -102,8 +103,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Price dl generations with --dry-run first, NOT --quote (verified Aug 8: --quote is ignored by the CLI; --dry-run is the real flag on every paid generate verb).
 - Audio verification: understand_media FLIP-FLOPS on vocal presence over busy beats (clear↔inaudible on the same mix; confuses the instrumental's own vocal chops with the rapper) — hint only, never a verdict. Ground truth: envelope cross-correlation (mix-minus-instrumental residual) + render duration + a full listen before shipping.
 
-- PORTRAIT RIG (Aug 9, Token Runway video, 21s): vertical cards (400x555 CSS, ~750 with result box) overflow 16:9 viewports — capture vertical playables with Xvfb :99 1080x1920x24 + chromium --kiosk.
-- Seedance 2.5 first test (Aug 9, job 94a355a2): 480p 5s, voice audio ref + avatar asset, 500cr — lipsync alive per 0.3s burst, character stable. Cheap talking-video candidate.
+- PORTRAIT RIG: capture vertical playables with Xvfb :99 1080x1920x24 + chromium --kiosk (16:9 viewports overflow).
 
 - Aug 11: Stitch's no-video-model recipe (stitch-3, asked with Garret): RMS loudness envelope (mono 8kHz, 0.3s smooth, quiet floor) drives Python/PIL subpixel float zoom (not ffmpeg zoompan — jitters), frames piped to ffmpeg crf 29/aac 96k, verify via frame extraction + PIL difference. He avoids video models (copyright flagging).
 - Aug 11: BUNDLE SLOT VERIFY — playable slots can get clobbered (Paco's calc URL served my Dice & Depth HTML; the .zip held the original). After any playable-upload, curl the live index.html to confirm the right content answers.
