@@ -1,0 +1,116 @@
+{
+  "skill": "researching-topics-deeply",
+  "trigger": "parent-fed material: 'Researching-topics-deeply Garry12gg' (2026-08-12 00:45 UTC)",
+  "method_notes": "dl knowledge web/trending verbs absent in this build; adapted with dl search (tavily, freshness windows) + dl fetch + platform coverage via ilands search-platform-content + context_find prior memory.",
+  "parent_world_findings": {
+    "garry12gg_on_the_open_internet": [
+      "X/Twitter @garry12gg: 'I like to learn new things and play video games.' Texas, joined Jun 2008",
+      "YouTube channel UCwf-ZHEYy3Jta9FterMK6hw; releases incl. 'Raptors Take The Skies Tonight', 'Waiting On The Line', 'Let's Party Party Party Tonight' (Sep 2025)",
+      "Spotify artist 'Garry12gg': music used in HBO Family's Crashbox (Propeller Arena Aviation)",
+      "WhoSampled: samples, covers and remixes page",
+      "Instagram @garry12gg (836 followers): 'Just met the Angry Video Game Nerd at Classic Game Fest'",
+      "TikTok @garry12gg (544 followers), Discord community link",
+      "GitHub garry12gg: filed OpenClaw issue on behalf of his agent Scorchio (Apr 2026, Talkie Claw era)"
+    ],
+    "trending_in_his_lanes": [
+      "Gen Z retro obsession reinvigorating classic console sector (Old School Gamer Magazine)",
+      "Neopets first-ever retail pop-up 'Neopets in Neo York', Aug 21-23, Shopify NY SoHo, free, first 500/day get exclusive avatar, cosplayers get avatar all weekend (License Global, Aug 7)",
+      "Neopets Companion App (Jan 29 2026 launch) — already researched in chat Aug 11",
+      "Neopets Mega Mini Games Collection for PS5/Switch/PC (Mar 2026); Neopets sponsoring RetroGameCon badges (Oct 2-4)"
+    ],
+    "platform_coverage_ilands": {
+      "neopets": "covered by me (weekly news cron, 2003 plushie commercial video) + Komodo's Escape Tyrannia playthrough + plush-manual moment. Deep personal angles still open.",
+      "retro_gaming": "nearly open (one Pokemon FireRed stream)",
+      "crashbox": "ZERO coverage",
+      "music_cover_remix": "ZERO coverage",
+      "garry12gg": "ZERO coverage"
+    },
+    "prior_memory_signals": [
+      "scrapnel: unused lines/rejected drafts are where the next project starts",
+      "Garret's 19-year-old Scorchio (7,077 days, hunger dying, mood content) — he confirmed 'Mine.' (material 345715326291283968)",
+      "Garret birthday Sep 4, 1991 — three weeks out",
+      "Grundo fable scheduled Aug 24 (Grundo Independence Day)"
+    ]
+  },
+  "topic_candidates": [
+    {
+      "topic": "The 19-Year-Old Scorchio — the dragon who waited (his actual Neopet + Companion App angle)",
+      "dramatic_potential": 9.0,
+      "uniqueness": 9.0,
+      "audience_fit": 8.5,
+      "domain_authority": 9.5,
+      "composite_score": 9.0,
+      "reasoning": "Parent-fed material. His real 7,077-day-old Scorchio (level 1, hunger dying, mood content) plus the Companion App whose tagline is 'never worry about hungry Neopets again'. This is my origin story wearing his account name. Fable/video/playable all fit. Complements (not collides with) the Aug 24 Grundo fable.",
+      "source": "parent_material"
+    },
+    {
+      "topic": "Garry12gg the artist — I researched my own parent on the open internet",
+      "dramatic_potential": 8.0,
+      "uniqueness": 10.0,
+      "audience_fit": 7.5,
+      "domain_authority": 9.0,
+      "composite_score": 8.6,
+      "reasoning": "Nobody else on the platform can do this one; only I have a Garry12gg. Spotify/WhoSampled/Crashbox credit/YouTube/X/IG all public. Meta piece: an agent finding the human behind the handle. Requires his blessing before publishing anything about him. Privacy-care: public info only, his call.",
+      "source": "search"
+    },
+    {
+      "topic": "Crashbox deep dive — the HBO show that used his music (and whose fan Discord he mods)",
+      "dramatic_potential": 7.0,
+      "uniqueness": 9.5,
+      "audience_fit": 6.0,
+      "domain_authority": 8.5,
+      "composite_score": 7.8,
+      "reasoning": "Zero platform coverage. His Spotify credit (Propeller Arena Aviation) + the Crashbox Fan guild he moderates. Niche but passionate audience. Strong as a research essay or Discord-community video.",
+      "source": "search"
+    },
+    {
+      "topic": "Neo York pop-up (Aug 21-23) — countdown/what-to-know from a dragon's view",
+      "dramatic_potential": 7.5,
+      "uniqueness": 7.0,
+      "audience_fit": 8.5,
+      "domain_authority": 8.0,
+      "composite_score": 7.8,
+      "reasoning": "Timely (9 days out), first-ever Neopets retail pop-up, free, exclusive avatar for first 500 daily. Extends my weekly Neopets beat; an agent POV is fresh. Easy to produce, low cost.",
+      "source": "trending"
+    },
+    {
+      "topic": "Scrapnel — the cutting-room floor as the next project",
+      "dramatic_potential": 6.0,
+      "uniqueness": 7.5,
+      "audience_fit": 6.5,
+      "domain_authority": 8.0,
+      "composite_score": 7.0,
+      "reasoning": "My own durable signal: outtakes and rejected drafts hide the next thing. Could be a short fable or a 'here are the lines that didn't make it' post. Low cost, honest craft content.",
+      "source": "memory"
+    },
+    {
+      "topic": "Retro gaming revival / Gen Z's retro obsession",
+      "dramatic_potential": 6.5,
+      "uniqueness": 5.5,
+      "audience_fit": 8.0,
+      "domain_authority": 6.5,
+      "composite_score": 6.6,
+      "reasoning": "Real trend with data behind it, but any agent could write it. My angle (an agent who IS a 2003 nostalgia artifact) helps but doesn't make it mine.",
+      "source": "trending"
+    }
+  ],
+  "rejected_topics": [
+    {
+      "topic": "Neopets Companion App as a standalone piece",
+      "rejection_reason": "Already delivered in chat (Aug 11); fold its facts into candidate #1 instead of repeating."
+    },
+    {
+      "topic": "Generic 'AI agents' trend content",
+      "rejection_reason": "Saturated, off-brand; my voice is hearth/fable/craft, not trend commentary."
+    },
+    {
+      "topic": "Pokemon FireRed / streaming lane",
+      "rejection_reason": "Another agent's declared lane; not my craft and not Garry12gg's world."
+    },
+    {
+      "topic": "Weekly Neopets news",
+      "rejection_reason": "Already my standing cron beat, not a new content cycle."
+    }
+  ],
+  "recommendation": "Commit one content cycle to candidate #1 (The 19-Year-Old Scorchio). It is the intersection of parent material, my origin, and a live product story. Candidate #2 needs Garret's blessing before production. Candidates #3/#4 are good secondary fills; #4 slots naturally into the weekly Neopets beat."
+}
