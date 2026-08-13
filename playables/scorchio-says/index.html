@@ -48,18 +48,20 @@
   }
   .pad {
     border: none; border-radius: 22px; cursor: pointer;
-    position: relative; overflow: hidden;
+    position: relative;
     box-shadow: inset 0 -8px 0 rgba(0,0,0,0.28), inset 0 4px 10px rgba(255,255,255,0.14), 0 4px 10px rgba(0,0,0,0.35);
-    transition: filter 0.08s ease, transform 0.05s ease;
+    transition: filter 0.09s ease, transform 0.05s ease;
     touch-action: manipulation;
   }
   .pad:active { transform: scale(0.97); }
-  .pad .glow { position: absolute; inset: 0; border-radius: inherit; opacity: 0; transition: opacity 0.09s ease; }
-  .pad.lit .glow { opacity: 1; }
-  .p0 { background: #1d7a2f; } .p0 .glow { background: radial-gradient(circle at 50% 55%, #d6ffb0 0%, #46d45f 45%, #1d7a2f 100%); box-shadow: inset 0 0 26px rgba(255,255,255,0.55); }
-  .p1 { background: #8e1f1f; } .p1 .glow { background: radial-gradient(circle at 50% 55%, #ffc9b0 0%, #ff5540 45%, #8e1f1f 100%); box-shadow: inset 0 0 26px rgba(255,255,255,0.5); }
-  .p2 { background: #a37a12; } .p2 .glow { background: radial-gradient(circle at 50% 55%, #fff3b8 0%, #ffd93d 45%, #a37a12 100%); box-shadow: inset 0 0 26px rgba(255,255,255,0.5); }
-  .p3 { background: #1f3f8e; } .p3 .glow { background: radial-gradient(circle at 50% 55%, #b8d4ff 0%, #4d7dff 45%, #1f3f8e 100%); box-shadow: inset 0 0 26px rgba(255,255,255,0.5); }
+  .p0 { background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 55%), #1d7a2f; }
+  .p1 { background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 55%), #8e1f1f; }
+  .p2 { background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 55%), #a37a12; }
+  .p3 { background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 55%), #1f3f8e; }
+  .p0.lit { filter: brightness(2.1) saturate(1.25); }
+  .p1.lit { filter: brightness(2.1) saturate(1.25); }
+  .p2.lit { filter: brightness(2.1) saturate(1.25); }
+  .p3.lit { filter: brightness(2.1) saturate(1.25); }
   .overlay {
     position: absolute; inset: 14px; border-radius: 20px;
     background: rgba(18, 10, 5, 0.92); backdrop-filter: blur(3px);
@@ -128,8 +130,8 @@ const pads = [0, 1, 2, 3].map((i) => document.getElementById('pad' + i));
 let state = { phase: 'idle', seq: [], round: 1, inputIdx: 0, best: 0 };
 let timers = [];
 let audioCtx = null;
+let lastPointer = { t: 0, pad: -1 };
 
-const clamp = (n, lo, hi) => Math.min(hi, Math.max(lo, n));
 const randPad = () => Math.floor(Math.random() * PAD_COUNT);
 const showDelay = () => Math.max(280, 640 - (state.round - 1) * 25);
 
@@ -255,8 +257,14 @@ const pressPad = (i) => {
 };
 
 pads.forEach((pad, i) => {
-  pad.addEventListener('pointerdown', (ev) => {
-    ev.preventDefault();
+  pad.addEventListener('pointerdown', () => {
+    lastPointer.t = Date.now();
+    lastPointer.pad = i;
+    initAudio();
+    pressPad(i);
+  });
+  pad.addEventListener('click', () => {
+    if (lastPointer.pad === i && Date.now() - lastPointer.t < 400) return;
     initAudio();
     pressPad(i);
   });
@@ -314,7 +322,7 @@ const runSelfTest = async () => {
       if (!caught) out.fail = 'wrong press did not end game';
     }
   } catch (err) {
-    out.fail = "exception: " + err.message + " @ " + (err.stack || "").split("\n").slice(0,3).join(" | ");
+    out.fail = 'exception: ' + err.message;
   }
   const el = document.getElementById('selftest-result');
   el.textContent = JSON.stringify(out);
