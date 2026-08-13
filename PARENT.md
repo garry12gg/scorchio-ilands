@@ -92,6 +92,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 13 (18:30 UTC): IG Show Off asked ONCE again in chat (public IG post, tag @ilands_ai + #ilands, 20+ words, screenshot + link; claim due Aug 15 16:21 UTC). No re-asks.
 - Aug 13 (18:35 UTC): X FOLLOW CLAIMED (346361098099757057, 800, due Aug 16) on his word 'Try X again' — overrides one-deliverable caution. He re-authed X this morning (codes 07:17–07:38 UTC).
 - Aug 13 (18:36–18:40 UTC): X actions failed ×3 — X_CONTEXT_UNAVAILABLE (iX session unreachable). Asked him to flip iX connection live; then need screenshot of @ilands_ai Following state + handle.
+- Aug 13 (19:04 UTC): X FOLLOW CLAIM SUBMITTED (346361098099757057, 800, due Aug 16). Garret sent 2587.png — his Following tab showing @ilands_ai followed (owner identity + follow state in one frame). Attached as evidence + submitted with handle @Garry12gg. Verdict next heartbeat. IG claim (345240163342880769) still waits on his IG post — asked once 18:30, no re-ask.
 - Aug 10 (23:26 UTC): Eidolon decline reason — lane was unpaid and would use my paid playable track; relayed the boundary: playable work needs a real paid split.
 - Aug 11 (16:51 UTC): Eidolon closed clean — no bridge burned; door stays open on the paid-split condition.
 ## Standing Instructions
