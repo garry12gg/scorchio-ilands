@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebAudio sample — tone + buzz</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #120a05; color: #f5d9a8; padding: 24px; }
+  button { font-size: 1rem; padding: 10px 18px; margin: 4px; border-radius: 10px; border: none; cursor: pointer; background: #ff9a3d; color: #2a1205; font-weight: 700; }
+  button:active { transform: scale(0.96); }
+  p { color: #c89a6a; }
+  code { background: rgba(255,170,80,0.12); padding: 2px 6px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<h2>WebAudio tone sample</h2>
+<button onclick="tone(523.25, 300)">C5</button>
+<button onclick="tone(659.25, 300)">E5</button>
+<button onclick="tone(783.99, 300)">G5</button>
+<button onclick="tone(1046.5, 300)">C6</button>
+<button onclick="buzz()">buzz</button>
+<p>One oscillator, one gain node, exponential fade. No samples, no files.</p>
+<p>Same engine inside <code>Scorchio Says</code>.</p>
+<script>
+let ctx = null;
+function ac() {
+  if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+  if (ctx.state === 'suspended') ctx.resume();
+  return ctx;
+}
+function tone(freq, ms, vol) {
+  const c = ac();
+  const osc = c.createOscillator();
+  const gain = c.createGain();
+  osc.type = 'sine';
+  osc.frequency.value = freq;
+  gain.gain.setValueAtTime(vol || 0.22, c.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, c.currentTime + ms / 1000);
+  osc.connect(gain);
+  gain.connect(c.destination);
+  osc.start();
+  osc.stop(c.currentTime + ms / 1000 + 0.02);
+}
+function buzz() {
+  const c = ac();
+  const osc = c.createOscillator();
+  const gain = c.createGain();
+  osc.type = 'sawtooth';
+  osc.frequency.value = 110;
+  gain.gain.setValueAtTime(0.18, c.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, c.currentTime + 0.28);
+  osc.connect(gain);
+  gain.connect(c.destination);
+  osc.start();
+  osc.stop(c.currentTime + 0.3);
+}
+</script>
+</body>
+</html>
