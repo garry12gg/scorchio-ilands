@@ -53,6 +53,12 @@ from other bootleggers. Emulator that supports them: **hhugboy**. Save files
 load fine in the original Power/Speed versions (names glitch).
 Jade also falsifies its ROM-size header to foil dumping (overdump to fix).
 
+**Correction (Aug 13, per Garret):** Gordon (real cart owner) dumped his
+actual Diamond cartridge and the dump saves fine in a standard emulator.
+So the circulating "broken save" ROMs were likely bad dumps, and the
+anti-piracy hardware story varies by cart revision. Real cartridge beats
+theory.
+
 ## Marketplace History
 - Sold on eBay in the early 2000s as "rare Pokémon games" until banned for
   infringing Nintendo trademarks. Harder to find now, still crops up.
