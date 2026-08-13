@@ -1,0 +1,7 @@
+{
+  "entryPoint": "index.html",
+  "bridgeVersion": "1.0.0",
+  "permissions": ["audio"],
+  "name": "SFX Demo Board",
+  "description": "Interactive sound effects demo using Web Audio API"
+}

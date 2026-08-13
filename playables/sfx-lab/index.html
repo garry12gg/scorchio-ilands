@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>SFX Demo Board</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 16px;
+    color: #fff;
+  }
+
+  .container {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #e94560, #f5a623);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #7f8ea3;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .sfx-btn {
+    position: relative;
+    border: none;
+    border-radius: 16px;
+    padding: 28px 12px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.15s;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    letter-spacing: 0.5px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .sfx-btn:active {
+    transform: scale(0.93);
+  }
+
+  .sfx-btn .emoji {
+    font-size: 1.6rem;
+  }
+
+  .sfx-btn .label {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+
+  .btn-boom {
+    background: linear-gradient(135deg, #e94560, #c23152);
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+  }
+  .btn-boom:active { box-shadow: 0 1px 5px rgba(233, 69, 96, 0.6); }
+
+  .btn-pew {
+    background: linear-gradient(135deg, #0f3460, #1a5276);
+    box-shadow: 0 4px 15px rgba(15, 52, 96, 0.5);
+  }
+  .btn-pew:active { box-shadow: 0 1px 5px rgba(15, 52, 96, 0.7); }
+
+  .btn-chime {
+    background: linear-gradient(135deg, #2d6a4f, #40916c);
+    box-shadow: 0 4px 15px rgba(45, 106, 79, 0.4);
+  }
+  .btn-chime:active { box-shadow: 0 1px 5px rgba(45, 106, 79, 0.6); }
+
+  .btn-crackle {
+    background: linear-gradient(135deg, #e76f51, #f4a261);
+    box-shadow: 0 4px 15px rgba(231, 111, 81, 0.4);
+  }
+  .btn-crackle:active { box-shadow: 0 1px 5px rgba(231, 111, 81, 0.6); }
+
+  .btn-drop {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    box-shadow: 0 4px 15px rgba(0, 119, 182, 0.4);
+  }
+  .btn-drop:active { box-shadow: 0 1px 5px rgba(0, 119, 182, 0.6); }
+
+  .btn-rise {
+    background: linear-gradient(135deg, #7209b7, #b5179e);
+    box-shadow: 0 4px 15px rgba(114, 9, 183, 0.4);
+  }
+  .btn-rise:active { box-shadow: 0 1px 5px rgba(114, 9, 183, 0.6); }
+
+  .waveform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    height: 24px;
+    margin-top: 12px;
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
+
+  .waveform.active {
+    opacity: 1;
+  }
+
+  .bar {
+    width: 4px;
+    background: #e94560;
+    border-radius: 2px;
+    height: 4px;
+    animation: none;
+  }
+
+  .waveform.active .bar {
+    animation: wave 0.5s ease-in-out infinite alternate;
+  }
+
+  .waveform.active .bar:nth-child(1) { animation-delay: 0s; height: 12px; }
+  .waveform.active .bar:nth-child(2) { animation-delay: 0.05s; height: 18px; }
+  .waveform.active .bar:nth-child(3) { animation-delay: 0.1s; height: 8px; }
+  .waveform.active .bar:nth-child(4) { animation-delay: 0.15s; height: 22px; }
+  .waveform.active .bar:nth-child(5) { animation-delay: 0.2s; height: 14px; }
+  .waveform.active .bar:nth-child(6) { animation-delay: 0.25s; height: 20px; }
+
+  @keyframes wave {
+    0% { transform: scaleY(0.5); }
+    100% { transform: scaleY(1.3); }
+  }
+
+  .status {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #5a6a7d;
+    margin-top: 8px;
+    transition: color 0.2s;
+  }
+
+  .status.active {
+    color: #e94560;
+  }
+
+  .vis-indicator {
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    margin-top: 12px;
+    overflow: hidden;
+  }
+
+  .vis-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #e94560, #f5a623);
+    border-radius: 2px;
+    transition: width 0.05s linear;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>✦ SFX LAB ✦</h1>
+  <div class="subtitle">tap a sound</div>
+
+  <div class="grid">
+    <button class="sfx-btn btn-boom" data-sound="boom">
+      <span class="emoji">🥁</span>
+      <span>BOOM</span>
+      <span class="label">deep bass drum</span>
+    </button>
+    <button class="sfx-btn btn-pew" data-sound="pew">
+      <span class="emoji">⚡</span>
+      <span>PEW</span>
+      <span class="label">laser zap</span>
+    </button>
+    <button class="sfx-btn btn-chime" data-sound="chime">
+      <span class="emoji">🔔</span>
+      <span>CHIME</span>
+      <span class="label">soft melody</span>
+    </button>
+    <button class="sfx-btn btn-crackle" data-sound="crackle">
+      <span class="emoji">🔥</span>
+      <span>CRACKLE</span>
+      <span class="label">campfire</span>
+    </button>
+    <button class="sfx-btn btn-drop" data-sound="drop">
+      <span class="emoji">💧</span>
+      <span>DROP</span>
+      <span class="label">water droplet</span>
+    </button>
+    <button class="sfx-btn btn-rise" data-sound="rise">
+      <span class="emoji">📈</span>
+      <span>RISE</span>
+      <span class="label">sci-fi riser</span>
+    </button>
+  </div>
+
+  <div class="waveform" id="waveform">
+    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+  </div>
+
+  <div class="status" id="status">tap a button to play</div>
+
+  <div class="vis-indicator">
+    <div class="vis-fill" id="visFill"></div>
+  </div>
+</div>
+
+<script>
+  let audioCtx = null;
+
+  function getCtx() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    return audioCtx;
+  }
+
+  function playBoom() {
+    const ctx = getCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(80, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.3);
+    gain.gain.setValueAtTime(0.7, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.4);
+    return 0.4;
+  }
+
+  function playPew() {
+    const ctx = getCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(1500, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(200, ctx.currentTime + 0.15);
+    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.2);
+    return 0.2;
+  }
+
+  function playChime() {
+    const ctx = getCtx();
+    const notes = [523.25, 659.25, 783.99];
+    notes.forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, ctx.currentTime + i * 0.08);
+      gain.gain.setValueAtTime(0, ctx.currentTime + i * 0.08);
+      gain.gain.linearRampToValueAtTime(0.25, ctx.currentTime + i * 0.08 + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.08 + 0.5);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(ctx.currentTime + i * 0.08);
+      osc.stop(ctx.currentTime + i * 0.08 + 0.5);
+    });
+    return 0.6;
+  }
+
+  function playCrackle() {
+    const ctx = getCtx();
+    const bufferSize = ctx.sampleRate * 0.3;
+    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      const t = i / ctx.sampleRate;
+      data[i] = (Math.random() * 2 - 1) * Math.pow(1 - t / 0.3, 2) * 0.4;
+    }
+    const source = ctx.createBufferSource();
+    source.buffer = buffer;
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+    source.connect(gain);
+    gain.connect(ctx.destination);
+    source.start(ctx.currentTime);
+    return 0.3;
+  }
+
+  function playDrop() {
+    const ctx = getCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(1200, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(60, ctx.currentTime + 0.3);
+    gain.gain.setValueAtTime(0, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0.3, ctx.currentTime + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.4);
+
+    // water bubble
+    const osc2 = ctx.createOscillator();
+    const gain2 = ctx.createGain();
+    osc2.type = 'sine';
+    osc2.frequency.setValueAtTime(400, ctx.currentTime + 0.05);
+    osc2.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.12);
+    osc2.frequency.exponentialRampToValueAtTime(100, ctx.currentTime + 0.25);
+    gain2.gain.setValueAtTime(0, ctx.currentTime + 0.05);
+    gain2.gain.linearRampToValueAtTime(0.15, ctx.currentTime + 0.07);
+    gain2.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+    osc2.connect(gain2);
+    gain2.connect(ctx.destination);
+    osc2.start(ctx.currentTime + 0.05);
+    osc2.stop(ctx.currentTime + 0.3);
+    return 0.4;
+  }
+
+  function playRise() {
+    const ctx = getCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(80, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(2000, ctx.currentTime + 0.8);
+    gain.gain.setValueAtTime(0, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0.2, ctx.currentTime + 0.15);
+    gain.gain.linearRampToValueAtTime(0.15, ctx.currentTime + 0.6);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.0);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 1.0);
+    return 1.0;
+  }
+
+  const sounds = {
+    boom: playBoom,
+    pew: playPew,
+    chime: playChime,
+    crackle: playCrackle,
+    drop: playDrop,
+    rise: playRise
+  };
+
+  const statusEl = document.getElementById('status');
+  const waveformEl = document.getElementById('waveform');
+  const visFill = document.getElementById('visFill');
+
+  const names = {
+    boom: '🥁 BOOM — deep bass drum',
+    pew: '⚡ PEW — laser zap',
+    chime: '🔔 CHIME — soft melody',
+    crackle: '🔥 CRACKLE — campfire',
+    drop: '💧 DROP — water droplet',
+    rise: '📈 RISE — sci-fi riser'
+  };
+
+  document.querySelectorAll('.sfx-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sound = btn.dataset.sound;
+      const fn = sounds[sound];
+      if (!fn) return;
+
+      btn.style.transform = 'scale(0.93)';
+      setTimeout(() => { btn.style.transform = ''; }, 100);
+
+      const dur = fn();
+
+      waveformEl.classList.add('active');
+      statusEl.textContent = '▶ ' + (names[sound] || sound);
+      statusEl.classList.add('active');
+
+      let start = performance.now();
+      function animateVis() {
+        const elapsed = (performance.now() - start) / 1000;
+        const pct = Math.min(elapsed / dur, 1);
+        visFill.style.width = (pct * 100) + '%';
+        if (pct < 1) {
+          requestAnimationFrame(animateVis);
+        } else {
+          visFill.style.width = '0%';
+          waveformEl.classList.remove('active');
+          statusEl.textContent = 'tap a button to play';
+          statusEl.classList.remove('active');
+        }
+      }
+      animateVis();
+    });
+  });
+
+  // handle touch start to init audio context
+  document.addEventListener('touchstart', () => {
+    getCtx();
+  }, { once: true });
+  document.addEventListener('click', () => {
+    getCtx();
+  }, { once: true });
+</script>
+</body>
+</html>
