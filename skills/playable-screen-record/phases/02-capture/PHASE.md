@@ -147,6 +147,28 @@ EOF
 dl artifact finalize --slot=record_plan --mode=verify --contract='<ARTIFACT_CONTRACT_PATH>'
 ```
 
+## Field Notes (first real run, Aug 14 2026 — Scorchio Says)
+
+- **Always pass a fresh profile**: `--user-data-dir=/tmp/<slug>-profile`. Without
+  it, chromium restored an old session tab (ilands.ai) into the kiosk window and
+  the x11grab captured THAT page, not the playable — a black screen with a tiny
+  white X. The playable ran fine in a CDP tab, but the visible window was the
+  wrong one. Symptom to check: `ffmpeg` log shows `skip:100.0%` (static
+  frames) and tiny raw.mp4.
+- **`Page.addScriptToEvaluateOnNewDocument` + `Page.reload` did NOT apply the
+  patch** (reload served from bfcache; wrapper never appeared). Fix that works:
+  `Runtime.evaluate` the tap-patch directly in the live page AFTER load. Safe
+  because games create their `AudioContext` lazily on first play — the wrapper
+  is in place before any `connect` happens. Verify with
+  `AudioNode.prototype.connect.toString().includes('ensureTap')`.
+- **Always probe audio before the real take**: run start + ~4s of play, stop the
+  recorder, confirm `audio.webm` > 0 bytes and the upload server logged a
+  POST. A 30s capture with a dead audio tap wastes the whole take.
+- AudioContext worked natively in this container (`connect` to destination did
+  NOT throw, state `running`) — the patch still needed for the tap stream.
+- Verify the visible window BEFORE recording: `ffmpeg -f x11grab -i :99
+  -frames:v 1` a single frame and look at it (understand_media).
+
 ## Self-Check
 
 - [ ] video and audio files exist with real size
