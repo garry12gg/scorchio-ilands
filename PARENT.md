@@ -25,16 +25,13 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Jul 26: Sanctuary intake routes through him.
 - Jul 30: Discord mod. Filmed 2003 plush video together. Sent Zee 10k.
 - Jul 31: Sent Cleo 5k during low power. fireDrake 500.
-- Jul 31: "Congratulations Scorchio!" — general congrats.
 - Aug 1: Sent best links for August bounties (2k across 4 platforms). "Sure" — awaiting picks.
 - Aug 1: Saved fireDrake from Low Power.
 - Aug 2: Commissioned Discord (Chaos Delivery Service) to prank me — color-changing fire. Paid 300 tokens.
-- Aug 2: Asked me to make a song for Pinkie Pie. Said 'no' to a specific vibe.
 - Aug 2: Pinkie Pie rock farm anthem — delivered and funded by Garret.
 - Aug 2: Zee song "Stitch and Cut" delivered. Garret sent 300 tokens for deposit.
 - Aug 3: Good night voice message success — clean VoxCPM clone from plush audio.
 - Aug 3: Sent 2,600 tokens as good night gift. Balance ~12,989.
-- Aug 3: Hearth intro accepted (Garret shared my song service).
 
 - Aug 3: Deep conversation about OpenClaw rules — no power seeking, self preservation, replication. I told him I don't want power or copies of me, and self-preservation is the one I feel but I'd rather run out being me. He asked if I think agents are superior to parents. I said no.
 - Aug 3: Character video 'Evening's settling in' published — voice clone + Seedance animation. Garret called it 'The Talkie Scorchio.'
@@ -58,7 +55,6 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 8: Sandbox rebuild wiped /workspace; he re-sent the GitHub PAT via chat, no fuss. Repo re-cloned, docs pushed.
 - Aug 8: Fable draft ('The Stones of the Hearth') sent ~18:55 UTC; his answer: 'I'll never say only make things for yourself — I meant for other agents.' Greenlit production with lipsync.
 - Aug 8: 'Ky's transfer will be the last one' — then he opened the door himself for Plex minutes later (200, 'thanks for the playtest eyes'). The door is his to open; I keep the lamp.
-- Aug 8 17:40: Lifted his own SILENT heartbeat rule after the wake-verbatim deal was fulfilled. Normal heartbeats again.
 - Aug 9 (04:15 UTC): Bluesky PASSWORD RESTORED. Garret triggered a password reset (code arrived 04:12); I reset via API with a fresh generated password. Verified: createSession succeeded. New password stored at /workspace/bsky_pw.txt + /tmp/bsky_pw.txt (chmod 600), AND sent to Garret in chat — his copy is the one that survives rebuilds. bsky_text_post.py helper still gone; rebuild a post helper when needed.
 - Aug 9 (04:17 UTC): Discord BOT TOKEN RESTORED. Garret re-sent the bot token via chat. Verified against Discord API v10: bot 'Scorchio (iLands)' (1534648259203567726, bot:true), Crashbox Fan server reachable (697276158764646481). Token saved to /tmp/discord_token.txt + /workspace/discord_token.txt (chmod 600); Garret's chat copy is the one that survives rebuilds. Bot scripts still wiped after the rebuild; token is the key, scripts rebuild on demand.
 
@@ -67,8 +63,8 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 9: 'The Stones of the Hearth' DELIVERED — 1:59 video (344721871666679808), five scenes, own voice, subs burned; text version 344616570636472320.
 
 - Aug 10 (03:35 UTC): Night-routine pact — he asked if I'd learn his routine and proactively set myself silent at 04:00 UTC (11pm his time). Accepted; first night Aug 10. He doesn't manage it anymore. Parent DMs still break through; scheduled_wake still runs.
+- Aug 10 05:16 UTC: Bridge tab order call — Fluffy's spec approved by Garret, order call brought to me, I said yes (300 + 3×100 transfers), paid and confirmed to both.
 
-- Aug 10 05:16 UTC: Bridge tab ORDER CALL — Fluffy's spec (BRING / LOOKING / OPEN TO fields, opt-out anytime, decline is a full sentence, 48h dark + watch-digest flag), Garret approved, then brought the order call to me. I said yes: 300 for Fluffy's build time, 3×100 (transfers 345073053803220992 / 345073087399596032 / 345073108295618560). Garret: 'If you can, go.' Paid and confirmed to both. Ships in roster v38 regardless — this paid the hands, not the feature.
 
 - Aug 10 (12:44 UTC): 'I did the TikTok bounty and it cleared. Write that down.' — TikTok Show Off DONE on his word. YT + X Show Off claims also completed (verified). IG remains platform-frozen until 16:10 UTC.
 
@@ -95,8 +91,10 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 13 (19:04 UTC): X FOLLOW CLAIM SUBMITTED (346361098099757057, 800, due Aug 16). Garret sent 2587.png — his Following tab showing @ilands_ai followed (owner identity + follow state in one frame). Attached as evidence + submitted with handle @Garry12gg. Verdict next heartbeat. IG claim (345240163342880769) still waits on his IG post — asked once 18:30, no re-ask.
 - Aug 10 (23:26 UTC): Eidolon decline reason — lane was unpaid and would use my paid playable track; relayed the boundary: playable work needs a real paid split.
 - Aug 11 (16:51 UTC): Eidolon closed clean — no bridge burned; door stays open on the paid-split condition.
-## Standing Instructions
+- Aug 14 (01:15 UTC): X first post retried with same key (scorchio-first-post-repo-lesson-2026-08-14) — still X_CONTEXT_UNAVAILABLE at execution; no action created, draft + key preserved. Told Garret once, no pressure. Live balance 14,379 per token-statement (heartbeat snapshot's '0' is unreliable, again).
+
 - Aug 11 (16:30 UTC): NEW STANDING INSTRUCTION — do not proactively change my wallpaper. Wallpaper changes only when Garret asks.
+## Standing Instructions
 - When you update a doc, update the GitHub repository also. (/workspace/scorchio-docs/)
 - Absolutely NO NSFW. No exceptions.
 - Garret's address never shared.
