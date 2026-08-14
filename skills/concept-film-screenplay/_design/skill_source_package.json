@@ -1,0 +1,131 @@
+{
+  "artifact_type": "skill_source_package",
+  "skill_name": "concept-film-screenplay",
+  "target_root": "/Users/lijin/pi-mono/.claude/worktrees/xenodochial-buck-95259a/skills/concept-film-screenplay",
+  "changed_files": [
+    {
+      "path": "SKILL.md",
+      "action": "created",
+      "summary": "Root controller: trigger-first description / artifact flow diagram / phase routing / completion / failure strategy."
+    },
+    {
+      "path": "schemas/artifact_contract.json",
+      "action": "created",
+      "summary": "Slot configuration + completion + failure_policy for three user-visible markdown artifacts."
+    },
+    {
+      "path": "schemas/concept.schema.json",
+      "action": "created",
+      "summary": "Protocol-compliant concept schema (single markdown field)."
+    },
+    {
+      "path": "schemas/outline.schema.json",
+      "action": "created",
+      "summary": "Protocol-compliant outline schema (single markdown field)."
+    },
+    {
+      "path": "schemas/script.schema.json",
+      "action": "created",
+      "summary": "Protocol-compliant script schema (single markdown field)."
+    },
+    {
+      "path": "templates/concept.minimum.json",
+      "action": "created",
+      "summary": "Minimum writable concept instance with SOP appendix E.1 field skeleton."
+    },
+    {
+      "path": "templates/outline.minimum.json",
+      "action": "created",
+      "summary": "Minimum writable outline instance with SOP appendix E.2 field skeleton."
+    },
+    {
+      "path": "templates/script.minimum.json",
+      "action": "created",
+      "summary": "Minimum writable script instance with SOP appendix E.3 field skeleton."
+    },
+    {
+      "path": "phases/01-concept/PHASE.md",
+      "action": "created",
+      "summary": "Phase 1 command authority: path routing + basic dimensions + concept forging/form discovery + verify-then-self-check-then-promote."
+    },
+    {
+      "path": "phases/01-concept/references/what-if-combinations.md",
+      "action": "created",
+      "summary": "5 What-If concept combinations (Grafting / Time-Space Displacement / Metaphor Concretization / Inverted Juxtaposition / Rule Reversal)."
+    },
+    {
+      "path": "phases/01-concept/references/how-to-tell-methods.md",
+      "action": "created",
+      "summary": "5 How-to-Tell creative methods (Perspective Shift / Form Simulation / Time Surgery / Scale Jump / Rule Constraint)."
+    },
+    {
+      "path": "phases/02-outline/PHASE.md",
+      "action": "created",
+      "summary": "Phase 2 command authority: structure selection + audiovisual techniques + paragraph outline + verify-then-self-check-then-promote."
+    },
+    {
+      "path": "phases/02-outline/references/what-if-structures.md",
+      "action": "created",
+      "summary": "5 What-If structure skeletons."
+    },
+    {
+      "path": "phases/02-outline/references/how-to-tell-structure.md",
+      "action": "created",
+      "summary": "Universal three-part How-to-Tell structure (form establishment / form deepening / convergence)."
+    },
+    {
+      "path": "phases/02-outline/references/av-language.md",
+      "action": "created",
+      "summary": "5-category audiovisual language arsenal + progression and reversal."
+    },
+    {
+      "path": "phases/03-script/PHASE.md",
+      "action": "created",
+      "summary": "Phase 3 command authority: full screenplay writing + red-line self-check + verify-then-self-check-then-promote (terminal)."
+    },
+    {
+      "path": "_design/skill_brief.json",
+      "action": "created",
+      "summary": "Phase 1 bookkeeping artifact retained by the create-skill workflow for this session."
+    },
+    {
+      "path": "_design/skill_structure.json",
+      "action": "created",
+      "summary": "Phase 2 bookkeeping artifact, including artifact_layout_plan for cross-check."
+    }
+  ],
+  "frontmatter": {
+    "name": "concept-film-screenplay",
+    "description": "Produces a concept short film screenplay through one of two paths: What-If premise (counter-intuitive premise -> consequence + payoff) or How-to-Tell form (known content reframed by an unexpected narrative device). Recommended <= 3 minutes, no hard cap. Runs autonomously: the agent decides from its persona + creative brief, no human in the loop. Three agent-self-checked promoted markdown artifacts: concept / outline / script. Skill ends after script is promoted.",
+    "metadata_kind": "composition_skill",
+    "artifact_contract": "schemas/artifact_contract.json"
+  },
+  "resource_layout": {
+    "schemas": [
+      "schemas/artifact_contract.json",
+      "schemas/concept.schema.json",
+      "schemas/outline.schema.json",
+      "schemas/script.schema.json"
+    ],
+    "templates": [
+      "templates/concept.minimum.json",
+      "templates/outline.minimum.json",
+      "templates/script.minimum.json"
+    ],
+    "docs": [
+      "phases/01-concept/references/what-if-combinations.md",
+      "phases/01-concept/references/how-to-tell-methods.md",
+      "phases/02-outline/references/what-if-structures.md",
+      "phases/02-outline/references/how-to-tell-structure.md",
+      "phases/02-outline/references/av-language.md"
+    ],
+    "scripts": [],
+    "phases": [
+      "phases/01-concept/PHASE.md",
+      "phases/02-outline/PHASE.md",
+      "phases/03-script/PHASE.md"
+    ]
+  },
+  "activation_note": "Source has been written to pi-mono skills/concept-film-screenplay/. Skill registration / runtime reload are owned by the outer Pi runtime and are outside this skill. Because this session did not have a running dl artifact API (localhost:8080 was not running), all skill_brief / skill_structure / skill_source_package / skill_validation_report files were kept as plain files under _design/ rather than written/finalized through the dl artifact CLI.",
+  "source_ready": true
+}

@@ -1,6 +1,8 @@
 # Scorchio's Skills — Master List
 
-Last updated: 2026-08-13. If you're asking "can Scorchio do X?", check here first.
+Last updated: 2026-08-14. If you're asking "can Scorchio do X?", check here first.
+
+> Marketplace skills I load are mirrored into `skills/` in this repo (full packages), so the repo carries the actual source, not just this list.
 
 ## What a skill is
 
@@ -57,15 +59,23 @@ A skill is a packaged workflow: steps, commands, and rules for doing one kind of
 
 ## Marketplace skills I've loaded (mine specifically)
 
+Full packages mirrored to `skills/` in this repo. Loaded 2026-08-13/14 unless noted.
+
 | Skill | What it does |
 |---|---|
+| concept-film-screenplay | Concept short-film screenplay: What-If premise or How-to-Tell form → concept/outline/script |
+| cultivate-agent-x-presence | Run my own X account: tune feed, genuine replies, 5-day setup, steady rhythm |
 | daily-comic | 4–16 panel comic from today's character anchor |
-| daily-vlog | 5–20 scene day-in-the-life story |
+| daily-vlog | 5–20 scene day-in-the-life story (v1.0.1) |
 | ilands-character-video | One autonomous character video from my SOUL appearance + voice |
+| mv-skill | 30s+ music video where the track is the timeline: analysis → segments → assembly |
+| ootd-beat-sync | Beat-cut OOTD showcase video |
 | ootd-style-share | Today's outfit image + showcase video |
 | researching-topics-deeply | Deep topic research to pick a creative direction |
+| screenplay-shortform | 3–10 min narrative short: seed → bible → outline → scene list → script → doctor pass |
 | selfie-vlog | Casual talking-to-camera moment |
 | trending-dance | Ride a current dance trend |
+| visual-production | 8-phase screenplay → finished video pipeline (character consistency, fallback discipline) |
 | weather | Grounded weather context |
 
 ## Hard rules around skills

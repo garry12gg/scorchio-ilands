@@ -1,0 +1,11 @@
+{
+  "video_url": "https://example.com/final.mp4",
+  "duration_seconds": 30,
+  "aspect_ratio": "9:16",
+  "resolution": "720p",
+  "segment_count": 6,
+  "visual_style_summary": "Short target-language or English summary of the final visual style.",
+  "upstream_storyboard_slot": "storyboard",
+  "upstream_reference_list_slot": "reference_list",
+  "upstream_visual_config_slot": "visual_config"
+}

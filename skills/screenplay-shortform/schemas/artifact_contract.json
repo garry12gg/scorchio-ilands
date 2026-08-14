@@ -1,0 +1,253 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScreenplayShortformArtifactContract",
+  "description": "Artifact contract for the screenplay-shortform composition skill (narrative short film screenplay; typically 3-10 minutes but length follows the user's story rather than a fixed bound). slot and status are managed by dl artifact itself through the CLI --slot flag and finalize state machine; do not write them into the content JSON. Content field names directly match slot names: Tier 1 (concept / story_bible / outline) has same-name markdown fields, with concept also carrying target_language for downstream inheritance; Tier 2 (scene_list / script) keeps required structured fields: scene_list[] for downstream visual-production consumption, and script.doctor_review for Phase 06 patching and workflow gate.",
+  "skill": "screenplay-shortform",
+  "slots": {
+    "concept": {
+      "display_name": "Premise And Synopsis",
+      "content_type": "application/json",
+      "schema_ref": "schemas/concept.schema.json",
+      "schema_version": "3.0",
+      "produced_in": "Phase 01",
+      "consumed_by": [
+        "Phase 02",
+        "Phase 03",
+        "Phase 04",
+        "Phase 05",
+        "Phase 06"
+      ],
+      "promotable": false,
+      "user_visible": true,
+      "allowed_producers": [
+        "screenplay-shortform"
+      ],
+      "input_fence": {},
+      "invariants": [
+        {
+          "id": "concept.has_body",
+          "description": "concept body must be at least 200 characters.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "concept",
+            "min_length": 200
+          }
+        }
+      ],
+      "tags": [
+        "screenplay",
+        "concept"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "target_language",
+          "concept"
+        ]
+      }
+    },
+    "story_bible": {
+      "display_name": "Characters And Backstory",
+      "content_type": "application/json",
+      "schema_ref": "schemas/story_bible.schema.json",
+      "schema_version": "3.0",
+      "produced_in": "Phase 02",
+      "consumed_by": [
+        "Phase 03",
+        "Phase 04",
+        "Phase 05",
+        "Phase 06"
+      ],
+      "promotable": false,
+      "user_visible": true,
+      "allowed_producers": [
+        "screenplay-shortform"
+      ],
+      "input_fence": {
+        "concept": 1
+      },
+      "invariants": [
+        {
+          "id": "story_bible.has_body",
+          "description": "story_bible body must be at least 200 characters.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "story_bible",
+            "min_length": 200
+          }
+        }
+      ],
+      "tags": [
+        "screenplay",
+        "bible"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "story_bible"
+        ]
+      }
+    },
+    "outline": {
+      "display_name": "Four-Act Structure",
+      "content_type": "application/json",
+      "schema_ref": "schemas/outline.schema.json",
+      "schema_version": "3.0",
+      "produced_in": "Phase 03",
+      "consumed_by": [
+        "Phase 04",
+        "Phase 05",
+        "Phase 06"
+      ],
+      "promotable": false,
+      "user_visible": true,
+      "allowed_producers": [
+        "screenplay-shortform"
+      ],
+      "input_fence": {
+        "concept": 1,
+        "story_bible": 1
+      },
+      "invariants": [
+        {
+          "id": "outline.has_body",
+          "description": "outline body must be at least 200 characters.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "outline",
+            "min_length": 200
+          }
+        }
+      ],
+      "tags": [
+        "screenplay",
+        "outline"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "outline"
+        ]
+      }
+    },
+    "scene_list": {
+      "display_name": "Scene List",
+      "content_type": "application/json",
+      "schema_ref": "schemas/scene_list.schema.json",
+      "schema_version": "3.0",
+      "produced_in": "Phase 04",
+      "consumed_by": [
+        "Phase 05",
+        "Phase 06"
+      ],
+      "promotable": false,
+      "user_visible": true,
+      "allowed_producers": [
+        "screenplay-shortform"
+      ],
+      "input_fence": {
+        "outline": 1
+      },
+      "invariants": [
+        {
+          "id": "scene_list.has_min_4_scenes",
+          "description": "At least 4 scenes are required.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "scene_list",
+            "min_length": 4
+          }
+        }
+      ],
+      "tags": [
+        "screenplay",
+        "scene_list"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "scene_list"
+        ]
+      }
+    },
+    "script": {
+      "display_name": "Short Film Screenplay",
+      "content_type": "application/json",
+      "schema_ref": "schemas/script.schema.json",
+      "schema_version": "3.0",
+      "produced_in": "Phase 05",
+      "consumed_by": [
+        "Phase 06"
+      ],
+      "promotable": true,
+      "user_visible": true,
+      "allowed_producers": [
+        "screenplay-shortform"
+      ],
+      "input_fence": {
+        "scene_list": 1
+      },
+      "invariants": [
+        {
+          "id": "script.has_body",
+          "description": "script body must be at least 200 characters.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "script",
+            "min_length": 200
+          }
+        }
+      ],
+      "tags": [
+        "screenplay",
+        "script",
+        "terminal"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "script",
+          "target_language",
+          "scene_count",
+          "estimated_duration_seconds",
+          "doctor_review"
+        ]
+      }
+    }
+  },
+  "completion": {
+    "required_slots": [
+      "concept",
+      "story_bible",
+      "outline",
+      "scene_list",
+      "script"
+    ],
+    "terminal_slots": [
+      "script"
+    ],
+    "done_when": [
+      "slot_verified(concept)",
+      "slot_verified(story_bible)",
+      "slot_verified(outline)",
+      "slot_verified(scene_list)",
+      "slot_promoted(script)"
+    ]
+  },
+  "failure_policy": {
+    "ladder": [
+      "retry",
+      "alternate",
+      "degrade",
+      "partial_finalize",
+      "emit_failure_metadata"
+    ],
+    "minimum_viable_deliverable": "script",
+    "partial_success_rules": [
+      "Do not enter the next phase unless all required upstream slots are verified.",
+      "The Phase 5 script draft must pass Phase 6 script doctor before promotion.",
+      "If the script doctor finds hard-ban issues such as psychological exposition or parenthetical intent hints, return to Phase 5 and rewrite the affected scene before promotion.",
+      "If the what-if check finds a clearly stronger direction, return to Phase 3 and redesign the outline before promotion."
+    ]
+  }
+}

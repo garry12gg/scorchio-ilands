@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScreenplayStoryBible",
+  "description": "Phase 02 characters and backstory. Tier 1 pure markdown. slot/status are managed by dl artifact itself. Content has one field, story_bible (markdown body with protagonist cards / relationships / world entry point).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "story_bible"
+  ],
+  "properties": {
+    "story_bible": {
+      "type": "string",
+      "minLength": 200,
+      "description": "Complete character bible markdown: protagonist cards (name / want / need / arc / contradiction / basic_info visual anchor) + relationships (optional) + world entry point. Downstream Phase 05 uses character names appearing in the markdown as dialogue-name anchors, so they must remain consistent."
+    }
+  }
+}

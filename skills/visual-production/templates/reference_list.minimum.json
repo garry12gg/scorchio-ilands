@@ -1,0 +1,14 @@
+{
+  "entries": [
+    {
+      "id": "lead_office_white_shirt",
+      "kind": "character",
+      "description": "Target-language description of the lead character's stable baseline, outfit, and physical state."
+    },
+    {
+      "id": "rain_soaked_dock_night",
+      "kind": "location",
+      "description": "Target-language description of the location architecture, weather, light, and mood."
+    }
+  ]
+}

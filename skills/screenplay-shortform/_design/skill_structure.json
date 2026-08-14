@@ -1,0 +1,203 @@
+{
+  "artifact_type": "skill_structure",
+  "skill_name": "screenplay-shortform",
+  "target_root": "skills/screenplay-shortform",
+  "kind": "composition_skill",
+  "file_plan": [
+    {
+      "path": "SKILL.md",
+      "purpose": "Thin root controller + artifact protocol table + Self-Check Discipline.",
+      "action": "update"
+    },
+    {
+      "path": "schemas/artifact_contract.json",
+      "purpose": "All 5 slots are user_visible:true; required_fields remain aligned with current content shape.",
+      "action": "update"
+    },
+    {
+      "path": "schemas/concept.schema.json",
+      "purpose": "Phase 01 single markdown body plus target_language.",
+      "action": "update"
+    },
+    {
+      "path": "schemas/story_bible.schema.json",
+      "purpose": "Phase 02 single markdown body.",
+      "action": "update"
+    },
+    {
+      "path": "schemas/outline.schema.json",
+      "purpose": "Phase 03 single markdown body.",
+      "action": "update"
+    },
+    {
+      "path": "schemas/scene_list.schema.json",
+      "purpose": "Phase 04 structured scene-list cards.",
+      "action": "update"
+    },
+    {
+      "path": "schemas/script.schema.json",
+      "purpose": "Phase 05-06 single screenplay markdown plus metadata and doctor_review.",
+      "action": "update"
+    },
+    {
+      "path": "templates/concept.minimum.json",
+      "purpose": "Minimum valid template.",
+      "action": "update"
+    },
+    {
+      "path": "templates/story_bible.minimum.json",
+      "purpose": "Minimum valid template.",
+      "action": "update"
+    },
+    {
+      "path": "templates/outline.minimum.json",
+      "purpose": "Minimum valid template.",
+      "action": "update"
+    },
+    {
+      "path": "templates/scene_list.minimum.json",
+      "purpose": "Minimum valid template with 4 scene cards.",
+      "action": "update"
+    },
+    {
+      "path": "templates/script.minimum.json",
+      "purpose": "Minimum valid template.",
+      "action": "update"
+    },
+    {
+      "path": "phases/01-concept/PHASE.md",
+      "purpose": "Phase 01 entry; concept write payload and self-check step.",
+      "action": "update"
+    },
+    {
+      "path": "phases/02-bible/PHASE.md",
+      "purpose": "Phase 02 entry; story bible write payload and self-check step.",
+      "action": "update"
+    },
+    {
+      "path": "phases/03-outline/PHASE.md",
+      "purpose": "Phase 03 entry; outline write payload and self-check step.",
+      "action": "update"
+    },
+    {
+      "path": "phases/04-scenes/PHASE.md",
+      "purpose": "Phase 04 entry; scene-list payload and self-check step.",
+      "action": "update"
+    },
+    {
+      "path": "phases/05-script-draft/PHASE.md",
+      "purpose": "Phase 05 entry; script draft write.",
+      "action": "update"
+    },
+    {
+      "path": "phases/06-script-doctor/PHASE.md",
+      "purpose": "Phase 06 entry; doctor_review patch-json path.",
+      "action": "update"
+    },
+    {
+      "path": "docs/core_principles.md",
+      "purpose": "Core methodology.",
+      "action": "keep"
+    },
+    {
+      "path": "docs/concept_combinatorics.md",
+      "purpose": "Concept-combination methodology.",
+      "action": "keep"
+    },
+    {
+      "path": "docs/dual_track_pacing.md",
+      "purpose": "Dual-track pacing methodology.",
+      "action": "keep"
+    },
+    {
+      "path": "docs/duration_estimation.md",
+      "purpose": "Duration estimation methodology.",
+      "action": "keep"
+    },
+    {
+      "path": "docs/external_search.md",
+      "purpose": "External search methodology.",
+      "action": "keep"
+    },
+    {
+      "path": "docs/viral_hooks.md",
+      "purpose": "Opening-hook methodology.",
+      "action": "keep"
+    }
+  ],
+  "artifact_slots": [
+    "concept",
+    "story_bible",
+    "outline",
+    "scene_list",
+    "script"
+  ],
+  "terminal_slots": [
+    "script"
+  ],
+  "completion_done_when": [
+    "slot_verified(concept)",
+    "slot_verified(story_bible)",
+    "slot_verified(outline)",
+    "slot_verified(scene_list)",
+    "slot_promoted(script)"
+  ],
+  "validation_plan": [
+    "Parse SKILL.md frontmatter (name / description / metadata.kind / artifact-contract).",
+    "Parse schemas/artifact_contract.json + 5 schema_ref files + 5 template JSON files.",
+    "Audit all .md files for dl artifact call discipline.",
+    "Check protocol compliance for all 5 user-visible slots.",
+    "Check layout-plan consistency against the corresponding schemas."
+  ],
+  "runtime_boundaries": [
+    "approval / checkpoint / publish / budget policy are handled by outer orchestration.",
+    "runtime reload / activation are handled by the Pi runtime.",
+    "storyboard / visual style / shot language / video generation / marketing are handled by visual-production or downstream skills."
+  ],
+  "artifact_layout_plan": [
+    {
+      "slot": "concept",
+      "display_name": "Premise And Synopsis",
+      "layout_type": "single",
+      "primary_component_type": "markdown",
+      "is_segment": false,
+      "notes": "Concept is one coherent document: logline + four dimensions + core_drama + synopsis; render as single markdown."
+    },
+    {
+      "slot": "story_bible",
+      "display_name": "Characters And Backstory",
+      "layout_type": "single",
+      "primary_component_type": "markdown",
+      "is_segment": false,
+      "notes": "Characters plus world entry point are best read as one markdown document."
+    },
+    {
+      "slot": "outline",
+      "display_name": "Four-Act Structure",
+      "layout_type": "single",
+      "primary_component_type": "markdown",
+      "is_segment": false,
+      "notes": "Opening hook and four acts form a skeleton document; render as single markdown."
+    },
+    {
+      "slot": "scene_list",
+      "display_name": "Scene List",
+      "layout_type": "list",
+      "layout_config": {
+        "index_prefix": "Scene"
+      },
+      "primary_component_type": "card",
+      "card_variant": "landscape",
+      "is_segment": false,
+      "notes": "Scenes are ordered entities with slug, micro_drama, pacing, and duration; card list is appropriate."
+    },
+    {
+      "slot": "script",
+      "display_name": "Short Film Screenplay",
+      "layout_type": "single",
+      "primary_component_type": "markdown",
+      "is_segment": false,
+      "notes": "The full screenplay is a continuous markdown document with metadata attached; promote after Phase 06 doctor pass."
+    }
+  ]
+}

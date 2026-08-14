@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScreenplayConcept",
+  "description": "Phase 01 premise and synopsis. Tier 1 pure markdown. slot/status are managed by dl artifact itself and are not written into content JSON. Content fields: target_language (for downstream phase inheritance) + concept (markdown body with Logline / four dimensions / Core Drama / Synopsis).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "target_language",
+    "concept"
+  ],
+  "properties": {
+    "target_language": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Target language used for user-visible artifacts and the final screenplay. Downstream phases inherit this value."
+    },
+    "concept": {
+      "type": "string",
+      "minLength": 200,
+      "description": "Complete premise document markdown: Logline (reveals ending) + four dimensions (tone / satisfaction / protagonist background / core expectation) + Core Drama (goal + conflict) + setup-development-turn-resolution synopsis (200-500 word Archplot passage)."
+    }
+  }
+}

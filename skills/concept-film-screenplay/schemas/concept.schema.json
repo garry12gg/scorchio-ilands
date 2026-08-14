@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ConceptArtifact",
+  "description": "Concept dossier: single-field JSON `{ \"concept\": \"<markdown>\" }`. Fill the Concept section for the What-If path, or the Form section for the How-to-Tell path; they are mutually exclusive. Slot identity is passed by `--slot=concept`; status is managed by the dl artifact state machine and is not written in the body.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "concept"
+  ],
+  "properties": {
+    "concept": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

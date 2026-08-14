@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Storyboard",
+  "description": "v2 minimal flat shape: segments[] is the segment array. Phase 04 writes plan fields (id / scene_number / duration_seconds / model / narrative / needs_keyframe / uses_prev_video). Phase 06 patches `prompt` + `references`; the agent organizes shot structure and transitions inside the prompt string, with no shots[] array. Phase 07 patches `video_url`, `video_state`, and optional fallback_history. The schema only enforces Phase 04 required fields.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "segments"
+  ],
+  "properties": {
+    "slot": {
+      "const": "storyboard"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "verified"
+      ]
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "skill": {
+      "type": "string"
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "id",
+          "scene_number",
+          "duration_seconds",
+          "model",
+          "narrative",
+          "needs_keyframe",
+          "uses_prev_video"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 4,
+            "description": "Unique segment id, e.g. 'seg_01_a1f9'. Once written in Phase 04, it remains stable across phases."
+          },
+          "scene_number": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Written in Phase 04. Belongs to the upstream screenplay scene index."
+          },
+          "duration_seconds": {
+            "type": "number",
+            "minimum": 1,
+            "description": "Written in Phase 04. Segment duration in seconds. Phase 07 fallback may change it when switching models."
+          },
+          "model": {
+            "type": "string",
+            "minLength": 3,
+            "description": "Written in Phase 04. Video model; Phase 07 fallback may change it."
+          },
+          "narrative": {
+            "type": "string",
+            "minLength": 4,
+            "description": "Written in Phase 04. One target-language sentence summarizing this segment, using [[id]] to mention characters where useful. Used for the agent's self-check and Phase 06 prompt drafting."
+          },
+          "needs_keyframe": {
+            "type": "boolean",
+            "description": "Marked in Phase 04 and read by Phase 05 / 06. true means Phase 05 uses image-generation to synthesize a refined first frame."
+          },
+          "uses_prev_video": {
+            "type": "boolean",
+            "description": "Marked in Phase 04 and read by Phase 07. true means Phase 07 uses the previous segment video as ref_video_url. The first segment must be false."
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 16,
+            "description": "Patched in Phase 06. Complete prompt passed directly to video-generation. The agent organizes shot structure in text (one shot every 1-3 seconds, with type/camera/transition in prose). Contains [[id]] placeholders. Keyframe segments start with `@image1 as the opening frame.`"
+          },
+          "references": {
+            "type": "array",
+            "description": "Patched in Phase 06. Each segment has exactly one location. For needs_keyframe=true segments, references[0] must be the keyframe with alias=image1. Each reference uses either `ref_id` lookup into reference_list or a previous storyboard segment (default), or inline `image_url` / `asset_id` / `video_url`. Both modes still include alias + as.",
+            "items": {
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "alias",
+                "as"
+              ],
+              "properties": {
+                "ref_id": {
+                  "type": "string",
+                  "description": "Lookup mode: points to reference_list.entries[].id. video_continuation is the exception and may point to the previous storyboard.segments[].id. Inline mode may omit this."
+                },
+                "image_url": {
+                  "type": "string",
+                  "description": "Inline mode: directly provides a publicly accessible image URL without adding it to reference_list. Omit in lookup mode; the tool layer reads it from reference_list."
+                },
+                "asset_id": {
+                  "type": "string",
+                  "description": "Inline mode: directly provides an existing id returned by register-asset, useful for external production reuse. Omit in lookup mode; the tool layer reads it from reference_list."
+                },
+                "video_url": {
+                  "type": "string",
+                  "description": "Inline mode for video_continuation only: directly provides a video URL, bypassing previous-storyboard lookup. Usually paired with `as: video_continuation`."
+                },
+                "alias": {
+                  "type": "string",
+                  "description": "Placeholder replacement target, e.g. 'image1' / 'asset1' / 'video1'. The tool layer replaces [[id]] in the prompt according to alias, producing the segment model's native placeholder syntax (e.g. Seedance `@imageN` / `@assetN` / `@videoN`); it adapts per `segment.model`, so choose aliases that match the reference channels that model actually accepts (see `dl generate-video model <model>`)."
+                },
+                "as": {
+                  "enum": [
+                    "character",
+                    "location",
+                    "object",
+                    "keyframe",
+                    "video_continuation"
+                  ]
+                }
+              }
+            }
+          },
+          "video_url": {
+            "type": "string",
+            "description": "Patched in Phase 07. URL returned by video-generation."
+          },
+          "video_thumbnail_url": {
+            "type": "string",
+            "description": "Patched in Phase 07. Optional."
+          },
+          "video_state": {
+            "enum": [
+              "pending",
+              "done",
+              "failed"
+            ],
+            "description": "Patched in Phase 07."
+          },
+          "fallback_history": {
+            "type": "array",
+            "description": "Appended during Phase 07 fallback.",
+            "items": {
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "attempted_model",
+                "failure_kind",
+                "action"
+              ],
+              "properties": {
+                "attempted_model": {
+                  "type": "string"
+                },
+                "failure_kind": {
+                  "type": "string"
+                },
+                "action": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

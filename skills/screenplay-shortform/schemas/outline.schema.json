@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScreenplayOutline",
+  "description": "Phase 03 four-act structure + opening hook. Tier 1 pure markdown. slot/status are managed by dl artifact itself. Content has one field, outline (markdown body with opening hook + Acts 1-4).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "outline"
+  ],
+  "properties": {
+    "outline": {
+      "type": "string",
+      "minLength": 200,
+      "description": "Complete outline markdown: opening hook (formula: identity_flip / outcome_first / in_medias_res / taboo_break / ticking_clock / surreal_shock / emotional_impact / custom) + Act 1 (setup + inciting_incident) + Act 2 (obstacle_1 + obstacle_2 + midpoint + all_is_lost) + Act 3 (climax + key_choice) + Act 4 (new_normal). obstacle_2 must differ in kind from obstacle_1; author must check this."
+    }
+  }
+}

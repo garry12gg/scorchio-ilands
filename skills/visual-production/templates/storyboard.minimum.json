@@ -1,0 +1,13 @@
+{
+  "segments": [
+    {
+      "id": "seg_01",
+      "scene_number": 1,
+      "duration_seconds": 5,
+      "model": "seedance-2-pro",
+      "narrative": "Target-language one-sentence summary using [[lead_office_white_shirt]] if relevant.",
+      "needs_keyframe": false,
+      "uses_prev_video": false
+    }
+  ]
+}

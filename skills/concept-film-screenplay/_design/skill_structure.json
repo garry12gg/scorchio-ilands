@@ -1,0 +1,143 @@
+{
+  "artifact_type": "skill_structure",
+  "skill_name": "concept-film-screenplay",
+  "target_root": "/Users/lijin/pi-mono/.claude/worktrees/xenodochial-buck-95259a/skills/concept-film-screenplay",
+  "kind": "composition_skill",
+  "file_plan": [
+    {
+      "path": "SKILL.md",
+      "purpose": "Thin root controller: path-routing prompt, artifact flow diagram, phase routing, completion, and failure strategy.",
+      "action": "create"
+    },
+    {
+      "path": "schemas/artifact_contract.json",
+      "purpose": "Slot configuration + completion and failure strategy for three user-visible markdown artifacts.",
+      "action": "create"
+    },
+    {
+      "path": "schemas/concept.schema.json",
+      "purpose": "Protocol-compliant concept artifact schema (single markdown field).",
+      "action": "create"
+    },
+    {
+      "path": "schemas/outline.schema.json",
+      "purpose": "Protocol-compliant outline artifact schema (single markdown field).",
+      "action": "create"
+    },
+    {
+      "path": "schemas/script.schema.json",
+      "purpose": "Protocol-compliant script artifact schema (single markdown field).",
+      "action": "create"
+    },
+    {
+      "path": "templates/concept.minimum.json",
+      "purpose": "Minimum writable concept instance with the field skeleton from SOP appendix E.1.",
+      "action": "create"
+    },
+    {
+      "path": "templates/outline.minimum.json",
+      "purpose": "Minimum writable outline instance with the field skeleton from SOP appendix E.2.",
+      "action": "create"
+    },
+    {
+      "path": "templates/script.minimum.json",
+      "purpose": "Minimum writable script instance with the field skeleton from SOP appendix E.3.",
+      "action": "create"
+    },
+    {
+      "path": "phases/01-concept/PHASE.md",
+      "purpose": "Phase 1: path routing (What-If / How-to-Tell) + basic dimensions + concept forging / form discovery, self-check, and autonomous agent-self-checked concept promotion.",
+      "action": "create"
+    },
+    {
+      "path": "phases/01-concept/references/what-if-combinations.md",
+      "purpose": "5 What-If concept combination methods (Grafting / Time-Space Displacement / Metaphor Concretization / Inverted Juxtaposition / Rule Reversal), with operating steps and examples.",
+      "action": "create"
+    },
+    {
+      "path": "phases/01-concept/references/how-to-tell-methods.md",
+      "purpose": "5 How-to-Tell creative methods (Perspective Shift / Form Simulation / Time Surgery / Scale Jump / Rule Constraint), with examples.",
+      "action": "create"
+    },
+    {
+      "path": "phases/02-outline/PHASE.md",
+      "purpose": "Phase 2: structure selection + audiovisual techniques + paragraph outline + dual-track pacing, self-check, and autonomous agent-self-checked outline promotion.",
+      "action": "create"
+    },
+    {
+      "path": "phases/02-outline/references/what-if-structures.md",
+      "purpose": "Skeletons for 5 What-If structures (Three-Act / Progressive Collapse / Dual-Line Juxtaposition / Loop / Reverse Reveal).",
+      "action": "create"
+    },
+    {
+      "path": "phases/02-outline/references/how-to-tell-structure.md",
+      "purpose": "Universal three-part How-to-Tell structure (form establishment / form deepening / convergence).",
+      "action": "create"
+    },
+    {
+      "path": "phases/02-outline/references/av-language.md",
+      "purpose": "5-category audiovisual language arsenal (camera / editing-time / composition / sound / interface-media) + technique progression and reversal.",
+      "action": "create"
+    },
+    {
+      "path": "phases/03-script/PHASE.md",
+      "purpose": "Phase 3: full screenplay writing (radically concise + zero explanation + twist at the very end), self-check, and autonomous agent-self-checked script promotion.",
+      "action": "create"
+    }
+  ],
+  "artifact_slots": [
+    "concept",
+    "outline",
+    "script"
+  ],
+  "terminal_slots": [
+    "script"
+  ],
+  "completion_done_when": [
+    "slot_promoted(concept)",
+    "slot_promoted(outline)",
+    "slot_promoted(script)"
+  ],
+  "validation_plan": [
+    "Parse SKILL.md frontmatter (name / description / kind / artifact-contract).",
+    "Parse schemas/artifact_contract.json and confirm all 3 slots declare promotable + user_visible.",
+    "Parse 3 *.schema.json files and 3 *.minimum.json files; validate minimum instances with AJV.",
+    "Run protocol_compliance: all 3 schemas pass the wrapper 6-field / slot const / layout_type=single / component_type=markdown / detail.type=null protocol checks.",
+    "Run layout_plan_cross_check: artifact_layout_plan in _design/skill_structure.json matches schema consts.",
+    "Run unsupported_command_audit: SKILL.md / PHASE.md do not contain future commands such as dl skill draft-create / draft-update / validate / compile / activate / fork / search.",
+    "Run artifact_contract_usage: write / finalize / validate calls include --contract; patch-json uses supported JSONPath-lite ops and omits --contract.",
+    "Confirm all 3 phases/*.md files are present (01-concept / 02-outline / 03-script)."
+  ],
+  "runtime_boundaries": [
+    "Approval density / checkpoint trigger mechanisms / pause-resume strategy are runtime-owned. The skill only describes the methodological rule: run the agent self-check (against the skill's criteria + persona + creative brief) after verify before promoting.",
+    "Skill reload / registration / publishing are runtime-owned. After source files are written, the Pi runtime picks them up.",
+    "Budgets and quotas (such as maximum calls per phase) are runtime-owned and not written into the skill.",
+    "Downstream rendering / compositing / TTS / music are outside this skill; the skill ends once the script is persisted."
+  ],
+  "artifact_layout_plan": [
+    {
+      "slot": "concept",
+      "display_name": "Concept Dossier",
+      "layout_type": "single",
+      "primary_component_type": "markdown",
+      "is_segment": false,
+      "notes": "One coherent narrative: Path / basic dimensions / Concept section (What-If) or Form section (How-to-Tell)."
+    },
+    {
+      "slot": "outline",
+      "display_name": "Structure and Audiovisual Outline",
+      "layout_type": "single",
+      "primary_component_type": "markdown",
+      "is_segment": false,
+      "notes": "One coherent narrative: structure type / audiovisual techniques / paragraph outline (with runtime + dual-track pacing) / logical validity of the twist."
+    },
+    {
+      "slot": "script",
+      "display_name": "Full Screenplay",
+      "layout_type": "single",
+      "primary_component_type": "markdown",
+      "is_segment": false,
+      "notes": "Full screenplay + runtime estimate + twist-strength self-review + alternatives. Terminal artifact; after promotion, skill is complete."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "target_root": "skills/visual-production",
+  "language_migration": "English operational documentation with target_language resolved from explicit user setting or user input language.",
+  "semantic_preservation": "Phase split, artifact slots, field contracts, phase self-checks (autonomous; no human gates), model routing, fallback discipline, and optional post-production responsibilities preserved.",
+  "original_reference": "See skill-mp-work/visual-production-original-1.5.1 for the source version used for comparison."
+}

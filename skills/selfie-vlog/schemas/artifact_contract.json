@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SelfieVlogArtifactContract",
+  "description": "Terminal artifact contract for selfie-vlog.",
+  "skill": "selfie-vlog",
+  "slots": {
+    "selfie_vlog_result": {
+      "display_name": "Selfie Vlog Result",
+      "content_type": "application/json",
+      "produced_in": "Phase 5",
+      "consumed_by": [],
+      "promotable": true,
+      "allowed_producers": ["selfie-vlog"],
+      "verification": {
+        "mode": "verify_and_promote",
+        "required_fields": [
+          "character_ref_url",
+          "selfie_image_url",
+          "tts_audio_url",
+          "emotion",
+          "tts_script",
+          "voice_id",
+          "aspect_ratio",
+          "quality_tier",
+          "created_at"
+        ]
+      },
+      "tags": ["composition", "terminal"]
+    }
+  },
+  "completion": {
+    "required_slots": ["selfie_vlog_result"],
+    "terminal_slots": ["selfie_vlog_result"],
+    "done_when": ["slot_promoted(selfie_vlog_result)"]
+  },
+  "failure_policy": {
+    "ladder": ["retry", "alternate", "degrade", "partial_finalize", "emit_failure_metadata"],
+    "minimum_viable_deliverable": "selfie_vlog_result",
+    "partial_success_rules": [
+      "The lipsync video may be null in degraded mode.",
+      "Selfie image and TTS audio must remain present for a valid degraded result."
+    ]
+  }
+}

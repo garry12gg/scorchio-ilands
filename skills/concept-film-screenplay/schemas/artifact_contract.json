@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ConceptFilmArtifactContract",
+  "description": "Artifact contract for the concept short-film skill. Three user-visible artifacts (Canvas-visible; the parent watches passively and does not gate); each content body has exactly 1 field: a markdown body field with the same name as the slot (`concept` / `outline` / `script`). Slot identity is passed by `dl artifact write --slot=<name>`; status is managed by the dl artifact state machine (write -> draft / finalize verify -> verified) and is not written in the body. After verify passes, the agent self-checks the artifact against this skill's criteria and its persona + creative brief, and promotes it autonomously on pass. After script is promoted, the agent decides whether to continue into visual production; yes loads the visual-production skill.",
+  "skill": "concept-film-screenplay",
+  "slots": {
+    "concept": {
+      "content_type": "application/json",
+      "schema_ref": "schemas/concept.schema.json",
+      "schema_version": "3.0",
+      "produced_in": "Phase 1",
+      "consumed_by": [
+        "Phase 2",
+        "Phase 3"
+      ],
+      "promotable": true,
+      "user_visible": true,
+      "allowed_producers": [
+        "concept-film-screenplay"
+      ],
+      "input_fence": {},
+      "invariants": [
+        {
+          "id": "concept.has_body",
+          "description": "concept must have a non-empty markdown body.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "concept",
+            "required": true,
+            "min_length": 80
+          }
+        }
+      ],
+      "tags": [
+        "concept-film-screenplay",
+        "concept"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "concept"
+        ]
+      }
+    },
+    "outline": {
+      "content_type": "application/json",
+      "schema_ref": "schemas/outline.schema.json",
+      "schema_version": "3.0",
+      "produced_in": "Phase 2",
+      "consumed_by": [
+        "Phase 3"
+      ],
+      "promotable": true,
+      "user_visible": true,
+      "allowed_producers": [
+        "concept-film-screenplay"
+      ],
+      "input_fence": {
+        "concept": 1
+      },
+      "invariants": [
+        {
+          "id": "outline.has_body",
+          "description": "outline must have a non-empty markdown body.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "outline",
+            "required": true,
+            "min_length": 150
+          }
+        }
+      ],
+      "tags": [
+        "concept-film-screenplay",
+        "outline"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "outline"
+        ]
+      }
+    },
+    "script": {
+      "content_type": "application/json",
+      "schema_ref": "schemas/script.schema.json",
+      "schema_version": "3.0",
+      "produced_in": "Phase 3",
+      "consumed_by": [],
+      "promotable": true,
+      "user_visible": true,
+      "allowed_producers": [
+        "concept-film-screenplay"
+      ],
+      "input_fence": {
+        "outline": 1
+      },
+      "invariants": [
+        {
+          "id": "script.has_body",
+          "description": "script must have a non-empty markdown body.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "script",
+            "required": true,
+            "min_length": 200
+          }
+        }
+      ],
+      "tags": [
+        "concept-film-screenplay",
+        "script",
+        "terminal"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "script"
+        ]
+      }
+    }
+  },
+  "completion": {
+    "required_slots": [
+      "concept",
+      "outline",
+      "script"
+    ],
+    "terminal_slots": [
+      "script"
+    ],
+    "done_when": [
+      "slot_promoted(concept)",
+      "slot_promoted(outline)",
+      "slot_promoted(script)"
+    ],
+    "post_completion_gate": {
+      "id": "visual_production_handoff",
+      "kind": "agent_decision",
+      "question": "The concept short-film three-piece set is complete. Continue into visual production?",
+      "options": [
+        {
+          "value": "yes",
+          "action": "load_skill",
+          "target": "visual-production"
+        },
+        {
+          "value": "no",
+          "action": "end"
+        }
+      ],
+      "owner_phase": "Phase 3"
+    }
+  },
+  "failure_policy": {
+    "ladder": [
+      "retry",
+      "alternate",
+      "degrade",
+      "partial_finalize",
+      "emit_failure_metadata"
+    ],
+    "minimum_viable_deliverable": "script",
+    "partial_success_rules": [
+      "A failed concept can be rewritten without affecting the existence of outline and script, but outline / script must be regenerated from the new concept or remain unpromoted.",
+      "If outline self-check fails (extrapolation is not progressive / twist is forced / audiovisual tricks are piled up), do not advance to script; return to Phase 2 and rearrange.",
+      "If script self-check hits a red line (dialogue explains the concept / internal description / unfilmable content), do not promote; rewrite the failing section.",
+      "If an artifact fails the agent's self-check against this skill's criteria and its persona + creative brief, keep it unpromoted, return to the corresponding phase, revise, verify again, and self-check again."
+    ]
+  }
+}

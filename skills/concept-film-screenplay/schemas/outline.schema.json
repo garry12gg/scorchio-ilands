@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OutlineArtifact",
+  "description": "Structure and audiovisual outline: single-field JSON `{ \"outline\": \"<markdown>\" }`. Includes structure type, total runtime, audiovisual techniques, paragraph list with dual-track pacing, and the twist with its logical validity. Slot identity is passed by `--slot=outline`; status is managed by the dl artifact state machine and is not written in the body.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "outline"
+  ],
+  "properties": {
+    "outline": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

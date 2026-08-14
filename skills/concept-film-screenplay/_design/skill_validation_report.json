@@ -1,0 +1,44 @@
+{
+  "artifact_type": "skill_validation_report",
+  "skill_name": "concept-film-screenplay",
+  "target_root": "/Users/lijin/pi-mono/.claude/worktrees/xenodochial-buck-95259a/skills/concept-film-screenplay",
+  "status": "pass",
+  "checks": {
+    "frontmatter": true,
+    "artifact_contract": true,
+    "schemas": true,
+    "templates": true,
+    "protocol_compliance": true
+  },
+  "unsupported_command_audit": {
+    "current_pi_execution_path_clean": true,
+    "future_section_present": false,
+    "findings": []
+  },
+  "artifact_contract_usage": {
+    "write_finalize_validate_calls_include_contract": true,
+    "patch_json_uses_supported_operations": true,
+    "patch_json_omits_contract": true,
+    "findings": []
+  },
+  "protocol_compliance": {
+    "all_user_visible_slots_match_protocol": true,
+    "slots_checked": [
+      "concept",
+      "outline",
+      "script"
+    ],
+    "findings": []
+  },
+  "layout_plan_cross_check": {
+    "ran": true,
+    "ok": true,
+    "findings": []
+  },
+  "terminal_source_package_promoted": false,
+  "issues": [],
+  "warnings": [
+    "This session did not run the dl artifact API (localhost:8080 was not running), so the 4 bookkeeping artifacts (skill_brief / skill_structure / skill_source_package / skill_validation_report) were kept as plain files in _design/ rather than written/finalized through the dl artifact CLI. terminal_source_package_promoted is false to reflect that fact. The source files are on disk and passed validator; the next step is for the Pi runtime to pick them up and complete registration."
+  ],
+  "validated_at": "2026-05-11T00:00:00Z"
+}

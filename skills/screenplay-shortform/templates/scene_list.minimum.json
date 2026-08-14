@@ -1,0 +1,40 @@
+{
+  "scene_list": [
+    {
+      "id": "scene_01",
+      "slug": "INT. OFFICE - DUSK",
+      "duration_seconds": 30,
+      "micro_drama": "Lena tries to dismiss the wedding invitation, but the date exposes Victor's threat.",
+      "plot_pace": "tight",
+      "emotion_pace": "medium",
+      "visual_anchor": "gilded invitation"
+    },
+    {
+      "id": "scene_02",
+      "slug": "INT. LENA'S LIVING ROOM - NIGHT",
+      "duration_seconds": 40,
+      "micro_drama": "Lena tries to keep bedtime normal, but the teacher's call proves Victor has reached her daughter.",
+      "plot_pace": "medium",
+      "emotion_pace": "heavy",
+      "visual_anchor": "glowing phone beside a sleeping child"
+    },
+    {
+      "id": "scene_03",
+      "slug": "INT. BANK SAFE-DEPOSIT ROOM - NIGHT",
+      "duration_seconds": 40,
+      "micro_drama": "Lena tries to gather proof and money, but the closing clock forces her to choose fast.",
+      "plot_pace": "tight",
+      "emotion_pace": "medium",
+      "visual_anchor": "safe-deposit drawer"
+    },
+    {
+      "id": "scene_04",
+      "slug": "EXT. CLIFF ROAD - DAWN",
+      "duration_seconds": 70,
+      "micro_drama": "Lena tries to escape Victor's pursuit, but the road leaves only one irreversible option.",
+      "plot_pace": "tight",
+      "emotion_pace": "heavy",
+      "visual_anchor": "rearview mirror"
+    }
+  ]
+}

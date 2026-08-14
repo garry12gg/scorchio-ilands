@@ -1,0 +1,16 @@
+{
+  "script": "# The Proposal On The Night Of The Funeral - Script\n\n## Scene 1 - INT. OFFICE - DUSK (about 30 seconds)\n\nLena Ward opens a gilded invitation. Her fingers stop on the date: November 18.\n\nShe tears the invitation in half, drops it into the trash, then reaches down, retrieves it, and folds it carefully into a drawer.\n\nVICTOR (V.O.)\nLena. I hope you come.\n\n## Scene 2 - INT. LENA'S LIVING ROOM - NIGHT (about 40 seconds)\n\nLena tucks the blanket around her daughter. Her phone rings.\n\nLENA\nHello?\n\nTEACHER (PHONE)\nMs. Ward, an uncle picked Nora up for a little while today. You knew about that, right?\n\nLena's hand tightens around the phone.\n\nLENA\nYes. Thank you.\n\nShe hangs up. Her hand shakes. She looks at her sleeping daughter.\n\n## Scene 3 - INT. BANK SAFE-DEPOSIT ROOM - NIGHT (about 40 seconds)\n\nLena loads documents, cash, and her husband's letter into a bag.\n\nGUARD (O.S.)\nMs. Ward, time is up.\n\nLENA\nOne more minute.\n\nShe touches the letter once and inhales.\n\n## Scene 4 - EXT. CLIFF ROAD - DAWN (about 70 seconds)\n\nLena drives. Victor's headlights grow in the rearview mirror.\n\nHer daughter sleeps in the back seat.\n\nLena presses the accelerator. The cliff road opens ahead.\n\nShe looks once more into the mirror, at her daughter, and smiles.\n\nThe car surges forward.",
+  "target_language": "English",
+  "scene_count": 4,
+  "estimated_duration_seconds": 180,
+  "doctor_review": {
+    "passed": true,
+    "categories": {
+      "concept_drama": "pass",
+      "character_arc": "pass",
+      "structure_pacing": "pass",
+      "audiovisual_language": "pass"
+    },
+    "issues_found": []
+  }
+}

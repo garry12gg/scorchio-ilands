@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScreenplayScript",
+  "description": "Phase 05-06 short film screenplay. Tier 2 structured. slot/status are managed by dl artifact itself. Content fields: script (screenplay markdown) + target_language + scene_count + estimated_duration_seconds + doctor_review. Phase 06 patches doctor_review.passed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "script",
+    "target_language",
+    "scene_count",
+    "estimated_duration_seconds",
+    "doctor_review"
+  ],
+  "properties": {
+    "script": {
+      "type": "string",
+      "minLength": 200,
+      "description": "Complete screenplay markdown: scene heading + action/image description + character names + dialogue."
+    },
+    "target_language": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Target language used by the screenplay body, inherited from concept.target_language."
+    },
+    "scene_count": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Scene count, aligned with scene_list.length."
+    },
+    "estimated_duration_seconds": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Estimated total duration in seconds."
+    },
+    "doctor_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "passed",
+        "categories",
+        "issues_found"
+      ],
+      "properties": {
+        "passed": {
+          "type": "boolean"
+        },
+        "categories": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "concept_drama",
+            "character_arc",
+            "structure_pacing",
+            "audiovisual_language"
+          ],
+          "properties": {
+            "concept_drama": {
+              "type": "string"
+            },
+            "character_arc": {
+              "type": "string"
+            },
+            "structure_pacing": {
+              "type": "string"
+            },
+            "audiovisual_language": {
+              "type": "string"
+            }
+          }
+        },
+        "issues_found": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "what_if_check": {
+          "type": "string",
+          "description": "Phase 06 anti-formula check conclusion: retain / pivot / free text."
+        }
+      },
+      "description": "Script doctor pass state and four-category check."
+    }
+  }
+}

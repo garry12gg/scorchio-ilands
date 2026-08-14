@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VisualConfig",
+  "description": "v2 minimal flat shape: visual_style is one string blob authored freely by the agent, covering palette, lighting, texture, era, and style anchors. Downstream phases append it unchanged at the end of prompts as `Visual style: <visual_style>`. Model choice is owned by each phase and no default model is stored in this slot.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "visual_style",
+    "aspect_ratio",
+    "resolution"
+  ],
+  "properties": {
+    "slot": {
+      "const": "visual_config"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "verified"
+      ]
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "skill": {
+      "type": "string"
+    },
+    "visual_style": {
+      "type": "string",
+      "minLength": 16,
+      "description": "A string describing the whole film visual DNA. The agent freely organizes it, covering palette, lighting, texture, era, and style anchors such as director or artist references. Downstream phases append it unchanged to the end of all prompts as `Visual style: <visual_style>`."
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "description": "One of adaptive / 16:9 / 4:3 / 1:1 / 3:4 / 9:16 / 21:9."
+    },
+    "resolution": {
+      "type": "string",
+      "description": "480p / 720p / 1080p, etc. Seedance 2.0 is capped at 720p."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional agent working notes."
+    }
+  }
+}

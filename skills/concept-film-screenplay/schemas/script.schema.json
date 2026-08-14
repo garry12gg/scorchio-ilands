@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScriptArtifact",
+  "description": "Full screenplay: single-field JSON `{ \"script\": \"<markdown>\" }`, including 1-3 scenes + twist ending + runtime estimate + twist-strength self-review + alternative twist options + alternative audiovisual technique options. Terminal artifact. Slot identity is passed by `--slot=script`; status is managed by the dl artifact state machine and is not written in the body.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "script"
+  ],
+  "properties": {
+    "script": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

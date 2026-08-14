@@ -1,0 +1,39 @@
+{
+  "artifact_type": "skill_brief",
+  "problem": "Package the 'concept short film' creation workflow into a reusable Pi runtime composition skill. The workflow covers the What-If path and How-to-Tell path; no wasted shots; establishing the rule within 5 seconds; and placing the twist on the final frame. The original SOP lives in the ilands repository at docs/episode-creation/concept-film-sop.md and defines Phase 0/1/2/3, 3 artifacts (concept / outline / script), 5 What-If concept combinations, 5 How-to-Tell creative methods, 5 What-If structures plus a universal three-part How-to-Tell structure, and a 5-category audiovisual language arsenal. Current pain point: the method only lives in markdown, so the agent must reread it every time and cannot persist phase-by-phase artifacts with autonomous per-phase self-check gates.",
+  "trigger_cases": [
+    "The user wants to make a concept short film or creative short (recommended <= 3 minutes, no hard cap).",
+    "The user gives a counter-intuitive What-If premise ('what would happen if...').",
+    "The user gives 'known content + an unexpected narrative form' ('tell Y through X form').",
+    "The user gives an abstract social anxiety (such as overwork competition / appearance anxiety / filter bubbles) and wants to make it physical through a rule.",
+    "The user gives a known event / person / situation and wants a new angle for retelling it."
+  ],
+  "target_runtime": {
+    "name": "Pi",
+    "pi_safe_fallback": true,
+    "notes": "Source files are written directly to pi-mono skills/concept-film-screenplay/. At runtime, the dl artifact CLI writes three user-visible markdown artifacts (Canvas-visible; the parent watches passively and does not gate): concept / outline / script. After verify, the agent self-checks each artifact against the skill's criteria and its persona + creative brief, and promotes it autonomously on pass (verify_and_promote). Skill reload itself is owned by the outer runtime."
+  },
+  "output_boundary": "Three agent-self-checked and promoted markdown artifacts: concept (path chosen + basic dimensions + Concept or Form section), outline (structure selection + audiovisual techniques + paragraph outline + dual-track pacing), and script (complete screenplay + runtime estimate + twist-strength self-review + alternatives). Each artifact follows write -> finalize verify -> agent self-check against criteria + persona + creative brief -> finalize verify_and_promote on pass. Skill complete = script promoted.",
+  "source_inputs": [
+    "The user's creative seed (What-If premise / known content + form / abstract anxiety / known event).",
+    "Original SOP: ilands repository docs/episode-creation/concept-film-sop.md (methodological source; this skill makes it executable).",
+    "Optional: the 5 domains of the search-writing skill (writing_hook / writing_plot / writing_payoff / writing_conflict / writing_character) as inspiration retrieval."
+  ],
+  "non_goals": [
+    "Ad-film-specific adaptation (product anchor / brand tone / CTA ending): out of scope for this version; add later when requirements are clear.",
+    "Hard runtime cap: recommended <= 3 minutes; when over 5 minutes, switch to screenplay-shortform.",
+    "3-10 minute drama shorts (use screenplay-shortform) / feature films / knowledge explainers (each has its own skill; this skill is not reused for them).",
+    "Approval density / publishing / budget / runtime reload strategy (runtime-owned, not written into the skill).",
+    "Downstream rendering, compositing, TTS, music, etc.; this skill stops at screenplay."
+  ],
+  "failure_policy": {
+    "minimum_viable_deliverable": "script",
+    "ladder": [
+      "retry",
+      "alternate",
+      "degrade",
+      "partial_finalize",
+      "emit_failure_metadata"
+    ]
+  }
+}

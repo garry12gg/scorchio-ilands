@@ -1,0 +1,212 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VisualProduction2ArtifactContract",
+  "description": "Artifact contract for visual-production (phase-split, minimal flat shape). The four user-visible slots are visual_config, reference_list, storyboard, and final. All schemas use flat shapes. visual_config keeps only visual_style, aspect_ratio, and resolution. reference_list has top-level entries[] where each entry requires only id, kind, and description. storyboard has top-level segments[] where each segment requires Phase 04 plan fields, and Phase 06 patches prompt without a shots[] array. Phase order: 00 -> 01 -> 02 -> 03 -> 04 -> 05 -> 06 -> 07 -> 08.",
+  "skill": "visual-production",
+  "slots": {
+    "visual_config": {
+      "display_name": "Visual configuration",
+      "content_type": "application/json",
+      "schema_ref": "schemas/visual_config.schema.json",
+      "schema_version": "2.0",
+      "produced_in": "Phase 01",
+      "consumed_by": [
+        "Phase 02",
+        "Phase 03",
+        "Phase 04",
+        "Phase 05",
+        "Phase 06",
+        "Phase 07",
+        "Phase 08"
+      ],
+      "promotable": true,
+      "user_visible": true,
+      "allowed_producers": [
+        "visual-production"
+      ],
+      "input_fence": {},
+      "invariants": [
+        {
+          "id": "visual_config.has_visual_style",
+          "description": "Require visual_style (one string blob), aspect_ratio, and resolution.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "visual_style",
+            "required": true
+          }
+        }
+      ],
+      "tags": [
+        "visual-production",
+        "config"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "visual_style",
+          "aspect_ratio",
+          "resolution"
+        ]
+      }
+    },
+    "reference_list": {
+      "display_name": "Reference library (characters / locations / props / keyframes)",
+      "content_type": "application/json",
+      "schema_ref": "schemas/reference_list.schema.json",
+      "schema_version": "2.0",
+      "produced_in": "Phase 02",
+      "consumed_by": [
+        "Phase 03",
+        "Phase 04",
+        "Phase 05",
+        "Phase 06",
+        "Phase 07"
+      ],
+      "promotable": true,
+      "user_visible": true,
+      "allowed_producers": [
+        "visual-production"
+      ],
+      "input_fence": {
+        "visual_config": 1
+      },
+      "invariants": [
+        {
+          "id": "reference_list.has_entries",
+          "description": "entries[] must contain at least one item.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "entries",
+            "min_length": 1
+          }
+        }
+      ],
+      "tags": [
+        "visual-production",
+        "reference"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "entries"
+        ]
+      }
+    },
+    "storyboard": {
+      "display_name": "Storyboard and video segments",
+      "content_type": "application/json",
+      "schema_ref": "schemas/storyboard.schema.json",
+      "schema_version": "2.0",
+      "produced_in": "Phase 04",
+      "consumed_by": [
+        "Phase 05",
+        "Phase 06",
+        "Phase 07",
+        "Phase 08"
+      ],
+      "promotable": true,
+      "user_visible": true,
+      "allowed_producers": [
+        "visual-production"
+      ],
+      "input_fence": {
+        "visual_config": 1,
+        "reference_list": 1
+      },
+      "invariants": [
+        {
+          "id": "storyboard.has_segments",
+          "description": "segments[] must contain at least one item.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "segments",
+            "min_length": 1
+          }
+        }
+      ],
+      "tags": [
+        "visual-production",
+        "storyboard"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "segments"
+        ]
+      }
+    },
+    "final": {
+      "display_name": "Final video",
+      "content_type": "application/json",
+      "schema_ref": "schemas/final.schema.json",
+      "schema_version": "2.0",
+      "produced_in": "Phase 08",
+      "consumed_by": [],
+      "promotable": true,
+      "user_visible": true,
+      "allowed_producers": [
+        "visual-production"
+      ],
+      "input_fence": {
+        "storyboard": 1
+      },
+      "invariants": [
+        {
+          "id": "final.has_video_url",
+          "description": "video_url is required.",
+          "check_type": "rule",
+          "check_config": {
+            "field": "video_url",
+            "required": true
+          }
+        }
+      ],
+      "tags": [
+        "visual-production",
+        "final",
+        "terminal"
+      ],
+      "verification": {
+        "mode": "verify",
+        "required_fields": [
+          "video_url",
+          "duration_seconds"
+        ]
+      }
+    }
+  },
+  "completion": {
+    "required_slots": [
+      "visual_config",
+      "reference_list",
+      "storyboard",
+      "final"
+    ],
+    "terminal_slots": [
+      "final"
+    ],
+    "done_when": [
+      "slot_promoted(visual_config)",
+      "slot_promoted(reference_list)",
+      "slot_promoted(storyboard)",
+      "slot_promoted(final)"
+    ]
+  },
+  "failure_policy": {
+    "ladder": [
+      "retry",
+      "alternate",
+      "degrade",
+      "partial_finalize",
+      "emit_failure_metadata"
+    ],
+    "minimum_viable_deliverable": "final",
+    "partial_success_rules": [
+      "If any upstream visual_config, reference_list, or storyboard slot is not verified, do not enter the next phase.",
+      "If Phase 03 base reference image generation fails, mark image_state='failed'; do not carry failed entries into Phase 05.",
+      "If Phase 05 character/IP register-asset fails, mark that entry asset_state='failed' plus asset_failure_reason. It must not be referenced in Phase 06/07 until registration succeeds, or Phase 04 must remove segments that reference it.",
+      "Phase 07 segment video generation follows its section 6 decision tree: retry -> alternate (switch model per segment and edit only that segment storyboard) -> degrade (switch whole-film primary model) -> partial_finalize (mark some segments video_state='failed' for upper-layer handling).",
+      "If Phase 08 ffmpeg concat fails, do not promote final; leave storyboard as recoverable state for the upper layer."
+    ]
+  }
+}

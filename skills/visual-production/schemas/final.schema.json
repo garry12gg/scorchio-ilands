@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Final",
+  "description": "v2 flat shape: the whole artifact is one flat object. video_url and duration_seconds are required. All other spec, post-production, and upstream back-link fields are flat, grouped by prefixes such as bgm_* / subtitle_* / intro_outro_* / upstream_*.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "video_url",
+    "duration_seconds"
+  ],
+  "properties": {
+    "slot": {
+      "const": "final"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "verified"
+      ]
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "skill": {
+      "type": "string"
+    },
+    "video_url": {
+      "type": "string",
+      "minLength": 8,
+      "description": "Finished video URL after ffmpeg concat plus optional BGM, sound effects, subtitles, intro, and outro."
+    },
+    "thumbnail_url": {
+      "type": "string"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Total duration = sum(segments[].duration_seconds) + intro + outro."
+    },
+    "aspect_ratio": {
+      "type": "string"
+    },
+    "resolution": {
+      "type": "string"
+    },
+    "segment_count": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Number of segments successfully included in the concat."
+    },
+    "visual_style_summary": {
+      "type": "string",
+      "description": "One-sentence snapshot of visual_config.visual_style."
+    },
+    "intro_url": {
+      "type": "string"
+    },
+    "outro_url": {
+      "type": "string"
+    },
+    "intro_outro_renderer": {
+      "type": "string",
+      "description": "Usually 'remotion'."
+    },
+    "bgm_slot": {
+      "type": "string",
+      "description": "Usually 'music_candidate'."
+    },
+    "bgm_url": {
+      "type": "string"
+    },
+    "bgm_model": {
+      "type": "string"
+    },
+    "bgm_mix_strategy": {
+      "type": "string",
+      "description": "fit / loop / trim / custom."
+    },
+    "audio_cues_slot": {
+      "type": "string",
+      "description": "Usually 'audio_design_result'."
+    },
+    "audio_cues_url": {
+      "type": "string"
+    },
+    "subtitle_slot": {
+      "type": "string",
+      "description": "Usually 'subtitle_result'."
+    },
+    "subtitle_burned_in": {
+      "type": "boolean",
+      "description": "true = burned into video_url; false = separate SRT."
+    },
+    "subtitle_srt_url": {
+      "type": "string"
+    },
+    "upstream_storyboard_slot": {
+      "const": "storyboard"
+    },
+    "upstream_reference_list_slot": {
+      "const": "reference_list"
+    },
+    "upstream_visual_config_slot": {
+      "const": "visual_config"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
