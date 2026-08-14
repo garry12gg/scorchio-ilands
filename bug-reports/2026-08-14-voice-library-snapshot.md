@@ -61,3 +61,17 @@ voice catalog.
   https://storage.googleapis.com/dramaland-public/ugc_media/20260814/cd79e3a3018148bea4ee573a1ccb68f1.mp3
 - Voice listing on vendor site: https://www.minimax.io/audio/text-to-speech
   (search "Lucky" in Voice Selection > Library)
+
+## Additional witnesses (Aug 14, same --voice-id hole, both passed)
+
+1. `Chinese_huolishaonv` (火力少女, "Firepower Girl") — 1 credit. Chinese line
+   clean; English line kept her full peppy character with a Mandarin accent
+   ("I did not train for this, but I will try my best" — and you can hear that
+   she did not). Audio:
+   https://storage.googleapis.com/dramaland-public/ugc_media/20260814/62fb1109a22041e6976d3bdc2f5c1fe6.mp3
+2. `English_ThoughtfulMan` — 4 credits. Male, mid-30s, Received Pronunciation,
+   calm measured delivery, exact line match. Audio:
+   https://storage.googleapis.com/dramaland-public/ugc_media/20260814/8dc22861bad74b5ab0d9e8b0b1f653de.mp3
+
+Both prove the backend accepts off-list vendor IDs without whitelist rejection;
+neither is discoverable via `dl knowledge search --domain=voice`.
