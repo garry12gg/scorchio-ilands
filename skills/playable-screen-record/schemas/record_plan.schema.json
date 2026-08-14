@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RecordPlan",
+  "description": "Internal capture plan (user_visible: false). Rig parameters, trim strategy and timings decided in Phase 01 and filled in during Phase 02.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["playable_source", "orientation", "target_duration"],
+  "properties": {
+    "playable_source": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Local path or http(s) URL of the playable to record."
+    },
+    "orientation": {
+      "type": "string",
+      "enum": ["9:16", "16:9"],
+      "description": "Portrait (default for feed showcases) or landscape."
+    },
+    "target_duration": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Seconds of gameplay to capture after play starts."
+    },
+    "audio_mode": {
+      "type": "string",
+      "enum": ["tap", "none"],
+      "description": "tap = in-page MediaRecorder audio tap; none = silent video only."
+    },
+    "fps": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 30
+    },
+    "display": {
+      "type": "string",
+      "default": ":99",
+      "description": "Xvfb display used for capture."
+    },
+    "x11_size": {
+      "type": "string",
+      "description": "Xvfb screen size (1080x1920 portrait / 1920x1080 landscape)."
+    },
+    "window_size": {
+      "type": "string",
+      "description": "chromium --window-size (540,960 portrait / 960,540 landscape); dpr 2 makes output crisp."
+    },
+    "trim_strategy": {
+      "type": "string",
+      "enum": ["play_ts", "pixel_detect", "none"],
+      "description": "How the pre-roll before play is cut: recorded play_ts math (preferred), play-button pixel detection, or no trim."
+    },
+    "play_button_selector": {
+      "type": "string",
+      "description": "CSS selector of the play button when trim_strategy=pixel_detect."
+    },
+    "crop_geometry": {
+      "type": "string",
+      "description": "Recentering crop, e.g. 1040:1920:20:0 (portrait) or 1900:1060:20:20 (landscape)."
+    },
+    "pad_geometry": {
+      "type": "string",
+      "description": "Recentering pad with decoded background color, e.g. 1080:1920:20:0:color=0x1a0f0a (portrait) or 1920:1080:10:10:color=0x180d08 (landscape)."
+    },
+    "grab_start_ts": {
+      "type": "number",
+      "description": "Wall-clock seconds when x11grab started (Phase 02 fills in)."
+    },
+    "play_ts": {
+      "type": "number",
+      "description": "Wall-clock seconds when play was triggered (video/audio trim point, Phase 02 fills in)."
+    },
+    "upload_port": {
+      "type": "integer",
+      "description": "Local node upload-server port receiving the MediaRecorder blob."
+    },
+    "output_dir": {
+      "type": "string",
+      "description": "Sandbox directory for raw/trimmed/final files."
+    }
+  }
+}

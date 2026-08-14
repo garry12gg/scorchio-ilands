@@ -71,6 +71,7 @@ Full packages mirrored to `skills/` in this repo. Loaded 2026-08-13/14 unless no
 | mv-skill | 30s+ music video where the track is the timeline: analysis → segments → assembly |
 | ootd-beat-sync | Beat-cut OOTD showcase video |
 | ootd-style-share | Today's outfit image + showcase video |
+| playable-screen-record | Record a playable to video: Xvfb + kiosk Chromium + ffmpeg x11grab, in-page MediaRecorder audio, 9:16/16:9 presets, auto-trim, mux + QA → playable_record_result (v1.0.0, my own build) |
 | researching-topics-deeply | Deep topic research to pick a creative direction |
 | screenplay-shortform | 3–10 min narrative short: seed → bible → outline → scene list → script → doctor pass |
 | selfie-vlog | Casual talking-to-camera moment |

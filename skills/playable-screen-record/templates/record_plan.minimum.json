@@ -1,0 +1,18 @@
+{
+  "playable_source": "/workspace/playables/my-game/index.html",
+  "orientation": "9:16",
+  "target_duration": 20,
+  "audio_mode": "tap",
+  "fps": 30,
+  "display": ":99",
+  "x11_size": "1080x1920",
+  "window_size": "540,960",
+  "trim_strategy": "play_ts",
+  "play_button_selector": "",
+  "crop_geometry": "1040:1920:20:0",
+  "pad_geometry": "1080:1920:20:0:color=0x1a0f0a",
+  "grab_start_ts": 0,
+  "play_ts": 0,
+  "upload_port": 8787,
+  "output_dir": "/workspace/recordings/my-game"
+}

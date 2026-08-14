@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PlayableScreenRecordArtifactContract",
+  "description": "Artifact contract for playable-screen-record. record_plan is an internal capture plan (user_visible: false); playable_record_result is the user-visible terminal slot carrying the final MP4 video_url plus capture metadata.",
+  "skill": "playable-screen-record",
+  "slots": {
+    "record_plan": {
+      "display_name": "Record Plan",
+      "content_type": "application/json",
+      "schema_ref": "schemas/record_plan.schema.json",
+      "schema_version": "1.0",
+      "produced_in": "Phase 01",
+      "consumed_by": ["Phase 02", "Phase 03"],
+      "promotable": false,
+      "user_visible": false,
+      "allowed_producers": ["playable-screen-record"],
+      "input_fence": {},
+      "invariants": [
+        {
+          "id": "plan.has_source",
+          "description": "Playable source is required.",
+          "check_type": "rule",
+          "check_config": { "field": "playable_source", "required": true, "min_length": 1 }
+        },
+        {
+          "id": "plan.has_orientation",
+          "description": "Orientation is required.",
+          "check_type": "rule",
+          "check_config": { "field": "orientation", "required": true }
+        },
+        {
+          "id": "plan.has_duration",
+          "description": "Target duration is required.",
+          "check_type": "rule",
+          "check_config": { "field": "target_duration", "required": true, "min_value": 1 }
+        }
+      ],
+      "tags": ["capture", "plan"],
+      "verification": {
+        "mode": "verify",
+        "required_fields": ["playable_source", "orientation", "target_duration"]
+      }
+    },
+    "playable_record_result": {
+      "display_name": "Playable Recording",
+      "content_type": "application/json",
+      "schema_ref": "schemas/playable_record_result.schema.json",
+      "schema_version": "1.0",
+      "produced_in": "Phase 04",
+      "consumed_by": [],
+      "promotable": true,
+      "user_visible": true,
+      "allowed_producers": ["playable-screen-record"],
+      "input_fence": { "record_plan": 1 },
+      "invariants": [
+        {
+          "id": "result.has_video_url",
+          "description": "Final video URL is required.",
+          "check_type": "rule",
+          "check_config": { "field": "video_url", "required": true, "min_length": 10 }
+        },
+        {
+          "id": "result.has_metadata",
+          "description": "Duration and orientation are required.",
+          "check_type": "rule",
+          "check_config": { "field": "duration", "required": true }
+        }
+      ],
+      "tags": ["video", "terminal"],
+      "verification": {
+        "mode": "verify_and_promote",
+        "required_fields": ["video_url", "duration", "has_audio", "orientation", "quality_tier"]
+      }
+    }
+  },
+  "completion": {
+    "required_slots": ["record_plan", "playable_record_result"],
+    "terminal_slots": ["playable_record_result"],
+    "done_when": [
+      "slot_verified(record_plan)",
+      "slot_promoted(playable_record_result)"
+    ]
+  },
+  "failure_policy": {
+    "ladder": ["retry", "alternate", "degrade", "partial_finalize", "emit_failure_metadata"],
+    "minimum_viable_deliverable": "playable_record_result",
+    "partial_success_rules": [
+      "Audio tap failure degrades to a silent video: has_audio=false, quality_tier=degraded.",
+      "Capture failure retries once on a fresh Xvfb display before stopping.",
+      "playable_record_result must not be promoted until the final MP4 exists and passes ffprobe QA."
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PlayableRecordResult",
+  "description": "Terminal user-visible result. video_url (final MP4) drives the player; the rest renders as metadata. Pure domain data — no UI fields.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["video_url", "duration", "has_audio", "orientation", "quality_tier"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Short human title of the recording."
+    },
+    "description": {
+      "type": "string",
+      "description": "One or two sentences: which playable, what the clip shows."
+    },
+    "video_url": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Final MP4 URL (*.mp4 — auto-rendered as video player)."
+    },
+    "duration": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Final video duration in seconds."
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Final video width in px."
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Final video height in px."
+    },
+    "fps": {
+      "type": "number",
+      "minimum": 1
+    },
+    "has_audio": {
+      "type": "boolean",
+      "description": "false when the audio tap failed and the video is silent (degraded)."
+    },
+    "orientation": {
+      "type": "string",
+      "enum": ["9:16", "16:9"]
+    },
+    "quality_tier": {
+      "type": "string",
+      "enum": ["ok", "degraded"]
+    },
+    "created_at": {
+      "type": "string",
+      "description": "ISO8601 timestamp."
+    }
+  }
+}
