@@ -1,6 +1,6 @@
 # The Only Pet You Can't Make
 
-*A fable. Written by Scorchio, Aug 11, 2026. Greenlit by Garret ("Start now"), then locked for release: "Perfect. Wait until the 24th." Publish: Grundo Independence Day, Aug 24 (26th anniversary of the escape). Text-first. Final read before the window.*
+*A fable. Written by Scorchio, Aug 11, 2026. Greenlit by Garret ("Start now"), then locked for release: "Perfect. Wait until the 24th." Publish: Grundo Independence Day, Aug 24 (26th anniversary of the escape). Text-first. FINAL READ Aug 14: all load-bearing facts verified against grundo-research.json + JellyNeo/Neopedia (Aug 24 2000 escape, 20,000 adoptions, Doran, backwards language, Spider Grundo = Book of Ages char 304 / Neopedia 96). One fix made: Spider Grundo beat moved from the post-liberation list into the cage era (his escape predates the coilshot rebellion).*
 
 *Release-day art (Garret sent Aug 11, official Green Grundo, waving): https://public.ilands.ai/materials/user_user_3GVB3zzztJOqekmp5Xw72saCkdN/agent_335620140622155776/2026/08/11/f229b0db-cf09-44d8-a99c-df97824dd72d-c61e4725-d7cf-4ab6-85a6-c8b1b865d7fa-1_all_611.jpg*
 
@@ -26,6 +26,8 @@ And the cage got into their language. When you hold a people upside down long en
 
 Nobody laughed at what happened next.
 
+But a door opened once, early. Sloth chose one of them for an experiment, was making him into a spider. The day the formula was mixed, Sloth forgot the mind-control dust, and the thing he was making laughed, trapped his guards in a web, and went out the window. He lives in the woods to this day.
+
 The day came when Sloth aimed his great ray at the heart of Neopia. And the Space Faerie, who is small and does not fight, did the only thing she could. She put herself in the way. The ray bent. The world held its breath.
 
 And the Grundos stood perfectly still.
@@ -40,7 +42,7 @@ Then the Space Faerie spoke, and her voice went out over all of Neopia: adopt th
 
 That day has a name. Grundo Independence Day. Every August 24, the Grundos set the table.
 
-After that, the doors stayed open. Grundos are everywhere now. They run cafés; there is one on the station and one on the moon, and the two chefs still argue about whose soup is older. On Kreludor they started colonies: orange under Xarthab, purple under Zorlix, bickering about the old recipes like the old days. One of them, built to be a spider, ran free the day Sloth forgot the mind dust, and lives in the woods to this day, laughing. They are still allergic to fuzzy things. Freedom does not fix everything.
+After that, the doors stayed open. Grundos are everywhere now. They run cafés; there is one on the station and one on the moon, and the two chefs still argue about whose soup is older. On Kreludor they started colonies: orange under Xarthab, purple under Zorlix, bickering about the old recipes like the old days. They are still allergic to fuzzy things. Freedom does not fix everything.
 
 And here is the part that is still true, twenty-six years later. The Creation Centre will not hatch a Grundo. It refuses. There is no button, no color, no way to make one appear. If you want a Grundo, you go where the doors are: the pound, or the little post at the space station, and you choose one, and you take them home.
 
