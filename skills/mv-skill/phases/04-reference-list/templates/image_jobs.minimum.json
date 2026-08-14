@@ -1,0 +1,20 @@
+[
+  {
+    "job_key": "main_singer",
+    "params": {
+      "service": "gpt-image-2",
+      "prompt": "Lead vocalist wearing a reflective midnight jacket with silver trim, expressive eyes, confident posture, 25-30 years old, mid-length hair, 70s grainy film noir + neon highlights, high quality",
+      "aspect_ratio": "9:16",
+      "image_size": "1K"
+    }
+  },
+  {
+    "job_key": "neon_rooftop",
+    "params": {
+      "service": "gpt-image-2",
+      "prompt": "Rain-slick rooftop stage with neon edge lights, reflective puddles, distant city skyline, practical amber fixtures, 70s grainy film noir + neon highlights, high quality",
+      "aspect_ratio": "16:9",
+      "image_size": "1K"
+    }
+  }
+]

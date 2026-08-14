@@ -1,0 +1,35 @@
+{
+  "music_url": "https://.../music.mp3",
+  "duration": 67.84,
+  "transcription": {
+    "language": "en",
+    "segments": [
+      {
+        "start": 0.00,
+        "end": 3.50,
+        "text": "在城市的边缘",
+        "words": [
+          { "word": "在", "start": 0.00, "end": 0.30 },
+          { "word": "城市", "start": 0.30, "end": 0.80 },
+          { "word": "的", "start": 0.80, "end": 0.95 },
+          { "word": "边缘", "start": 0.95, "end": 1.50 }
+        ]
+      }
+    ]
+  },
+  "beats": {
+    "bpm": 120,
+    "positions": [0.50, 1.00, 1.50, 2.00],
+    "sections": [
+      { "label": "intro", "start": 0.00, "end": 8.42 },
+      { "label": "verse_1", "start": 8.42, "end": 24.18 }
+    ]
+  },
+  "emotional_arc": "intro 冷静 → verse 内敛 → chorus 爆发 → outro 解脱",
+  "track": {
+    "title": "夜街的回响",
+    "genre": "synth-pop ballad",
+    "tags": ["melancholic", "neon", "2020s"],
+    "model": "suno-v4"
+  }
+}

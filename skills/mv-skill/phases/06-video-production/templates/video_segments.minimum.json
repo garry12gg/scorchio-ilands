@@ -1,0 +1,25 @@
+{
+  "segments": [
+    {
+      "id": "seg_01",
+      "raw_video_url": "https://.../seg_01_raw.mp4",
+      "assembly_video_url": "https://.../seg_01_assembly.mp4",
+      "status": "confirmed",
+      "model_used": "seedance-2-0"
+    },
+    {
+      "id": "seg_02",
+      "raw_video_url": "https://.../seg_02_raw.mp4",
+      "assembly_video_url": "https://.../seg_02_assembly.mp4",
+      "status": "confirmed",
+      "model_used": "dlai2v_pro"
+    },
+    {
+      "id": "seg_03",
+      "raw_video_url": "https://.../seg_03_raw.mp4",
+      "assembly_video_url": "https://.../seg_03_assembly.mp4",
+      "status": "degraded",
+      "model_used": "seedance-2-0-fast"
+    }
+  ]
+}

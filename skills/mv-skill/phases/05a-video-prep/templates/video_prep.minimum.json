@@ -1,0 +1,47 @@
+{
+  "segments": [
+    {
+      "id": "seg_01",
+      "model": "seedance-2-0",
+      "shot_count": 2,
+      "duration": 9,
+      "aspect_ratio": "16:9",
+      "resolution": "720p",
+      "prompt": "@asset1 is the singer (her face and outfit). @image1 is the rooftop location. A 9-second neon-noir rooftop segment. @audio1 is the segment's music — cut and move to its beat (rhythm reference only, no lip-sync). Shot 1 (0-4s): the singer (@asset1) walks toward the edge of @image1 overlooking the neon ruin, slow handheld follow. At 4s: Quick cut. Shot 2 (4-9s): she halts as a glowing white figure flickers in the distance, slow push-in. neo-noir, cool-blue + amber neon, wet-surface reflections.",
+      "references": [
+        { "role": "character_asset", "url": "https://example.com/refs/main_singer_look_a.png", "ark_asset_id": "asset_ms_looka_001" },
+        { "role": "location_asset", "url": "https://example.com/refs/neon_rooftop_base.png" },
+        { "role": "audio_slice", "url": "https://example.com/audio/seg_01.mp3" }
+      ]
+    },
+    {
+      "id": "seg_02",
+      "model": "dlai2v_pro",
+      "shot_count": 1,
+      "duration": 5,
+      "aspect_ratio": "16:9",
+      "resolution": "720p",
+      "prompt": "Follow the character and visual style from the input image. All shots should continue in motion\n\nsync motion and lips to the audio.\nShot 1 (Medium Close-Up): the singer sings with perfect lip synchronization, swaying gently with the rhythm, subtle head nods, looking into the camera.",
+      "references": [
+        { "role": "character_asset", "url": "https://example.com/refs/main_singer_look_a.png" },
+        { "role": "keyframe", "ref_id": "keyframe1", "url": "https://example.com/keyframes/kf_seg_02.png" },
+        { "role": "audio_slice", "url": "https://example.com/audio/seg_02.mp3" }
+      ]
+    },
+    {
+      "id": "seg_04",
+      "model": "dlai2v_pro",
+      "shot_count": 2,
+      "duration": 5,
+      "aspect_ratio": "16:9",
+      "resolution": "720p",
+      "prompt": "Follow the character and visual style from the input image. All shots should continue in motion\n\nsync motion and lips to the audio.\nShot 1 (Close-Up): the singer sings with perfect lip synchronization, head rising, rain on her face, looking into the camera.\nShot 2 (Medium Close-Up): the singer sings with perfect lip synchronization, chin turning, shoulders lifting with the breath.",
+      "references": [
+        { "role": "character_asset", "url": "https://example.com/refs/main_singer_look_a.png" },
+        { "role": "keyframe", "ref_id": "keyframe1", "url": "https://example.com/keyframes/kf_seg_04_a.png", "frame_position": "first" },
+        { "role": "keyframe", "ref_id": "keyframe2", "url": "https://example.com/keyframes/kf_seg_04_b.png", "frame_position": "last" },
+        { "role": "audio_slice", "url": "https://example.com/audio/seg_04.mp3" }
+      ]
+    }
+  ]
+}

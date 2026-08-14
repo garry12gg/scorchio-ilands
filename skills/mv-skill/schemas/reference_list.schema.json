@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ReferenceList",
+  "description": "Phase 04 产出。character / location / prop 素材库——人物 + 人物妆造 + 场景 + 道具。每条 reference 是一张最终可用参考图。lipsync keyframe 不在本 artifact（由 Phase 05b 用 gpt-image-2 按 segment 生成、拆分上传后直接填进 video_prep）。因 model_primary 在 Phase 02 已选定，本 phase 即可对真人 character ref 做 ARK 注册（当 model_primary 是 seedance 系时）。下游 Phase 05a 按 id 取 image_url / ark_asset_id 映射到每个 segment。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "slot",
+    "target_aspect",
+    "references"
+  ],
+  "properties": {
+    "slot": {
+      "const": "reference_list"
+    },
+    "target_aspect": {
+      "type": "string",
+      "description": "等于 visual_config.aspect_ratio。"
+    },
+    "references": {
+      "type": "array",
+      "minItems": 1,
+      "description": "素材库：人物（含妆造 look 变体）/ 场景 / 道具。多 look 角色 / 多时段地点的拓扑由 Phase 04 agent 自行判断：先生 base（portrait anchor / location base），其余 img2img 自前置图并在 depends_on 记录来源。",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "id",
+          "kind",
+          "prompt",
+          "image_url"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "description": "Entry 稳定 ID（snake_case），下游按它取。多 look / 多时段用描述性后缀（main_singer_look_a / neon_rooftop_dawn）。"
+          },
+          "kind": {
+            "enum": [
+              "character",
+              "location",
+              "prop"
+            ]
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "description": "实际生图 prompt。按 docs/image_prompting.md 模板写。人物妆造 / 场景可在 prompt 里补充细节（材质 / 配饰 / 时段光线等），但人物身份层（脸 / 发 / 体型 / 年纪）从 brief 人物表取、保持一致。"
+          },
+          "image_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "生成图 URL。"
+          },
+          "ark_asset_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "可选。Byteplus ARK asset 注册后返回的 ID（seedance 真人 policy）。**当 model_primary 是 seedance 系 且本 entry 是真人 character 时，Phase 04 即注册并填本字段**（model 已在 Phase 02 选定）；非 seedance / location / prop / 卡通不需要，省略。"
+          },
+          "depends_on": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "description": "可选：本图 img2img 依赖的前置图 entry id（如 outfit 依赖 portrait anchor、location variant 依赖 base）。base / 自包含项省略。生图时传该前置图的 image_url 作 img2img 参考锁脸 / 锁结构。"
+          }
+        }
+      }
+    }
+  }
+}

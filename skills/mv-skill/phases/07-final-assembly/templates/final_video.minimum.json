@@ -1,0 +1,10 @@
+{
+  "duration": 27.00,
+  "aspect_ratio": "16:9",
+  "resolution": "720p",
+  "audio_track_url": "https://.../music.mp3",
+  "total_segments": 4,
+  "video_url": "https://.../final_video.mp4",
+  "thumbnail_url": "https://.../final_poster.png",
+  "title": "夜街的回响 · MV"
+}

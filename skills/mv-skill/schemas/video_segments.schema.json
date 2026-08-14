@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VideoSegments",
+  "description": "Phase 06 产出。每个 segment 的模型原始视频 raw_video_url + 精准裁剪去音频的 assembly_video_url + status。segments[] 严格 index 对齐 creative_proposal.segments[]。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "slot",
+    "segments"
+  ],
+  "properties": {
+    "slot": {
+      "const": "video_segments"
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "id",
+          "raw_video_url",
+          "assembly_video_url",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^seg_[0-9]+$"
+          },
+          "raw_video_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri",
+            "description": "模型原始返回视频，用于 agent 自检听声音 / 看原始结果 / 回溯。status=failed 时置 null。"
+          },
+          "assembly_video_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri",
+            "description": "Phase 06 精准裁剪、去音频、统一规格后的拼接输入。Phase 07 只消费此 URL。status=failed 时置 null。"
+          },
+          "status": {
+            "enum": [
+              "generated",
+              "degraded",
+              "failed",
+              "needs_review",
+              "confirmed"
+            ],
+            "description": "generated=生成 + trim 成功，待自检；degraded=fallback model 生成（可用但降级）；failed=生成失败；needs_review=自动检查（understand-media）发现疑点，待 agent 复核；confirmed=agent 在 FINALIZE 自检中确认接受。"
+          },
+          "model_used": {
+            "type": "string",
+            "description": "可选，实际生成 model（degraded 时可能是 fallback）。"
+          },
+          "error": {
+            "type": "string",
+            "description": "可选，failed 时的原因。"
+          }
+        }
+      }
+    }
+  }
+}

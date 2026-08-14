@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FinalVideo",
+  "description": "Phase 07 产出（干净视觉版终片，可选下游 Phase 08 出发布物料）。最终视频：含 duration / aspect_ratio / resolution / audio_track_url / total_segments / video_url / thumbnail_url / title。total_segments == video_segments.segments.length。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "slot",
+    "duration",
+    "aspect_ratio",
+    "resolution",
+    "audio_track_url",
+    "total_segments",
+    "video_url"
+  ],
+  "properties": {
+    "slot": {
+      "const": "final_video"
+    },
+    "duration": {
+      "type": "number"
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "description": "等于 visual_config.aspect_ratio。"
+    },
+    "resolution": {
+      "type": "string",
+      "description": "等于 visual_config.resolution。"
+    },
+    "audio_track_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "等于 audio_analysis.music_url（拼片整条覆盖音轨，不混音）。"
+    },
+    "total_segments": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "video_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

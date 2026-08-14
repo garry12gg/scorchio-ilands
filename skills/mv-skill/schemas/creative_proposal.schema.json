@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreativeProposal",
+  "description": "Phase 02 产出，pipeline 创意来源 + 脊柱合一。4 个创意决策字段（mv_type / tone_mood / model_primary / visual_instructions，spawn gemini 前由 agent 据 persona + brief 自定）+ logline + brief（markdown 创意 vision）+ music_url / total_duration + segments[]。gemini 在决策敲定后一次写出 logline + brief + segments。segments 是 pipeline 唯一渲染单位（一段 = 一次 video model 调用），phase 02 阶段只含时间结构 + description（场景级，不含 ref_id——具体 reference 映射在 Phase 05 video_prep 做）。下游 video_prep / video_segments / final_video 的 segments[] 严格 index 对齐本 artifact。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "slot",
+    "mv_type",
+    "tone_mood",
+    "model_primary",
+    "logline",
+    "brief",
+    "music_url",
+    "total_duration",
+    "segments"
+  ],
+  "properties": {
+    "slot": {
+      "const": "creative_proposal"
+    },
+    "mv_type": {
+      "enum": [
+        "narrative",
+        "performance",
+        "hybrid",
+        "concept"
+      ],
+      "description": "MV 创意方向（决策 1，spawn gemini 前由 agent 自定）。narrative=戏剧世界内叙事，角色不看镜头；performance=主角对镜口型 / 直面镜头；concept=符号 / 蒙太奇 / 抽象（abstract 是其极端，可无人物）；hybrid=演唱 + 叙事交叉剪辑（最常见）。影响 brief 怎么展开 + gemini 切 lipsync / 非 lipsync 段的比例倾向。"
+    },
+    "tone_mood": {
+      "type": "string",
+      "minLength": 1,
+      "description": "整片基调与情绪（决策 2，spawn gemini 前由 agent 敲定）。一句话锁定整片服务的单一情感意图 + 气质（如 'melancholic、克制、冷蓝夜色' / 'euphoric、张扬、高饱和'）。是 brief 的 north star——色彩 / 光线 / 节奏 / arc 都向它靠。"
+    },
+    "model_primary": {
+      "type": "string",
+      "minLength": 1,
+      "description": "非 lipsync 段的主 video model（决策 3，spawn gemini 前由 agent 从 video-generation/SKILL.md 当前候选里选）。决定非 lipsync 生成路径与切段策略：seedance-2-0 / seedance-2-0-fast（asset_reference 路径）→ 一段可跨多场景（description 列清场景）；其余任何 model（keyframe 路径）→ 场景切换处必须切新 segment，且非 lipsync 段改用 keyframe 生成（见 docs/non_seedance_path.md）。"
+    },
+    "visual_instructions": {
+      "type": "string",
+      "description": "可选。创意 brief 里额外的视觉指令 / must-have 元素 / 想避免的东西（决策 4，自由文本）。gemini 写 brief + 下游 Phase 03 visual style / Phase 04 reference 都参考。无则省略或空串。"
+    },
+    "logline": {
+      "type": "string",
+      "minLength": 1,
+      "description": "一句话整片核心 hook。gemini 在 gate 敲定后写。"
+    },
+    "brief": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Markdown 创意 vision，按 references/treatment_director.md 写。骨架：核心母题 / 视觉世界与气质（含 style anchor）/ 人物表（identity 身份层）/ 记忆点（signature moment）/ 线与复线（主线 + 复线 / 副线）/ 按 mv_type 的更多信息。logline 与 mv_type / tone_mood 是独立字段，正文不重复。反复出现的人 / 地 / 物点名 + 首次写定身份层供下游抽取，落大 scene 级不切 shot——无 timecode（segments[] 才是时间轴）。"
+    },
+    "music_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "整片原音轨 URL = audio_analysis.music_url。Phase 02 切 segment 音轨用，Phase 07 拼片覆盖音轨用。"
+    },
+    "total_duration": {
+      "type": "number",
+      "description": "整片总时长（秒）= audio_analysis.duration。segments[] 全片覆盖到此。"
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 4,
+      "description": "有序 segment 列表，pipeline 脊柱。gemini 据 audio_analysis（beats / 词级歌词时间戳 / sections）+ brief + mv_type + tone_mood + model_primary 能力切。全片覆盖（首段 start=0、末段 end=total_duration、无 gap / overlap、帧对齐、2 位小数）。",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "id",
+          "start_time",
+          "end_time",
+          "duration",
+          "description",
+          "lyrics",
+          "lipsync",
+          "model"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^seg_[0-9]+$",
+            "description": "Segment 稳定 ID（seg_01 / seg_02 ...，时间顺序）。"
+          },
+          "start_time": {
+            "type": "number"
+          },
+          "end_time": {
+            "type": "number"
+          },
+          "duration": {
+            "type": "number",
+            "minimum": 4,
+            "maximum": 15,
+            "description": "Segment 时长（秒）。lipsync 与非 lipsync 段都可段内多 shot，包络 4-15s（上限以所选 model 的 video-generation/SKILL.md 文档为准）。切点落歌词开头（vocal onset）或 downbeat。keyframe 路径（model_primary 非 seedance-2-0/-fast）时每个场景切换处必须切新 segment（段不跨场景）；asset_reference 路径（seedance 2.0）时段可尽量长、跨多场景，由 description 列清。"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Segment 级画面描述。写清这段在哪个 / 哪些场景、谁在画面、在干什么——带具体动作和情绪推进。一段跨多场景时（model 支持多图参考），逐个点出里面有哪些场景 + 每个场景干了什么（A 场景做 X → B 场景做 Y）。不拆镜头（不写景别 / 运镜 / 'shot 1… shot 2…'）——段内分镜由 Phase 05a 写 prompt 时展开。场景 / 人物只用 brief 已点名的，不凭空造。Phase 04 据此抽 reference，Phase 05a 据此写 prompt（lipsync 段的 keyframe 由 Phase 05b 据此 prompt 生成）。"
+          },
+          "lyrics": {
+            "type": "string",
+            "description": "该 segment 时间段对应的歌词文本（从 audio_analysis.transcription 按时间截取拼接）；纯器乐 / 无词 = '-'。用于 agent 自检 + Phase 05 prompt 情绪呼应。"
+          },
+          "lipsync": {
+            "type": "boolean",
+            "description": "true = 对口型段：艺人对镜演唱，靠 keyframe(s) + audio 驱动；false = 非对口型段：走 model_primary。lipsync 比例由 gemini 据 mv_type + tone_mood + performance 意图自定，agent 在 self-check 中复核比例并按需调整。"
+          },
+          "model": {
+            "type": "string",
+            "description": "Segment video model。lipsync=false → model_primary；lipsync=true → 'dlai2v_pro'（单帧 image_url 或多帧 keyframes 列表都走 dlai2v_pro）。最终 model 以 Phase 05a video_prep 为准。"
+          },
+          "audio_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "可选（**sub-agent 不输出本字段**）。本 segment 预切好的音轨片段 URL。Phase 02 self-check 通过后，由主 agent 切音轨并给每段**添加**本字段（draft 阶段不存在，finalize 前补齐）。lipsync 段唇形驱动用；非 lipsync 段可作 audio reference。"
+          }
+        }
+      }
+    }
+  }
+}

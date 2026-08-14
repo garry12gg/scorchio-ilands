@@ -1,0 +1,8 @@
+{
+  "visual_style": {
+    "prompt_modifier": "70s grainy film noir with neon highlights, cool blue base + amber accents, soft haze, reflective wet surfaces, intimate performance energy",
+    "reference_image_urls": ["https://example.com/style-preview/film-noir-neon.jpg"]
+  },
+  "aspect_ratio": "16:9",
+  "resolution": "720p"
+}

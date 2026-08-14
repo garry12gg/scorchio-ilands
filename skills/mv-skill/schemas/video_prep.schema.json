@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VideoPrep",
+  "description": "Phase 05a + 05b 产出。每个 segment 喂给 video model 的生成请求：prompt + model + duration + aspect_ratio + references[]。05a 写全部 segment 的 prompt + 非 lipsync references（从 reference_list 映射）；05b 为每个 lipsync 段启动独立 sub-agent 准备 generation request，默认用 dl generate-image --service=gpt-image-2 --aspect-ratio=<helper generation_aspect_ratio> --image-size=2K 生成单图或最多四宫格，拆分、自动去黑边、上传后把 1-4 张 keyframe 填进该段 references。Phase 06 据此生成。segments[] 严格 index 对齐 creative_proposal.segments[]。各 model 具体要哪些字段 / placeholder / frame 协议以 video-generation/SKILL.md 为准。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "slot",
+    "segments"
+  ],
+  "properties": {
+    "slot": {
+      "const": "video_prep"
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "id",
+          "prompt",
+          "model",
+          "shot_count",
+          "duration",
+          "aspect_ratio",
+          "references"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^seg_[0-9]+$"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "description": "完整 video-gen prompt，按 prompt_authoring.md 模板写（lipsync §1 / 非 lipsync §2）。"
+          },
+          "model": {
+            "type": "string",
+            "description": "video model。非 lipsync 段 = creative_proposal.model_primary；lipsync 段 = 'dlai2v_pro'（单帧 image_url 或多帧 keyframes 列表都走 dlai2v_pro）。"
+          },
+          "shot_count": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "本段切几个 shot（Phase 05a 按 prompt_authoring §0 定，≈ceil(duration/3)，慢歌 / brief 指定例外），与 prompt 里的 explicit Shot 1/2/… 数一致。**lipsync 段：shot_count ∈ [1,4]，= Phase 05b 要生成的 keyframe 数（05b 直接读本字段定 target_keyframe_count，不解析 prompt 文本）**；非 lipsync 段：= 段内多 shot 数（informational + QA 参考）。"
+          },
+          "duration": {
+            "type": "number",
+            "description": "请求时长，**整数秒**——向上取整自 creative_proposal.segments[i].duration（如 6.4 → 7）。Phase 06 生成后 trim 回精确 duration。"
+          },
+          "aspect_ratio": {
+            "type": "string",
+            "description": "= visual_config.aspect_ratio。"
+          },
+          "resolution": {
+            "type": "string",
+            "description": "可选，= visual_config.resolution。"
+          },
+          "references": {
+            "type": "array",
+            "description": "本 segment 生成要喂的参考资源。**结构不强制**——按 segment.model 在 video-generation/SKILL.md 的需要、怎么方便怎么写。常见 key：role（keyframe / audio_slice / character_asset / location_asset / prop_asset / prev_video）、url、frame_position、ark_asset_id。lipsync 段（dlai2v_pro）的 keyframe 由 Phase 05b 生成后填入：1 张 → {role:keyframe,url}；2 张 → frame_position first/last；3 张 → first/middle/last；4 张 → first/middle/middle/last。非 lipsync 段在 05a 即填好 character/location/prop ref。",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

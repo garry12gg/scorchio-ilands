@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VisualConfig",
+  "description": "Phase 03 产出（self-check：agent 选 style + ratio）。视觉配置：visual_style（prompt_modifier + 可选 reference_image_urls）/ aspect_ratio / resolution。model_primary 在 Phase 02 已选定，故本 phase 可由 model + aspect_ratio 一并推断 resolution。下游 Phase 04-08 消费。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "slot",
+    "visual_style",
+    "aspect_ratio",
+    "resolution"
+  ],
+  "properties": {
+    "slot": {
+      "const": "visual_config"
+    },
+    "visual_style": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prompt_modifier"
+      ],
+      "properties": {
+        "prompt_modifier": {
+          "type": "string",
+          "description": "全片视觉 DNA——可粘贴进任何生图 / 生视频 prompt 的风格段。下游 Phase 04/05 注入。"
+        },
+        "reference_image_urls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "可选：风格参考图 URL（如知识库选中风格的 preview 图）。"
+        }
+      }
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "enum": [
+        "16:9",
+        "9:16",
+        "1:1",
+        "4:3",
+        "3:4",
+        "21:9"
+      ]
+    },
+    "resolution": {
+      "type": "string",
+      "description": "整片分辨率，从 creative_proposal.model_primary 默认值 + aspect_ratio 推断（如 16:9 720p）。下游生图 / 生视频 / 拼片共享。"
+    }
+  }
+}

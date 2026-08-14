@@ -1,0 +1,170 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AudioAnalysis",
+  "description": "Phase 01 产出。音频分析：含 music_url / duration / transcription / beats / emotional_arc / track。下游 Phase 02-07 消费。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "slot",
+    "music_url",
+    "duration",
+    "transcription",
+    "beats",
+    "track"
+  ],
+  "properties": {
+    "slot": {
+      "const": "audio_analysis"
+    },
+    "music_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "原音轨 URL。Phase 02 ffmpeg 切片用，Phase 07 拼片覆盖音轨用。"
+    },
+    "duration": {
+      "type": "number",
+      "description": "音轨总时长（秒，2 位小数）。"
+    },
+    "transcription": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "language",
+        "segments"
+      ],
+      "properties": {
+        "language": {
+          "type": "string",
+          "description": "检测到的语言代码（如 'zh' / 'en' / 'und'）。纯器乐曲 = 'und'。"
+        },
+        "segments": {
+          "type": "array",
+          "description": "逐句歌词。纯器乐 = []。",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "start",
+              "end",
+              "text"
+            ],
+            "properties": {
+              "start": {
+                "type": "number"
+              },
+              "end": {
+                "type": "number"
+              },
+              "text": {
+                "type": "string",
+                "description": "歌词文本。器乐间隔可用 '[instrumental]' / '[interlude]' 标注。"
+              },
+              "words": {
+                "type": "array",
+                "description": "词级时间戳。Phase 02 切段最细粒度锚点。",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "word",
+                    "start",
+                    "end"
+                  ],
+                  "properties": {
+                    "word": {
+                      "type": "string"
+                    },
+                    "start": {
+                      "type": "number"
+                    },
+                    "end": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "beats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bpm",
+        "positions"
+      ],
+      "properties": {
+        "bpm": {
+          "type": "number"
+        },
+        "positions": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "description": "节拍位置时间戳数组（秒）。Phase 02 切段 snap 锚点。"
+        },
+        "sections": {
+          "type": "array",
+          "description": "歌曲结构段。",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "start",
+              "end"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "description": "段标签（'intro' / 'verse_1' / 'chorus_1' / 'bridge' / 'outro' / 'interlude'）。"
+              },
+              "start": {
+                "type": "number"
+              },
+              "end": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "emotional_arc": {
+      "type": "string",
+      "description": "整片情感弧自然语言描述（1-3 句）。Phase 02 创意提案参考。"
+    },
+    "track": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "genre",
+        "tags",
+        "model"
+      ],
+      "description": "音轨元数据。",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "genre": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "model": {
+          "type": "string",
+          "description": "音乐生成 / 来源 model 标签。"
+        }
+      }
+    }
+  }
+}

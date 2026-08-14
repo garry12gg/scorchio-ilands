@@ -1,0 +1,24 @@
+{
+  "target_aspect": "16:9",
+  "references": [
+    {
+      "id": "main_singer_look_a",
+      "kind": "character",
+      "prompt": "Two-panel costume reference of a 28-year-old East Asian woman, athletic build, rounded face with strong cheekbones, mid-length straight black hair, dark eyes. Side by side, thin neutral divider, identical person / outfit / lighting in both halves. LEFT: upper-body (chest-up), head and face clearly visible, front-facing, neutral expression. RIGHT: full-body, head-to-toe visible, neutral standing pose, arms relaxed. Wearing a tailored charcoal wool overcoat with peaked lapels over a black turtleneck, slim silver chain. Plain light-gray studio backdrop, no environment, even studio lighting. Visual style: 70s grainy film noir + neon highlights. No text on the image.",
+      "image_url": "https://example.com/refs/main_singer_look_a.png",
+      "ark_asset_id": "asset_ms_looka_001"
+    },
+    {
+      "id": "neon_rooftop_base",
+      "kind": "location",
+      "prompt": "Rain-slick rooftop overlooking a neon-lit cityscape at night. Polished concrete edge with brushed steel railings, scattered puddles reflecting amber and cyan signage. Distant skyline through misty haze. Overhead practical neon tubes, motivated by surrounding signage. 28mm wide, eye level 1.7m, slight Dutch angle emphasizing depth. Visual style: 70s grainy film noir + neon highlights. Practical light everywhere. no characters.",
+      "image_url": "https://example.com/refs/neon_rooftop_base.png"
+    },
+    {
+      "id": "silver_mic",
+      "kind": "prop",
+      "prompt": "A vintage silver ribbon microphone, brushed chrome body with fine engraving, worn leather grip, palm-to-forearm sized. Studio-style three-point lighting showing the metal grain, isolated on a dark neutral backdrop. Visual style: 70s grainy film noir + neon highlights. no characters.",
+      "image_url": "https://example.com/refs/silver_mic.png"
+    }
+  ]
+}

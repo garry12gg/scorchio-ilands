@@ -1,0 +1,520 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ArtifactContract",
+  "description": "mv-skill 的 8-artifact 依赖图。每个 slot 明确：(1) pipeline_role——存在意义；(2) produces——为下游暴露什么；(3) consumed_by——下游谁消费哪些字段（路径级，schema_ref 是真源）；(4) cross_artifact——schema 无法表达但 PHASE.md 必须保证的跨 artifact 一致性。Artifact 内容 = flat domain JSON，`dl artifact write` 自动注入 slot/status，agent 只写 root 层 domain fields。segment 是 pipeline 唯一渲染单位——一个 segment = 一次 video model 调用，lipsync / 非 lipsync 段都可段内多 shot，包络 4-15s。segment 无 shots[] 嵌套层。segments[] 在 Phase 02 creative_proposal 里诞生（脊柱），下游 video_prep / video_segments / final_video 严格 index 对齐。",
+  "skill": "mv-skill",
+  "pipeline": {
+    "overview": "8 artifact 单向流水线（Phase 05 拆 05a/05b 两步共产 video_prep）。Phase 01 audio_analysis 建时间锚点；Phase 02 creative_proposal 是创意来源 + pipeline 脊柱合一——4 个 gate（mv_type / tone_mood / model_primary / visual_instructions）敲定后 gemini 一次出 logline + brief + segments[]，主 agent 切音轨回填；Phase 03 visual_config 选 style + ratio + 推 resolution；Phase 04 reference_list 生 character/location/prop 素材库（model_primary=seedance 时真人 ARK 注册，不延后）；Phase 05a video_prep 为每段写 prompt（lipsync 一律 dlai2v_pro）+ 映射非 lipsync references；Phase 05b（仅有 lipsync 段时）为每个 lipsync 段启动独立 sub-agent，用 gpt-image-2 生成单图或最多四宫格，拆分 / 自动去黑边 / 上传 / understand_media 验单张后填进 video_prep 并 finalize；Phase 06 video_segments 按段生成 raw_video_url + 精准裁剪无音频 assembly_video_url；Phase 07 final_video 验证 assembly clips 后拼片 + 原音轨覆盖出干净终片；Phase 08 social_kit（optional）出封面 + 社交文案。segment 是唯一渲染单位，无 shots[] 嵌套层。",
+    "user_gate_phases": [
+      "02",
+      "03",
+      "04",
+      "05a",
+      "05b",
+      "06",
+      "07",
+      "08"
+    ],
+    "auto_phases": [
+      "01"
+    ],
+    "optional_phases": [
+      "05b",
+      "08"
+    ],
+    "segment_alignment_rule": "Phase 02 起所有 artifact.segments[].length 必须等于 creative_proposal.segments[].length，且按 index 严格对齐。任意 segment 需要改动 → 回 creative_proposal 改，下游所有 artifact 重生。"
+  },
+  "slots": {
+    "audio_analysis": {
+      "display_name": "音频分析",
+      "produced_in": "Phase 01",
+      "pipeline_role": "整片时间锚点 + 原音轨容器。下游所有切 segment 决策的物理基础，终片音轨的来源。",
+      "schema_ref": "schemas/audio_analysis.schema.json",
+      "content_type": "application/json",
+      "promotable": true,
+      "verification": {
+        "mode": "verify_and_promote",
+        "required_fields": [
+          "music_url",
+          "duration",
+          "transcription",
+          "beats",
+          "track"
+        ]
+      },
+      "allowed_producers": [
+        "mv-skill"
+      ],
+      "input_fence": {},
+      "produces": [
+        "music_url（原音轨 URL）",
+        "duration（总时长）",
+        "transcription.segments[].words[]（词级 ASR 时间戳）",
+        "beats.positions[]（madmom 节拍位置）",
+        "beats.sections[]（结构段，Phase 02 切 segment 边界 + finalize 自检软分组参考）",
+        "emotional_arc（情感弧）"
+      ],
+      "consumed_by": {
+        "Phase 02 creative_proposal": [
+          "duration",
+          "music_url",
+          "emotional_arc",
+          "transcription.segments[].text",
+          "transcription.segments[].words[]",
+          "beats.positions[]",
+          "beats.sections[]"
+        ],
+        "Phase 07 final_video": [
+          "music_url（拼片覆盖音轨；atempo 小漂移补偿时仍作为源音轨）",
+          "duration（concat 后 drift policy 目标）"
+        ]
+      },
+      "tags": [
+        "mv",
+        "audio"
+      ],
+      "is_segment": false,
+      "user_visible": true,
+      "schema_version": "4.0"
+    },
+    "creative_proposal": {
+      "display_name": "创意方案",
+      "produced_in": "Phase 02",
+      "pipeline_role": "创意来源 + pipeline 脊柱合一。4 个 gate 字段（mv_type / tone_mood / model_primary / visual_instructions）+ logline + brief（markdown vision）+ music_url / total_duration + segments[]。brief 是下游创意来源（Phase 03 抽 visual style、Phase 04 抽 character/location/prop），segments[] 是下游唯一渲染单位（一段 = 一次 video model 调用）。segments 在本 artifact 诞生、定时间结构 + 场景级 description（不含 ref_id），下游所有 artifact.segments[] 必须与本 artifact 等长、等序、index 对齐。",
+      "schema_ref": "schemas/creative_proposal.schema.json",
+      "content_type": "application/json",
+      "promotable": true,
+      "verification": {
+        "mode": "verify_and_promote",
+        "required_fields": [
+          "mv_type",
+          "tone_mood",
+          "model_primary",
+          "logline",
+          "brief",
+          "music_url",
+          "total_duration",
+          "segments"
+        ]
+      },
+      "allowed_producers": [
+        "mv-skill"
+      ],
+      "input_fence": {
+        "audio_analysis": 1
+      },
+      "produces": [
+        "mv_type（narrative / performance / hybrid / concept；决策 1）",
+        "tone_mood（整片基调情绪；决策 2）",
+        "model_primary（非 lipsync 主 video model；决策 3）",
+        "visual_instructions（可选，brief 里额外视觉指令；决策 4）",
+        "logline（一句话 hook）",
+        "brief（markdown 创意 vision：核心母题 / 视觉世界与气质 / 人物表 / 记忆点 / 线与复线 / 按 type 的更多信息；反复出现的人 / 地 / 物点名 + 首次写定身份层）",
+        "music_url（== audio_analysis.music_url）",
+        "total_duration（== audio_analysis.duration）",
+        "segments[].id（seg_01 / seg_02 ...）",
+        "segments[].start_time / end_time / duration（lipsync 与非 lipsync 都 4-15s，上限按 model provider）",
+        "segments[].description（场景级画面意图；跨多场景时列清里面有哪些场景 + 每个场景干什么；不列具体 shot）",
+        "segments[].lyrics（对应歌词或 '-'）",
+        "segments[].lipsync（生产决策，比例由 gemini 自定）",
+        "segments[].model（非 lipsync=model_primary；lipsync=dlai2v_pro，单/多帧都 dlai2v_pro）",
+        "segments[].audio_url（每段预切好的音轨片段 URL，必填，Phase 02 self-check 后切 + 回填）"
+      ],
+      "consumed_by": {
+        "Phase 03 visual_config": [
+          "brief（视觉世界与气质段抽 visual style 搜索串 + type filter + aspect_ratio 默认）",
+          "tone_mood / visual_instructions（自定义风格合成参考）",
+          "model_primary（推断 resolution）"
+        ],
+        "Phase 04 reference_list": [
+          "brief（抽 character / location / prop 实体 + 视觉描述）",
+          "segments[].description（哪些场景 / 人物上镜，定要生哪些 reference）",
+          "model_primary（=seedance 系时真人 character ref 注册 ARK）"
+        ],
+        "Phase 05a video_prep": [
+          "segments[].description（写完整 prompt 的素材）",
+          "segments[].lipsync / model（决定 prompt 模板；lipsync 段一律 dlai2v_pro）",
+          "segments[].duration（段内多 shot 的时间分镜窗口 + 整数秒取整）",
+          "segments[].audio_url（lipsync 驱动 + seedance audio_ref）",
+          "model_primary（非 lipsync 段 model）"
+        ],
+        "Phase 05b lipsync-keyframes": [
+          "segments[].description（作为 lipsync segment narrative，匹配出场人物 / 场景 / 道具作 gpt-image-2 参考素材）"
+        ],
+        "Phase 07 final_video": [
+          "total_duration（concat 后 drift policy 目标）",
+          "segments[].duration（Phase 06 生成 assembly_video_url 的 authoritative duration；Phase 07 只校验）"
+        ],
+        "Phase 08 social_kit": [
+          "logline / brief / tone_mood（社交文案语气 + 母题呼应）"
+        ]
+      },
+      "cross_artifact": [
+        "总和 segments[].duration == total_duration == audio_analysis.duration",
+        "首 segment start_time == 0.00，末 segment end_time == total_duration，segments[i+1].start_time == segments[i].end_time（无 gap 无 overlap，帧对齐，2 位小数）",
+        "lipsync 与非 lipsync segment 都可段内多 shot，duration ∈ [4, 15]（上限以所选 model 的 provider 文档为准）",
+        "切点只落在歌词开头（vocal onset）或 downbeat：歌词意思优先，downbeat 兜底",
+        "model_primary 不支持多图参考时：每个场景切换处必须切新 segment（段不跨场景）；支持多图参考时：段可尽量长、跨多场景，description 逐个列清场景 + 每个场景干什么",
+        "segments[] 不含 ref_id——具体 reference 映射在 Phase 05a video_prep 做（此时 reference_list 还不存在）。description 用 brief 已点名的人 / 地 / 物，不凭空造",
+        "lipsync 比例由 gemini 据 mv_type + tone_mood + performance 意图自定，agent 在 self-check 中复核比例并按需调整，不设硬性目标区间"
+      ],
+      "tags": [
+        "mv",
+        "creative",
+        "spine"
+      ],
+      "is_segment": false,
+      "user_visible": true,
+      "schema_version": "4.0"
+    },
+    "visual_config": {
+      "display_name": "视觉配置",
+      "produced_in": "Phase 03",
+      "pipeline_role": "整片视觉技术参数 + 风格 prompt 片段。self-check phase——agent 选定 style + ratio 后冻结，并由 model_primary + ratio 推断 resolution。下游所有生图 / 生视频 / 拼片共享这一组规则。",
+      "schema_ref": "schemas/visual_config.schema.json",
+      "content_type": "application/json",
+      "promotable": true,
+      "verification": {
+        "mode": "verify_and_promote",
+        "required_fields": [
+          "visual_style",
+          "aspect_ratio",
+          "resolution"
+        ]
+      },
+      "allowed_producers": [
+        "mv-skill"
+      ],
+      "input_fence": {
+        "creative_proposal": 1
+      },
+      "produces": [
+        "visual_style.prompt_modifier（注入所有生图 / 生视频 prompt）",
+        "visual_style.reference_image_urls（可选，知识库 preview 图）",
+        "aspect_ratio",
+        "resolution（从 creative_proposal.model_primary 默认值 + aspect_ratio 推断）"
+      ],
+      "consumed_by": {
+        "Phase 04 reference_list": [
+          "visual_style.prompt_modifier",
+          "aspect_ratio"
+        ],
+        "Phase 05a video_prep": [
+          "visual_style.prompt_modifier",
+          "aspect_ratio",
+          "resolution"
+        ],
+        "Phase 05b lipsync-keyframes": [
+          "visual_style.prompt_modifier（注入 gpt-image-2 宫格 prompt）",
+          "aspect_ratio（helper 计算 05b 的 ideal_grid_aspect_ratio / generation_aspect_ratio，并作为最终 keyframe 裁剪比例）"
+        ],
+        "Phase 07 final_video": [
+          "aspect_ratio",
+          "resolution"
+        ]
+      },
+      "tags": [
+        "mv",
+        "visual"
+      ],
+      "is_segment": false,
+      "user_visible": true,
+      "schema_version": "4.0"
+    },
+    "reference_list": {
+      "display_name": "参考素材包",
+      "produced_in": "Phase 04",
+      "pipeline_role": "character / location / prop 素材库——人物 + 人物妆造 + 场景 + 道具。从 creative_proposal.brief 抽实体生图。lipsync keyframe 不在本 artifact（Phase 05b 用 gpt-image-2 按 segment 生成、拆分上传后直接填 video_prep）。model_primary 在 Phase 02 已选定，故 model_primary 是 seedance 系时本 phase 即对真人 character ref 注册 ARK，不延后。下游 Phase 05a 按 id 取 image_url / ark_asset_id 映射到非 lipsync segment。",
+      "schema_ref": "schemas/reference_list.schema.json",
+      "content_type": "application/json",
+      "promotable": true,
+      "verification": {
+        "mode": "verify_and_promote",
+        "required_fields": [
+          "target_aspect",
+          "references"
+        ]
+      },
+      "allowed_producers": [
+        "mv-skill"
+      ],
+      "input_fence": {
+        "creative_proposal": 1,
+        "visual_config": 1
+      },
+      "produces": [
+        "references[].id / kind（character / location / prop）/ prompt / image_url",
+        "references[].ark_asset_id（model_primary=seedance 系 且真人 character 时本 phase 注册并填；否则省略）",
+        "references[].depends_on（可选，单个前置图 id；img2img 锁脸 / 锁结构来源）"
+      ],
+      "consumed_by": {
+        "Phase 05a video_prep": [
+          "references[].image_url（seedance 喂 --image-urls / 各 model 的人物 / 场景 / 道具锚定）",
+          "references[].ark_asset_id（seedance 优先喂 --ark-asset-ids 代替 --image-urls）"
+        ],
+        "Phase 05b lipsync-keyframes": [
+          "references[].image_url（lipsync 段出场的人物 / 场景 / 道具 ref，作 gpt-image-2 生成单图 / 宫格 keyframe 的参考素材）"
+        ]
+      },
+      "cross_artifact": [
+        "每个 reference entry 对应 Phase 04 从 creative_proposal.brief 抽出的一个实体（character / location / prop）",
+        "多 look 角色：有一张 portrait anchor（被各 look 的 depends_on 指向）；人物身份层（脸 / 发 / 体型 / 年纪）从 brief 人物表取保持一致，妆造 / 场景可在 prompt 补细节",
+        "有 depends_on 的 entry：指向的前置图 id 存在（多 look 时各 look 的 2-panel character reference sheet / three-view 指向角色 portrait；location variant 指向 location base），生图时作 img2img 来源",
+        "ARK 注册：model_primary 是 seedance 系时，真人 character ref 必须有 ark_asset_id（Phase 04 即注册，不延后）；location / prop / 非真人 / 非 seedance 不需要。判定真人：图里能识别出人物头/身体即注册"
+      ],
+      "tags": [
+        "mv",
+        "visual",
+        "shared"
+      ],
+      "is_segment": false,
+      "user_visible": true,
+      "schema_version": "4.0"
+    },
+    "video_prep": {
+      "display_name": "视频生产准备",
+      "produced_in": "Phase 05a + 05b（两个独立 phase 顺序加载：05a 起草 draft，05b 补 lipsync keyframe 后 finalize；无 lipsync 段则 05a finalize、05b 跳过）",
+      "pipeline_role": "为每个 segment 写完整 video-generation prompt + 映射参考资源。Phase 05a：写全部 segment 的 prompt + 定 model（lipsync 一律 dlai2v_pro，非 lipsync=model_primary）+ 映射非 lipsync 段的 character/location/prop references（draft）。Phase 05b（仅有 lipsync 段时）：每个 lipsync 段一个独立 sub-agent 准备 generation request，默认用 dl generate-image --service=gpt-image-2 --aspect-ratio=<helper generation_aspect_ratio> --image-size=2K 生成单图或最多四宫格，拆分 / 自动去黑边 / 上传 / understand_media 验单张后，填进该段 references 并 finalize。两个 phase 各有 self-check（05a 自检 prompt，05b 自检 keyframe）。",
+      "schema_ref": "schemas/video_prep.schema.json",
+      "content_type": "application/json",
+      "promotable": true,
+      "verification": {
+        "mode": "verify_and_promote",
+        "required_fields": [
+          "segments"
+        ]
+      },
+      "allowed_producers": [
+        "mv-skill"
+      ],
+      "input_fence": {
+        "creative_proposal": 1,
+        "reference_list": 1,
+        "visual_config": 1
+      },
+      "produces": [
+        "segments[].prompt（完整 video-gen prompt，按 prompt_authoring.md 模板）",
+        "segments[].shot_count（05a 按 §0 定的 shot 数，与 prompt 的 explicit Shot 数一致；lipsync 段 ∈ [1,4] = Phase 05b 要生成的 keyframe 数，05b 直接读它定 target_keyframe_count）",
+        "segments[].model（非 lipsync=model_primary；lipsync=dlai2v_pro，单帧 image_url / 多帧 keyframes）/ duration（round-up 整数秒）/ aspect_ratio",
+        "segments[].references[]（结构不强制，按 segment.model 需要写；常见 role / url / frame_position / ark_asset_id）"
+      ],
+      "consumed_by": {
+        "Phase 06 video_segments": [
+          "segments[].prompt",
+          "segments[].model / duration / aspect_ratio",
+          "segments[].references[]（按 model 在 video-generation/SKILL.md 的规格翻译成 CLI，详见 cli_translation.md）"
+        ]
+      },
+      "cross_artifact": [
+        "segments.length == creative_proposal.segments.length，index 对齐",
+        "每段 prompt 按 prompt_authoring.md 的对应模板写（lipsync / 非 lipsync），内容从 creative_proposal.segments[].description + brief 推导",
+        "每段 prompt + references[] 满足 segment.model 在 video-generation/SKILL.md 的当前规格（字段 / 参考 / placeholder / frame 协议）——不在此枚举各 model",
+        "lipsync 段：model 一律 dlai2v_pro；keyframe 张数 = segment.shot_count（Phase 05b 直接读 shot_count，不解析 prompt 文本），由 Phase 05b 用 gpt-image-2 生成单图 / 最多四宫格，拆分去黑边并上传后填 role=keyframe（ref_id keyframe1..N 按 shot 序）——1 张 → 单 image_url，2 张 → first/last，3 张 → first/middle/last，4 张 → first/middle/middle/last。各 lipsync 段独立生成，相邻段天然不同",
+        "lipsync 段 references 含两类：05a 写的 source ref（character_asset = 该 look 的 2-panel character reference sheet（自带脸 + 全身）/ location_asset，是 Phase 05b 生 keyframe 的素材）+ 05b 填的 keyframe（role=keyframe, ref_id keyframe1..N）。**Phase 06 对 lipsync 段只翻译 keyframe + audio_slice 喂 dlai2v_pro，不传 source 人物/场景 ref**（已 baked 进 keyframe）",
+        "含人物的非 lipsync segment：references[] 必须显式含 character ref（即使有 keyframe 也要——keyframe 可能中远景 / 侧面，model 单靠它锁不住身份）。该 character ref = 角色对应 look 的 2-panel character reference sheet（自带脸 + 全身，一张）",
+        "非 lipsync segment：出场的人物 / 地点 / 道具都必须在 prompt 里 @imageN / @assetN 点名（不能只挂 reference url，否则 model 不知道往哪用）；placeholder 按通道独立编号（@imageN=image_urls[N-1]，@assetN=ark_asset_ids[N-1]，@audio1=reference_audio_url），不按全局 reference_list 或混合视觉 slot 编号；references[] 图数受 segment.model 在 video-generation/SKILL.md 的上限约束，超限时砍最不关键、最好用文字描述的 image ref（移出 references[]、改 prompt 文字补回），保留人物 2-panel character reference sheet 这类身份 / 结构最难文字化的",
+        "model 时长必须整数秒：fractional duration 向上取整生成，Phase 06 再 trim 回精确时长",
+        "seedance + 真人 segment：角色参考用 ARK asset（非空 ark_asset_id，Phase 04 已注册）；不要同一张图既挂 --image-urls 又挂 --ark-asset-ids"
+      ],
+      "tags": [
+        "mv",
+        "prompt"
+      ],
+      "is_segment": false,
+      "user_visible": true,
+      "schema_version": "4.0"
+    },
+    "video_segments": {
+      "display_name": "视频片段",
+      "produced_in": "Phase 06",
+      "pipeline_role": "逐 segment 执行 video generation，保留 raw_video_url，并在 Phase 06 生成精确裁剪、去音频、统一规格的 assembly_video_url。失败 segment status=failed 时 Phase 07 拼片决定跳 segment 或停产。",
+      "schema_ref": "schemas/video_segments.schema.json",
+      "content_type": "application/json",
+      "promotable": true,
+      "verification": {
+        "mode": "verify_and_promote",
+        "required_fields": [
+          "segments"
+        ]
+      },
+      "allowed_producers": [
+        "mv-skill"
+      ],
+      "input_fence": {
+        "video_prep": 1,
+        "creative_proposal": 1
+      },
+      "produces": [
+        "segments[].raw_video_url（模型原始输出，供预览 / 回溯）",
+        "segments[].assembly_video_url（精确裁剪、无音频、统一规格的拼片输入）",
+        "segments[].status（generated / degraded / failed / needs_review / confirmed）",
+        "segments[].model_used（degraded 时可能 fallback）"
+      ],
+      "consumed_by": {
+        "Phase 07 final_video": [
+          "segments[].assembly_video_url（按 index 顺序 concat）",
+          "segments[].status（任一 failed 不 promote final_video）"
+        ]
+      },
+      "cross_artifact": [
+        "segments.length == creative_proposal.segments.length",
+    "每段 assembly_video_url 在 Phase 06 trim 到精确 creative_proposal.segments[i].duration（ffprobe video duration 差 < 0.05s；re-encode 不用 -c copy），且无 audio stream；raw_video_url 只用于单段预览 / 回溯，不进入 Phase 07 concat 链路",
+    "status ∈ generated/degraded/confirmed 的 segment 必须有合法 raw_video_url 和 assembly_video_url"
+      ],
+      "tags": [
+        "mv",
+        "video"
+      ],
+      "is_segment": true,
+      "user_visible": true,
+      "schema_version": "4.0"
+    },
+    "final_video": {
+      "display_name": "最终视频",
+      "produced_in": "Phase 07",
+      "pipeline_role": "干净视觉版终片（无字幕）。所有 video_segments.segments[].assembly_video_url concat + 原音轨整条 overlay（不是 mix——MV 是歌配画，直接用 audio_analysis.music_url 覆盖）。是 minimum viable deliverable；其后 Phase 08 social_kit 为可选发布物料。",
+      "schema_ref": "schemas/final_video.schema.json",
+      "content_type": "application/json",
+      "promotable": true,
+      "verification": {
+        "mode": "verify_and_promote",
+        "required_fields": [
+          "duration",
+          "aspect_ratio",
+          "resolution",
+          "audio_track_url",
+          "total_segments",
+          "video_url"
+        ]
+      },
+      "allowed_producers": [
+        "mv-skill"
+      ],
+      "input_fence": {
+        "video_segments": 1,
+        "audio_analysis": 1,
+        "visual_config": 1
+      },
+      "produces": [
+        "video_url（终片，干净视觉版无字幕）",
+        "duration / aspect_ratio / resolution",
+        "audio_track_url（== audio_analysis.music_url）",
+        "total_segments（== video_segments.segments.length）",
+        "thumbnail_url（可选，海报缩略图）",
+        "title（可选）"
+      ],
+      "consumed_by": {
+        "Phase 08 social_kit": [
+          "video_url（抽帧 / 封面底图）",
+          "thumbnail_url / title（可选复用）"
+        ]
+      },
+      "cross_artifact": [
+        "duration == audio_analysis.duration（direct overlay）或 duration == concat_video_duration（Phase 07 atempo_overlay 小漂移补偿时）；Phase 07 audit_trail 必须记录 drift_policy / audio_adjustment_ran / atempo_factor",
+        "aspect_ratio == visual_config.aspect_ratio",
+        "resolution == visual_config.resolution",
+        "audio_track_url == audio_analysis.music_url（原音轨作为整条覆盖源，不混音；atempo_overlay 时只做线性时间补偿）",
+        "total_segments == video_segments.segments.length（要求所有 segment status != failed）"
+      ],
+      "tags": [
+        "mv",
+        "video",
+        "terminal"
+      ],
+      "is_segment": false,
+      "user_visible": true,
+      "schema_version": "4.0"
+    },
+    "social_kit": {
+      "display_name": "发布物料",
+      "produced_in": "Phase 08",
+      "pipeline_role": "可选终态。MV 发布物料：封面 / 海报图 + 社交文案（标题 / 正文 / 话题标签）。基于 final_video + creative_proposal（logline / brief / tone_mood）+ visual_config 生成。agent 判断无需发布物料时本 phase 跳过，不影响 final_video 终态。",
+      "schema_ref": "schemas/social_kit.schema.json",
+      "content_type": "application/json",
+      "promotable": true,
+      "verification": {
+        "mode": "verify_and_promote",
+        "required_fields": [
+          "cover_image_url",
+          "caption"
+        ]
+      },
+      "allowed_producers": [
+        "mv-skill"
+      ],
+      "input_fence": {
+        "final_video": 1,
+        "creative_proposal": 1,
+        "visual_config": 1,
+        "reference_list": 1
+      },
+      "produces": [
+        "cover_image_url（封面 / 海报图）",
+        "title（可选，视频标题）",
+        "caption（社交文案正文）",
+        "hashtags（可选，话题标签数组）"
+      ],
+      "consumed_by": {},
+      "cross_artifact": [
+        "封面风格与 visual_config.visual_style 一致；aspect_ratio 与整片一致或按平台封面比例",
+        "caption 语气贴合 creative_proposal.tone_mood，呼应 logline / 母题"
+      ],
+      "tags": [
+        "mv",
+        "social",
+        "terminal",
+        "optional"
+      ],
+      "is_segment": false,
+      "user_visible": true,
+      "schema_version": "4.0"
+    }
+  },
+  "completion": {
+    "required_slots": [
+      "audio_analysis",
+      "creative_proposal",
+      "visual_config",
+      "reference_list",
+      "video_prep",
+      "video_segments",
+      "final_video"
+    ],
+    "optional_slots": [
+      "social_kit"
+    ],
+    "terminal_slots": [
+      "final_video",
+      "social_kit"
+    ],
+    "done_when": [
+      "slot_promoted(audio_analysis)",
+      "slot_promoted(creative_proposal)",
+      "slot_promoted(visual_config)",
+      "slot_promoted(reference_list)",
+      "slot_promoted(video_prep)",
+      "slot_promoted(video_segments)",
+      "slot_promoted(final_video)"
+    ]
+  },
+  "failure_policy": {
+    "ladder": [
+      "retry",
+      "alternate_model",
+      "degrade",
+      "partial_finalize",
+      "emit_failure_metadata"
+    ],
+    "minimum_viable_deliverable": "final_video",
+    "rules": [
+      "上游任一 required slot 未 promoted → 不进下一 phase。",
+      "Phase 02 creative_proposal：gemini 切段 / 写 brief 由 schema 校验 + agent self-check 把关；agent 在 self-check 中调 segment 或回滚改决策字段。",
+      "Phase 04 reference_list 单个 reference 失败：retry 1 次 → alternate image model → agent 复用 brief 里已有的素材 URL。ARK 注册（model_primary=seedance + 真人 character）失败：retry 1 次 → 仍失败不能放过。",
+      "Phase 05a video_prep：agent 在 self-check 中可回滚到 Phase 02/03/04 修改上游。",
+      "Phase 05b lipsync-keyframes（仅有 lipsync 段时）：gpt-image-2 生成的单图 / 宫格先拆分、自动去黑边、上传，再对拆分后的单张 keyframe 逐张 understand_media 验——残留大黑边 / 分屏 / 拼贴文字 / 水印 / 异常 → 重试该段；重试仍失败 → agent 在 self-check 中决定（改 prompt 回 05a / 跳过）。lipsync keyframe framing 不达标（非 MCU+ / 嘴不可见 / 极侧面）→ 重生，不要勉强放行。",
+      "Phase 06 video 单 segment 失败：retry → alternate model（per-segment fallback）→ degrade (status='degraded') → mark status='failed'。",
+      "Phase 07 拼片：所有 segment status != 'failed' 且 assembly_video_url 校验通过才能 promote final_video。Phase 07 不再逐段裁剪 / 规整；concat 后 drift ≤0.1s 直接 overlay，0.1-1.0s 用 atempo 轻微补偿，>1.0s 不 promote，回 Phase 06 查偏差段。任一 segment failed 则不 promote，video_segments 留底交给上层处理。",
+      "Phase 08 social_kit：可选，失败 / 跳过不影响 final_video 终态。"
+    ]
+  }
+}

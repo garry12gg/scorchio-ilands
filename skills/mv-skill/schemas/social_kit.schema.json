@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SocialKit",
+  "description": "Phase 08 产出（optional 终态）。MV 发布物料：封面图 + 社交文案。基于 final_video + creative_proposal（logline / brief / tone_mood）+ visual_config 生成。agent 判断无需发布物料时本 phase 可跳过，不影响 final_video 终态。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "slot",
+    "cover_image_url",
+    "caption"
+  ],
+  "properties": {
+    "slot": {
+      "const": "social_kit"
+    },
+    "cover_image_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "封面 / 海报图 URL。按 visual_config 风格 + 整片标志性画面生成（或从 final_video 抽帧再加工），aspect_ratio 与整片一致或按平台封面比例。"
+    },
+    "title": {
+      "type": "string",
+      "description": "可选。视频标题（短、抓人）。"
+    },
+    "caption": {
+      "type": "string",
+      "minLength": 1,
+      "description": "社交平台文案正文。语气贴合 tone_mood，呼应 logline / 母题，可含 emoji（按平台调性）。"
+    },
+    "hashtags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "可选。话题标签数组（带或不带 # 前缀均可，PHASE.md SOP 统一）。"
+    }
+  }
+}

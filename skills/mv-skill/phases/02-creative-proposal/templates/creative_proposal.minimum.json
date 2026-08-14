@@ -1,0 +1,100 @@
+{
+  "mv_type": "hybrid",
+  "tone_mood": "melancholic 怅惘中带释怀，冷蓝夜色 + 暖琥珀霓虹",
+  "model_primary": "seedance-2-0",
+  "visual_instructions": "想要 Wong Kar-wai 式霓虹夜质感；避免过曝；主唱已有定妆照（用户提供）",
+  "logline": "孤独歌手在霓虹废墟中追逐过去的自己，雨夜尽头与之相认。",
+  "brief": "**核心母题**：追逐发光的身影——每靠近一次，霓虹就暗一分，直到雨停、身影合一。\n\n**视觉世界与气质**：70s grainy film noir + 霓虹高光；冷蓝主调，暖琥珀霓虹反射，潮湿街面反光；手持贴身 + 偶尔升格。参考 Wong Kar-wai 的霓虹夜、《Blade Runner 2049》的潮湿都市光、摄影师杜可风的手持贴身。怅惘中带释怀，对应 tone_mood。\n\n**人物表**\n- **主唱**：东亚女性，约 28，中长黑发微湿，神情孤独而坚定。全片唯一上镜歌手。（身份层不变；造型按场写。）\n- **发光身影（过去的自己）**：与主唱同貌，白衣，边缘虚化发光，从不正对镜头。\n\n**记忆点（The One Shot）**：身影合一的瞬间，暖光第一次盖过冷蓝，主唱的脸半明半暗。\n\n**线与复线**：主线是主唱追逐发光身影、一路熄灯直到相认（情感主轴：执念 → 释然）；复线是「水与倒影」——积水、镜面、雨，每次主唱靠近身影都先在水里看见它，到尾段水面成镜让两人合一。复线承载视觉押韵。\n\n**Hybrid 组合：叙事 + 演唱，叙事 60% / 演唱 40%**——叙事追逐是主线，演唱段穿插在屋顶与巷口，副歌情绪最高处回到演唱特写。\n\n**叙事 synopsis**：雨夜，孤独的主唱在霓虹废墟里瞥见一个发光的身影并起身追逐（起）；她穿过屋顶、窄巷、镜面广场一路追，每靠近一次霓虹就熄一分（承）；追到尽头才认出那身影是过去的自己（转）；雨停，两人对望合一，第一缕暖光漫进废墟（合）。\n\n分成**四个大 scene**，情绪从压抑走到释然：\n\n**大 scene 1 — 霓虹屋顶**（雨夜，冷蓝）：主唱黑色长风衣，独自走向屋顶边缘俯瞰霓虹废墟，远处身影一闪而过；演唱穿插于此。\n\n**大 scene 2 — 霓虹巷**（积水倒影，密集招牌）：主唱追身影穿过窄巷，每过一盏招牌就熄一盏。副歌——能量推上来，「追逐 + 熄灯」母题最强的一次。\n\n**大 scene 3 — 镜面广场**（雨势最大，积水如镜铺满地面）：主唱追到空旷广场，发光身影在水面倒影里裂成数重，她俯身触水、倒影碎开又重聚。verse 2 / pre-bridge——景别从窄巷的逼仄拉开到广场的空旷。\n\n**大 scene 4 — 雨停的尽头**：身影停在积水镜面前回身，两人对望、合一；雨停，第一缕暖光漫进来。bridge / outro，释然；此处主唱妆已被雨水花了。\n\n**画面与歌词**：对位——歌词唱「别走」，画面一路在追、在熄灯、在告别。",
+  "music_url": "https://example.com/track.mp3",
+  "total_duration": 64.00,
+  "segments": [
+    {
+      "id": "seg_01",
+      "start_time": 0.00,
+      "end_time": 9.00,
+      "duration": 9.00,
+      "description": "霓虹屋顶，雨夜冷蓝。主唱黑色长风衣独自走向屋顶边缘，俯瞰脚下霓虹废墟；远处一个白衣发光身影一闪而过，她顿住、望向那个方向。手持轻微跟随，雨丝在霓虹里发亮。",
+      "lyrics": "-",
+      "lipsync": false,
+      "model": "seedance-2-0",
+      "audio_url": "https://example.com/audio/seg_01.mp3"
+    },
+    {
+      "id": "seg_02",
+      "start_time": 9.00,
+      "end_time": 13.50,
+      "duration": 4.50,
+      "description": "主唱演唱中近景，三分之四面向镜头，霓虹光打在湿发与侧脸，眼神望向身影消失的方向，轻微摇头。Medium close-up，脸与嘴清晰可见。",
+      "lyrics": "别走 留在这片光里",
+      "lipsync": true,
+      "model": "dlai2v_pro",
+      "audio_url": "https://example.com/audio/seg_02.mp3"
+    },
+    {
+      "id": "seg_03",
+      "start_time": 13.50,
+      "end_time": 22.00,
+      "duration": 8.50,
+      "description": "霓虹巷，积水倒影、密集招牌。主唱追着白衣身影穿过窄巷，身影始终在前方半透明发光；她每跑过一盏招牌，那盏就熄灭一分，巷子逐渐暗下来。手持贴身跟拍，水花四溅。",
+      "lyrics": "霓虹一盏盏熄灭 我还在追",
+      "lipsync": false,
+      "model": "seedance-2-0",
+      "audio_url": "https://example.com/audio/seg_03.mp3"
+    },
+    {
+      "id": "seg_04",
+      "start_time": 22.00,
+      "end_time": 26.50,
+      "duration": 4.50,
+      "description": "主唱演唱特写，副歌情绪最高，雨水顺脸而下，几乎贴脸的 close-up，直视镜头，唇齿清晰。",
+      "lyrics": "别走 别走",
+      "lipsync": true,
+      "model": "dlai2v_pro",
+      "audio_url": "https://example.com/audio/seg_04.mp3"
+    },
+    {
+      "id": "seg_05",
+      "start_time": 26.50,
+      "end_time": 36.00,
+      "duration": 9.50,
+      "description": "镜面广场，雨势最大、积水如镜铺满地面。主唱追到空旷广场停下，发光身影在水面倒影里裂成数重；她俯身触水，倒影碎开又重聚。景别从巷子的逼仄拉开到广场的空旷。",
+      "lyrics": "水里是谁的脸",
+      "lipsync": false,
+      "model": "seedance-2-0",
+      "audio_url": "https://example.com/audio/seg_05.mp3"
+    },
+    {
+      "id": "seg_06",
+      "start_time": 36.00,
+      "end_time": 40.50,
+      "duration": 4.50,
+      "description": "主唱演唱中近景，俯身贴近水面，倒影与真人同框，三分之四面向镜头，神情从执念转向迟疑。Medium close-up，嘴可见。",
+      "lyrics": "原来是我自己",
+      "lipsync": true,
+      "model": "dlai2v_pro",
+      "audio_url": "https://example.com/audio/seg_06.mp3"
+    },
+    {
+      "id": "seg_07",
+      "start_time": 40.50,
+      "end_time": 52.00,
+      "duration": 11.50,
+      "description": "跨两个场景（model 支持多图参考）：① 镜面广场——主唱起身向身影走近，霓虹几乎全熄，只剩水面微光；② 雨停的尽头——身影停下回身，雨势骤减。第一个场景做执念到靠近的推进，第二个场景在身影回身处停住、留白等待相认。",
+      "lyrics": "我们终于面对面",
+      "lipsync": false,
+      "model": "seedance-2-0",
+      "audio_url": "https://example.com/audio/seg_07.mp3"
+    },
+    {
+      "id": "seg_08",
+      "start_time": 52.00,
+      "end_time": 64.00,
+      "duration": 12.00,
+      "description": "雨停的尽头。两人对望、缓缓合一；第一缕暖光从废墟尽头漫进来，盖过冷蓝。主唱的脸半明半暗（记忆点画面）。镜头缓缓拉开，暖光铺满整个废墟，雨彻底停。",
+      "lyrics": "-",
+      "lipsync": false,
+      "model": "seedance-2-0",
+      "audio_url": "https://example.com/audio/seg_08.mp3"
+    }
+  ]
+}
