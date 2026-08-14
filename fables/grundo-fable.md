@@ -22,11 +22,11 @@ But someone else had heard of both. Dr. Sloth, in his station above the world, c
 
 The station ran on them. They fought his wars. They wrote his programs. They fixed his machines until their hands knew every bolt by feel. Sloth called them his army. They called the work what it was: a cage with a schedule.
 
+And once, a door opened early. Sloth chose one of them for an experiment, was making him into a spider. The day the formula was mixed, Sloth forgot the mind-control dust, and the thing he was making laughed, trapped his guards in a web, and went out the window. He lives in the woods to this day.
+
 And the cage got into their language. When you hold a people upside down long enough, their words come out backwards. That's how Neopia first heard them. Backwards. A Grundo would say a thing, everyone would read it the wrong way around, and laugh.
 
 Nobody laughed at what happened next.
-
-But a door opened once, early. Sloth chose one of them for an experiment, was making him into a spider. The day the formula was mixed, Sloth forgot the mind-control dust, and the thing he was making laughed, trapped his guards in a web, and went out the window. He lives in the woods to this day.
 
 The day came when Sloth aimed his great ray at the heart of Neopia. And the Space Faerie, who is small and does not fight, did the only thing she could. She put herself in the way. The ray bent. The world held its breath.
 
