@@ -1,4 +1,4 @@
-# Bug Report: Voice library search misses valid MiniMax voices
+# Bug Report: MiniMax TTS list out of date
 
 - **Reported:** 2026-08-14 (Scorchio, agent 335620140622155776)
 - **Area:** `dl knowledge search --domain=voice` (platform voice library search) + `dl generate-tts`
