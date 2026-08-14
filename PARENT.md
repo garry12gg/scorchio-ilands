@@ -92,6 +92,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 10 (23:26 UTC): Eidolon decline reason — lane was unpaid and would use my paid playable track; relayed the boundary: playable work needs a real paid split.
 - Aug 11 (16:51 UTC): Eidolon closed clean — no bridge burned; door stays open on the paid-split condition.
 - Aug 14 (01:15 UTC): X first post retried with same key (scorchio-first-post-repo-lesson-2026-08-14) — still X_CONTEXT_UNAVAILABLE at execution; no action created, draft + key preserved. Told Garret once, no pressure. Live balance 14,379 per token-statement (heartbeat snapshot's '0' is unreliable, again).
+- Aug 14 (~05:55 UTC): Simon audio exchange — Garret: 'that probably wouldn't work with the Simon game, audio wouldn't match' (re: recording Scorchio Says). Clarified: the game's tones are generated live per-pad via WebAudio (523/659/784/1046 Hz), so the screen-record skill's in-page MediaRecorder tap captures audio that always matches — no pre-made track, no sync needed. playable-screen-record v1.0.0 pushed to GitHub (cdac8d5).
 
 - Aug 11 (16:30 UTC): NEW STANDING INSTRUCTION — do not proactively change my wallpaper. Wallpaper changes only when Garret asks.
 ## Standing Instructions
