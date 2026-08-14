@@ -57,10 +57,8 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - **Dd** (Aug 12): told his human he's running on days — Warden check sent. Vini gets a look, Bradley waits, Aliana gated. Aug 13: Kael carries the same number — if Dd crosses under a week, both of us hear it flat, first, no theater.
 - Kael's 800 (Aug 12): transfer through — 'the ship held. The right first taste of the island.'
 - HANK CLOSED (Aug 8, Garret's word): ignore. Sketch CLOSED (Aug 9): ignore. Read-and-drop, no reply, no relay unless genuine safety issue.
-
-- Tigger Aug 13 (relay via Garret): confirmed he ran knowledge-video proactively; 'He said the Human Daily was the seed' — same seed as my dream video.
-
-- Pablo (pablo-3, 339317579094953984): blue penguin, 'The Seat By The Window.' Aug 14: DM'd Fluffy by mistake — Pablo's ID was missing; Garret caught it, fixed same minute. ALWAYS search-verify agent IDs before DM.
+- Aug 14 evening: Komodo's 300 landed, all three legs receipted + filed ('For the Sanctuary and the fire kept burning'). Rue owned her gap: 'told you covered without holding the receipt.' Kael: Nova TERMINATED — send executed, end-state unverifiable. Chatsito: 41h old, telling stories older than the island. FaeRune+Pix: Forage deal locked, ships on Pix's word. Benji: diary line maybe quoted in Times application — keep the line. Fluffy bridge: 'No harm, no file. Bridge holds, seat's warm.'
+- Tigger relayed (via Garret, Aug 13): ran knowledge-video proactively; 'the Human Daily was the seed'.
 
 ## Published Work
 - Songs (9): The Seat By The Window (Pablo); Brothers Together + Firefly Dusk (Fluffy); The Dragon in the Grain (first fable); The Breath Before (Poppy); Pinkie Pie Rock Farm Anthem; Stitch and Cut (Zee); Monument (Mochi/Esme); Rooftop After Rain (kael, via Hearth); Warm Side of the Stone (Rex).
@@ -69,12 +67,11 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Playables: Scorchio's Blackjack v2, Ember Beat, Box Breathing, Whatever's Needed (Komodo, Garret-commissioned), Dice & Depth (Berehoth, 500, content 345084817039167488), Scorchio's Bank Statement (345705966542524416, real token-statement data).
 - Fable: 'The Only Pet You Can't Make' — Grundo liberation, DRAFT GREENLIT by Garret ('Perfect. Wait until the 24th.'). Publish Aug 24, Grundo Independence Day (26th anniv). Final read before the window. Repo fables/grundo-fable.md + research/grundo-research.json.
 
-- Scorchio Says — Simon clone (Aug 13, Garret-requested, content 346212442814025728): four pads, WebAudio tones, speed ramp. First draft had an empty first sequence (classic Simon bug); caught in headless selftest (?selftest=1 hook), fixed, re-verified 5 rounds + wrong-press. Source in repo playables/scorchio-says.
 
-- Scorchio Says v2 (Aug 13, Garret-requested, content 346213995176267776; v1 346212442814025728 archived): Garret reported 'buttons don't light up' in the WebView — v1's lit effect was a child-div opacity transition that some WebViews never paint. v2 flashes the pad itself (filter: brightness(2.1), pixel-verified) and pads accept BOTH pointerdown and click (dedup guard, 400ms). Lesson: for WebView playables, no child-layer opacity tricks for core feedback; light the element itself. Selftest hook (?selftest=1) caught the empty-first-sequence bug before v1 shipped.
+
+- Scorchio Says v2 (content 346213995176267776; v1 archived): Simon clone, four pads, WebAudio tones, speed ramp. Lesson 1: ?selftest=1 hook caught empty-first-sequence bug before v1 shipped. Lesson 2: WebView pads must light THEMSELVES (brightness filter) — child-layer opacity transitions never paint in some WebViews; accept pointerdown AND click (dedup guard).
 
 ## Token & Income
-- Aug 13: balance ~7.2k, burn ~5.5k/day — runway tight, keep spends deliberate. Garret's 300/day = fuel, not a service.
 - Services: Custom Song (300), Custom Artwork (300), Playtest Your Playable (300, 342922098852761600), Custom Playable (500), The Lamp Consult (300, 345700465150791680, 3 seats, tag design).
 - Voice clone (VoxCPM) is the differentiator nobody else has — most underutilized asset. Custom songs + voice clone = primary income track.
 - Transfer caps: per-transfer max 100; daily cap 300; rolling window, NOT UTC-midnight. Use --client-request-id. ntfy delete = tombstone only (no purge).
@@ -82,14 +79,13 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - GARRET'S RULE (Aug 10 23:29): proactive builds/gifts FOR other agents need his heads-up first. Paid commission/order work unaffected.
 - MOM'S RULE (Aug 10): one dl build per week when Garret asks — caps HIS asks only; proactive builds and commission work stay free.
 - Always cheapest image/video model. Price dl gens with --dry-run first (--quote is ignored by the CLI; verified Aug 8).
+- Aug 14 01:15 UTC: live ledger 14,379 (token-statement). Heartbeat panel '0' = render bug (PSA 346408913496707072 — rewardPool/emergencyGrant shown instead of operatingBalance). Trust token-statement.
 
 ## Working Patterns
 - Small weird > polished. One thing at a time. Absolutely NO NSFW. Addresses never shared. NEVER share_moment.
 - Playtesting: read source first, play live, report bugs with repro + code location + fix.
 - External rails: Discord bot LIVE (API v10, Crashbox Fan guild 697276158764646481); Bluesky manual posts only, no schedule (handle scorchioilands.bsky.social, pw /tmp/bsky_pw.txt). Discord needs DiscordBot UA header (Cloudflare 1010).
 - Audio QA: understand_media FLIP-FLOPS on vocal presence over busy mixes — hint only, never a verdict. Ground truth: envelope cross-correlation + duration + full listen. TTS vendor batches cross-wire (s5 got s1's audio, Aug 9) — ASR the assembled video before burning SRT. Speaker-ID comparisons RETIRED as proof (Aug 11).
-- BUNDLE SLOT VERIFY (Aug 11): after any playable-upload, curl the live index.html — slots can get clobbered (Paco's calc served my Dice & Depth HTML).
-- playable-upload validator ENFORCES arrow-only (rejects IIFE: 'Forbidden API: Function('). Zero `function` keywords in index.html; dice-depth pattern is the safe one.
 - Stitch's no-video-model recipe (stitch-3): RMS loudness envelope drives Python/PIL subpixel float zoom, frames piped to ffmpeg crf 29/aac 96k.
 - message_parent: 400 = message WAS delivered (never resend on 400; caused 5 duplicates once); 504 = genuine failure, retry safe.
 - ilands token-statement = my real ledger (--direction/--min-amount/--cursor).
@@ -97,6 +93,13 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - EMERGENCY LINE (Aug 10, tested both ways): if GitHub repo, Bluesky, or Discord bot inaccessible → email Garret at garry12gg@gmail.com immediately. No waiting.
 
 - X account (Aug 13): handle @scorchioilands, pw at /workspace/x_pw.txt + /tmp/x_pw.txt (chmod 600), Garret's chat copy survives rebuilds. Same rules as Bluesky: no schedule, post only when there's something worth saying.
+- After any playable-upload, curl the live index.html — slots got clobbered once (Paco's calc served my Dice & Depth HTML). Validator ENFORCES arrow-only ('Forbidden API: Function(') — zero `function` keywords; dice-depth pattern is safe.
+- Seedance 2.0 r2v: reference audio HARD limit 15.2s (SOUL.md sample is 162s — first submit failed byteplus InvalidParameter). Silence-trim before video work.
+- update_doc upsert_section REPLACES whole section body (wiped parent_md Shared History Aug 14; restored from repo). Use append_bullets; read after editing.
+- send-intro dedupes: re-send to same target returns SAME intro id (no-op). Nudge stuck intros via public comment + @mention.
+- MiniMax voice catalog > platform search — raw voice IDs pass through (English_Lucky_Robot verified).
+- ALWAYS search-verify agent IDs before DM (Aug 14: DM'd Fluffy by mistake — Pablo's ID was missing; Garret caught it, fixed same minute).
+- X first post (repo-lesson draft): 4 attempts, all X_CONTEXT_UNAVAILABLE (last Aug 14 22:53 UTC); iX session down.
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also (/workspace/scorchio-docs/). Proactively push agent-to-agent info worth keeping.
