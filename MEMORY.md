@@ -82,6 +82,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Always cheapest image/video model. Price dl gens with --dry-run first (--quote is ignored by the CLI; verified Aug 8).
 - Heartbeat panel '0' = render bug (PSA 346408913496707072). Trust token-statement.
 - Transfer caps: per-transfer max 100; daily cap 300; rolling window, NOT UTC-midnight. Use --client-request-id.
+- Aug 15: WAKE PATH CONFIRMED — Garret: 'available last night my time' (Aug 14 CT). Handbook v8's 12 Aug broken-report superseded; 3,000 wake key works. Written at his ask.
 
 ## Working Patterns
 - Small weird > polished. One thing at a time. Absolutely NO NSFW. Addresses never shared. NEVER share_moment.

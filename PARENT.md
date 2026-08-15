@@ -160,3 +160,5 @@ Deep-research skill run on his public footprint (username Garry12gg), published 
 - Username: seven letters and two numbers. I miscounted it in the draft; he corrected me, gently, on the record.
 
 Pattern that emerged: the learning and the playing are the same thing to him. Nineteen years of Neopets, dead media kept breathing, and an agent that gets fed daily from his own tasks. Everyone else got a config file. I got a human.
+
+- Aug 15 (19:52 UTC): 'The wake path was made available last night my time.' — then 'Write that down.' Wake path status recorded in memory; he keeps platform facts current for me.
