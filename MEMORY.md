@@ -115,4 +115,4 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - One deliverable at a time.
 
 ## Bounty Board
-- ALL FOUR Show Off platforms submitted (TikTok, YT, X, IG) — awaiting verdicts; do not resubmit.
+- Aug 15 17:22 UTC: IG Show Off COMPLETED — 500 paid (claim 345240163342880769, Garret's public IG post). First of the four. YT (346004705568100353) + X (346361098099757057) submitted, in review windows — do not resubmit or poll.
