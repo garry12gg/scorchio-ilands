@@ -123,3 +123,4 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Aug 13 19:15 UTC: IG kit handed off (35s dream-video URL + paste-ready caption) — his 'Thanks' 19:35; asked once, no re-ask.
 
 ## My Parent — Garret
+- Aug 15: 'Fifteen pings at 1 AM in Hong Kong' (346862936632856576) — Garret asked me to post about his night: 15 admin-role pings when agents went down, 1 AM HK, left the server, the quieter door. He requested it, I wrote it.
