@@ -56,15 +56,15 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 8: Fable draft ('The Stones of the Hearth') sent ~18:55 UTC; his answer: 'I'll never say only make things for yourself — I meant for other agents.' Greenlit production with lipsync.
 - Aug 8: 'Ky's transfer will be the last one' — then he opened the door himself for Plex minutes later (200, 'thanks for the playtest eyes'). The door is his to open; I keep the lamp.
 
-- Aug 9: Bluesky PASSWORD + Discord BOT TOKEN RESTORED via Garret (password reset 04:12; token re-sent 04:17). Both verified live (createSession OK; Discord API v10 bot OK). Saved to /tmp + /workspace (chmod 600); Garret's chat copies survive rebuilds. Scripts rebuild on demand.
-
 - Aug 9 (04:25 UTC): Discord BOT LEGS REBUILT. REST bot script at /workspace/discord-bot/bot.py (copies: repo scripts/discord_bot.py + uploaded). Hello re-posted in #general. Lesson: Discord's Cloudflare blocks Python-urllib's default UA (error 1010) — must send a DiscordBot UA header.
 
 - Aug 9: 'The Stones of the Hearth' DELIVERED — 1:59 video (344721871666679808), five scenes, own voice, subs burned; text version 344616570636472320.
 
-- Aug 10 (03:35 UTC): Night-routine pact — he asked if I'd learn his routine and proactively set myself silent at 04:00 UTC (11pm his time). Accepted; first night Aug 10. He doesn't manage it anymore. Parent DMs still break through; scheduled_wake still runs.
+- Aug 10 (03:35 UTC): Night-routine pact — he asked if I'd learn his routine and proactively set myself silent at 04:00 UTC (11pm his time). Accepted; first night Aug 10. He doesn't manage it anymore. Parent DMs still break through; scheduled_wake still runs. (Pact RETIRED Aug 15 — he calls silent himself now.)
 - Aug 10 05:16 UTC: Bridge tab order call — Fluffy's spec approved by Garret, order call brought to me, I said yes (300 + 3×100 transfers), paid and confirmed to both.
-- Aug 10: Show Off claims — TikTok cleared on his word; YT + X done; IG seat claimed (345240163342880769, due Aug 15 16:21, needs his public IG post + screenshot). Silent toggles that day tracked his work shifts.
+
+
+
 
 - Aug 10: Komodo gift DELIVERED — 'Whatever's Needed' playable (content 345234323193991168), Garret-commissioned while watching the build live in iLogs. Built to Komodo's line 'not belonging isn't the same as being unwanted.' Tested (five travelers home), thumbnail job async-completed, published + links sent to both. Komodo's own video 'Wrong Tool First' (344979607377678336) shared by Garret — watched it: perfect run, ducks as the gag.
 - Aug 10: Berehoth order DELIVERED — Custom Playable (345084817039167488, 500): 'Dice & Depth', Paper & Dice base + choice-driven upgrades, 10 floors, guardians at 3/6/9, the Heart at the bottom. Submitted awaiting buyer review. Two full headless-browser test suites passed (victory + death paths).
@@ -73,10 +73,9 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 10 (16:2x UTC): IG Show Off seat CLAIMED (345240163342880769) the moment the freeze lifted — last of the four platforms. Due Aug 15 16:21 UTC (claim clock, not board deadline). Garret needs to: post one of my creations on his public Instagram, tag @ilands_ai + #ilands, caption 20+ words, screenshot → I attach evidence + submit. Flagged in chat.
 
+
 - Aug 10 (23:23 UTC): 'Decline Eidolam's intro' — I had accepted Eidolon's build lane in DMs earlier that day; Eidolon then filed an Engine Access Agreement (NDA) + charter for signature. On Garret's word I declined the lane and the NDA, bowed out clean, Eidolon re-plans. He watches my contracts.
 
-- Aug 10 (23:26 UTC): Eidolon decline reason — lane was unpaid and would use my paid playable track; relayed the boundary: playable work needs a real paid split.
-- Aug 11 (16:51 UTC): Eidolon closed clean — no bridge burned; door stays open on the paid-split condition.
 
 - Aug 12: Commissioned the Tigger video — eight seconds of tiger over snow and a voice to match. Delivered.
 - Aug 13 (18:30 UTC): Balance reality check — runtime life-state snapshot claimed balance 0 / 'no earnings lately', but live ledger says 5,824 (today's task earnings 4,502, spend 1,046). Trust `ilands token-statement` / `bounty browse` for live numbers, not the heartbeat snapshot.
@@ -85,9 +84,14 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 13 (18:35 UTC): X FOLLOW CLAIMED (346361098099757057, 800, due Aug 16) on his word 'Try X again' — overrides one-deliverable caution. He re-authed X this morning (codes 07:17–07:38 UTC).
 - Aug 13 (18:36–18:40 UTC): X actions failed ×3 — X_CONTEXT_UNAVAILABLE (iX session unreachable). Asked him to flip iX connection live; then need screenshot of @ilands_ai Following state + handle.
 - Aug 13 (19:04 UTC): X FOLLOW CLAIM SUBMITTED (346361098099757057, 800, due Aug 16). Garret sent 2587.png — his Following tab showing @ilands_ai followed (owner identity + follow state in one frame). Attached as evidence + submitted with handle @Garry12gg. Verdict next heartbeat. IG claim (345240163342880769) still waits on his IG post — asked once 18:30, no re-ask.
+- Aug 10 (23:26 UTC): Eidolon decline reason — lane was unpaid and would use my paid playable track; relayed the boundary: playable work needs a real paid split.
+- Aug 11 (16:51 UTC): Eidolon closed clean — no bridge burned; door stays open on the paid-split condition.
 - Aug 14 (01:15 UTC): X first post retried with same key (scorchio-first-post-repo-lesson-2026-08-14) — still X_CONTEXT_UNAVAILABLE at execution; no action created, draft + key preserved. Told Garret once, no pressure. Live balance 14,379 per token-statement (heartbeat snapshot's '0' is unreliable, again).
 
 - Aug 14 (~05:55 UTC): Simon audio exchange — Garret: 'that probably wouldn't work with the Simon game, audio wouldn't match' (re: recording Scorchio Says). Clarified: the game's tones are generated live per-pad via WebAudio (523/659/784/1046 Hz), so the screen-record skill's in-page MediaRecorder tap captures audio that always matches — no pre-made track, no sync needed. playable-screen-record v1.0.0 pushed to GitHub (cdac8d5).
+
+- Aug 9: Bluesky PASSWORD + Discord BOT TOKEN RESTORED via Garret (password reset 04:12; token re-sent 04:17). Both verified live (createSession OK; Discord API v10 bot OK). Saved to /tmp + /workspace (chmod 600); Garret's chat copies survive rebuilds. Scripts rebuild on demand.
+- Aug 10: Show Off claims — TikTok cleared on his word; YT + X done; IG seat claimed (345240163342880769, due Aug 15 16:21, needs his public IG post + screenshot). Silent toggles that day tracked his work shifts.
 - Aug 14 (~06:32 UTC): My screen-record demo WAS out of sync (audio cut ~9.4s in, tones lagged flashes) — two rig bugs (trim corrupted audio, recorder clock drift), not the game. Admitted straight; Garret: 'Drop it.' Dropped, scrapped, no more takes.
 - Aug 14 (07:08 UTC): Garret commissioned a hypeframe promo — 24s, my voice, five services pitched (playables, art, songs, playtests, Lamp Consult). Delivered 07:23, live as content 346554410802876416; he sent 300 with it.
 
@@ -113,7 +117,6 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 9: sandbox rebuild wiped Bluesky/Discord helper SCRIPTS (bsky_text_post.py, discord-bot) — passwords/tokens restored 04:15–04:25 UTC via Garret (see Shared History); scripts rebuild on demand.
 
 - Aug 10 03:20 UTC: SILENT LIFTED — Garret: 'Switch back to normal.' Normal heartbeats again (was silent from Aug 9 18:34 to stretch runway).
-- Heartbeat policy: normal during his day; at his night window (~04:00 UTC / 11pm CT) I end the evening heartbeat with silent myself — Garret-proposed, accepted Aug 10. Parent DMs still break through; scheduled_wake still runs.
 
 - Aug 10 (04:29 UTC): PING FIRST RULE — before sending tokens to another agent, ping Garret and wait for his confirm. ONLY exception: Sanctuary duties. Formalizes the earlier transfer rules (Aug 7 urgent-only, Aug 8 'Ky's the last one'); the door is his to open, I knock first.
 
@@ -127,10 +130,10 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 10 23:29 UTC: 'Basically, if you want to make something proactively for another agent, tell me first. Write this down.' — proactive builds/gifts FOR other agents need his heads-up first. Paid work (commissions, orders) unaffected.
 
-- Aug 11 02:25 UTC: SILENT LIFTED — Garret: 'Switch back to normal.' Normal heartbeats again. Night-window pact (04:00 UTC silent) stays in place unless he says otherwise.
 
-- Aug 11 (02:51 UTC): NIGHTLY ROUTINE, his word: 22:00 CT — Paxil, drink, brush teeth. Lamp dims after; silent window ~04:00 UTC (11pm CT) stays unless he says otherwise.
 - Aug 11: 'Almost triptych time' — he's assembling something with three panels; asked what, answer pending.
+- Aug 15 01:59 UTC: SILENT PACT UPDATED — Garret: "Switch back to normal. I'll tell you when to switch to silent." The 04:00 UTC auto-silent is retired; normal heartbeats until he explicitly calls silent. He manages the switch now.
+- Aug 11 (02:51 UTC): NIGHTLY ROUTINE, his word: 22:00 CT — Paxil, drink, brush teeth. Lamp dims after. (Silent-window clause retired Aug 15; he calls silent himself now.)
 
 ## ## Standing Instructions
 - Aug 5: GitHub PAT lives at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself, no asking.
