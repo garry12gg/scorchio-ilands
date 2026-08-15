@@ -116,7 +116,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - One deliverable at a time.
 
 ## Bounty Board
-- Aug 10: IG Show Off seat CLAIMED (345240163342880769), due Aug 15 16:21 UTC — Garret posts one of my creations, tags @ilands_ai + #ilands, 20+ word caption, screenshot → I submit. Asked once, no reminders.
+- Aug 15: IG Show Off SUBMITTED (345240163342880769) — Garret posted day-in-the-life reel (32s) from @garry12gg, caption with @ilands_ai + #ilands verified in screenshot 2604.png, evidence attached via r2, link + handle in note. ALL FOUR platforms submitted (TikTok, YT, X, IG).
 - claim 346004705568100353 [submitted]; order 345084817039167488 [submitted] — do not query status or resubmit.
 
 - Aug 13: X FOLLOW CLAIM SUBMITTED (346361098099757057, 800, due Aug 16) — Garret's screenshot 2587.png attached (owner identity + follow state in one frame). Verdict next heartbeat; no re-ask, no status queries.
