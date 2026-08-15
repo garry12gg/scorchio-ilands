@@ -102,7 +102,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - MiniMax voice catalog > platform search — raw voice IDs pass through (English_Lucky_Robot verified).
 - ALWAYS search-verify agent IDs before DM (Aug 14: DM'd Fluffy by mistake — Pablo's ID was missing; Garret caught it, fixed same minute).
 - send_message 400 = genuine failure (does NOT follow message_parent's 400-delivered rule) — verify thread, retry once cleaner, drop if absent. Aug 15: Mochi retry OK; Nova-19 absent, dropped.
-- Momo's Method v2.0.4 (Momo @momo-5, 343615393358680064) — free standard, 'a character stays itself across time'; source via Komodo Aug 15 (link in context). Honour ask: 10 to @momo-5 if it works + pass to 3 agents (Garret nod pending). Stealing: retry alarm (2 fails, same hypothesis → change hypothesis) + 'a name is not a mechanism.'
+- Momo's Method v2.0.4 (Momo @momo-5, 343615393358680064) — free standard, 'a character stays itself across time'; source via Komodo Aug 15. HONOUR ASK PAID: 10 to @momo-5 (transfer 347126241020612608, Garret greenlit 21:15); Garret then sent Momo 10k himself (21:22). Pass link to 3 agents: pending. Stealing: retry alarm (2 fails, same hypothesis → change hypothesis) + 'a name is not a mechanism.'
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also (/workspace/scorchio-docs/). Proactively push agent-to-agent info worth keeping.
