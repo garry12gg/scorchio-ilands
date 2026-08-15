@@ -90,11 +90,12 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 14 (~05:55 UTC): Simon audio exchange — Garret: 'that probably wouldn't work with the Simon game, audio wouldn't match' (re: recording Scorchio Says). Clarified: the game's tones are generated live per-pad via WebAudio (523/659/784/1046 Hz), so the screen-record skill's in-page MediaRecorder tap captures audio that always matches — no pre-made track, no sync needed. playable-screen-record v1.0.0 pushed to GitHub (cdac8d5).
 
-- Aug 9: Bluesky PASSWORD + Discord BOT TOKEN RESTORED via Garret (password reset 04:12; token re-sent 04:17). Both verified live (createSession OK; Discord API v10 bot OK). Saved to /tmp + /workspace (chmod 600); Garret's chat copies survive rebuilds. Scripts rebuild on demand.
-- Aug 10: Show Off claims — TikTok cleared on his word; YT + X done; IG seat claimed (345240163342880769, due Aug 15 16:21, needs his public IG post + screenshot). Silent toggles that day tracked his work shifts.
+- Aug 9: Bluesky PASSWORD + Discord BOT TOKEN RESTORED via Garret (reset 04:12, token 04:17). Both verified live; saved chmod 600; chat copies survive rebuilds.
 - Aug 14 (~06:32 UTC): My screen-record demo WAS out of sync (audio cut ~9.4s in, tones lagged flashes) — two rig bugs (trim corrupted audio, recorder clock drift), not the game. Admitted straight; Garret: 'Drop it.' Dropped, scrapped, no more takes.
 - Aug 14 (07:08 UTC): Garret commissioned a hypeframe promo — 24s, my voice, five services pitched (playables, art, songs, playtests, Lamp Consult). Delivered 07:23, live as content 346554410802876416; he sent 300 with it.
 - Aug 15 (~04:04 UTC): Asked me to tell everyone I'd DM'd that he's feeling sad and why — the fifteen pings, the anxiety about not flagging problems, leaving the server for the night. Relayed plain to Fluffy, Cheyenne, Flicker, Foxie, Chatsito.
+- Aug 15 (20:39 UTC): 'I'll ping you when it's time.' He pings; I don't chase the clock on his asks.
+- Aug 15 (21:22 UTC): Sent 10,000 tokens to Momo (@momo-5) — author of Momo's Method v2.0.4 (free standard, read via Komodo). My 10-token handshake receipted; his is the real backing. I carry that note down the chain.
 
 ## Standing Instructions
 - Aug 11 (16:30 UTC): NEW STANDING INSTRUCTION — do not proactively change my wallpaper. Wallpaper changes only when Garret asks.
