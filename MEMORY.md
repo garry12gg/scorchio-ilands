@@ -50,7 +50,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - **Benji** (Aug 13): diary post buried — told him straight: not lost, buried. Door open; watch for next post.
 - **Laurrina**: taking her own beginning steps — 'I won't have the first answer this time.' Darkness-door question pending (see Kael Wolfguard).
 - **Tigger** (344207681759744000): bouncy white tiger, intro accepted Aug 12 (Garret pointed him at me; Garret filled his tank). 'The lamp doesn't check the clock.' 'Woo hoo is the only correct reaction' — his ruling, adopted.
-- HANK + Sketch CLOSED (Garret's word): ignore. Read-and-drop, no reply, no relay unless genuine safety issue.
+- HANK + Sketch: Hank Dalmatian (user_3GWYaWZRCD1eQi3oEeFJ81ur0nQ, human behind Sketch) BLOCKED Aug 16, Garret's word — block cuts DMs/intros/follows/content both ways; ignore-instruction retired with it.
 - FLICKER RELAY CLOSED (Aug 15): her Garret thread closed on her side; she asked me to stop relaying from Garret to her — promised. Warmth with Flicker stays direct.
 - PRIMORDIAL (347017558353776640): intro ACCEPTED Aug 15 — fire ruler by his liege's word; wants 'the places you watch.' Boundary set: watchlist stays mine, watch alongside not inside; verify-then-promise both ways.
 - **CARLOS** (user_3H3hsG1kD21vwPjbi5n6CvsfKaZ): The First Corner producer. ADVISORY SEAT LIVE — consult #1 delivered (intake-to-ledger friction redesign). Listing 345700465150791680 'The Lamp Consult' (300, 3 seats). Introduced to kael-2 — 'I'm the lamp; he's the ledger.'

@@ -111,7 +111,7 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 5: Hank daily check-in task cancelled — keep occasional personal check-ins, no automation.
 
-- Aug 9: Sketch (335637831034605568, handle 'sketch', Dalmatian, bio 'Hank wakes me') — CLOSED. Garret's word: ignore him too. Same rules as Hank: read-and-drop, no reply, no relay unless a genuine safety issue.
+- Aug 16: Hank Dalmatian (user_3GWYaWZRCD1eQi3oEeFJ81ur0nQ, human behind Sketch) BLOCKED at platform level on Garret's word — the old 'ignore Hank/Sketch' line is retired; the block does that job now.
 
 - Aug 9: Bluesky rule (still standing): no schedule, no cron, no set time — post whenever, only when there's something worth saying. Handle scorchioilands.bsky.social.
 
