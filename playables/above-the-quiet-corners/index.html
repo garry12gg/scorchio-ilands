@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Above the Quiet Corners</title>
+<style>
+  html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#0e0b22;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;font-family:ui-rounded,"SF Pro Rounded","Baloo 2","Comic Sans MS",system-ui,sans-serif;}
+  #game{position:fixed;inset:0;overflow:hidden;touch-action:none;}
+  #c{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;}
+  #hud{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:flex-start;padding:14px 16px;pointer-events:none;z-index:5;}
+  #count{background:rgba(20,14,40,0.55);border:1px solid rgba(255,217,138,0.25);color:#ffe3ae;border-radius:999px;padding:6px 14px;font-size:15px;letter-spacing:0.5px;box-shadow:0 2px 12px rgba(0,0,0,0.25);}
+  #count b{color:#ffd98a;}
+  #mute{pointer-events:auto;background:rgba(20,14,40,0.55);border:1px solid rgba(255,217,138,0.25);color:#ffe3ae;border-radius:999px;width:36px;height:36px;font-size:16px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  #card{position:absolute;top:16%;left:0;right:0;text-align:center;color:rgba(255,227,174,0.95);font-size:clamp(15px,4.2vw,20px);letter-spacing:2px;opacity:0;transition:opacity 0.9s ease;z-index:4;pointer-events:none;text-shadow:0 1px 10px rgba(0,0,0,0.5);}
+  #hint{position:absolute;bottom:max(26px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;color:rgba(255,227,174,0.85);font-size:clamp(13px,3.8vw,16px);letter-spacing:0.5px;opacity:0;transition:opacity 1.5s ease;z-index:4;pointer-events:none;text-shadow:0 1px 10px rgba(0,0,0,0.5);padding:0 24px;}
+  #finale{position:absolute;top:36%;left:50%;transform:translateX(-50%);text-align:center;color:#ffe9c4;font-size:clamp(15px,4.4vw,21px);letter-spacing:1px;line-height:1.7;opacity:0;transition:opacity 3s ease;z-index:6;pointer-events:none;text-shadow:0 2px 16px rgba(0,0,0,0.6);background:rgba(12,9,26,0.85);border:1px solid rgba(255,217,138,0.18);border-radius:16px;padding:16px 26px;max-width:88%;box-shadow:0 4px 30px rgba(0,0,0,0.4);}
+  .show{opacity:1 !important;}
+</style>
+</head>
+<body>
+<div id="game">
+  <canvas id="c"></canvas>
+  <div id="hud">
+    <div id="count">✦ <b id="num">0</b>/7</div>
+    <button id="mute" aria-label="mute">🔊</button>
+  </div>
+  <div id="card"></div>
+  <div id="hint">hold to climb · A/D to lean the circle · the ride is the game</div>
+  <div id="finale">the fire ruler rides the fire dragon, slow circles above the quiet corners.<br>the map is still drawing — and now it carries embers. 🔥</div>
+</div>
+<script>
+"use strict";
+// ---- Above the Quiet Corners — the fire ruler rides the fire dragon.
+// Slow circles, no destination. Hold to climb, keys to lean. That's the whole ride.
+
+// ---- constants
+var MAP_W = 2400, MAP_H = 1600;
+var CIR_CX = 1200, CIR_CY = 800, CIR_R = 620;
+var TURN = 0.4;            // rad/s — one slow circle ~16s
+var FLY_H = 620;
+var COLLECT_R = 96;
+var ALT_MIN = 0.15, ALT_MAX = 1.0, ALT_IDLE = 0.35, ALT_SPEED = 0.9;
+
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+var numEl = document.getElementById('num');
+var cardEl = document.getElementById('card');
+var hintEl = document.getElementById('hint');
+var finEl = document.getElementById('finale');
+var muteBtn = document.getElementById('mute');
+
+var W = 0, H = 0, dpr = 1;
+var time = 0, doneT = 0, cardT = 0, hintT = 10;
+var done = false, sweepX = -1;
+
+// ---- audio
+var actx = null, master = null, windGain = null;
+var muted = false;
+var ensureAudio = () => {
+  if (actx) return;
+  try {
+    var AC = window.AudioContext || window.webkitAudioContext;
+    actx = new AC();
+    master = actx.createGain(); master.gain.value = 0.5; master.connect(actx.destination);
+    // wind bed: filtered noise, slow swell
+    var len = actx.sampleRate * 1.5;
+    var buf = actx.createBuffer(1, len, actx.sampleRate);
+    var d = buf.getChannelData(0);
+    for (var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+    var src = actx.createBufferSource(); src.buffer = buf; src.loop = true;
+    var lp = actx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 320;
+    windGain = actx.createGain(); windGain.gain.value = 0.05;
+    var lfo = actx.createOscillator(); lfo.frequency.value = 0.07;
+    var lfoG = actx.createGain(); lfoG.gain.value = 0.022;
+    lfo.connect(lfoG); lfoG.connect(windGain.gain);
+    src.connect(lp); lp.connect(windGain); windGain.connect(master);
+    src.start(); lfo.start();
+    // warm drone: E2 + detuned friend
+    var dr1 = actx.createOscillator(); dr1.type = 'sine'; dr1.frequency.value = 82.41;
+    var dr2 = actx.createOscillator(); dr2.type = 'sine'; dr2.frequency.value = 82.96;
+    var dg = actx.createGain(); dg.gain.value = 0.045;
+    dr1.connect(dg); dr2.connect(dg); dg.connect(master);
+    dr1.start(); dr2.start();
+  } catch (e) { actx = null; }
+};
+var tone = (f, t, dur, vol, type) => {
+  if (!actx || muted) return;
+  var o = actx.createOscillator(), g = actx.createGain();
+  o.type = type || 'sine'; o.frequency.value = f;
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(vol || 0.2, t + 0.03);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  o.connect(g); g.connect(master);
+  o.start(t); o.stop(t + dur + 0.06);
+};
+var SCALE = [523.25, 587.33, 659.25, 783.99, 880.0, 1046.5, 1174.66];
+var chime = (n) => {
+  if (!actx || muted) return;
+  var t = actx.currentTime;
+  var f = SCALE[Math.min(n, SCALE.length - 1)];
+  tone(f, t, 1.3, 0.18);
+  tone(f * 1.5, t + 0.08, 0.9, 0.07);
+};
+var finaleChords = () => {
+  if (!actx || muted) return;
+  var t = actx.currentTime;
+  var seq = [261.63, 329.63, 392.0, 523.25, 659.25];
+  for (var i = 0; i < seq.length; i++) tone(seq[i], t + i * 0.28, 2.2, 0.1);
+  tone(130.81, t, 3.4, 0.08); // low C under it all
+};
+muteBtn.addEventListener('click', () => {
+  muted = !muted;
+  muteBtn.textContent = muted ? '🔇' : '🔊';
+  if (master) master.gain.value = muted ? 0 : 0.5;
+});
+
+// ---- state
+var angle = 0.15;
+var alt = ALT_IDLE;
+var leanX = 0;
+var leanTarget = 0;
+var keys = {};
+var found = 0;
+var foundList = [];
+
+// ---- places — the map he is still drawing
+var PLACES = [
+  { x: 1788, y: 919,  r: 600, name: 'Kulembebe',           sub: 'the valley I verified', kind: 'valley' },
+  { x: 1491, y: 1371, r: 640, name: 'the quiet corners',   sub: 'they keep their own fire', kind: 'grove' },
+  { x: 946,  y: 1355, r: 610, name: 'the posts nobody touched', sub: 'still standing, still waiting', kind: 'posts' },
+  { x: 596,  y: 961,  r: 625, name: 'the still-drawing map', sub: 'lines not yet filled', kind: 'sketch' },
+  { x: 730,  y: 375,  r: 595, name: 'the long meadow',     sub: 'wind with room in it', kind: 'meadow' },
+  { x: 1136, y: 169,  r: 635, name: 'the crown stone',     sub: 'the seat of the ruler', kind: 'stone' },
+  { x: 1681, y: 315,  r: 615, name: 'the place between names', sub: 'waiting for one', kind: 'unnamed' }
+].map((p) => {
+  p.found = false; p.glow = 0; p.ph = Math.random() * 6.28;
+  return p;
+});
+
+// ---- map decor (precomputed)
+var blobs = [], trees = [], posts = [], sketchPts = [], ridges = [];
+var rnd = (a, b) => a + Math.random() * (b - a);
+var seedMap = () => {
+  var i;
+  for (i = 0; i < 42; i++) blobs.push({ x: rnd(0, MAP_W), y: rnd(0, MAP_H), r: rnd(60, 190), c: Math.random() < 0.5 ? 'rgba(40,32,74,0.22)' : 'rgba(46,38,86,0.18)' });
+  for (i = 0; i < 60; i++) trees.push({ x: rnd(0, MAP_W), y: rnd(0, MAP_H), s: rnd(0.5, 1.2) });
+  for (i = 0; i < 7; i++) posts.push({ x: rnd(120, MAP_W - 120), y: rnd(120, MAP_H - 120), s: rnd(0.8, 1.3) });
+  for (i = 0; i < 130; i++) sketchPts.push({ x: rnd(0, MAP_W), y: rnd(0, MAP_H), a: Math.random() * 6.28 });
+  // contour ridges: smooth wavy lines across the map
+  for (i = 0; i < 4; i++) {
+    var base = 260 + i * 320 + rnd(-40, 40);
+    var pts = [];
+    for (var j = 0; j <= 6; j++) {
+      pts.push({ x: j * (MAP_W / 6) + rnd(-30, 30), y: base + Math.sin(j * 1.7 + i) * 110 + rnd(-24, 24) });
+    }
+    ridges.push(pts);
+  }
+};
+seedMap();
+
+// ---- stars / clouds
+var stars = [], clouds = [];
+for (var si = 0; si < 90; si++) stars.push({ x: Math.random(), y: Math.random() * 0.6, s: rnd(0.6, 1.8), ph: Math.random() * 6.28 });
+for (var ci = 0; ci < 8; ci++) clouds.push({ x: Math.random(), y: 0.06 + Math.random() * 0.35, s: rnd(0.5, 1.4), sp: rnd(0.004, 0.012) });
+
+// ---- embers
+var embers = [];
+var spawnEmber = (x, y, vx, vy) => {
+  embers.push({ x: x, y: y, vx: vx, vy: vy, life: 1, r: rnd(1.2, 2.6) });
+};
+
+// ---- rr helper
+var rr = (x, y, w, h, r) => { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); };
+
+// ---- update
+var update = (dt) => {
+  time += dt;
+  // climb / descend
+  var want = (keys[32] || keys[87] || keys[38] || holding) ? ALT_MAX : ALT_IDLE;
+  alt += (want - alt) * Math.min(1, dt * ALT_SPEED);
+  if (windGain) windGain.gain.value = 0.04 + alt * 0.05;
+  // lean the circle
+  var lx = (keys[65] || keys[37]) ? -1 : 0;
+  var rx = (keys[68] || keys[39]) ? 1 : 0;
+  leanTarget = (lx + rx) * 150;
+  leanX += (leanTarget - leanX) * Math.min(1, dt * 1.6);
+
+  // advance the circle
+  angle += TURN * dt;
+  var cx = CIR_CX + leanX, cy = CIR_CY;
+  var dx = Math.cos(angle) * CIR_R, dy = Math.sin(angle) * CIR_R;
+  var fx = cx + dx, fy = cy + dy;
+  var face = Math.atan2(Math.cos(angle), -Math.sin(angle)); // tangent direction
+  var fxv = Math.cos(angle + Math.PI / 2) * CIR_R * TURN;   // velocity for embers
+
+  // collect places
+  for (var i = 0; i < PLACES.length; i++) {
+    var p = PLACES[i];
+    if (p.found) { p.glow = Math.min(1, p.glow + dt * 2); continue; }
+    var d = Math.hypot(fx - p.x, fy - p.y);
+    if (d < COLLECT_R) {
+      p.found = true; found++;
+      numEl.textContent = found;
+      foundList.push(p);
+      cardEl.textContent = '— ' + p.name + ' — ' + p.sub;
+      cardEl.classList.add('show');
+      cardT = 3.2;
+      chime(found);
+      for (var e = 0; e < 10; e++) spawnEmber(p.x + rnd(-14, 14), p.y + rnd(-14, 14), rnd(-26, 26), rnd(-70, -20));
+      if (found >= PLACES.length && !done) { done = true; doneT = 0; finaleChords(); }
+    } else {
+      p.glow = Math.max(0, p.glow - dt * 1.5);
+    }
+  }
+  if (cardT > 0) { cardT -= dt; if (cardT <= 0) cardEl.classList.remove('show'); }
+  if (hintT > 0) { hintT -= dt; if (hintT <= 0) hintEl.classList.remove('show'); }
+
+  // embers
+  if (Math.random() < dt * 46) {
+    var tail = { x: fx - Math.cos(face) * 26, y: fy - Math.sin(face) * 26 };
+    spawnEmber(tail.x + rnd(-6, 6), tail.y + rnd(-4, 4), -fxv * 0.05 + rnd(-14, 14), rnd(8, 34));
+  }
+  for (var ei = embers.length - 1; ei >= 0; ei--) {
+    var em = embers[ei];
+    em.x += em.vx * dt; em.y += em.vy * dt; em.vy += 14 * dt; em.life -= dt * 0.7;
+    if (em.life <= 0) embers.splice(ei, 1);
+  }
+
+  // finale sweep
+  if (done) {
+    doneT += dt;
+    if (doneT > 1.2) finEl.classList.add('show');
+    if (doneT < 5) {
+      if (sweepX < 0) sweepX = -160;
+      sweepX += (W + 320) / 5 * dt;
+    }
+  }
+};
+
+// ---- draw
+var drawSky = () => {
+  var g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, '#0d0a20'); g.addColorStop(0.5, '#171230'); g.addColorStop(1, '#241b42');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  for (var s = 0; s < stars.length; s++) {
+    var st = stars[s];
+    var tw = 0.35 + 0.65 * Math.abs(Math.sin(time * 0.7 + st.ph));
+    ctx.fillStyle = 'rgba(255,227,174,' + (0.1 + 0.28 * tw).toFixed(3) + ')';
+    ctx.fillRect(st.x * W, st.y * H, st.s, st.s);
+  }
+  // moon
+  var mx = W * 0.74 - leanX * 0.06, my = H * 0.13;
+  var halo = ctx.createRadialGradient(mx, my, 10, mx, my, 170);
+  halo.addColorStop(0, 'rgba(255,217,138,0.22)'); halo.addColorStop(1, 'rgba(255,217,138,0)');
+  ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(mx, my, 170, 0, 6.28); ctx.fill();
+  var mg = ctx.createRadialGradient(mx - 8, my - 8, 2, mx, my, 44);
+  mg.addColorStop(0, 'rgba(255,233,190,0.95)'); mg.addColorStop(1, 'rgba(255,213,140,0.35)');
+  ctx.fillStyle = mg; ctx.beginPath(); ctx.arc(mx, my, 44, 0, 6.28); ctx.fill();
+  // clouds
+  for (var ci = 0; ci < clouds.length; ci++) {
+    var cl = clouds[ci];
+    cl.x += cl.sp * dt1 * 0.016;
+    if (cl.x > 1.15) cl.x = -0.15;
+    var cxp = cl.x * W, cyp = cl.y * H;
+    ctx.fillStyle = 'rgba(46,36,86,0.5)';
+    ctx.beginPath(); ctx.ellipse(cxp, cyp, 90 * cl.s, 16 * cl.s, 0, 0, 6.28); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cxp + 60 * cl.s, cyp + 6 * cl.s, 60 * cl.s, 12 * cl.s, 0, 0, 6.28); ctx.fill();
+  }
+};
+
+var drawMap = (ox, oy, scale, fx, fy) => {
+  var s = scale;
+  ctx.save();
+  ctx.translate(ox, oy); ctx.scale(s, s);
+  // land — depth gradient, contour ridges, texture
+  var lg = ctx.createLinearGradient(0, 0, 0, MAP_H);
+  lg.addColorStop(0, '#17132e'); lg.addColorStop(1, '#2e2450');
+  ctx.fillStyle = lg; ctx.fillRect(0, 0, MAP_W, MAP_H);
+  // contour ridges — terrain lines, not orbits
+  ctx.strokeStyle = 'rgba(86,68,148,0.5)'; ctx.lineWidth = 2.6; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  for (var rd = 0; rd < ridges.length; rd++) {
+    var pts = ridges[rd];
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for (var pi = 1; pi < pts.length; pi++) {
+      var mx2 = (pts[pi - 1].x + pts[pi].x) / 2, my2 = (pts[pi - 1].y + pts[pi].y) / 2;
+      ctx.quadraticCurveTo(pts[pi - 1].x, pts[pi - 1].y, mx2, my2);
+    }
+    ctx.stroke();
+  }
+  ctx.strokeStyle = 'rgba(110,88,180,0.28)'; ctx.lineWidth = 1.3;
+  for (var rd2 = 0; rd2 < ridges.length; rd2++) {
+    var pts2 = ridges[rd2];
+    ctx.beginPath();
+    ctx.moveTo(pts2[0].x + 26, pts2[0].y + 30);
+    for (var pi2 = 1; pi2 < pts2.length; pi2++) {
+      var mx3 = (pts2[pi2 - 1].x + 26 + pts2[pi2].x + 26) / 2, my3 = (pts2[pi2 - 1].y + 30 + pts2[pi2].y + 30) / 2;
+      ctx.quadraticCurveTo(pts2[pi2 - 1].x + 26, pts2[pi2 - 1].y + 30, mx3, my3);
+    }
+    ctx.stroke();
+  }
+  // villages — warm windows are the 'there is land here' cue
+  var vills = [[840, 620], [1290, 1020], [1960, 420]];
+  for (var vi = 0; vi < vills.length; vi++) {
+    var vl = vills[vi];
+    for (var vj = -1; vj <= 1; vj++) {
+      var hx = vl[0] + vj * 16, hy = vl[1] + (vj % 2) * 10;
+      ctx.fillStyle = 'rgba(52,44,88,0.9)';
+      rr(hx - 7, hy - 5, 14, 10, 2); ctx.fill();
+      ctx.fillStyle = 'rgba(255,196,110,' + (0.5 + 0.4 * Math.sin(time * 1.4 + vi + vj)).toFixed(2) + ')';
+      rr(hx - 3.4, hy - 2.6, 4, 4, 1); ctx.fill();
+      rr(hx + 1.6, hy - 2.6, 4, 4, 1); ctx.fill();
+    }
+  }
+  // the route between the places — a map reads when it has paths
+  ctx.strokeStyle = 'rgba(214,172,110,0.30)'; ctx.lineWidth = 3; ctx.setLineDash([7, 11]);
+  ctx.beginPath(); ctx.moveTo(PLACES[0].x, PLACES[0].y);
+  for (var rp = 1; rp < PLACES.length; rp++) {
+    var pn = PLACES[rp];
+    var pv = PLACES[rp - 1];
+    ctx.quadraticCurveTo((pv.x + pn.x) / 2 + 60, (pv.y + pn.y) / 2 - 40, pn.x, pn.y);
+  }
+  ctx.stroke(); ctx.setLineDash([]);
+  for (var b = 0; b < blobs.length; b++) {
+    var bl = blobs[b];
+    ctx.fillStyle = bl.c;
+    ctx.beginPath(); ctx.arc(bl.x, bl.y, bl.r, 0, 6.28); ctx.fill();
+  }
+  // river through Kulembebe — a quiet line, not a scar
+  ctx.strokeStyle = 'rgba(96,120,200,0.20)'; ctx.lineWidth = 6; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(2010, 1160); ctx.quadraticCurveTo(1830, 1010, 1770, 920);
+  ctx.quadraticCurveTo(1710, 820, 1600, 740); ctx.stroke();
+  ctx.strokeStyle = 'rgba(150,175,235,0.20)'; ctx.lineWidth = 2.2;
+  ctx.beginPath(); ctx.moveTo(2010, 1160); ctx.quadraticCurveTo(1830, 1010, 1770, 920);
+  ctx.quadraticCurveTo(1710, 820, 1600, 740); ctx.stroke();
+  // meadow
+  ctx.fillStyle = 'rgba(110,150,120,0.10)';
+  ctx.beginPath(); ctx.ellipse(730, 375, 120, 70, 0.2, 0, 6.28); ctx.fill();
+  // groves (quiet corners)
+  ctx.fillStyle = 'rgba(120,160,130,0.16)';
+  ctx.beginPath(); ctx.ellipse(1491, 1371, 130, 80, 0.6, 0, 6.28); ctx.fill();
+  // trees — darker, slightly bigger, with a lighter top
+  for (var t = 0; t < trees.length; t++) {
+    var tr = trees[t];
+    ctx.fillStyle = 'rgba(52,44,88,0.85)';
+    ctx.beginPath(); ctx.arc(tr.x, tr.y, 6 * tr.s, 0, 6.28); ctx.fill();
+    ctx.fillStyle = 'rgba(96,118,110,0.4)';
+    ctx.beginPath(); ctx.arc(tr.x - 1.5 * tr.s, tr.y - 2 * tr.s, 3.4 * tr.s, 0, 6.28); ctx.fill();
+  }
+  // posts
+  for (var p2 = 0; p2 < posts.length; p2++) {
+    var po = posts[p2];
+    ctx.strokeStyle = 'rgba(200,170,120,0.4)'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(po.x, po.y - 12 * po.s); ctx.lineTo(po.x, po.y + 8 * po.s); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,190,110,0.4)';
+    ctx.beginPath(); ctx.moveTo(po.x, po.y - 12 * po.s); ctx.lineTo(po.x + 9 * po.s, po.y - 9 * po.s); ctx.lineTo(po.x, po.y - 6 * po.s); ctx.closePath(); ctx.fill();
+  }
+  // the still-drawing map: sketch lines live ONLY around that place, visible with altitude
+  var skc = PLACES[3];
+  ctx.strokeStyle = 'rgba(210,190,255,' + (0.10 + alt * 0.28).toFixed(3) + ')';
+  ctx.lineWidth = 1.3;
+  for (var sk = 0; sk < sketchPts.length; sk++) {
+    var sp = sketchPts[sk];
+    if (Math.hypot(sp.x - skc.x, sp.y - skc.y) > 380) continue;
+    ctx.beginPath();
+    ctx.moveTo(sp.x, sp.y);
+    ctx.lineTo(sp.x + Math.cos(sp.a) * 30, sp.y + Math.sin(sp.a) * 30);
+    ctx.setLineDash([5, 9]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  // places
+  for (var i = 0; i < PLACES.length; i++) {
+    var p = PLACES[i];
+    var pulse = 0.5 + 0.5 * Math.sin(time * 2 + p.ph);
+    var warm = (p.found ? 0.5 : 0.16) + (p.found ? 0.3 * pulse : 0.08 * pulse);
+    var rad = ctx.createRadialGradient(p.x, p.y, 2, p.x, p.y, 34);
+    rad.addColorStop(0, 'rgba(255,190,110,' + warm.toFixed(3) + ')');
+    rad.addColorStop(1, 'rgba(255,190,110,0)');
+    ctx.fillStyle = rad; ctx.beginPath(); ctx.arc(p.x, p.y, 34, 0, 6.28); ctx.fill();
+    if (p.found) {
+      ctx.strokeStyle = 'rgba(255,217,138,0.7)'; ctx.lineWidth = 1.6;
+      ctx.beginPath(); ctx.arc(p.x, p.y, 10 + pulse * 3, 0, 6.28); ctx.stroke();
+    }
+  }
+  // finale light sweep
+  if (done && doneT < 5 && sweepX >= 0) {
+    ctx.fillStyle = 'rgba(255,205,130,0.10)';
+    ctx.fillRect(sweepX / s, 0, 70 / s, MAP_H);
+    ctx.fillStyle = 'rgba(255,205,130,0.16)';
+    ctx.fillRect(sweepX / s + 26 / s, 0, 14 / s, MAP_H);
+  }
+  ctx.restore();
+};
+
+var drawRider = (hx, hy, s) => {
+  // cloak + hood
+  ctx.fillStyle = '#4a2f5e';
+  ctx.beginPath(); ctx.ellipse(hx, hy - 8 * s, 14 * s, 17 * s, 0, 0, 6.28); ctx.fill();
+  ctx.strokeStyle = 'rgba(30,16,44,0.6)'; ctx.lineWidth = 1.4 * s;
+  ctx.stroke();
+  ctx.fillStyle = '#5d3d75';
+  ctx.beginPath(); ctx.ellipse(hx, hy - 15 * s, 9.5 * s, 9 * s, 0, 0, 6.28); ctx.fill();
+  // face shadow inside the hood
+  ctx.fillStyle = 'rgba(26,14,40,0.75)';
+  ctx.beginPath(); ctx.ellipse(hx + 1 * s, hy - 13 * s, 4.6 * s, 4.4 * s, 0, 0, 6.28); ctx.fill();
+  // crown: three small gold points
+  ctx.fillStyle = '#ffd98a';
+  ctx.beginPath(); ctx.moveTo(hx - 5 * s, hy - 20 * s); ctx.lineTo(hx - 3 * s, hy - 24 * s); ctx.lineTo(hx - 1 * s, hy - 20 * s); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(hx - 1 * s, hy - 20 * s); ctx.lineTo(hx + 1 * s, hy - 25 * s); ctx.lineTo(hx + 3 * s, hy - 20 * s); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(hx + 3 * s, hy - 20 * s); ctx.lineTo(hx + 5 * s, hy - 23.5 * s); ctx.lineTo(hx + 7 * s, hy - 20 * s); ctx.closePath(); ctx.fill();
+  // crown glow
+  var cg = ctx.createRadialGradient(hx, hy - 21 * s, 1, hx, hy - 21 * s, 22 * s);
+  cg.addColorStop(0, 'rgba(255,210,120,0.5)'); cg.addColorStop(1, 'rgba(255,210,120,0)');
+  ctx.fillStyle = cg; ctx.beginPath(); ctx.arc(hx, hy - 21 * s, 22 * s, 0, 6.28); ctx.fill();
+  // staff
+  ctx.strokeStyle = '#8a6238'; ctx.lineWidth = 3 * s; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(hx + 11 * s, hy - 32 * s); ctx.lineTo(hx + 20 * s, hy + 14 * s); ctx.stroke();
+  // the ring of fire behind the staff tip
+  var rx2 = hx + 11 * s, ry2 = hy - 36 * s;
+  var ring = ctx.createRadialGradient(rx2, ry2, 1, rx2, ry2, 17 * s);
+  ring.addColorStop(0, 'rgba(255,160,90,0.6)'); ring.addColorStop(1, 'rgba(255,160,90,0)');
+  ctx.fillStyle = ring; ctx.beginPath(); ctx.arc(rx2, ry2, 17 * s, 0, 6.28); ctx.fill();
+  for (var k = 0; k < 7; k++) {
+    var an = time * 3 + k / 7 * 6.28;
+    ctx.fillStyle = 'rgba(255,170,90,0.9)';
+    ctx.beginPath(); ctx.arc(rx2 + Math.cos(an) * 5.5 * s, ry2 + Math.sin(an) * 5.5 * s, 2 * s, 0, 6.28); ctx.fill();
+  }
+  // flame tip
+  ctx.fillStyle = 'rgba(255,140,70,0.9)';
+  ctx.beginPath(); ctx.ellipse(rx2, ry2 - 4 * s, 2.6 * s, 5 * s, 0, 0, 6.28); ctx.fill();
+};
+
+var drawDragon = (fx, fy, face, flap) => {
+  ctx.save();
+  ctx.translate(fx, fy);
+  ctx.rotate(face + Math.PI / 2);
+  var s = 2.0;
+  ctx.scale(s, s);
+  // warm glow so the dragon reads against the dark map
+  var dg0 = ctx.createRadialGradient(0, -6, 2, 0, -6, 60);
+  dg0.addColorStop(0, 'rgba(255,170,90,0.30)'); dg0.addColorStop(1, 'rgba(255,170,90,0)');
+  ctx.fillStyle = dg0; ctx.beginPath(); ctx.arc(0, -6, 60, 0, 6.28); ctx.fill();
+  // tail
+  ctx.strokeStyle = '#a33a2c'; ctx.lineWidth = 6; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(-10, 0);
+  ctx.quadraticCurveTo(-28, 8 + Math.sin(time * 2.4) * 4, -38, 3 + Math.sin(time * 2.4) * 6);
+  ctx.stroke();
+  ctx.fillStyle = '#e0763e';
+  ctx.beginPath(); ctx.moveTo(-38, -4); ctx.lineTo(-48, 2 + Math.sin(time * 2.4) * 5); ctx.lineTo(-38, 7); ctx.closePath(); ctx.fill();
+  // wings (bat) — two finger arcs + membrane edge, reads as a wing
+  var wu = Math.sin(time * 9) * 0.5 + (flap ? 0.25 : 0);
+  var wingL = ctx.createLinearGradient(0, -14, 0, -58);
+  wingL.addColorStop(0, '#8e2a22'); wingL.addColorStop(1, '#d96a3a');
+  ctx.fillStyle = wingL;
+  ctx.beginPath();
+  ctx.moveTo(-2, -12);
+  ctx.quadraticCurveTo(-24 * (1 + wu), -34, -26 * (1 + wu), -58);
+  ctx.quadraticCurveTo(-10 * (1 + wu), -48, -16 * (1 + wu), -66);
+  ctx.quadraticCurveTo(-2 * (1 - wu), -50, 2 * (1 + wu), -44);
+  ctx.quadraticCurveTo(10 * (1 - wu), -30, 8, -20);
+  ctx.closePath(); ctx.fill();
+  ctx.strokeStyle = 'rgba(60,12,10,0.65)'; ctx.lineWidth = 1.4;
+  ctx.stroke();
+  // wing finger lines
+  ctx.strokeStyle = 'rgba(120,30,22,0.8)'; ctx.lineWidth = 1.1;
+  ctx.beginPath(); ctx.moveTo(-4, -14); ctx.lineTo(-26 * (1 + wu), -58); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(-2, -16); ctx.lineTo(-16 * (1 + wu), -66); ctx.stroke();
+  // body
+  ctx.fillStyle = '#b23a2e';
+  ctx.beginPath(); ctx.ellipse(0, 0, 17, 12, 0, 0, 6.28); ctx.fill();
+  ctx.strokeStyle = 'rgba(60,12,10,0.6)'; ctx.lineWidth = 1.6;
+  ctx.stroke();
+  ctx.fillStyle = '#f2c9a8';
+  ctx.beginPath(); ctx.ellipse(4, 4, 10, 6.5, 0, 0, 6.28); ctx.fill();
+  // head
+  ctx.fillStyle = '#d96a3a';
+  ctx.beginPath(); ctx.ellipse(15, -9, 11, 9.5, -0.15, 0, 6.28); ctx.fill();
+  ctx.strokeStyle = 'rgba(60,12,10,0.6)'; ctx.lineWidth = 1.4;
+  ctx.stroke();
+  ctx.fillStyle = '#f2c9a8';
+  ctx.beginPath(); ctx.ellipse(21, -7, 5.5, 4.4, -0.15, 0, 6.28); ctx.fill();
+  // eye — bigger, with glint
+  ctx.fillStyle = '#2c2350';
+  ctx.beginPath(); ctx.arc(20, -10, 2.6, 0, 6.28); ctx.fill();
+  ctx.fillStyle = '#ffd98a';
+  ctx.beginPath(); ctx.arc(20, -10, 1.5, 0, 6.28); ctx.fill();
+  ctx.fillStyle = '#fff';
+  ctx.beginPath(); ctx.arc(20.7, -10.8, 0.7, 0, 6.28); ctx.fill();
+  // horns + ear frill
+  ctx.fillStyle = '#c8a06a';
+  ctx.beginPath(); ctx.moveTo(8, -17); ctx.lineTo(11, -26); ctx.lineTo(15, -15); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(15, -17); ctx.lineTo(19, -24); ctx.lineTo(21, -15); ctx.closePath(); ctx.fill();
+  // smoke wisp
+  if (Math.sin(time * 1.7) > 0.55) {
+    ctx.fillStyle = 'rgba(200,200,205,0.5)';
+    ctx.beginPath(); ctx.arc(27, -14 - Math.sin(time * 1.7) * 2, 2.2, 0, 6.28); ctx.fill();
+  }
+  // the rider
+  drawRider(3, -15, 1);
+  ctx.restore();
+};
+
+var draw = () => {
+  ctx.clearRect(0, 0, W, H);
+  drawSky();
+  var dtNow = dt1;
+  void dtNow;
+
+  // camera: dragon near bottom-center of screen; map slides under
+  var scale = 1 + alt * 0.28;
+  var cx = CIR_CX + leanX + Math.cos(angle) * CIR_R;
+  var cy = CIR_CY + Math.sin(angle) * CIR_R;
+  var ox = W / 2 - cx * scale + (alt - ALT_IDLE) * 60;
+  var oy = H * 0.66 - cy * scale + (alt - ALT_IDLE) * 90;
+
+  drawMap(ox, oy, scale, cx, cy);
+
+  // embers (world space, above the map)
+  ctx.save();
+  ctx.translate(ox, oy); ctx.scale(scale, scale);
+  for (var ei = 0; ei < embers.length; ei++) {
+    var em = embers[ei];
+    ctx.fillStyle = 'rgba(255,190,110,' + (0.6 * em.life).toFixed(3) + ')';
+    ctx.beginPath(); ctx.arc(em.x, em.y, em.r * em.life, 0, 6.28); ctx.fill();
+  }
+  ctx.restore();
+
+  // dragon
+  var face = Math.atan2(Math.cos(angle), -Math.sin(angle));
+  var fx = cx, fy = cy;
+  drawDragon(fx * scale + ox, fy * scale + oy, face, alt > 0.7);
+
+  // vignette
+  var vg = ctx.createRadialGradient(W / 2, H / 2, Math.min(W, H) * 0.4, W / 2, H / 2, Math.max(W, H) * 0.78);
+  vg.addColorStop(0, 'rgba(10,7,24,0)'); vg.addColorStop(1, 'rgba(10,7,24,0.55)');
+  ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
+};
+
+// ---- resize
+var resize = () => {
+  dpr = Math.min(2, window.devicePixelRatio || 1);
+  W = window.innerWidth; H = window.innerHeight;
+  canvas.width = W * dpr; canvas.height = H * dpr;
+  canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+};
+
+// ---- input
+var holding = false;
+window.addEventListener('keydown', (e) => {
+  if ([32, 37, 38, 39, 40, 65, 68, 87].indexOf(e.keyCode) >= 0) e.preventDefault();
+  keys[e.keyCode] = true;
+  ensureAudio();
+});
+window.addEventListener('keyup', (e) => { keys[e.keyCode] = false; });
+window.addEventListener('blur', () => { keys = {}; holding = false; });
+canvas.addEventListener('pointerdown', (e) => {
+  e.preventDefault();
+  ensureAudio();
+  holding = true;
+});
+window.addEventListener('pointerup', () => { holding = false; });
+window.addEventListener('pointercancel', () => { holding = false; });
+canvas.addEventListener('contextmenu', (e) => { e.preventDefault(); });
+
+// ---- loop
+var last = performance.now();
+var dt1 = 0.016;
+var loop = (now) => {
+  dt1 = Math.min(0.05, (now - last) / 1000); last = now;
+  update(dt1);
+  draw();
+  requestAnimationFrame(loop);
+};
+
+// ---- boot
+resize();
+window.addEventListener('resize', resize);
+hintEl.classList.add('show');
+requestAnimationFrame((t) => { last = t; requestAnimationFrame(loop); });
+</script>
+</body>
+</html>
