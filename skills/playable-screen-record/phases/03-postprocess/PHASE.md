@@ -8,7 +8,7 @@ persistent `video_url`.
 
 ## Required Inputs
 
-- `raw.mp4`, `audio.webm` (if audio_mode=tap)
+- `raw.mp4`, `audit.json` (+ `events.jsonl`) from Phase 02
 - `record_plan`: `play_ts`, `grab_start_ts`, `crop_geometry`, `pad_geometry`
 
 ## Steps
@@ -58,21 +58,41 @@ If the kiosk window landed dead-center (check one extracted frame), skip the
 crop/pad. `--force-device-scale-factor=2` + `window-size` gives crisp output
 at the full Xvfb resolution.
 
-### 3. Audio (audio_mode=tap)
+### 3. Audio (audio_mode=audit): synthesize from the event log
+
+The audit events are wall-timestamped, and `grab_start_ts` / `play_ts` are
+wall-clock too — so the audio timeline agrees with the video **by
+construction**. Synthesize the WAV (see the proven Aug 15 implementation
+`/workspace/capture/synth.py` for Ember Run):
 
 ```bash
-ffmpeg -y -ss <trim> -i audio.webm -c:a aac -b:a 192k audio.m4a
+python3 synth.py <output_dir>/audit.json <output_dir>/soundtrack.wav
 ```
 
-Lazy-AudioContext pages start sounding exactly at play, so the same trim
-keeps sync; if the video's in-game visuals clearly run ahead of the sound,
-use `silencedetect` on `audio.webm` to find the first real onset and trim to
-that instead.
+The synth must honor real WebAudio semantics:
+- `exponentialRampToValueAtTime`: `v(t) = v0 * (v1/v0)^((t-t0)/(t1-t0))`
+  (guard `v0=0` with a floor like WebAudio's `1e-4`); piecewise across
+  consecutive param points.
+- Biquad filters: RBJ cookbook bandpass (constant 0 dB peak gain), which is
+  what Chrome's biquad implements.
+- Noise/crackle: rebuild from the logged raw noise samples (or seeded
+  generator) and route through the same bandpass.
+- Sample rate 48 kHz, float→int16, wall offsets only.
+
+Then trim the soundtrack to the same play window as the video:
+
+```bash
+ffmpeg -y -ss <trim> -i <output_dir>/soundtrack.wav -c:a pcm_s16le audio.wav
+```
+
+> Why not just record? The container has no sound card; Chromium's fake
+> audio clock races ~280x, so any recorded audio cuts or drifts (the Aug 14
+> failure). Events + synthesis is the only path that keeps sync.
 
 ### 4. Mux + encode final
 
 ```bash
-ffmpeg -y -i trimmed.mp4 -i audio.m4a -c:v copy -c:a aac -shortest \
+ffmpeg -y -i trimmed.mp4 -i audio.wav -c:v copy -c:a aac -b:a 192k -shortest \
   -movflags +faststart final.mp4
 ```
 

@@ -30,7 +30,8 @@ dl artifact finalize --slot=playable_record_result --mode=verify_and_promote --c
 
 ## Degradation Rules
 
-- Audio tap failed → `has_audio: false`, `quality_tier: "degraded"` (silent
+- Audio audit failed (empty log after one re-injected retry) →
+  `has_audio: false`, `quality_tier: "degraded"` (silent
   video is a valid deliverable).
 - One capture retry also failed → stop with structured failure metadata in
   the slot (describe the failing step and what was attempted) instead of

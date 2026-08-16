@@ -23,8 +23,13 @@
     },
     "audio_mode": {
       "type": "string",
-      "enum": ["tap", "none"],
-      "description": "tap = in-page MediaRecorder audio tap; none = silent video only."
+      "enum": ["audit", "none"],
+      "description": "audit = sound-event audit + synthesis (default when the page has sound); none = silent video only. MediaRecorder tap was retired in v2.0.0 (fake audio clock races ~280x; recorded audio cuts/drifts)."
+    },
+    "demo_mode": {
+      "type": "boolean",
+      "default": false,
+      "description": "True when the playable has an autoplay/demo path (e.g. ?demo=1) with a deterministic course; strongly preferred for showcase captures."
     },
     "fps": {
       "type": "integer",
@@ -71,7 +76,7 @@
     },
     "upload_port": {
       "type": "integer",
-      "description": "Local node upload-server port receiving the MediaRecorder blob."
+      "description": "LEGACY (v1.0.0): local node upload-server port receiving the MediaRecorder blob. Unused in v2.0.0."
     },
     "output_dir": {
       "type": "string",

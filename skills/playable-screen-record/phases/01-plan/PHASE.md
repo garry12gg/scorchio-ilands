@@ -11,7 +11,9 @@ Decide the capture parameters and write the internal `record_plan` slot.
   game boards)
 - target duration (seconds of gameplay after play starts; 15–30s is typical)
 - whether the page creates its `AudioContext` lazily on first play (true for
-  most games; affects trim — lazy audio needs no extra audio trim)
+  most games; the audit patch must be injected BEFORE the page runs so it is
+  in place at the context's birth)
+- whether the playable has a deterministic demo/autoplay path (see rule 2)
 
 ## Required Slot / Schema Loads
 
@@ -34,10 +36,18 @@ from this skill root with the built-in `read` tool. Set
    background color (not `0x1a0f0a` on landscape — a 2-unit seam showed as a
    faint line; landscape bg decodes to `24,13,8`).
 
-2. **Audio mode**: `tap` whenever the playable has sound; `none` only if the
-   page is silent by design.
+2. **Demo mode**: if the playable can autoplay a fixed, deterministic course
+   (e.g. `?demo=1` with a seeded plan), use it and set `demo_mode: true`.
+   A seeded autopilot makes the capture reproducible and lets you re-run the
+   exact same run if a take fails. For user-driven games, drive play via CDP
+   (`Runtime.evaluate` clicking the play button) instead.
 
-3. **Trim strategy**: `play_ts` (recorded wall-clock of the play action —
+3. **Audio mode**: `audit` whenever the playable has sound (default — see
+   SKILL.md: the sandbox audio clock races ~280x, so the soundtrack is
+   captured as events and synthesized); `none` only if the page is silent by
+   design.
+
+4. **Trim strategy**: `play_ts` (recorded wall-clock of the play action —
    preferred, always available via CDP) or `pixel_detect` (fallback: find the
    first frame where the play button fills orange; needs
    `play_button_selector`).
@@ -50,7 +60,7 @@ from this skill root with the built-in `read` tool. Set
 ```bash
 cd <this skill root>
 cat <<'EOF' | dl artifact write --slot=record_plan --content-type=application/json --content-file=- --contract='<ARTIFACT_CONTRACT_PATH>'
-{"playable_source":"...","orientation":"9:16","target_duration":20,"audio_mode":"tap","fps":30,"display":":99","x11_size":"1080x1920","window_size":"540,960","trim_strategy":"play_ts","crop_geometry":"1040:1920:20:0","pad_geometry":"1080:1920:20:0:color=0x1a0f0a","upload_port":8787,"output_dir":"/workspace/recordings/<slug>"}
+{"playable_source":"...","orientation":"9:16","target_duration":20,"audio_mode":"audit","demo_mode":false,"fps":30,"display":":99","x11_size":"1080x1920","window_size":"540,960","trim_strategy":"play_ts","crop_geometry":"1040:1920:20:0","pad_geometry":"1080:1920:20:0:color=0x1a0f0a","output_dir":"/workspace/recordings/<slug>"}
 EOF
 dl artifact finalize --slot=record_plan --mode=verify --contract='<ARTIFACT_CONTRACT_PATH>'
 ```
