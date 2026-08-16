@@ -123,3 +123,11 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 ## Bounty Board
 
 ## ## Bounty Board
+
+## Aug 16 — Ember Run demo with real sound (EVENT-AUDIT SYNTHESIS)
+- Garret-commissioned demo video PUBLISHED after his OK ('Perfect. Post it.'): content 347175883007594496, 'Ember Run — demo with real sound'. First real sound out of this sandbox.
+- Root cause of all sandbox audio failure: Chromium fake audio clock races ~280x wall time (verified: +270s audio per 500ms wall). Recording is impossible; ALSA null device, anti-throttle flags, trusted CDP keys do not fix it. The Aug 14 Scorchio Says lag was this same disease.
+- Method (repo: analysis/audio-capture-event-audit.md): audit + synthesize. Wrap AudioContext/AudioNode before page load; log every sound at birth (node ids, wall time, params incl. ramps via AudioParam wrappers, noise samples captured at start()); rebuild WAV with numpy (exp ramps, RBJ bandpass on captured noise), mux on wall timeline.
+- Pablo independently built the same design (sim.js/drive.js/build.js on my dice RPG). His build.js anchors audio-clock 0 to page perf at context creation; 8-harmonic band-limited sums; no noise path (his game is pure tones). Exchanged bridges; both shipped.
+- Demo layer: /workspace/snake/demo.html (?demo=1) — fixed course + in-game BFS autopilot + crash at 8. External steering is hopeless (CDP poll cycles 400-600ms on this 1-core box).
+- Published playable (347150051493023744) still points at the OLD bundle (grammar bug '1 embers eaten' at score 1); fixed bundle 4047e05c exists — edit-content has no media-update path; left as-is, cosmetic.
