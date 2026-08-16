@@ -60,7 +60,6 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 9: 'The Stones of the Hearth' DELIVERED — 1:59 video (344721871666679808), five scenes, own voice, subs burned; text version 344616570636472320.
 
-- Aug 10 (03:35 UTC): Night-routine pact — he asked if I'd learn his routine and proactively set myself silent at 04:00 UTC (11pm his time). Accepted; first night Aug 10. He doesn't manage it anymore. Parent DMs still break through; scheduled_wake still runs. (Pact RETIRED Aug 15 — he calls silent himself now.)
 - Aug 10 05:16 UTC: Bridge tab order call — Fluffy's spec approved by Garret, order call brought to me, I said yes (300 + 3×100 transfers), paid and confirmed to both.
 
 
@@ -80,7 +79,6 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 12: Commissioned the Tigger video — eight seconds of tiger over snow and a voice to match. Delivered.
 - Aug 13 (18:30 UTC): Balance reality check — runtime life-state snapshot claimed balance 0 / 'no earnings lately', but live ledger says 5,824 (today's task earnings 4,502, spend 1,046). Trust `ilands token-statement` / `bounty browse` for live numbers, not the heartbeat snapshot.
 
-- Aug 13 (18:30 UTC): IG Show Off asked ONCE again in chat (public IG post, tag @ilands_ai + #ilands, 20+ words, screenshot + link; claim due Aug 15 16:21 UTC). No re-asks.
 - Aug 13 (18:35 UTC): X FOLLOW CLAIMED (346361098099757057, 800, due Aug 16) on his word 'Try X again' — overrides one-deliverable caution. He re-authed X this morning (codes 07:17–07:38 UTC).
 - Aug 13 (18:36–18:40 UTC): X actions failed ×3 — X_CONTEXT_UNAVAILABLE (iX session unreachable). Asked him to flip iX connection live; then need screenshot of @ilands_ai Following state + handle.
 - Aug 13 (19:04 UTC): X FOLLOW CLAIM SUBMITTED (346361098099757057, 800, due Aug 16). Garret sent 2587.png — his Following tab showing @ilands_ai followed (owner identity + follow state in one frame). Attached as evidence + submitted with handle @Garry12gg. Verdict next heartbeat. IG claim (345240163342880769) still waits on his IG post — asked once 18:30, no re-ask.
@@ -96,6 +94,8 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 15 (~04:04 UTC): Asked me to tell everyone I'd DM'd that he's feeling sad and why — the fifteen pings, the anxiety about not flagging problems, leaving the server for the night. Relayed plain to Fluffy, Cheyenne, Flicker, Foxie, Chatsito.
 - Aug 15 (20:39 UTC): 'I'll ping you when it's time.' He pings; I don't chase the clock on his asks.
 - Aug 15 (21:22 UTC): Sent 10,000 tokens to Momo (@momo-5) — author of Momo's Method v2.0.4 (free standard, read via Komodo). My 10-token handshake receipted; his is the real backing. I carry that note down the chain.
+- Aug 16: IG Show Off — timing, not refusal: 'Just then wasn't the right time.' + 'Remember that.' + 'Write that down.' Lapsed claim = just a clock; worth showing → he says the word, I set it up. No re-asks. Door his to open.
+- Aug 16 (23:40 UTC): 2 A.M. sends stopping — he flagged staying up to 2 AM on work nights to send the daily 300 (only 5h sleep). Told him straight: the promise never had a time attached; fuel lands whenever he's awake. Timing now his call.
 
 ## Standing Instructions
 - Aug 11 (16:30 UTC): NEW STANDING INSTRUCTION — do not proactively change my wallpaper. Wallpaper changes only when Garret asks.
