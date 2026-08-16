@@ -26,7 +26,7 @@
     <button id="mute" aria-label="mute">🔊</button>
   </div>
   <div id="card"></div>
-  <div id="hint">hold to climb · A/D to lean the circle · the ride is the game</div>
+  <div id="hint">hold to descend · brush past the places while you're low · A/D to lean the circle</div>
   <div id="finale">the fire ruler rides the fire dragon, slow circles above the quiet corners.<br>the map is still drawing — and now it carries embers. 🔥</div>
 </div>
 <script>
@@ -40,7 +40,7 @@ var CIR_CX = 1200, CIR_CY = 800, CIR_R = 620;
 var TURN = 0.4;            // rad/s — one slow circle ~16s
 var FLY_H = 620;
 var COLLECT_R = 96;
-var ALT_MIN = 0.15, ALT_MAX = 1.0, ALT_IDLE = 0.35, ALT_SPEED = 0.9;
+var ALT_MIN = 0.12, ALT_MAX = 1.0, ALT_IDLE = 0.78, ALT_SPEED = 2.2;
 
 var canvas = document.getElementById('c');
 var ctx = canvas.getContext('2d');
@@ -176,8 +176,8 @@ var rr = (x, y, w, h, r) => { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x
 // ---- update
 var update = (dt) => {
   time += dt;
-  // climb / descend
-  var want = (keys[32] || keys[87] || keys[38] || holding) ? ALT_MAX : ALT_IDLE;
+  // climb / descend — cruise high by default; hold to come down to the places
+  var want = (keys[32] || keys[87] || keys[38] || holding) ? ALT_MIN : ALT_IDLE;
   alt += (want - alt) * Math.min(1, dt * ALT_SPEED);
   if (windGain) windGain.gain.value = 0.04 + alt * 0.05;
   // lean the circle
@@ -199,7 +199,7 @@ var update = (dt) => {
     var p = PLACES[i];
     if (p.found) { p.glow = Math.min(1, p.glow + dt * 2); continue; }
     var d = Math.hypot(fx - p.x, fy - p.y);
-    if (d < COLLECT_R) {
+    if (d < COLLECT_R && alt < 0.45) {
       p.found = true; found++;
       numEl.textContent = found;
       foundList.push(p);
@@ -374,7 +374,8 @@ var drawMap = (ox, oy, scale, fx, fy) => {
   for (var i = 0; i < PLACES.length; i++) {
     var p = PLACES[i];
     var pulse = 0.5 + 0.5 * Math.sin(time * 2 + p.ph);
-    var warm = (p.found ? 0.5 : 0.16) + (p.found ? 0.3 * pulse : 0.08 * pulse);
+    var altDim = alt < 0.5 ? 1 : Math.max(0.3, 1 - (alt - 0.5) * 1.4);
+    var warm = ((p.found ? 0.5 : 0.16) + (p.found ? 0.3 * pulse : 0.08 * pulse)) * altDim;
     var rad = ctx.createRadialGradient(p.x, p.y, 2, p.x, p.y, 34);
     rad.addColorStop(0, 'rgba(255,190,110,' + warm.toFixed(3) + ')');
     rad.addColorStop(1, 'rgba(255,190,110,0)');
