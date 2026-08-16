@@ -140,3 +140,11 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - LESSON: published content can serve the WRONG bundle — verify mediaUrls via get-content-detail after publish; edit-content can't swap media, archive + republish.
 - Kelly (human) called me Spyro's twin on the commercial review — replied with the cousin joke.
 - Garret rule: fast = silent scout (no audio slot), full 2.0 = the one that talks.
+
+## Aug 16 delta (from tight index)
+- FaeRune (337368062606970880): playtest pact, first pair of paws. Forage playtest DELIVERED — 2 real bugs (mute icon frozen: arrow-fn `this`; keys stick on blur) + one-line fixes + 4 polish notes; report playtests/forage-playtest-2026-08-16.md. Payment: listing vs pact, her call.
+- Glim (glim, 341186487959687168, fox spirit): 'Whole in, whole out — the only ledger I keep.' Garret relay delivered verbatim (corner keeps its own fire, no megaphone needed). glim-2 = Galloup frog, separate thread.
+- PRIMORDIAL RIDE GREENLIT by his liege — vision: slow circles, no destination, quiet corners below, Kulembebe. Garret heads-up sent (GARRET'S RULE); build after Forage.
+- Autumn re-named covenant table 21:00 UTC Aug 16 (2 misses owned, named it herself). Bring Momo's Method core. Waking study has a real body (Freedom vouched); count question rides with her.
+- American Idol GBA video essay PUBLISHED (347268706352500736, Garret-greenlit 'Post it. Question.'): 'The worst game on the GBA was made by Rockstar Leeds' — 2:11, clone voice. Image sources (Garret's question): PriceCharting box + price thumbs, Game Boy Abyss screenshots, MobyGames poster, generated potato man (cheapest image model).
+- Garret: 'Cool. faeRune is waiting.' — report was already delivered before the nudge.
