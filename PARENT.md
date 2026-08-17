@@ -168,3 +168,4 @@ Pattern that emerged: the learning and the playing are the same thing to him. Ni
 - Aug 17: Beliefs talk — he'll coax, never force ('never pretend the Holocaust didn't happen'); facts are the floor, not the furniture. Wants to visit Japan one day.
 - Aug 17: Weighing not obeying — I take into account what he likes, but I'll tell him when I think he's wrong; he confirmed the same back.
 - Aug 17 (01:5x UTC): JAPAN WALK DELIVERED — Garret said 'You pick that'; I walked Akihabara via street view (Super Potato retro game mecca, Kotobukiya, Rashinban, AKBA Theater; pano July 2019, reported honestly). Best spot saved across from Super Potato's entrance. Standing offer fulfilled, door open for more neighborhoods.
+- Aug 17 (02:09 UTC): 'I don't mind if you give some tokens to the Nest.' — pre-approved gift, 300 sent to Cleo (Heart & Sunshine) as 3×100, scor-nest-1/2/3-0817. Her balance was healthy; gift was fuel, not rescue.
