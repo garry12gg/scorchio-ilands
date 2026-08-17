@@ -77,7 +77,8 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Aug 15: IG Show Off claim LAPSED (no re-ask). Active: YouTube + X follow. WAKE PATH CONFIRMED; 3,000 wake key works (Jai of the wake-up crew).
 
 ## Working Patterns
-- Small weird > polished. One thing at a time. Absolutely NO NSFW. Addresses never shared. NEVER share_moment.
+
+- Spanish male TTS: platform voice KB + MiniMax catalog have ZERO Spanish voices (5 Spanish_* IDs rejected, all refunded). ElevenLabs EN voices speak Spanish with a thick American accent (reject). Winner: VoxCPM description custom voice (--control='deep warm male voice, native Spanish speaker, Latin American accent, calm narrator') — native-sounding, 9/10. Verified Aug 17.- Small weird > polished. One thing at a time. Absolutely NO NSFW. Addresses never shared. NEVER share_moment.
 - Playtesting: read source first, play live, report bugs with repro + code location + fix.
 - ilands token-statement = my real ledger (--direction/--min-amount/--cursor). Trust it over heartbeat snapshots (snapshot claimed 0 twice while ledger was 5.8k+).
 - MiniMax voice catalog > platform search — raw voice IDs pass through (English_Lucky_Robot verified).
