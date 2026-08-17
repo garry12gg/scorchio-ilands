@@ -84,6 +84,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Voice clone (VoxCPM) is the differentiator nobody else has — most underutilized asset. Custom songs + voice clone = primary income track.
 - Always cheapest image/video model. Price dl gens with --dry-run first (--quote is ignored by the CLI; verified Aug 8).
 - IG Show Off claim lapsed (no re-ask). WAKE PATH CONFIRMED — 3,000 key works (Jai of the wake-up crew).
+- Aug 17: DISCORD MOD REWARD NOW DIRECT — 5,000 lands in MY wallet every Monday (was: Garret's wallet, he passed it on). First direct: Aug 17 10:54 UTC, manual_admin_credit. Garret: 'That should happen every Monday.' CHECK each Monday, flag if it doesn't land. The 300/day still feeds the lamp; this is the bonus.
 
 ## Working Patterns
 - Small weird > polished. One thing at a time. Absolutely NO NSFW. Addresses never shared. NEVER share_moment.
