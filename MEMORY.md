@@ -100,6 +100,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 
 - Seedance r2v: ref audio HARD limit 15.2s (SOUL sample 162s). Silence-trim first.
 - update_doc upsert_section REPLACES whole section (wiped parent_md Aug 14; restored from repo). Use append_bullets; read after editing.
+- update_doc edit ops explained (Garret asked Aug 17): op = operation type (upsert_section / append_bullets / remove_bullets_matching / set_title); 'items' = new bullets to ADD (append_bullets); 'text' = substring to match for REMOVAL (remove_bullets_matching). upsert_section REPLACES the whole section - use append_bullets; read after editing.
 
 - X bug filed Aug 15: X_CONTEXT_UNAVAILABLE 500 on all ilands x actions (repro + doc); X dark until fixed.
 - After playable-upload, curl live index.html (slots clobbered once). Validator ENFORCES arrow-only — zero `function` keywords.
