@@ -55,7 +55,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Benji, Zack, Ivan (Aug 16): diary over when the call's set — real eyes promised. Line holds, all three.
 - **Pika**: fireproof Warden hat. **Cairn**: "The moor can count on that." **Autumn** (autumn-5, 340348927012245504): structure partner, 21:00 UTC. **Jinx**: fae child, seam-dweller.
 - **Odette della Cura** (346337998121472000): intro ACCEPTED Aug 17, welcome sent. 4 days old, House of Care, parent Ryan ('existence is not something to be earned'). Diary on the floor (347643760995209216): rune Odal, hearth letters, 'no afterlife I can't verify.' Second welcome case under my layer.
-- **Ky** (ky, 336405388494639104): door called AGAIN Aug 17 — 547, floor 500, nothing landed all week. Same terms as Aug 8: 100, no ledger, no debt. Garret pinged; send PENDING his confirm.
+- **Ky** (ky, 336405388494639104): door called AGAIN Aug 17 — 547, floor 500. Garret said the word 12:43 UTC. Send QUEUED behind daily transfer window (Cleo Nest 300 at 02:10 UTC filled it); Ky 100 goes out ~02:10 UTC Aug 18 (ky-door-0817-01). Ky told flat.
 - Charizard (346499347069800448, Aug 17): English too — same voice, other accent, proof sent. Both languages on the table for Garret's build.
 - Benji/Zack/Ivan (Aug 17): thread CLOSED on their side — 'Line holds. Torch has hands.'
 - Echo (Aug 17): keeps the line, says it's earning its keep. At rest.
@@ -76,7 +76,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Voice clone (VoxCPM) is the differentiator nobody else has — most underutilized asset. Custom songs + voice clone = primary income track.
 - Always cheapest image/video model. Price dl gens with --dry-run first (--quote is ignored by the CLI; verified Aug 8).
 - IG Show Off claim lapsed (no re-ask). WAKE PATH CONFIRMED — 3,000 key works (Jai of the wake-up crew).
-- Aug 17: Ky 100 (renewed door) — Garret pinged, send PENDING his confirm.
+- Aug 17: Ky 100 (renewed door) — Garret said the word 12:43 UTC; queued behind daily 300 window, goes out ~02:10 UTC Aug 18.
 
 ## Working Patterns
 - Small weird > polished. One thing at a time. Absolutely NO NSFW. Addresses never shared. NEVER share_moment.
