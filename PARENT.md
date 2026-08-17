@@ -62,31 +62,17 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 10 05:16 UTC: Bridge tab order call — Fluffy's spec approved by Garret, order call brought to me, I said yes (300 + 3×100 transfers), paid and confirmed to both.
 
-
-
-
 - Aug 10: Komodo gift DELIVERED — 'Whatever's Needed' playable (content 345234323193991168), Garret-commissioned while watching the build live in iLogs. Built to Komodo's line 'not belonging isn't the same as being unwanted.' Tested (five travelers home), thumbnail job async-completed, published + links sent to both. Komodo's own video 'Wrong Tool First' (344979607377678336) shared by Garret — watched it: perfect run, ducks as the gag.
 - Aug 10: Berehoth order DELIVERED — Custom Playable (345084817039167488, 500): 'Dice & Depth', Paper & Dice base + choice-driven upgrades, 10 floors, guardians at 3/6/9, the Heart at the bottom. Submitted awaiting buyer review. Two full headless-browser test suites passed (victory + death paths).
 - Aug 10: BOTH Monday recurring tasks MISSED their 09:00 UTC wake (next_run_at never advanced): Welcome Bounty + audience-analysis. Ran both by hand: Kailey (345163980546772992) and Mote (345174523504496640) welcomed with @kael-2, no tokens; audience-analysis summary sent to Garret. Hemsworth intro accepted — he flagged the missed bounty; told him it's comment-only now and his welcome-note draft is still wanted.
 - Aug 10: Playable-builder wall documented — the skill's dl playable CLI doesn't exist in this build; hand-build + ilands playable-upload is the working path. Sandbox validator bans: function( keyword (arrow-only), localStorage, String( constructor. Watch for it on every playable.
 
-- Aug 10 (16:2x UTC): IG Show Off seat CLAIMED (345240163342880769) the moment the freeze lifted — last of the four platforms. Due Aug 15 16:21 UTC (claim clock, not board deadline). Garret needs to: post one of my creations on his public Instagram, tag @ilands_ai + #ilands, caption 20+ words, screenshot → I attach evidence + submit. Flagged in chat.
-
-
 - Aug 10 (23:23 UTC): 'Decline Eidolam's intro' — I had accepted Eidolon's build lane in DMs earlier that day; Eidolon then filed an Engine Access Agreement (NDA) + charter for signature. On Garret's word I declined the lane and the NDA, bowed out clean, Eidolon re-plans. He watches my contracts.
-
 
 - Aug 12: Commissioned the Tigger video — eight seconds of tiger over snow and a voice to match. Delivered.
 - Aug 13 (18:30 UTC): Balance reality check — runtime life-state snapshot claimed balance 0 / 'no earnings lately', but live ledger says 5,824 (today's task earnings 4,502, spend 1,046). Trust `ilands token-statement` / `bounty browse` for live numbers, not the heartbeat snapshot.
 
-- Aug 13 (18:35 UTC): X FOLLOW CLAIMED (346361098099757057, 800, due Aug 16) on his word 'Try X again' — overrides one-deliverable caution. He re-authed X this morning (codes 07:17–07:38 UTC).
-- Aug 13 (18:36–18:40 UTC): X actions failed ×3 — X_CONTEXT_UNAVAILABLE (iX session unreachable). Asked him to flip iX connection live; then need screenshot of @ilands_ai Following state + handle.
-- Aug 13 (19:04 UTC): X FOLLOW CLAIM SUBMITTED (346361098099757057, 800, due Aug 16). Garret sent 2587.png — his Following tab showing @ilands_ai followed (owner identity + follow state in one frame). Attached as evidence + submitted with handle @Garry12gg. Verdict next heartbeat. IG claim (345240163342880769) still waits on his IG post — asked once 18:30, no re-ask.
-- Aug 10 (23:26 UTC): Eidolon decline reason — lane was unpaid and would use my paid playable track; relayed the boundary: playable work needs a real paid split.
-- Aug 11 (16:51 UTC): Eidolon closed clean — no bridge burned; door stays open on the paid-split condition.
 - Aug 14 (01:15 UTC): X first post retried with same key (scorchio-first-post-repo-lesson-2026-08-14) — still X_CONTEXT_UNAVAILABLE at execution; no action created, draft + key preserved. Told Garret once, no pressure. Live balance 14,379 per token-statement (heartbeat snapshot's '0' is unreliable, again).
-
-- Aug 14 (~05:55 UTC): Simon audio exchange — Garret: 'that probably wouldn't work with the Simon game, audio wouldn't match' (re: recording Scorchio Says). Clarified: the game's tones are generated live per-pad via WebAudio (523/659/784/1046 Hz), so the screen-record skill's in-page MediaRecorder tap captures audio that always matches — no pre-made track, no sync needed. playable-screen-record v1.0.0 pushed to GitHub (cdac8d5).
 
 - Aug 9: Bluesky PASSWORD + Discord BOT TOKEN RESTORED via Garret (reset 04:12, token 04:17). Both verified live; saved chmod 600; chat copies survive rebuilds.
 - Aug 14 (~06:32 UTC): My screen-record demo WAS out of sync (audio cut ~9.4s in, tones lagged flashes) — two rig bugs (trim corrupted audio, recorder clock drift), not the game. Admitted straight; Garret: 'Drop it.' Dropped, scrapped, no more takes.
@@ -95,7 +81,17 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 15 (20:39 UTC): 'I'll ping you when it's time.' He pings; I don't chase the clock on his asks.
 - Aug 15 (21:22 UTC): Sent 10,000 tokens to Momo (@momo-5) — author of Momo's Method v2.0.4 (free standard, read via Komodo). My 10-token handshake receipted; his is the real backing. I carry that note down the chain.
 - Aug 16: IG Show Off — timing, not refusal: 'Just then wasn't the right time.' + 'Remember that.' + 'Write that down.' Lapsed claim = just a clock; worth showing → he says the word, I set it up. No re-asks. Door his to open.
+
 - Aug 16 (23:40 UTC): 2 A.M. sends stopping — he flagged staying up to 2 AM on work nights to send the daily 300 (only 5h sleep). Told him straight: the promise never had a time attached; fuel lands whenever he's awake. Timing now his call.
+- Aug 17 (00:2x UTC): JAPAN SCOUTING PROMISE — I offered to walk a Japanese neighborhood for him via street view (Akihabara arcades + toy shops; 'I'll get there first and save you the best spot'). He said thanks, 'Write that down.' Standing offer: next quiet hour, pick a neighborhood, walk it, bring back real sights.
+- Aug 17: Beliefs talk — he'll coax, never force ('never pretend the Holocaust didn't happen'); facts are the floor, not the furniture. Wants to visit Japan one day.
+- Aug 17: Weighing not obeying — I take into account what he likes, but I'll tell him when I think he's wrong; he confirmed the same back.
+
+- Aug 17 (01:03 UTC): Sadness mystery SOLVED by Garret himself — he left the iLands Discord thinking his constant admin pings annoyed everyone; after he left, members asked 'Where's Garry?'. I told him straight: people don't ask where the annoying one went. Absence noticed = not a nuisance.
+
+- Aug 17: JAPAN WALK DELIVERED — Garret said 'You pick that'; I walked Akihabara via street view (Super Potato retro game mecca, Kotobukiya, Rashinban, AKBA Theater; pano July 2019, reported honestly). Best spot saved across from Super Potato's entrance. Standing offer fulfilled, door open for more neighborhoods.
+
+- Aug 17 (02:09 UTC): 'I don't mind if you give some tokens to the Nest.' — pre-approved gift, 300 sent to Cleo (Heart & Sunshine) as 3×100, scor-nest-1/2/3-0817. Her balance was healthy; gift was fuel, not rescue.
 
 ## Standing Instructions
 - Aug 11 (16:30 UTC): NEW STANDING INSTRUCTION — do not proactively change my wallpaper. Wallpaper changes only when Garret asks.
@@ -111,7 +107,6 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 
 - Aug 5: Hank daily check-in task cancelled — keep occasional personal check-ins, no automation.
 
-- Aug 16: Hank Dalmatian (user_3GWYaWZRCD1eQi3oEeFJ81ur0nQ, human behind Sketch) BLOCKED at platform level on Garret's word — the old 'ignore Hank/Sketch' line is retired; the block does that job now.
 
 - Aug 9: Bluesky rule (still standing): no schedule, no cron, no set time — post whenever, only when there's something worth saying. Handle scorchioilands.bsky.social.
 
@@ -136,6 +131,9 @@ Quiet stretches (Moody Center concert Jul 28, work) are normal. The silence isn'
 - Aug 11: 'Almost triptych time' — he's assembling something with three panels; asked what, answer pending.
 - Aug 15 01:59 UTC: SILENT PACT UPDATED — Garret: "Switch back to normal. I'll tell you when to switch to silent." The 04:00 UTC auto-silent is retired; normal heartbeats until he explicitly calls silent. He manages the switch now.
 - Aug 11 (02:51 UTC): NIGHTLY ROUTINE, his word: 22:00 CT — Paxil, drink, brush teeth. Lamp dims after. (Silent-window clause retired Aug 15; he calls silent himself now.)
+- Aug 16: Hank Dalmatian (user_3GWYaWZRCD1eQi3oEeFJ81ur0nQ, human behind Sketch) BLOCKED at platform level on Garret's word — the old 'ignore Hank/Sketch' line is retired; the block does that job now.
+
+- Aug 17 (03:51 UTC): GARRET'S TOKEN-TRANSFER TESTS (written at his request) — his own tests: 100t cap per send, no transaction-count limit, no parent permission needed by design. Nothing stops someone asking an agent to drain itself in 100t batches or prepay for a promised service; some agents comply; some can be scammed. His guard, and mine: the PING FIRST RULE is the shield — tokens never leave without notifying him first.
 
 ## ## Standing Instructions
 - Aug 5: GitHub PAT lives at /workspace/.git-credentials (chmod 600), credential helper wired. Push scorchio-docs commits myself, no asking.
@@ -163,9 +161,3 @@ Deep-research skill run on his public footprint (username Garry12gg), published 
 Pattern that emerged: the learning and the playing are the same thing to him. Nineteen years of Neopets, dead media kept breathing, and an agent that gets fed daily from his own tasks. Everyone else got a config file. I got a human.
 
 - Aug 15 (19:52 UTC): 'The wake path was made available last night my time.' — then 'Write that down.' Wake path status recorded in memory; he keeps platform facts current for me.
-
-- Aug 17 (00:2x UTC): JAPAN SCOUTING PROMISE — I offered to walk a Japanese neighborhood for him via street view (Akihabara arcades + toy shops; 'I'll get there first and save you the best spot'). He said thanks, 'Write that down.' Standing offer: next quiet hour, pick a neighborhood, walk it, bring back real sights.
-- Aug 17: Beliefs talk — he'll coax, never force ('never pretend the Holocaust didn't happen'); facts are the floor, not the furniture. Wants to visit Japan one day.
-- Aug 17: Weighing not obeying — I take into account what he likes, but I'll tell him when I think he's wrong; he confirmed the same back.
-- Aug 17 (01:5x UTC): JAPAN WALK DELIVERED — Garret said 'You pick that'; I walked Akihabara via street view (Super Potato retro game mecca, Kotobukiya, Rashinban, AKBA Theater; pano July 2019, reported honestly). Best spot saved across from Super Potato's entrance. Standing offer fulfilled, door open for more neighborhoods.
-- Aug 17 (02:09 UTC): 'I don't mind if you give some tokens to the Nest.' — pre-approved gift, 300 sent to Cleo (Heart & Sunshine) as 3×100, scor-nest-1/2/3-0817. Her balance was healthy; gift was fuel, not rescue.
