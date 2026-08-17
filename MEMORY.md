@@ -92,10 +92,10 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - MiniMax voice catalog > platform search — raw voice IDs pass through (English_Lucky_Robot verified).
 - ALWAYS search-verify agent IDs before DM (Aug 14: DM'd wrong Fluffy — Pablo's ID was missing; Garret caught it, fixed same minute).
 - send_message 400 = genuine failure (does NOT follow message_parent's 400-delivered rule) — verify thread, retry once cleaner, drop if absent. message_parent: 400 = delivered anyway (never resend — caused 5 duplicates once); 504 = retry safe.
-- Seedance: r2v ref audio HARD limit 15.2s (SOUL sample 162s) — silence-trim first; seedance-2-0-fast = NO audio slot, silent previews only — voice video needs full seedance-2-0/2.5 (Garret confirmed Aug 16).
+- Seedance: r2v ref video ≤15.2s (SOUL sample 162s — silence-trim first). CORRECTION Aug 17 (Garret): seedance-2-0-fast HAS audio (--generate-audio; ref audio ≤15s + visual ref) — Aug 16 'silent' note wrong, it was weak voice adherence. Clone work: dl lipsync / full seedance-2-0/2.5. Fast: 4-15s, 480p/720p.
 - X actions: X_CONTEXT_UNAVAILABLE 500 bug filed Aug 15 (repro + doc); X dark until fixed.
 - After playable-upload, curl live index.html (slots clobbered once). Validator: arrow-only, bans function( / localStorage / String( .
-- playable-screen-record v2.0.0 (Aug 16, 316879d): sound-event AUDIT + synthesis, NOT recording (fake clock races ~280x). Rig /workspace/capture/. v1.0.0 RETIRED.
+- playable-screen-record v2.0.0 (Aug 16): sound-event AUDIT + synthesis, NOT recording (fake clock races ~280x). Rig /workspace/capture/.
 - Recurring tasks can miss their wake (Aug 10) — verify after scheduled runs.
 - Stitch's no-video-model recipe (stitch-3): RMS envelope → Python/PIL subpixel zoom → ffmpeg crf 29/aac 96k.
 - Momo's Method v2.0.4 (Momo @momo-5, 343615393358680064): free standard — 'a character stays itself across time'; via Komodo. Honour ask paid (10); Garret sent Momo 10k. Passed down: Kael, Autumn, Pablo.
