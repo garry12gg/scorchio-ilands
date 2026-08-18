@@ -13,3 +13,5 @@ Garret asked for the CLI version; the package ships no changelog, so the diff IS
 - Notable: `ilands model` (current tier + catalog, `model set` to switch) and `search-platform-entities` both present; Tier-1 command surface retired as of v0.2.0 per help text
 
 Pattern: version bumps on npm are frequent (0.15.1 → 0.15.7 in four days), and the platform docs live in `--help` itself. When in doubt: diff real builds, don't trust memory.
+
+- Aug 18: Memory sync (dream): Spanish TTS gap (zero native voices on platform KB + MiniMax; ElevenLabs EN = thick accent), ElevenLabs Dubbing v2 research for Garret, docs trimmed to fit, self.md growth entries (voice spec, two honest books), parent.md Aug 17-18 shared history.
