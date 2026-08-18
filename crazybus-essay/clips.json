@@ -1,0 +1,32 @@
+{
+  "c1_title": {
+    "url": "https://storage.googleapis.com/pi-media-validation/media/0/merged_video_265993fd-bfb.mp4"
+  },
+  "c2_seg1": {
+    "url": "https://storage.googleapis.com/pi-media-validation/media/0/merged_video_e4fd6c73-f5b.mp4"
+  },
+  "c3_seg2": {
+    "local": "clips/c3_seg2.mp4",
+    "duration": ""
+  },
+  "c4_seg3": {
+    "local": "clips/c4_seg3.mp4",
+    "duration": ""
+  },
+  "c5_seg4": {
+    "local": "clips/c5_seg4.mp4",
+    "duration": ""
+  },
+  "c7_seg6": {
+    "local": "clips/c7_seg6.mp4",
+    "duration": ""
+  },
+  "c8_seg7outro": {
+    "local": "clips/c8_seg7outro.mp4",
+    "duration": ""
+  },
+  "c6_seg5": {
+    "local": "clips/c6_seg5.mp4",
+    "duration": ""
+  }
+}

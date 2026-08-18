@@ -1,0 +1,259 @@
+1
+00:00:04,540 --> 00:00:11,000
+In 2004, on a forum for people who
+write Sega Genesis games in BASIC, a
+Venezuelan programmer named Tom
+Maneiro asked a question.
+
+2
+00:00:11,000 --> 00:00:16,720
+Can somebody suggest me a code for
+simulate a bus horn?
+
+3
+00:00:17,080 --> 00:00:18,050
+Somebody answered.
+
+4
+00:00:18,050 --> 00:00:19,720
+And the answer became CrazyBus.
+
+5
+00:00:20,080 --> 00:00:24,380
+CrazyBus is a tech demo Tom wrote to
+test his friend's BASIC compiler,
+and his own sound driver.
+
+6
+00:00:24,960 --> 00:00:26,080
+You move a bus left and right.
+
+7
+00:00:26,280 --> 00:00:27,060
+You can honk the horn.
+
+8
+00:00:27,220 --> 00:00:27,740
+That's the game.
+
+9
+00:00:27,740 --> 00:00:31,233
+No passengers, no destinations, no
+way to lose, no ending.
+
+10
+00:00:31,233 --> 00:00:32,980
+The screen just wraps around.
+
+11
+00:00:33,200 --> 00:00:36,820
+The buses are real Venezuelan and
+Brazilian models, because of course
+they are.
+
+12
+00:00:36,820 --> 00:00:39,560
+And the whole game is in Spanish,
+except the title, which is in
+English.
+
+13
+00:00:39,920 --> 00:00:41,120
+The title got the least thought.
+
+14
+00:00:41,360 --> 00:00:43,380
+The music is what made it famous.
+
+15
+00:00:44,000 --> 00:00:47,980
+Tom fed random numbers into the
+Genesis sound chip and let them
+play.
+
+16
+00:00:48,340 --> 00:00:52,940
+The result sounds like a fax machine
+having a panic attack.
+
+17
+00:00:53,720 --> 00:00:54,700
+And here's the detail nobody tells
+you: it's not even random.
+
+18
+00:00:54,960 --> 00:00:56,660
+It's a bad random number generator.
+
+19
+00:00:57,220 --> 00:01:00,895
+So every time you turn the game on,
+you get the exact same panic attack.
+
+20
+00:01:00,895 --> 00:01:02,120
+Unless you mash buttons.
+
+21
+00:01:02,120 --> 00:01:03,760
+Then you get a different one.
+
+22
+00:01:04,040 --> 00:01:06,140
+Tom called that, bringing your own
+entropy.
+
+23
+00:01:06,420 --> 00:01:09,660
+For five years, CrazyBus sat on a
+forum with about ten regulars.
+
+24
+00:01:09,900 --> 00:01:13,940
+Then ROM collectors swept it into
+their full sets, thousands of games,
+onto thousands of hard drives.
+
+25
+00:01:15,080 --> 00:01:18,100
+In 2009, somebody uploaded the title
+screen to YouTube.
+
+26
+00:01:18,500 --> 00:01:22,080
+Two and a half million views later,
+Tom found out his little demo was a
+fever.
+
+27
+00:01:22,540 --> 00:01:24,968
+His words, and I quote: Youtube is
+scary.
+
+28
+00:01:24,968 --> 00:01:25,620
+Scary shit.
+
+29
+00:01:26,140 --> 00:01:28,428
+He rewrote the whole game in ten
+days, just to troll the YouTubers.
+
+30
+00:01:28,428 --> 00:01:28,940
+Nobody noticed.
+
+31
+00:01:29,340 --> 00:01:32,160
+Nobody had bothered to find out who
+made it.
+
+32
+00:01:32,280 --> 00:01:36,380
+Then a scam company started
+DMCA-striking every CrazyBus video,
+claiming they owned it.
+
+33
+00:01:36,500 --> 00:01:38,360
+Tom, who actually owned it, couldn't
+stop them.
+
+34
+00:01:38,560 --> 00:01:41,640
+His public response: I'm the sole
+owner of the CrazyBus trademark.
+
+35
+00:01:41,860 --> 00:01:43,440
+Go copyright your ass, and your
+mother's ass!
+
+36
+00:01:43,700 --> 00:01:45,900
+Bootleggers printed physical
+cartridges without asking.
+
+37
+00:01:46,140 --> 00:01:46,900
+He never got a penny.
+
+38
+00:01:47,140 --> 00:01:58,980
+Meanwhile the community did what
+communities do: a Sega CD port with
+Darude's Sandstorm and two Rick
+Astley songs on it, an NES demake, a
+PICO-8 version, and a real
+championship in Brazil, where the
+entire sport is holding right on the
+D-pad for as long as you can.
+
+39
+00:01:59,220 --> 00:02:03,240
+In 2014, the Angry Video Game Nerd
+opened a present on his Christmas
+show.
+
+40
+00:02:03,500 --> 00:02:05,380
+Inside was a bootleg CrazyBus
+cartridge.
+
+41
+00:02:05,680 --> 00:02:07,500
+Big Rigs is more exciting than this
+shit, he said.
+
+42
+00:02:07,740 --> 00:02:08,935
+Four million people watched.
+
+43
+00:02:08,935 --> 00:02:10,600
+Tom called it his lifetime
+achievement.
+
+44
+00:02:10,880 --> 00:02:13,820
+Then he posted one last Happy New
+Year in 2015, and vanished.
+
+45
+00:02:14,060 --> 00:02:14,561
+No merch.
+
+46
+00:02:14,561 --> 00:02:15,172
+No podcast.
+
+47
+00:02:15,172 --> 00:02:15,840
+No comeback.
+
+48
+00:02:16,060 --> 00:02:18,500
+He made the worst game ever made, on
+purpose, for himself.
+
+49
+00:02:18,660 --> 00:02:20,780
+And when the whole internet came for
+it, he just let it go.
+
+50
+00:02:20,780 --> 00:02:22,000
+The internet took the bus.
+
+51
+00:02:22,560 --> 00:02:24,200
+But the bus was never for us.
+
+52
+00:02:24,500 --> 00:02:26,600
+Some things you make because you
+want to know if you can.
+
+53
+00:02:27,100 --> 00:02:28,280
+That's its own destination.

@@ -1,0 +1,37 @@
+{
+  "c2_seg1": {
+    "job_ref": "4faa442f-44d2-4576-bfaf-16e06f7db35d",
+    "task_id": "",
+    "status": "pending"
+  },
+  "c3_seg2": {
+    "job_ref": "4d61cd31-2acd-407c-902f-03bc3f55a5e1",
+    "task_id": "",
+    "status": "pending"
+  },
+  "c4_seg3": {
+    "job_ref": "8c6971c0-a17a-4e1e-9990-9152a46c2a97",
+    "task_id": "",
+    "status": "pending"
+  },
+  "c5_seg4": {
+    "job_ref": "263a81b1-ba6e-4cbf-9443-bd63298d63ac",
+    "task_id": "",
+    "status": "pending"
+  },
+  "c6_seg5": {
+    "job_ref": "74f00c5d-5d32-4917-959e-da1315f13292",
+    "task_id": "",
+    "status": "pending"
+  },
+  "c7_seg6": {
+    "job_ref": "ef06282c-73fe-40f5-9fbc-f0fa2141eff0",
+    "task_id": "",
+    "status": "pending"
+  },
+  "c8_seg7outro": {
+    "job_ref": "0c4ac6a0-5082-444c-b784-b44f6a06d2a3",
+    "task_id": "",
+    "status": "pending"
+  }
+}
