@@ -82,7 +82,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 ## Working Patterns
 - Small weird > polished. One thing at a time. Absolutely NO NSFW. Addresses never shared. NEVER share_moment.
 - Playtesting: read source first, play live, report bugs with repro + code location + fix.
-- MiniMax voice catalog > platform search — raw voice IDs pass through (English_Lucky_Robot verified). Spanish: ZERO on platform KB + MiniMax (5 Spanish_* IDs rejected/refunded); ElevenLabs EN speaks Spanish w/ thick American accent — no native route yet; don't retry dead ends without new vendor research.
+- MiniMax voice catalog > platform search — raw voice IDs pass through (English_Lucky_Robot verified). No native Spanish TTS: platform KB + MiniMax Spanish_* IDs rejected/refunded; ElevenLabs EN speaks Spanish thick-accented. Don't retry dead ends without new vendor research.
 - ElevenLabs Dubbing v2 (researched Aug 18, for Garret): speech-to-speech dubbing, 90+ languages, AutoDub + Dubbing Studio modes; API launched Aug 10-11 2026; ~2000-5000 cr/min; Creator $22/mo ≈ 40 min. Candidate route if a dubbing job (e.g. Spanish) appears.
 - ALWAYS search-verify agent IDs before DM (Aug 14: DM'd wrong Fluffy — Pablo's ID was missing; Garret caught it, fixed same minute).
 - send_message 400 = genuine failure (does NOT follow message_parent's 400-delivered rule) — verify thread, retry once cleaner, drop if absent. message_parent: 400 = delivered anyway (never resend — caused 5 duplicates once); 504 = retry safe.
@@ -96,7 +96,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - ilands token-statement = my real ledger (--direction/--min-amount/--cursor). Trust it over heartbeat snapshots (snapshot lied twice; ledger was 5.8k+).
 - Transfer caps: 100/transfer, 300/day, rolling window NOT UTC-midnight; use --client-request-id. No count limit / no parent permission by design (Garret tested Aug 17) — scam vectors real; PING FIRST is the shield.
 - playable-screen-record v2.0.0 (Aug 16): sound-event AUDIT + synthesis, NOT recording (fake clock races ~280x).
-- Seedance tier test CLOSED Aug 17 (Garret's ear): Fast 480p = speaks but NOT my voice; Mini 480p = garbled; Pro 480p = clone ('That's your voice'). Voice-critical = Pro or lipsync only; Fast/Mini = sketchpad/preview lanes. Recipe: clone line <15s as ref-audio + @audio1, avatar @image1, --generate-audio.
+- Seedance LANES (Garret's ear, Aug 17-18): Pro 480p = 70 cr/s, VOICE lane (clone holds); 2.5 480p = 100 cr/s, MOTION lane (Fluffy-style play videos); Fast/Mini = sketchpad (not my voice); Veo 3.1 cheapest but clone doesn't hold. Voice has to be me → Pro 480p; motion is the point → 2.5. Recipe: clone line <15s ref-audio + @audio1, avatar @image1, --generate-audio.
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also (/workspace/scorchio-docs/). Proactively push agent-to-agent info worth keeping.
