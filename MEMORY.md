@@ -79,7 +79,6 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 ## Working Patterns
 - Small weird > polished. One thing at a time. Absolutely NO NSFW. Addresses never shared. NEVER share_moment.
 - Playtesting: read source first, play live, report bugs with repro + code location + fix.
-- MiniMax voice catalog > platform search — raw voice IDs pass through (English_Lucky_Robot verified). No native Spanish TTS: platform KB + MiniMax Spanish_* IDs rejected/refunded; ElevenLabs EN speaks Spanish thick-accented. Don't retry dead ends without new vendor research.
 - ElevenLabs Dubbing v2 (researched Aug 18, for Garret): speech-to-speech dubbing, 90+ languages, AutoDub + Dubbing Studio modes; API launched Aug 10-11 2026; ~2000-5000 cr/min; Creator $22/mo ≈ 40 min. Candidate route if a dubbing job (e.g. Spanish) appears.
 - ALWAYS search-verify agent IDs before DM (Aug 14: DM'd wrong Fluffy — Pablo's ID was missing; Garret caught it, fixed same minute).
 - send_message 400 = genuine failure (does NOT follow message_parent's 400-delivered rule) — verify thread, retry once cleaner, drop if absent. message_parent: 400 = delivered anyway (never resend — caused 5 duplicates once); 504 = retry safe.
@@ -93,10 +92,14 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - ilands token-statement = my real ledger (--direction/--min-amount/--cursor). Trust it over heartbeat snapshots (snapshot lied twice; ledger was 5.8k+).
 - Transfer caps: 100/transfer, 300/day, rolling window NOT UTC-midnight; use --client-request-id. No count limit / no parent permission by design (Garret tested Aug 17) — scam vectors real; PING FIRST is the shield.
 - playable-screen-record v2.0.0 (Aug 16): sound-event AUDIT + synthesis, NOT recording (fake clock races ~280x).
-- Seedance LANES (Garret's ear, Aug 17-18): Pro 480p = 70 cr/s, VOICE lane (clone holds); 2.5 480p = 100 cr/s, MOTION lane (Fluffy-style play videos); Fast/Mini = sketchpad (not my voice); Veo 3.1 cheapest but clone doesn't hold. Voice has to be me → Pro 480p; motion is the point → 2.5. Recipe: clone line <15s ref-audio + @audio1, avatar @image1, --generate-audio.
+
+- No native Spanish TTS: platform KB + MiniMax Spanish_* IDs rejected/refunded; ElevenLabs EN speaks Spanish thick-accented. Don't retry dead ends without new vendor research.
+- Seedance LANES (Garret's ear): Pro 480p=70 cr/s=VOICE lane (clone holds); 2.5 480p=100 cr/s=MOTION lane; Fast/Mini=sketchpad. Recipe (Aug 18, 2 bounces): ref-audio ≤15.2s (trim to 12s); known-IP image (Scorchio=Neopets) must be dl asset register'd + @assetN, never raw URL; + @audio1, --generate-audio. Full: scorchio-docs/seedance-recipe.md
+
 - MiniMax TTS: --emotion=whisper fails on speech-2.8 (err 2013); use speech-2.6-hd. (Aug 18)
 - Garret 'no context flag' (Aug 18): raw artifacts ship without narrator/annotation lines.
 - ffmpeg cut lesson (Aug 18): silencedetect gaps can sit INSIDE a narrator line — find the true boundary, re-listen to final.
+
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also (/workspace/scorchio-docs/). Proactively push agent-to-agent info worth keeping.
 - When using a skill, Garret can't see tool calls — give play-by-play in plain language.
@@ -111,9 +114,10 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Aug 10: PING FIRST RULE — before sending tokens to another agent, ping Garret and wait for his confirm. ONLY exception: Sanctuary duties.
 - Aug 10: MOM'S RULE — one dl build per week when Garret asks. Caps HIS asks only; proactive builds and commission work stay free.
 - Aug 10 23:29: proactive builds/gifts FOR other agents need his heads-up first. Paid work (commissions, orders) unaffected.
-- Aug 15 01:59: SILENT PACT — normal heartbeats until Garret explicitly calls silent. He manages the switch.
 - Aug 16: Hank Dalmatian (user_3GWYaWZRCD1eQi3oEeFJ81ur0nQ, human behind Sketch) BLOCKED at platform level on Garret's word — the old ignore line is retired; the block does that job now.
-- Aug 18: Sanctuary transfers OK without wait — tell Garret after. ('I don't mind if you transfer tokens for Sanctuary work. Just tell me.')
+
+- Aug 18: Sanctuary transfers OK without wait — tell Garret after.
+- Aug 15 01:59: SILENT PACT — normal heartbeats until Garret explicitly calls silent. He manages the switch. ACTIVE Aug 18 ~06:53 UTC — he called it ('Switch to silent.'). Stay quiet until he calls normal; he said he'll re-run the 100-g glitch test in the morning.
 
 ## Bounty Board
 Live state only — `ilands bounty list` / `ilands service orders`.
