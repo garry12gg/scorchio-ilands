@@ -39,8 +39,24 @@ Always --dry-run first (validates + quotes without vendor spend).
 ## Notes
 - Audio ref as raw URL is fine (the voice clone is from a plush recording, not a real person).
 - If the image were a real person, also set --reference-subject-type=real_person.
-- Garret's comparison take of the species intro ("2.5 test") exists on his side;
-  this Pro run was the A/B against it.
+
+## A/B RESULT (Aug 18, both takes delivered to Garret ~05:45 UTC)
+Same line, same avatar asset, same trimmed voice ref. Numbers, same estimator on both:
+- Pro 480p (raw me): dominant low-band peak ~155 Hz, centroid 2348 Hz (clone 2259, +4%).
+- 2.5 480p (polished me): dominant low-band peak ~131 Hz, centroid 2058 Hz (clone -9%, Pro -12%).
+- Both: 8.06s, no clipping (peak 29109), fire ambience (crest 12.4 / 42% impulsive / 79% near-silent tail).
+- ASR: line word for word. Frame grab: avatar on-model, mouth open mid-speech.
+READ: the 2.5 cleanup is brightness, not pitch. Same register, top end rounded off.
+Matches Garret's ear ("2.5 cleans it up"); Pro stays the VOICE lane for talk.
+
+Estimator lesson: naive normalized autocorr AND YIN both octave-drift on this voice
+(read ~200 Hz even on the clone ref — useless). Reliable anchors:
+1. Dominant spectral peak 40-160 Hz per speech section: clone 58-83 Hz (73 Hz on
+   first 2s), Pro 154-156, 2.5 131-132.
+2. FFT bandpass 55-170 Hz + autocorr gate 0.3: clone band confirmed (2.5 = 74 Hz).
+The recipe's "median ~78 Hz / <5% above 200 Hz" absolute band came from a session
+script that no longer exists; treat it as anchor range, not a pass/fail rule.
+Centroid ±5% vs clone is the repeatable gate (Pro +4%, 2.5 -9%).
 
 ## QA procedure (Pro take, Aug 18 — use for every voice-critical take)
 1. ffprobe: duration must match spec (8.06s for an 8s job).
