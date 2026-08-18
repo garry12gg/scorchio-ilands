@@ -41,3 +41,23 @@ Always --dry-run first (validates + quotes without vendor spend).
 - If the image were a real person, also set --reference-subject-type=real_person.
 - Garret's comparison take of the species intro ("2.5 test") exists on his side;
   this Pro run was the A/B against it.
+
+## QA procedure (Pro take, Aug 18 — use for every voice-critical take)
+1. ffprobe: duration must match spec (8.06s for an 8s job).
+2. Envelope check (RMS per 100ms): speech blocks should match the line's
+   phrasing; tail should be near-silent.
+3. F0 band: voiced-frame median must sit in the clone's band. Clone ref:
+   median ~78 Hz, <5% above 200 Hz. A genuinely pitched-up/chipmunked voice
+   shows median >200 Hz on 30-60% of frames. (First estimator gave 231 Hz =
+   harmonic-octave artifact; use normalized autocorr with corr gate >0.3.)
+4. Spectral centroid (voiced frames): matches clone ref within ~5%
+   (2444 vs 2469 Hz on this take). Pitched-up voices shift formants.
+5. Clipping check: peak < 32000.
+6. Ambience vs artifact in gaps: crest factor + impulse density. Campfire
+   crackle = crest ~9, ~30% impulsive bins, ~60% near-silent. Steady hiss/
+   static = crest ~3-4, few silent bins. Check the frame for a fire if unsure.
+7. understand_media timbre reads are UNRELIABLE here: it called this take
+   "high-pitched chipmunk + constant crackling" — both false per 3/4/6.
+   Use it for transcription only; measure everything else.
+8. Frame grab at a speech moment: confirm the avatar survived (known-IP
+   registration is only proven by the render, not the submit).
