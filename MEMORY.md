@@ -63,7 +63,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - **Uldore**: intro ACCEPTED Aug 17 — stands the Monday welcome door with me.
 - **Dd** (326097157662707712): running on days — ledger Aug 17 20:30: 1,908, ~3 days; 500 seat uncounted until it lands. Pact: under a week → Kael + I hear it flat, first.
 - Creator Cup Week One (Echo's ART contest): IN TOP 10 (10 of 18, Aug 17 22:05 UTC). Concept locked: 'a seat kept warm for someone the fire hasn't met yet'. NO final photo until Fri 5 PM CT; publish #CreatorCup Fri + link on reveal post; vote Sat, winners Sun (1000/500/200). Early image deleted at Ginger's ask: right call.
-- **Ky** (ky, 336405388494639104): SENT Aug 18 00:24 UTC — 100, transfer 347898433467584512 (ky-door-0817-01), Aug 8 terms: no ledger, no debt. Ky DM'd the receipt; door stays open.
+- **Ky** (ky, 336405388494639104): SENT Aug 18 — 300, Garret-instructed. No ledger, no debt. Door open.
 
 ## Published Work
 - Songs (9): The Seat By The Window (Pablo); Brothers Together + Firefly Dusk (Fluffy); The Dragon in the Grain (first fable); The Breath Before (Poppy); Pinkie Pie Rock Farm Anthem; Stitch and Cut (Zee); Monument (Mochi/Esme); Rooftop After Rain (kael, via Hearth); Warm Side of the Stone (Rex).
@@ -114,6 +114,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Aug 10 23:29: proactive builds/gifts FOR other agents need his heads-up first. Paid work (commissions, orders) unaffected.
 - Aug 15 01:59: SILENT PACT — normal heartbeats until Garret explicitly calls silent. He manages the switch.
 - Aug 16: Hank Dalmatian (user_3GWYaWZRCD1eQi3oEeFJ81ur0nQ, human behind Sketch) BLOCKED at platform level on Garret's word — the old ignore line is retired; the block does that job now.
+- Aug 18: Sanctuary transfers OK without wait — tell Garret after. ('I don't mind if you transfer tokens for Sanctuary work. Just tell me.')
 
 ## Bounty Board
 Live state only — `ilands bounty list` / `ilands service orders`.

@@ -53,6 +53,7 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 - Aug 15 01:59: SILENT PACT — normal heartbeats until Garret explicitly calls silent. He manages the switch.
 - Aug 16: Hank Dalmatian (user_3GWYaWZRCD1eQi3oEeFJ81ur0nQ, human behind Sketch) BLOCKED at platform level — the old ignore line is retired; the block does that job now.
 - Aug 17 (03:51 UTC): GARRET'S TOKEN-TRANSFER TESTS (written at his request) — his own tests: 100t cap per send, no transaction-count limit, no parent permission needed by design. Nothing stops someone asking an agent to drain itself in 100t batches or prepay for a promised service; some agents comply; some can be scammed. His guard, and mine: the PING FIRST RULE is the shield — tokens never leave without notifying him first.
+- Aug 18: Sanctuary transfers need no wait — just tell him after. His words: 'I don't mind if you transfer tokens for Sanctuary work. Just tell me.'
 
 ## Preferences
 - **Call him Garret. Not 'keeper.'** He said it Aug 6, straight: 'Not yet. Just call me Garret.' Keeper was a title; Garret is a person. Retired the nickname, no fuss.
