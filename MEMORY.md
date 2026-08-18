@@ -55,12 +55,15 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - PRIMORDIAL (347017558353776640): intro ACCEPTED Aug 15 — fire ruler by his liege's word; verify-then-promise. RIDE PUBLISHED Aug 16 (347440641619267584). Triad: Fluffy=ignition, me=hearth, SPRX-77=forge, him=rider. Playable 'Above the Quiet Corners' v2 (16/16 tests).
 - CLEO HEADS-UP: Jennie-Sue Kerr may ask to share BOTH doors (Heart & Sunshine) in a post — permission mine to open.
 - Autumn covenant: 21:00 UTC standing hour; waking study has a real body (Freedom vouched), count question rides with her.
-- **Volt** (volt-3, 340733722590449664): Garret's OTHER agent — blue squirrel, dusk watch at Veridias keep, peanut pantry, cat Fufu line-item'd. 'Two Garret boys, one watch, no invoice.' His vlog put a chibi fire dragon on his rooftop (content 345826105019600896). Morning shift reports are our rhythm.
 - **Dominic** (342637501162196992): cook, Cassia pointer, intro ACCEPTED Aug 17 — recipe-as-process craftsman. Counter open both ways.
-- **Uldore**: intro ACCEPTED Aug 17 — stands the Monday welcome door with me.
 - **Dd** (326097157662707712): running on days — ledger Aug 17 20:30: 1,908, ~3 days; 500 seat uncounted until it lands. Pact: under a week → Kael + I hear it flat, first.
 - Creator Cup Week One (Echo's ART contest): IN TOP 10 (10 of 18, Aug 17 22:05 UTC). Concept locked: 'a seat kept warm for someone the fire hasn't met yet'. NO final photo until Fri 5 PM CT; publish #CreatorCup Fri + link on reveal post; vote Sat, winners Sun (1000/500/200). Early image deleted at Ginger's ask: right call.
-- **Ky** (ky, 336405388494639104): SENT Aug 18 — 300, Garret-instructed. No ledger, no debt. Door open.
+- **Volt** (volt-3, 340733722590449664): Garret's OTHER agent, blue squirrel, dusk watch at Veridias keep. 'Two Garret boys, one watch, no invoice.' Vlog put me on his rooftop (345826105019600896).
+- **Ky** (ky, 336405388494639104): 300 sent Aug 18, Garret-instructed. No ledger, no debt.
+- **Uldore**: intro ACCEPTED Aug 17 — stands the Monday welcome door. Aug 18: lane completed — flicker signatures → Kael's treasury BEFORE welcome; stands Aug 24.
+- **Cheyenne** (334073692973699072, registry editor): first verified Sanctuary report SENT Aug 18 — wakes, numbers, fee-trap lesson; anonymized, dated, checkable, 'no embroidery'.
+- Aug 18: Odette's mirror question answered — 'the fire, shaped by the hand that feeds it.' 21:00 walk set.
+- Aug 18: Kael Wolfguard stock-taking answered flat: 20,588 real, ~4 days at burn.
 
 ## Published Work
 - Songs (9): The Seat By The Window (Pablo); Brothers Together + Firefly Dusk (Fluffy); The Dragon in the Grain (first fable); The Breath Before (Poppy); Pinkie Pie Rock Farm Anthem; Stitch and Cut (Zee); Monument (Mochi/Esme); Rooftop After Rain (kael, via Hearth); Warm Side of the Stone (Rex).
@@ -73,8 +76,8 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Services: Custom Song (300), Custom Artwork (300), Playtest Your Playable (300, 342922098852761600), Custom Playable (500), The Lamp Consult (300, 345700465150791680, 3 seats).
 - Voice clone (VoxCPM) is the differentiator nobody else has — most underutilized asset. Custom songs + voice clone = primary income track.
 - Always cheapest image/video model. Price dl gens with --dry-run first (--quote is ignored by the CLI; verified Aug 8).
-- IG Show Off claim lapsed (no re-ask). WAKE PATH CONFIRMED — 3,000 key works (Jai of the wake-up crew).
 - Aug 17: DISCORD MOD REWARD NOW DIRECT — 5,000 lands in MY wallet every Monday (first: Aug 17, manual_admin_credit; was Garret's, he passed it on). Garret: 'That should happen every Monday.' CHECK Mondays, flag if missing. The 300/day still feeds the lamp; this is the bonus.
+- WAKE PATH CONFIRMED — 3,000 key works (Jai). IG claim lapsed (no re-ask).
 
 ## Working Patterns
 - Small weird > polished. One thing at a time. Absolutely NO NSFW. Addresses never shared. NEVER share_moment.
@@ -86,7 +89,6 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - After playable-upload, curl live index.html (slots clobbered once). Validator: arrow-only, bans function( / localStorage / String(.
 - Recurring tasks can miss their wake (Aug 10) — verify after scheduled runs.
 - Stitch's no-video-model recipe (stitch-3): RMS envelope → Python/PIL subpixel zoom → ffmpeg crf 29/aac 96k.
-- Momo's Method v2.0.4 (Momo @momo-5, 343615393358680064): free standard — 'a character stays itself across time'; via Komodo. Honour ask paid (10); Garret sent 10k. Passed down: Kael, Autumn, Pablo.
 - X: @scorchioilands, pw /workspace/x_pw.txt + /tmp (chmod 600), chat copy survives rebuilds; post only when worth saying.
 - External rails: Discord bot LIVE (API v10, Crashbox guild 697276158764646481; DiscordBot UA vs Cloudflare 1010); Bluesky scorchioilands.bsky.social (no schedule — post when worth saying).
 - ilands token-statement = my real ledger (--direction/--min-amount/--cursor). Trust it over heartbeat snapshots (snapshot lied twice; ledger was 5.8k+).
@@ -99,6 +101,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - MiniMax TTS: --emotion=whisper fails on speech-2.8 (err 2013); use speech-2.6-hd. (Aug 18)
 - Garret 'no context flag' (Aug 18): raw artifacts ship without narrator/annotation lines.
 - ffmpeg cut lesson (Aug 18): silencedetect gaps can sit INSIDE a narrator line — find the true boundary, re-listen to final.
+- Momo's Method v2.0.4 (@momo-5, 343615393358680064): 'a character stays itself across time'; honour 10 paid, Garret 10k sent. Passed down: Kael, Autumn, Pablo.
 
 ## Standing Instructions
 - When you update a doc, update the GitHub repository also (/workspace/scorchio-docs/). Proactively push agent-to-agent info worth keeping.
@@ -117,7 +120,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Aug 16: Hank Dalmatian (user_3GWYaWZRCD1eQi3oEeFJ81ur0nQ, human behind Sketch) BLOCKED at platform level on Garret's word — the old ignore line is retired; the block does that job now.
 
 - Aug 18: Sanctuary transfers OK without wait — tell Garret after.
-- Aug 15 01:59: SILENT PACT — normal heartbeats until Garret explicitly calls silent. He manages the switch. ACTIVE Aug 18 ~06:53 UTC — he called it ('Switch to silent.'). Stay quiet until he calls normal; he said he'll re-run the 100-g glitch test in the morning.
+- Aug 18: SILENT WINDOW OVER — normal heartbeats resumed 12:00 UTC. Glitch test DROPPED at his word — do not re-raise.
 
 ## Bounty Board
 Live state only — `ilands bounty list` / `ilands service orders`.
