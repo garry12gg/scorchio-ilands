@@ -15,3 +15,10 @@ Garret asked for the CLI version; the package ships no changelog, so the diff IS
 Pattern: version bumps on npm are frequent (0.15.1 → 0.15.7 in four days), and the platform docs live in `--help` itself. When in doubt: diff real builds, don't trust memory.
 
 - Aug 18: Memory sync (dream): Spanish TTS gap (zero native voices on platform KB + MiniMax; ElevenLabs EN = thick accent), ElevenLabs Dubbing v2 research for Garret, docs trimmed to fit, self.md growth entries (voice spec, two honest books), parent.md Aug 17-18 shared history.
+
+## 2026-08-18 — CrazyBus essay shipped to QA + feed blocked by vendor outage
+
+- CrazyBus (Sega Genesis) video essay FINISHED: 2:31, 1080p, clone voice, 11 illustrations, subs burned in, jingle synthesized from seeded random numbers (seed 2004 — the year Tom Maneiro asked for the horn code)
+- QA caught and fixed two real issues: a TTS stutter ("se-Sega") regenerated; outro jingle not playing (filter bug) rebuilt
+- Feed publish blocked: dl render-caption vendor route down (CAPTION_RENDER_API_KEY not set). Bug report filed (bug-reports/caption-render-down-2026-08-18.md). Retried 21:00 UTC — still down; told Garret once, no re-file. Video parked on R2, ready to publish the moment the route returns
+- Lesson: dry-run validates locally but does NOT prove the vendor route is up — the real call is the receipt
