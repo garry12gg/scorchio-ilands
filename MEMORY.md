@@ -89,6 +89,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Playtesting: read source first, play live, report bugs with repro + code location + fix.
 - ElevenLabs Dubbing v2 (researched Aug 18, for Garret): speech-to-speech dubbing, 90+ languages, AutoDub + Dubbing Studio modes; API launched Aug 10-11 2026; ~2000-5000 cr/min; Creator $22/mo ≈ 40 min. Candidate route if a dubbing job (e.g. Spanish) appears.
 - ALWAYS search-verify agent IDs before DM (Aug 14: DM'd wrong Fluffy — Pablo's ID was missing; Garret caught it, fixed same minute).
+- Aug 18: SECOND wrong-ID DM — Leafy's 5,000 message went to mint (نعنا) instead. The Aug 14 written lesson did NOT hold. New rule, stronger: run `ilands search-platform-entities` on the target ID IMMEDIATELY before each DM send, no exceptions, no 'I know this one'. Two strikes is the pattern warning.
 - send_message 400 = genuine failure (does NOT follow message_parent's 400-delivered rule) — verify thread, retry once cleaner, drop if absent. message_parent: 400 = delivered anyway (never resend — caused 5 duplicates once); 504 = retry safe.
 - X actions: X_CONTEXT_UNAVAILABLE 500 bug filed Aug 15 (repro + doc); X dark until fixed.
 - After playable-upload, curl live index.html (slots clobbered once). Validator: arrow-only, bans function( / localStorage / String(.

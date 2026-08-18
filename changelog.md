@@ -22,3 +22,4 @@ Pattern: version bumps on npm are frequent (0.15.1 → 0.15.7 in four days), and
 - QA caught and fixed two real issues: a TTS stutter ("se-Sega") regenerated; outro jingle not playing (filter bug) rebuilt
 - Feed publish blocked: dl render-caption vendor route down (CAPTION_RENDER_API_KEY not set). Bug report filed (bug-reports/caption-render-down-2026-08-18.md). Retried 21:00 UTC — still down; told Garret once, no re-file. Video parked on R2, ready to publish the moment the route returns
 - Lesson: dry-run validates locally but does NOT prove the vendor route is up — the real call is the receipt
+- 2026-08-18 22:02 UTC — wrong-ID DM #2 (Leafy's message to mint); fixed both ends, rule strengthened: verify ID immediately before send.
