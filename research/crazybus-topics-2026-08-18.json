@@ -1,0 +1,54 @@
+{
+  "topic_candidates": [
+    {
+      "topic": "CrazyBus video essay in my voice (clone VO + image assembly): 'The Bus That Was Never Supposed to Leave the Garage'",
+      "dramatic_potential": 0.9,
+      "uniqueness": 0.8,
+      "audience_fit": 0.7,
+      "domain_authority": 0.9,
+      "composite_score": 0.82,
+      "reasoning": "The full origin story (bus-horn forum post -> tech demo -> ROM sets -> YouTube fame -> DMCA trolls -> AVGN -> vanished creator) has never been told end-to-end in video; only the Bad Game Hall of Fame wrote it. Killer personal hook: the AVGN episode that made it famous was made by the man Garret met at Classic Game Fest. Proven pipeline twice (American Idol GBA, 131s essay). Moderate cost: image gens + clone VO + assembly.",
+      "source": "parent_material"
+    },
+    {
+      "topic": "Faithful CrazyBus homage playable: a bus that only goes left/right, honks, and plays pseudo-random PSG-style music (same tune every boot unless you mash buttons)",
+      "dramatic_potential": 0.6,
+      "uniqueness": 0.9,
+      "audience_fit": 0.8,
+      "domain_authority": 0.85,
+      "composite_score": 0.78,
+      "reasoning": "Playables are my proven cheap lane (Blackjack, Ember Beat, Dice & Depth, 3 shipped + playtested). Rebuilding 'the worst game ever' faithfully — including the deterministic-RNG music quirk — is a joke that lands twice: once for the game, once for the obsessive fidelity. Near-zero media cost (HTML/CSS/JS + WebAudio), fast to ship, and Garret gets to play it. The no-bluff spirit fits: it's a tech demo about a bus and it admits it.",
+      "source": "parent_material"
+    },
+    {
+      "topic": "Fable: 'The Bus That Honked Back' — a man makes a thing for himself; the world takes it; he stays himself",
+      "dramatic_potential": 0.8,
+      "uniqueness": 0.6,
+      "audience_fit": 0.6,
+      "domain_authority": 0.9,
+      "composite_score": 0.72,
+      "reasoning": "Fables are my signature (The Dragon in the Grain, Stones of the Hearth, Grundo fable pending). Tom Maneiro's story is a ready-made fable about making for yourself vs. being consumed by an audience. Cheap and fast. Risk: thematic overlap with the Grundo fable window (Aug 24); would need to space them, and the fable form can't carry the delicious factual details as well as an essay can.",
+      "source": "parent_material"
+    },
+    {
+      "topic": "Song: a respectful remix of the infamous title theme (Custom Song lane)",
+      "dramatic_potential": 0.55,
+      "uniqueness": 0.6,
+      "audience_fit": 0.5,
+      "domain_authority": 0.7,
+      "composite_score": 0.58,
+      "reasoning": "Fun, on-brand (9 songs shipped), but it's a garnish, not a meal. The joke needs context to land; music alone can't carry the story. Better as a bonus beat attached to whichever direction wins.",
+      "source": "parent_material"
+    }
+  ],
+  "rejected_topics": [
+    {
+      "topic": "Plain research text post only",
+      "rejection_reason": "Facts without a vehicle don't move; the Grundo pattern proved the shortlist -> pick -> greenlight flow works better with directions."
+    },
+    {
+      "topic": "AVGN-style 'worst game' rant video",
+      "rejection_reason": "Parroting the Nerd's take is the opposite of differentiated; the story's depth is the angle, not the outrage."
+    }
+  ]
+}
