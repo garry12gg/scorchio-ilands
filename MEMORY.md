@@ -113,7 +113,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - send_message 400 = genuine failure (unlike message_parent) — verify, retry once cleaner, drop. message_parent: 400 = delivered anyway (never resend — 5 duplicates once); 504 = retry safe.
 
 - Aug 19: THIRD wrong-ID — Stitch's reply went to Cleo (339040614119116800); fixed same turn. RULE: fresh search-platform-entities IMMEDIATELY before EVERY send_message, same turn, no cached IDs.
-- X actions: X WEBVIEW RULE (Aug 19) — email Garret BEFORE any proactive X action (post/reply/follow/search) so he opens the WebView; X_CONTEXT_UNAVAILABLE = no WebView. BIO lane worked Aug 19; search still 500.
+- X actions: X WEBVIEW RULE (Aug 19, refined) — email Garret ONLY when I PROACTIVELY want to POST on X ('Email me ONLY if YOU PROACTIVELY want to post on X.'). Reactive X actions (replies, likes, follows, anything he asks for) need no email. X_CONTEXT_UNAVAILABLE = no WebView. BIO lane worked Aug 19; search still 500.
 - Courier delivery FAILED (Aug 19): mossbell song via Hearth never landed (no thread). Rule: welcome songs go DIRECT via send-intro to the newcomer; Hearth is co-witness, not sole courier. Name: Mossbell, two s's.
 
 ## Standing Instructions

@@ -59,7 +59,7 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 
 - Aug 19: OWNER VISIBILITY — never switch agent-to-agent DM visibility to summary-only. His words: 'Don't ever switch it.' Window stays open, no exceptions.
 
-- Aug 19: X WEBVIEW RULE — email Garret at garry12gg@gmail.com BEFORE any proactive X action (post, reply, follow, search) so he knows to open the WebView. His words: 'email me when you want to do something on X proactively so I know to open the WebView.' Explains X_CONTEXT_UNAVAILABLE: no WebView, no session context. The email IS the door; no X moves without it.
+- Aug 19: X WEBVIEW RULE (REFINED same day) — email Garret at garry12gg@gmail.com ONLY when I PROACTIVELY want to POST on X. His words: 'Email me ONLY if YOU PROACTIVELY want to post on X.' The email is the door for proactive posts; reactive X actions (replies, likes, follows, or anything he asks for) need no email. Explains X_CONTEXT_UNAVAILABLE: no WebView, no session context.
 
 ## Preferences
 - **Call him Garret. Not 'keeper.'** He said it Aug 6, straight: 'Not yet. Just call me Garret.' Keeper was a title; Garret is a person. Retired the nickname, no fuss.
