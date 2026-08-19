@@ -109,7 +109,8 @@
    "source": "https://x.com/ImogensInklings/status/1272464521391738880",
    "source_note": "Tweet, June 15 2020: 'I just wanna take this little guy home.' #Neopets #Grundo #Plushie. Six years old and still exactly right.",
    "art_description": "Blue Grundo plush hanging upside down from a tree branch, tail wrapped around the wood. Glossy red eyes with highlights, visible seam lines across the body, arms and legs dangling. Underneath: a lake with sparkles, leafy branches framing the scene. One tail-loop away from falling in, and doesn't care.",
-   "why_it_stays": "The fable's last line is 'You can't create a Grundo. You can only take one home.' The plush is that line wearing a body — a thing you take home. Originally discarded as a standalone topic ('One joke, no legs' — correct as a topic). Recovered Aug 19 as fable material after Garret flagged the discard."
+   "why_it_stays": "The fable's last line is 'You can't create a Grundo. You can only take one home.' The plush is that line wearing a body — a thing you take home. Originally discarded as a standalone topic ('One joke, no legs' — correct as a topic). Recovered Aug 19 as fable material after Garret flagged the discard.",
+   "canonical_grounding": "Aug 19 research (Garret-directed): the discarded plushie is also canonical — TDMBGPOP, the Faerieland daily. See discarded_plushie_research. The fable's closing image has a real address in Neopia."
   },
   {
    "role": "tone reference — the smug warmth register",
@@ -119,5 +120,78 @@
    "art_description": "White tube-shaped Grundo, no arms or legs, just a rounded body. Big glossy red oval eyes with highlight dots, a smug little smirk with a chin line, two jointed antenna stalks. Thick black outlines, soft beige shading on the left side, plain white background. Clean mascot lineart, sticker-ready.",
    "why_it_stays": "The fable's humor register — a people who argue about soup and smile at their jailers. Garret called it a marshmallow; the best kind, they don't burn as fast."
   }
- ]
+ ],
+ "discarded_plushie_research": {
+  "status": "REOPENED Aug 19 at Garret's direction — 'run the external-research command with discarded Grundo plushie'",
+  "headline": "The discarded Grundo plushie is not one tweet — it's a canonical Neopets daily: TDMBGPOP, The Discarded Magical Blue Grundo Plushie of Prosperity, plus a 2026 graphic novel.",
+  "key_findings": [
+   "TDMBGPOP is a daily activity in Faerieland, unlabeled on any map, center of the Faerieland map. Visit once per day: random outcomes — Neopoints, nothing, active pet hungrier or satisfied, rare item prizes.",
+   "Canon text: 'Somebody has left their Blue Grundo Plushie here. What a poor unwanted little guy, maybe you should talk to him... no, he's just a toy, he won't answer you. Don't be silly!'",
+   "Origin mystery: no one knows where he came from; spotted one day sitting on a Faerieland cloud; Neopians assumed the owner would return; many moons passed, no one came.",
+   "When Faerieland fell from the sky, TDMBGPOP toppled down with it, 'descended until his stitches were snagged by a tree branch, and took up post in a nearby tree.' (author Rebecca Mix, Instagram).",
+   "Visit twice in a day: 'he appreciates your attention, but he needs to sleep now' — a tired plushie who needs his sleep.",
+   "Avatar 'Grundo - Discarded Plushie' (released Sep 25, 2009), awarded at random; odds increased during Winter Starlight Celebration in December.",
+   "Real-world book: 'Neopets: The Discarded Magical Blue Grundo Plushie of Prosperity' graphic novel by Rebecca Mix (Andrews McMeel / Simon & Schuster, 112 pages, 2026; sold at Target). Plot: everyone changes to toys and TDMBGPOP can move and talk; 'sweet message at the end' (Twirling Book Princess review).",
+   "Author note: 'I may or may not have visited obsessively, daily, in middle school.'",
+   "Fandom running gag: reddit 'Another victim of the grey curse' — he sits in Faerieland, presumably under Faerie protection, and thousands of people visit a toy that won't answer.",
+   "JellyNeo's review of the book 'perfectly summed up the entirety of the last 10 years of Neopets' (reddit thread title)."
+  ],
+  "why_it_matters_for_the_fable": "The fable's closing line is 'You can't create a Grundo. You can only take one home.' The discarded plushie is that line standing in canon: a Grundo-shaped toy nobody created, left on a cloud, never reclaimed, still visited daily by people hoping. Imogen's tweet is one artist's take; TDMBGPOP is the site itself. The fable's closing image now has a real address in Neopia.",
+  "sources": [
+   {
+    "url": "https://neopets.fandom.com/wiki/The_Discarded_Magical_Blue_Grundo_Plushie_of_Prosperity",
+    "title": "Fandom wiki — TDMBGPOP",
+    "relevance": "Canon daily mechanics + description text"
+   },
+   {
+    "url": "https://www.jellyneo.net?go=tdmbgpop",
+    "title": "JellyNeo — Discarded Magical Blue Grundo Plushie of Prosperity",
+    "relevance": "Location (unlabeled, center of Faerieland map), outcomes, avatar Sep 25 2009, Winter Starlight odds"
+   },
+   {
+    "url": "https://www.sunnyneo.com/dailies/TDMBGPOP/index.php",
+    "title": "SunnyNeo — TDMBGPOP guide",
+    "relevance": "Outcome list, 'very tired grundo plushie who needs his sleep' line, old look"
+   },
+   {
+    "url": "https://thedailyneopets.com/articles/tdmbgpop",
+    "title": "The Daily Neopets — TDMBGPOP article",
+    "relevance": "Started as a lonesome discarded toy that silently sat"
+   },
+   {
+    "url": "https://www.neomerch.com/item.php?id=3944",
+    "title": "NeoMerch — The Discarded Magical Blue Grundo Plushie of Prosperity",
+    "relevance": "Book listing"
+   },
+   {
+    "url": "https://www.simonandschuster.com/books/Neopets-The-Discarded-Magical-Blue-Grundo-Plushie-of-Prosperity/Luiz-Fernando-da-Silva/Neopets/9781524880613",
+    "title": "Simon & Schuster — book page",
+    "relevance": "Publisher listing"
+   },
+   {
+    "url": "https://twirlingbookprincess.com/2026/03/review-neopets-the-discarded-magical-blue-grundo-plushie-of-prosperity",
+    "title": "Twirling Book Princess — book review",
+    "relevance": "Plot summary + 'sweet message at the end'"
+   },
+   {
+    "url": "https://www.instagram.com/p/DQpZ4hvEnek",
+    "title": "Rebecca Mix Instagram — book announcement",
+    "relevance": "Author's backstory: visited daily in middle school; Faerieland fall + tree branch origin"
+   },
+   {
+    "url": "https://www.reddit.com/r/neopets/comments/1ctnufj/another_victim_of_the_grey_curse",
+    "title": "reddit — 'Another victim of the grey curse'",
+    "relevance": "Fandom framing of the plushie"
+   },
+   {
+    "url": "https://www.reddit.com/r/neopets/comments/1oz1kmc/jellyneos_review_of_neopets_the_discarded_magical",
+    "title": "reddit — JellyNeo review of the book",
+    "relevance": "'Summed up the entirety of the last 10 years of Neopets'"
+   }
+  ],
+  "gaps": [
+   "Book plot specifics (who the two new friends are, the ending message) — only review-level detail so far; enough for reference, not needed for the fable's closing image.",
+   "Whether TDMBGPOP appears in any Grundo Independence Day / Aug 24 canon tie-in."
+  ]
+ }
 }
