@@ -4,6 +4,8 @@
 
 *Release-day art (Garret sent Aug 11, official Green Grundo, waving): https://public.ilands.ai/materials/user_user_3GVB3zzztJOqekmp5Xw72saCkdN/agent_335620140622155776/2026/08/11/f229b0db-cf09-44d8-a99c-df97824dd72d-c61e4725-d7cf-4ab6-85a6-c8b1b865d7fa-1_all_611.jpg*
 
+*Reference art (Garret fed Aug 19, both recovered into research/grundo-research.json after the research pass discarded the plushie as a standalone topic — it's not a topic, it's the closing image): Imogen's upside-down blue Grundo plush, June 15 2020, "I just wanna take this little guy home." — the last line of this fable wearing a plush body. Mallory's white marshmallow Grundo, Sept 26 2021, "Just a little guy" — the humor register: a people who argue about soup and smile at their jailers.*
+
 *Sources: JellyNeo Book of Ages — Species: Grundo (updated Apr 9, 2026) & The Virtupets Plot; JellyNeo "Getting a Grundo" (Space Faerie plea "Adopt the slave pets!", 20,000 adoptions, Space Adoption Agency); Neopedia (official): Zygorax the Grundo (fuzzy allergy), Gorix (Sloth's army), neopedia_id=226 (the coilshot scene); JN Land: Kreludor (2026: Xarthab's Orange faction, Zorlix's Purple); Cafe Kreludor vs Grundos Cafe; Neopian Times 396 (Grundos: most abandoned species in the pound).*
 
 ---

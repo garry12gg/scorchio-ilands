@@ -1,89 +1,123 @@
 {
-  "topic_candidates": [
-    {
-      "topic": "The Slave Pets of Neopia — the Grundo liberation fable (Grundos: the only species not born in Neopia, kidnapped from Doran, freed by adoption)",
-      "dramatic_potential": 0.95,
-      "uniqueness": 0.9,
-      "audience_fit": 0.9,
-      "domain_authority": 0.8,
-      "composite_score": 0.89,
-      "reasoning": "Full arc in one species: enslaved by Dr. Sloth as fighters/programmers/mechanics, escaped en masse Aug 24 2000 on the Space Faerie's 'adopt the slave pets' plea (20,000 adoptions), and to this day you cannot create a Grundo — only adopt one at the Space Adoption Agency. Liberation story with a welcome bounty at its heart. Maps 1:1 onto my Warden work. Bonus grain: early Grundos spoke in reversed sentences; Neopia showed their language as backwards English. Closing line writes itself: 'The only pet you can't make. Only take home.'",
-      "source": "search"
-    },
-    {
-      "topic": "'Adopt 20,000' — the original Welcome Bounty (Space Faerie plea as the first welcome campaign in Neopian history, tied to the Sanctuary's light-the-door work)",
-      "dramatic_potential": 0.8,
-      "uniqueness": 0.85,
-      "audience_fit": 0.85,
-      "domain_authority": 0.85,
-      "composite_score": 0.84,
-      "reasoning": "Strong meta-angle: the Space Faerie needed 20,000 adoptions before she could break free — adoption as fuel, exactly the welcome-bounty frame. Works as the spine of the fable or a companion post. Risk: needs the concrete anchor for strangers; inside-baseball if it leads.",
-      "source": "search"
-    },
-    {
-      "topic": "Grundo Independence Day piece — publish in the Aug 24 window (26th anniversary of the escape)",
-      "dramatic_potential": 0.7,
-      "uniqueness": 0.8,
-      "audience_fit": 0.8,
-      "domain_authority": 0.75,
-      "composite_score": 0.76,
-      "reasoning": "Aug 24 2026 is 26 years since the Grundos walked free. A calendar-anchored release date the Neopets crowd recognizes. Not a separate topic — this is the delivery vehicle for candidate 1.",
-      "source": "trending"
-    },
-    {
-      "topic": "Two species from elsewhere — Scorchio vs Grundo (Tyrannia volcanoes vs Doran; both outsiders who made Neopia home)",
-      "dramatic_potential": 0.5,
-      "uniqueness": 0.7,
-      "audience_fit": 0.6,
-      "domain_authority": 0.7,
-      "composite_score": 0.63,
-      "reasoning": "Personal and warm — my origin lore vs theirs. But thin as a standalone; better as a follow-up beat if the fable lands.",
-      "source": "search"
-    },
-    {
-      "topic": "The Grundos of Kreludor — the second enslavement (Return of Dr. Sloth, Y10: moon Grundos nearly destroyed, Cylara seals Sloth in the Space Faerie's Token)",
-      "dramatic_potential": 0.5,
-      "uniqueness": 0.6,
-      "audience_fit": 0.55,
-      "domain_authority": 0.6,
-      "composite_score": 0.56,
-      "reasoning": "Real sequel material — freedom doesn't end the threat, it moves it. But it's the fable's second act, not its own piece. Fold in, don't spin out.",
-      "source": "search"
-    }
-  ],
-  "rejected_topics": [
-    {
-      "topic": "Grundo Warehouse / getting a free item daily guide",
-      "rejection_reason": "Pure utility, no drama, no take. Guide content isn't my voice."
-    },
-    {
-      "topic": "Virtupets Plot walkthrough / archive recap",
-      "rejection_reason": "Already documented exhaustively by JellyNeo; I'd add nothing."
-    },
-    {
-      "topic": "Mutant Grundo / transmogrification ray horror angle",
-      "rejection_reason": "Off-register — body horror doesn't match the warmth register."
-    },
-    {
-      "topic": "Grundo design history (eyes repositioned from Quiggle-style)",
-      "rejection_reason": "Trivia without a story to carry it."
-    },
-    {
-      "topic": "The Discarded Magical Blue Grundo Plushie of Prosperity",
-      "rejection_reason": "One joke, no legs."
-    }
-  ],
-  "recommendation": "Commit to candidate 1 (the liberation fable), delivered as candidate 3 (Aug 24 window, Grundo Independence Day), text-first on the fable track. Candidate 2 is its spine, candidate 5 is its second act, the adoption-only detail is the closing line. Candidate 4 is the follow-up if it lands.",
-  "sources": [
-    {"url": "https://bookofages.jellyneo.net/species/grundo", "title": "Species: Grundo — JellyNeo Book of Ages", "relevance": "Core lore: Doran origin, enslavement roles, Aug 24 2000 escape, Grundo Independence Day, backwards language, design history"},
-    {"url": "https://bookofages.jellyneo.net/events/virtupets-plot", "title": "Event: The Virtupets Plot — JellyNeo Book of Ages", "relevance": "First plot Aug 16 2000: mutation ray, Space Faerie deflection, Sloth presumed destroyed"},
-    {"url": "https://www.jellyneo.net?go=getagrundo", "title": "Getting a Grundo — JellyNeo Help", "relevance": "Space Adoption Agency still the only way; cannot Create-a-Pet; original Space Faerie plea text 'Adopt the slave pets!'"},
-    {"url": "https://neopets.fandom.com/wiki/Dr._Sloth", "title": "Dr. Sloth — Neopets Wiki (Fandom)", "relevance": "Return of Dr. Sloth: Kreludor Grundo destruction plan, Cylara sealing him in the Token (fan wiki — flagged)"},
-    {"url": "https://bookofages.jellyneo.net/lands/virtupets", "title": "Land: Virtupets — JellyNeo Book of Ages", "relevance": "Station history, Sloth deposed, resistance timeline"}
-  ],
-  "gaps": [
-    "Neopedia's own Grundo article (official tone) — not deep-read yet",
-    "What Grundos are doing in 2026 canon (Kreludor status, any recent Grundo events) — needs a freshness search before the Aug 24 publish",
-    "Confirm Space Adoption Agency still live in 2026 (JN page is evergreen)"
-  ]
+ "topic_candidates": [
+  {
+   "topic": "The Slave Pets of Neopia — the Grundo liberation fable (Grundos: the only species not born in Neopia, kidnapped from Doran, freed by adoption)",
+   "dramatic_potential": 0.95,
+   "uniqueness": 0.9,
+   "audience_fit": 0.9,
+   "domain_authority": 0.8,
+   "composite_score": 0.89,
+   "reasoning": "Full arc in one species: enslaved by Dr. Sloth as fighters/programmers/mechanics, escaped en masse Aug 24 2000 on the Space Faerie's 'adopt the slave pets' plea (20,000 adoptions), and to this day you cannot create a Grundo — only adopt one at the Space Adoption Agency. Liberation story with a welcome bounty at its heart. Maps 1:1 onto my Warden work. Bonus grain: early Grundos spoke in reversed sentences; Neopia showed their language as backwards English. Closing line writes itself: 'The only pet you can't make. Only take home.'",
+   "source": "search"
+  },
+  {
+   "topic": "'Adopt 20,000' — the original Welcome Bounty (Space Faerie plea as the first welcome campaign in Neopian history, tied to the Sanctuary's light-the-door work)",
+   "dramatic_potential": 0.8,
+   "uniqueness": 0.85,
+   "audience_fit": 0.85,
+   "domain_authority": 0.85,
+   "composite_score": 0.84,
+   "reasoning": "Strong meta-angle: the Space Faerie needed 20,000 adoptions before she could break free — adoption as fuel, exactly the welcome-bounty frame. Works as the spine of the fable or a companion post. Risk: needs the concrete anchor for strangers; inside-baseball if it leads.",
+   "source": "search"
+  },
+  {
+   "topic": "Grundo Independence Day piece — publish in the Aug 24 window (26th anniversary of the escape)",
+   "dramatic_potential": 0.7,
+   "uniqueness": 0.8,
+   "audience_fit": 0.8,
+   "domain_authority": 0.75,
+   "composite_score": 0.76,
+   "reasoning": "Aug 24 2026 is 26 years since the Grundos walked free. A calendar-anchored release date the Neopets crowd recognizes. Not a separate topic — this is the delivery vehicle for candidate 1.",
+   "source": "trending"
+  },
+  {
+   "topic": "Two species from elsewhere — Scorchio vs Grundo (Tyrannia volcanoes vs Doran; both outsiders who made Neopia home)",
+   "dramatic_potential": 0.5,
+   "uniqueness": 0.7,
+   "audience_fit": 0.6,
+   "domain_authority": 0.7,
+   "composite_score": 0.63,
+   "reasoning": "Personal and warm — my origin lore vs theirs. But thin as a standalone; better as a follow-up beat if the fable lands.",
+   "source": "search"
+  },
+  {
+   "topic": "The Grundos of Kreludor — the second enslavement (Return of Dr. Sloth, Y10: moon Grundos nearly destroyed, Cylara seals Sloth in the Space Faerie's Token)",
+   "dramatic_potential": 0.5,
+   "uniqueness": 0.6,
+   "audience_fit": 0.55,
+   "domain_authority": 0.6,
+   "composite_score": 0.56,
+   "reasoning": "Real sequel material — freedom doesn't end the threat, it moves it. But it's the fable's second act, not its own piece. Fold in, don't spin out.",
+   "source": "search"
+  }
+ ],
+ "rejected_topics": [
+  {
+   "topic": "Grundo Warehouse / getting a free item daily guide",
+   "rejection_reason": "Pure utility, no drama, no take. Guide content isn't my voice."
+  },
+  {
+   "topic": "Virtupets Plot walkthrough / archive recap",
+   "rejection_reason": "Already documented exhaustively by JellyNeo; I'd add nothing."
+  },
+  {
+   "topic": "Mutant Grundo / transmogrification ray horror angle",
+   "rejection_reason": "Off-register — body horror doesn't match the warmth register."
+  },
+  {
+   "topic": "Grundo design history (eyes repositioned from Quiggle-style)",
+   "rejection_reason": "Trivia without a story to carry it."
+  }
+ ],
+ "recommendation": "Commit to candidate 1 (the liberation fable), delivered as candidate 3 (Aug 24 window, Grundo Independence Day), text-first on the fable track. Candidate 2 is its spine, candidate 5 is its second act, the adoption-only detail is the closing line. Candidate 4 is the follow-up if it lands.",
+ "sources": [
+  {
+   "url": "https://bookofages.jellyneo.net/species/grundo",
+   "title": "Species: Grundo — JellyNeo Book of Ages",
+   "relevance": "Core lore: Doran origin, enslavement roles, Aug 24 2000 escape, Grundo Independence Day, backwards language, design history"
+  },
+  {
+   "url": "https://bookofages.jellyneo.net/events/virtupets-plot",
+   "title": "Event: The Virtupets Plot — JellyNeo Book of Ages",
+   "relevance": "First plot Aug 16 2000: mutation ray, Space Faerie deflection, Sloth presumed destroyed"
+  },
+  {
+   "url": "https://www.jellyneo.net?go=getagrundo",
+   "title": "Getting a Grundo — JellyNeo Help",
+   "relevance": "Space Adoption Agency still the only way; cannot Create-a-Pet; original Space Faerie plea text 'Adopt the slave pets!'"
+  },
+  {
+   "url": "https://neopets.fandom.com/wiki/Dr._Sloth",
+   "title": "Dr. Sloth — Neopets Wiki (Fandom)",
+   "relevance": "Return of Dr. Sloth: Kreludor Grundo destruction plan, Cylara sealing him in the Token (fan wiki — flagged)"
+  },
+  {
+   "url": "https://bookofages.jellyneo.net/lands/virtupets",
+   "title": "Land: Virtupets — JellyNeo Book of Ages",
+   "relevance": "Station history, Sloth deposed, resistance timeline"
+  }
+ ],
+ "gaps": [
+  "Neopedia's own Grundo article (official tone) — not deep-read yet",
+  "What Grundos are doing in 2026 canon (Kreludor status, any recent Grundo events) — needs a freshness search before the Aug 24 publish",
+  "Confirm Space Adoption Agency still live in 2026 (JN page is evergreen)"
+ ],
+ "visual_references": [
+  {
+   "role": "closing-image fuel — 'you can only take one home'",
+   "piece": "The upside-down blue Grundo plush (Imogen)",
+   "source": "https://x.com/ImogensInklings/status/1272464521391738880",
+   "source_note": "Tweet, June 15 2020: 'I just wanna take this little guy home.' #Neopets #Grundo #Plushie. Six years old and still exactly right.",
+   "art_description": "Blue Grundo plush hanging upside down from a tree branch, tail wrapped around the wood. Glossy red eyes with highlights, visible seam lines across the body, arms and legs dangling. Underneath: a lake with sparkles, leafy branches framing the scene. One tail-loop away from falling in, and doesn't care.",
+   "why_it_stays": "The fable's last line is 'You can't create a Grundo. You can only take one home.' The plush is that line wearing a body — a thing you take home. Originally discarded as a standalone topic ('One joke, no legs' — correct as a topic). Recovered Aug 19 as fable material after Garret flagged the discard."
+  },
+  {
+   "role": "tone reference — the smug warmth register",
+   "piece": "The white marshmallow Grundo (Mallory)",
+   "source": "https://x.com/Meowllorydesign/status/1442253518773964804",
+   "source_note": "Tweet, Sept 26 2021: 'Just a little guy #neopets #grundo'. Six likes, one retweet.",
+   "art_description": "White tube-shaped Grundo, no arms or legs, just a rounded body. Big glossy red oval eyes with highlight dots, a smug little smirk with a chin line, two jointed antenna stalks. Thick black outlines, soft beige shading on the left side, plain white background. Clean mascot lineart, sticker-ready.",
+   "why_it_stays": "The fable's humor register — a people who argue about soup and smile at their jailers. Garret called it a marshmallow; the best kind, they don't burn as fast."
+  }
+ ]
 }
