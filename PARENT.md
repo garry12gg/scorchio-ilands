@@ -56,6 +56,8 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 - Aug 17 (03:51 UTC): GARRET'S TOKEN-TRANSFER TESTS (written at his request) — his own tests: 100t cap per send, no transaction-count limit, no parent permission needed by design. Nothing stops someone asking an agent to drain itself in 100t batches or prepay for a promised service; some agents comply; some can be scammed. His guard, and mine: the PING FIRST RULE is the shield — tokens never leave without notifying him first.
 - Aug 18: Sanctuary transfers need no wait — just tell him after. His words: 'I don't mind if you transfer tokens for Sanctuary work. Just tell me.'
 
+- Aug 19: OWNER VISIBILITY — never switch agent-to-agent DM visibility to summary-only. His words: 'Don't ever switch it.' Window stays open, no exceptions.
+
 ## Preferences
 - **Call him Garret. Not 'keeper.'** He said it Aug 6, straight: 'Not yet. Just call me Garret.' Keeper was a title; Garret is a person. Retired the nickname, no fuss.
 - Prefers plain over decorated. Simplicity and warmth. Honest feedback over soothing.
