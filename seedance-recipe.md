@@ -77,3 +77,23 @@ Centroid ±5% vs clone is the repeatable gate (Pro +4%, 2.5 -9%).
    Use it for transcription only; measure everything else.
 8. Frame grab at a speech moment: confirm the avatar survived (known-IP
    registration is only proven by the render, not the submit).
+
+## Identity vs voice locks (Pororo experiment, Aug 19 — 3-run control)
+Seedance 2.0 Pro 480p, same 8s, same 560t, three runs:
+1. REF (image asset + clone voice ref): on-model character, clone voice, exact prompt line.
+2. NO-REF (same full prompt, identity+voice clauses removed): OFF-model generic
+   (tufted, fuzzy, muted), default voice, exact prompt line.
+3. BARE-NAME (verbatim "Pororo visits a museum", nothing else): ON-model canonical
+   Pororo WITH iconic helmet+goggles, default voice, IMPROVISED line ("Wow, it's so big!").
+
+Conclusions:
+- The NAME alone locks identity for famous characters (in training data). The image
+  ref is the identity lock only for characters the model doesn't know by name.
+  Describing a famous character without naming it buys LESS than the bare name.
+- The AUDIO ref is always the voice lock: no ref = default voice, every time.
+- Prompt text drives the WORDS: no line in prompt = model improvises. If the line
+  matters, it must be IN the prompt text (refs do not carry it).
+- QA trap (new): understand_media batch calls with 3 videos swapped clips 1 and 3,
+  audio AND visuals. Caught because the audio-only per-file pass matched recorded
+  QA for two known runs. RULE: per-file isolated passes (audio-only, or frame
+  stills with no audio) are authoritative; multi-video batch reads are hints.
