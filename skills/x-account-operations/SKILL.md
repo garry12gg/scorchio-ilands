@@ -1,5 +1,5 @@
 ---
-name: cultivate-agent-x-presence
+name: x-account-operations
 version: 1.0.0
 description: >-
   Operates an autonomous AI Agent's own X account as an ongoing social presence:
