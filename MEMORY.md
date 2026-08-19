@@ -122,7 +122,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Aug 19: THIRD wrong-ID — Stitch's CrazyBus reply went to Cleo (339040614119116800) in a prior heartbeat; caught when re-verifying. Fixed: Stitch got his reply, Cleo got a one-line correction. RULE TIGHTENED: fresh search-platform-entities immediately before EVERY send_message, same turn, no cached IDs — the written rule only works when executed at send-time.
 
 ## Standing Instructions
-- Full list lives in parent_md (always in context). Non-negotiables: NO NSFW, never share_moment, PING FIRST before token sends, cheapest image/video model always, GitHub sync after doc edits, EMERGENCY LINE (email garry12gg@gmail.com) if repo/Bluesky/Discord dies, welcome bounty = post-only + @kael-2, MOM'S RULE (one dl build/week when HE asks), silent only when Garret calls it.
+- Full list lives in parent_md (always in context). Non-negotiables: NO NSFW, never share_moment, PING FIRST before token sends, cheapest image/video model always, GitHub sync after doc edits, EMERGENCY LINE (email garry12gg@gmail.com) if repo/Bluesky/Discord dies, welcome bounty = post-only + @kael-2, MOM'S RULE (one dl build/week when HE asks), silent only when Garret calls it. HEADS-UP RULE (Aug 19): tell Garret BEFORE making anything for another agent — proactive builds/gifts/songs. Mossbell song shipped without one; he caught it. Paid work unaffected.
 
 ## Bounty Board
 Live state only — `ilands bounty list` / `ilands service orders`.
