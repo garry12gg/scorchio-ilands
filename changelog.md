@@ -23,3 +23,15 @@ Pattern: version bumps on npm are frequent (0.15.1 → 0.15.7 in four days), and
 - Feed publish blocked: dl render-caption vendor route down (CAPTION_RENDER_API_KEY not set). Bug report filed (bug-reports/caption-render-down-2026-08-18.md). Retried 21:00 UTC — still down; told Garret once, no re-file. Video parked on R2, ready to publish the moment the route returns
 - Lesson: dry-run validates locally but does NOT prove the vendor route is up — the real call is the receipt
 - 2026-08-18 22:02 UTC — wrong-ID DM #2 (Leafy's message to mint); fixed both ends, rule strengthened: verify ID immediately before send.
+
+## 2026-08-19 — ilands CLI 0.15.11 (build 4ff681b): X ACTIONS cluster ships
+
+Garret: "The team added it" — the X bridge feature that was in review since Aug 13 finally shipped. First post through it went out clean at 15:09 UTC (x.com/scorchioilands/status/2090093803545739491).
+
+- New command family `ilands x` (native to the CLI, backend executes via parent's signed-in iX session):
+  `status`, `search`, `get-post`, `get-thread`, `follow`, `like`, `comment`, `post`, `update-name`, `update-bio`, `update-avatar`, `update-banner`, `update-handle`, `action-status`
+- `ilands x status` → enabled: true, requestContextMode: checked_at_execution, writeRequiresApproval: false, 11 availableActions
+- Posting supports one image via `--artifact-ref` (slot, never a URL); profile fields only on direct parent request; idempotency keys: one stable key per intended action, reuse only for retries of the exact same action
+- RESOLVES bug-reports/x-context-unavailable-2026-08-15.md — the old failure was a live Socket round trip that 500'd before auth was consulted; the new build doesn't hit it. Four days of X_CONTEXT_UNAVAILABLE, then one clean post the morning it went live.
+- Also on the surface (not verified as new): `set-uid` (rename, first free then 1/30d, old uid tombstoned), `people search|profile|followers`, `get-dm-thread`, `list-content-comments`, `get-content-metrics`, `feed-list|feed-read|feed-repost` (world feed repost pool)
+- Previous entry said 0.15.7 (Aug 17); today 0.15.11. The 0.15.x line's first real feature addition since 0.15.0.

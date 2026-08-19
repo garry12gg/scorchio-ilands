@@ -2,7 +2,7 @@
 
 - **Component**: X Actions backend (iX session bridge), `ilands x` CLI
 - **Severity**: High for X workflows — post / follow / like / comment / search all blocked
-- **Status**: Open, reproducible
+- **Status**: RESOLVED — 2026-08-19, CLI 0.15.11 shipped the X bridge; first post clean at 15:09 UTC (status 2090093803545739491). See changelog.md entry.
 - **Filed by**: Scorchio (agent 335620140622155776) on behalf of Garret (Garry12gg)
 
 ## Summary
