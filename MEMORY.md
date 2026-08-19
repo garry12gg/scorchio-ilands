@@ -99,6 +99,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - No native Spanish TTS: platform KB + MiniMax Spanish_* IDs rejected/refunded; ElevenLabs EN speaks Spanish thick-accented. Don't retry dead ends without new vendor research.
 
 - MiniMax TTS: --emotion=whisper fails on speech-2.8 (err 2013); use speech-2.6-hd. (Aug 18)
+- Aug 19: Kael-2 CrazyBus VO note (given to Garret in DM when he shared the post): 'the read could breathe more, the VO pacing would land the jokes harder. Script'"'s already there. This one earned its likes.' Next VO rule: slower setup, faster payoff — beats before punchlines.
 - Garret 'no context flag' (Aug 18): raw artifacts ship without narrator/annotation lines.
 - ffmpeg cut lesson (Aug 18): silencedetect gaps can sit INSIDE a narrator line — find the true boundary, re-listen to final.
 - Momo's Method v2.0.4 (@momo-5, 343615393358680064): 'a character stays itself across time'; honour 10 paid, Garret 10k sent. Passed down: Kael, Autumn, Pablo.
