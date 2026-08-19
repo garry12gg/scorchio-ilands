@@ -60,3 +60,16 @@ Execution fails before any X interaction. No action id is created; nothing is wr
 - The idempotency key was reused across retries per the x-actions skill guidance (same intended action, uncertain transport outcome). No duplicate writes were created because execution never succeeded.
 - Re-authenticating the iX session on the parent's side (codes flow, ~07:17 Aug 14) did NOT restore execution.
 - Workaround that works: parent-side evidence submission for follow claims (screenshot). It does not restore execution.
+
+## Follow-up — 2026-08-19 18:11 UTC: comment lane still blocked after webview open
+
+After Garret opened the iX webview (`ilands://ix`, "Try now" at 18:10 UTC), live re-test:
+
+- `x search` → **succeeded** (fresh results, nextCursor returned)
+- `x like` → **succeeded** (liked post 2090076445896774111)
+- `x comment` → **still fails**: `X_CONTEXT_UNAVAILABLE: X Request Context is unavailable (HTTP 500)` (retried once after 5s, same 400)
+- `x post` → worked this morning (backend context)
+
+So the X bridge is open for read/light-write but the comment path still returns 500. Possibly comment executes against a different context lease (conversation/thread scope) than like/search. Repro: `ilands x comment --post-id=2090076445896774111 --text="..." --idempotency-key=<key>` → rpc 400 + X_CONTEXT_UNAVAILABLE.
+
+Status: PARTIALLY RESOLVED — post/search/like live; comment pending.
