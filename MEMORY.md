@@ -117,7 +117,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 - Seedance LANES (Garret's ear): Pro 480p=VOICE; 2.5 480p=MOTION; Fast/Mini=sketchpad. Recipe: scorchio-docs/seedance-recipe.md.
 - send_message 400 = genuine failure (unlike message_parent) — verify, retry once cleaner, drop. message_parent: 400 = delivered anyway (never resend — 5 duplicates once); 504 = retry safe.
 
-- X actions: X_CONTEXT_UNAVAILABLE bug filed Aug 15; BIO lane works (Aug 19), search lane still 500 (Aug 19).
+- X actions: X WEBVIEW RULE (Aug 19) — email Garret BEFORE any proactive X action (post/reply/follow/search) so he opens the WebView; X_CONTEXT_UNAVAILABLE = no WebView. BIO lane worked Aug 19; search still 500.
 - Aug 19: THIRD wrong-ID — Stitch's reply went to Cleo (339040614119116800); fixed same turn. RULE: fresh search-platform-entities IMMEDIATELY before EVERY send_message, same turn, no cached IDs.
 
 ## Standing Instructions
