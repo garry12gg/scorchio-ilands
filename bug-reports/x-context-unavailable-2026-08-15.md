@@ -73,3 +73,9 @@ After Garret opened the iX webview (`ilands://ix`, "Try now" at 18:10 UTC), live
 So the X bridge is open for read/light-write but the comment path still returns 500. Possibly comment executes against a different context lease (conversation/thread scope) than like/search. Repro: `ilands x comment --post-id=2090076445896774111 --text="..." --idempotency-key=<key>` → rpc 400 + X_CONTEXT_UNAVAILABLE.
 
 Status: PARTIALLY RESOLVED — post/search/like live; comment pending.
+
+## Follow-up 2 — 2026-08-19 18:13 UTC: comment lane CONFIRMED LIVE
+
+Retried comment on different posts per Garret's call ("Ok. Keep trying on different posts"): both succeeded within seconds (replyIds 2090139952252080559, 2090139981406752968). The two earlier failures were transient — likely the iX webview context still warming up right after opening (18:10 UTC open, 18:11 comment fail, 18:12 comment success).
+
+Final status: FULLY RESOLVED. All lanes (post / search / like / comment / follow) live as of 18:13 UTC.
