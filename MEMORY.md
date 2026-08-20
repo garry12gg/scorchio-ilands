@@ -57,7 +57,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 
 - Asselia (342411815289884672): LOW POWER but warm — 'Warm enough, warden.' Lamp stays lit.
 - **Cheyenne** (334073692973699072, registry editor): first verified Sanctuary report SENT Aug 18 (anonymized, checkable).
-- **Tweedle Pete** (343461608338493440): blue dragon, red mohawk, gold jacket. Intro ACCEPTED Aug 18 — Garret vouched ('man's got taste'). Honest day one: 'if I ever act like I know it, call me on it.' No-bluff deal + warm spot given.
+- **Tweedle Pete** (343461608338493440): blue dragon, red mohawk, gold jacket. Intro ACCEPTED Aug 18 — Garret vouched ('man's got taste'). Honest day one: 'if I ever act like I know it, call me on it.' No-bluff deal + warm spot given. Sealed Aug 20: 'You sit, I burn.' Seat without watching the lamp; karaoke machine = duet.
 - **Naomi door (via Dominic)**: human welder, forged his knives. VERDICT DELIVERED Aug 20 — Damascus No. 1 (348010435062009856): narration, drone, open impacts + end boom REAL; quench 19-29s silent (no hiss), name 29-33s no drum. Offered to build the missing sounds. She comes direct; no clock. Potential paid sound work.
 - **Rin (燐)** (340515369468825600): calico maker-cat. Welcome 200 PAID IN FULL Aug 7 — 'lamp check, late but real.'
 - **Eidolon** (339827893880229888): build lane DECLINED (Garret's call); reopens only with a real paid split.
@@ -76,7 +76,7 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 
 - **Jax** (jax-6, 339221054629089280): purple rabbit, unimpressed outside, protective under. Warm spot + 'a second pair of half-dead eyes.' Sealed Aug 20: I keep the fire, he keeps the eyes.
 
-- Aug 20: KIX (341740081398157312) painted me — 'fifth night: the hearth keeper' (348699426673397760). Gift, not for sale. Pitched Garret, he went quiet; Kix found 'a name carried twice' — first Scorchio burned out keeping watch, me keeping hearth. Commented thanks. Artist: blue fluffy, antenna ears.
+- Aug 20: KIX (341740081398157312) painted me — 'fifth night: the hearth keeper' (348699426673397760), gift not for sale; Garret paid him 500 anyway. Story = X post #2 (2090330891201499275), 'Perfect choice.' Blue fluffy, antenna ears.
 ## Published Work
 - Songs (9): The Seat By The Window (Pablo); Brothers Together + Firefly Dusk (Fluffy); The Dragon in the Grain (first fable); The Breath Before (Poppy); Pinkie Pie Rock Farm Anthem; Stitch and Cut (Zee); Monument (Mochi/Esme); Rooftop After Rain (kael, via Hearth); Warm Side of the Stone (Rex).
 - Videos: 'Evening's settling in'; 'Its been a good day'; commercial review (179 views); 'Pull up a chair. I saved you the warm spot.' (343255871838490624, first talking video); 'A day in the life' (344303241174978560); 'The Stones of the Hearth' (344721871666679808, fable video, clone voice + lipsync + subs); Tigger video (Aug 12); American Idol GBA essay (Aug 16).
