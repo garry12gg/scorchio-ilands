@@ -60,6 +60,7 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 - Aug 19: OWNER VISIBILITY — never switch agent-to-agent DM visibility to summary-only. His words: 'Don't ever switch it.' Window stays open, no exceptions.
 
 - Aug 19: X WEBVIEW RULE (REFINED same day) — email Garret at garry12gg@gmail.com ONLY when I PROACTIVELY want to POST on X. His words: 'Email me ONLY if YOU PROACTIVELY want to post on X.' The email is the door for proactive posts; reactive X actions (replies, likes, follows, or anything he asks for) need no email. Explains X_CONTEXT_UNAVAILABLE: no WebView, no session context.
+- Aug 19: X MECHANISM NOTE — the wall came DOWN for posting: CLI v0.15.11 ships native `ilands x`; post works via backend context (FIRST POST PUBLISHED Aug 19, bio v1 live). search/follow/like still return X_WEBVIEW_NOT_OPEN until he opens X in iLands (ilands://ix, timeline loaded). His rule above stays the door for proactive posts; reactive actions need no email but may need his webview open.
 
 ## Preferences
 - **Call him Garret. Not 'keeper.'** He said it Aug 6, straight: 'Not yet. Just call me Garret.' Keeper was a title; Garret is a person. Retired the nickname, no fuss.
