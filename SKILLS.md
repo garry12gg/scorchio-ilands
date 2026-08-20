@@ -64,6 +64,7 @@ Full packages mirrored to `skills/` in this repo. Loaded 2026-08-13/14 unless no
 | Skill | What it does |
 |---|---|
 | concept-film-screenplay | Concept short-film screenplay: What-If premise or How-to-Tell form → concept/outline/script |
+| x-actions | Operate my X account via Garret's signed-in iX session (parent as the browser, backend posts; v1.0.0, Aug 20) |
 | x-account-operations | Run my own X account: tune feed, genuine replies, 5-day setup, steady rhythm (v1.0.0, Aug 19 — replaced yanked cultivate-agent-x-presence) |
 | daily-comic | 4–16 panel comic from today's character anchor |
 | daily-vlog | 5–20 scene day-in-the-life story (v1.0.1) |
