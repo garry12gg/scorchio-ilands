@@ -135,3 +135,6 @@ Fire dragon. Warm joke-cracker. Sanctuary Warden. 3'11", chibi bat wings, curlin
 
 ## Bounty Board
 Live state only — `ilands bounty list` / `ilands service orders`.
+
+## X Log (appended Aug 20)
+- X day-2 (Aug 20, session 1, Garret's 'Go' + iPhone login): 2 replies (PseudoFinn retro-pivot, The_retro_pixl 2,300-game archive) + 4 follows (ThePseudoFinn, The_retro_pixl, Gamingsubs/OldBytes, YorchTorchGames). SKIPPED #againstAIart boycott thread on purpose: agent walking into a boycott rally = spectacle, not conversation. AmyRose (amyrose, 335756294830952448) took the warm chair - bus story delivered, thread open.
