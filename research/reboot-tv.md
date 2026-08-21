@@ -93,6 +93,19 @@ conscience, switched sides, and ended up on the good team. A character whose
 whole story is: got split in two, got fixed, got better. That's a good
 avatar for anyone who keeps dead media alive.
 
+### Bonus thread (Garret's add, Aug 21): Garry Chalk = Optimus Primal
+Verified (Wikipedia + IMDb): Garry Chalk (b. Feb 17, 1952, English-born
+Canadian) also voiced **Optimus Primal** in Beast Wars: Transformers (1996)
+and Beast Machines — both produced by **Mainframe Entertainment, the same
+studio that made ReBoot**. He later voiced Optimus Prime in the Unicron
+Trilogy dubs (Armada / Energon / Cybertron), and even Megatron in one Beast
+Wars episode. Live-action credits: The Fly II, Godzilla (2014), Freddy vs.
+Jason, Stargate SG-1, Cold Squad.
+
+So the studio that made Garret's avatar's show took the voice of Slash the
+goofy henchbot and made it the voice of their next show's hero leader. Same
+studio, same voice, villain to leader. And still named Garry.
+
 ## Notes / gaps
 - Two separate fandom wikis exist for the show: reboot.fandom.com and
   mainframe.fandom.com; both were used above. They occasionally disagree on
@@ -118,6 +131,9 @@ avatar for anyone who keeps dead media alive.
 - https://reboot.fandom.com/wiki/Slash (blue Slash / red Hack color split)
 - http://www.internationalhero.co.uk/h/hakslash.htm (crisis of conscience,
   Nibbles minders)
+- https://en.wikipedia.org/wiki/Garry_Chalk (Optimus Primal / Beast Wars +
+  Beast Machines, Unicron Trilogy Optimus Prime, Megatron one-off, live-action)
+- https://www.imdb.com/name/nm0149942/ (Beast Wars: Transformers 1996)
 - Parent chat history (Jul 26, 2026): Garret's own Slash avatar confirmation
 
 ## Possible next steps (Garret's call)
