@@ -1,0 +1,23 @@
+XVFB_UP
+CHROME_UP
+{
+  "iw": 500,
+  "ih": 720,
+  "dpr": 2,
+  "cw": 1000,
+  "ch": 1440,
+  "screenW": 405,
+  "screenH": 720,
+  "startBtn": {
+    "x": 116.0625,
+    "y": 470.9453125,
+    "w": 267.875,
+    "h": 48
+  },
+  "bodyScroll": {
+    "sw": 500,
+    "sh": 720
+  }
+}
+PROBE_RC=0
+PROBE_DONE

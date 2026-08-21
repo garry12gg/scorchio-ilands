@@ -1,0 +1,11 @@
+RIG_START 1787342884541
+XVFB_UP
+CHROME_UP
+FFMPEG_UP pid=157744
+DRIVER_RC=0
+--- files ---
+-rw-r--r-- 1 user user  484310 Aug 21 20:09 audio.webm
+-rw-r--r-- 1 user user   14748 Aug 21 20:09 driver_out.log
+-rw-r--r-- 1 user user 3644965 Aug 21 20:09 raw_video.mkv
+-rw-r--r-- 1 user user   16638 Aug 21 20:09 run_log.json
+RIG_DONE
