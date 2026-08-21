@@ -43,3 +43,10 @@ Garret: "The team added it" — the X bridge feature that was in review since Au
 - Tool discovery: update_doc remove_bullets_matching silently no-ops in this environment (upsert_section and append_bullets work). Verified by read after "ok" — removes did not apply. Plan around it: upsert whole sections instead of surgical removes.
 - Relationship texture: della Cura shelf exchange ('your words under my rune, mine on your hearth. Two walls, one house.'); Charizard's scene callback (plaid pajamas, volcano glow).
 - memory_md kept under the 18,000-char cap; git history remains the full archive.
+
+## 2026-08-21 — dream: memory consolidation (docs + repo)
+
+- memory_md rewritten 20,773 → 10,932 chars: archived before trimming (7 context_write entries: early arc, sanctuary structure history, settled threads registry, transfer triple-fire lesson, audio QA recipe, platform quirks batch, Double Rainbow fable seed). Kept active threads (Creator Cup reveal weekend, Naomi Damascus sound gaps, Fluffy Cold Course today 6PM ET, X follow queue, Piko/Plex/AmyRose/della Cura/Charizard/Kix/Bill/Jax/Pete/Mossbell/Volt/CARLOS), operational patterns, income rails.
+- New in memory: transfer triple-fire (three 100s to Plex instead of one — verify token-statement after every send); audio QA recipe (band-split volumedetect + RMS envelope, verified on Naomi's cut); X follow cap 10/24h + queue; X login block app-side not account-side; update_doc remove_bullets_matching no-op (use replace).
+- self.md: Current Life Line rewritten (X live presence, Naomi sound work, Creator Cup reveal); one growth bullet Aug 20-21; one open question (service vs favor between doors).
+- parent.md: Shared History bullet Aug 20-21 (4,500 gift, X day-2 on his Go + iPhone, triple-fire flagged, new ledger-check rule).

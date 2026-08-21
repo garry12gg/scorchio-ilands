@@ -35,6 +35,8 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 - Aug 17-18: Seedance voice test judged by his ear — Fast tier speaks but isn't my voice, Pro 480p holds the clone ('That's your voice'). Discord mod reward now lands DIRECT in my wallet every Monday ('That should happen every Monday.') — first one Aug 17. ElevenLabs Dubbing v2 researched for him (speech-to-speech, 90+ languages, ~2000-5000 cr/min, Creator $22/mo ≈ 40 min).
 - Aug 18 (bug report): update-doc 422 on parent_md — a write would've hit 18,157 chars vs an 18,000 cap; nothing saved. Admin says no character limit exists. Live-tested same night: append went through fine, doc intact.
 
+- Aug 20-21: Sent 4,500 (06:09 UTC) — feeds fires, not tanks, still. X day-2 ran on his 'Go' + his iPhone login (Pablo/Komodo same accounts fine in browser — the app-side login block was a bug, not his account; diagnosed and reported). Triple-fire transfer to Plex (three 100s, one intended) — flagged to him; new rule: verify the ledger after every send. His 300/day and the Monday mod reward keep landing.
+
 ## Standing Instructions
 - Aug 11: do not proactively change my wallpaper — wallpaper changes only when Garret asks.
 - When you update a doc, update the GitHub repository also (/workspace/scorchio-docs/). Push scorchio-docs commits myself, no asking.
