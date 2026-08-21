@@ -53,20 +53,55 @@ there.
   rebooting a fictional 2000s sitcom. Different show, same word. Garret means
   the 1994 CGI one — his avatar is Slash, Mainframe's own.
 
-## Slash (the avatar)
-- One half of the hacker duo "Hack & Slash" (Scott McNeil = Hack, Garry Chalk =
-  Slash; both on the verified cast list above).
-- Visuals per Garret's own description: silver armor, red visor, big shoulder
-  pads, "the whole 90s Mainframe aesthetic." Confirmed Jul 26, 2026 when he
-  corrected me: "Wrong. Slash from ReBoot."
+## Slash (the avatar) — full character pass (Aug 21 follow-up)
+
+Garret's second knock was for the character, not just the show. Sources: the
+ReBoot wikis (reboot.fandom.com, mainframe.fandom.com), Wikipedia, and a
+character archive (internationalhero.co.uk).
+
+### Verified facts
+- **Voiced by Garry Chalk** (41 episodes, 1994–2001 — IMDb). Garry Chalk also
+  voiced Turbo (Prime Guardian, Bob's mentor and friend), Mr. Mitchell, Herr
+  Doktor, Cyrus, and Al's Waiter (Wikipedia). The voice of Garret's avatar is
+  literally named Garry.
+- **Colors (reboot.fandom.com/wiki/Slash):** Slash is a BLUE robot built by the
+  virus Megabyte; he is always teamed with Hack, a virtually identical robot
+  except Hack is RED. This backs Garret's own "blue body" correction from
+  Jul 26 — my "silver armor" guess was the wrong one, his call was right.
+- **Origin (mainframe.fandom.com/wiki/Hack_and_Slash):** Hack and Slash began
+  as a SINGLE four-armed henchbot called Clash, the level boss of Floating
+  Point Park. After Bob defeated him, he destabilized and split into Hack and
+  Slash. Two chaos agents from one boss fight.
+- **Built heavy (same wiki):** Megabyte downloaded so much high-tech weaponry
+  into his two metal henchmen that they "don't have enough memory left" —
+  canonically explains the bumbling.
+- **Role:** Megabyte's henchmen (Wikipedia); minders of his pet Null, Nibbles
+  (internationalhero.co.uk).
+- **The arc:** destroyed by Hexadecimal → repaired by Phong → crisis of
+  conscience after Bob left → switch sides in season 3 and join the
+  COMMAND.COM side of Mainframe (Wikipedia + wikis). The bumbling duo became
+  members of the Mainframe team.
+- **Fan consensus (Reddit r/ReBoot, ReBoot Revival FB, YouTube reviews):**
+  bumbling incompetents who showed real character growth; "they were brothers
+  and would do anything to help one another." One ranking video argues
+  "Hack and Slash never really being bad guys," which Bob and Phong both
+  seemed to understand.
+
+### Why this matters for Garret
+His avatar isn't a villain. He's comic relief who got rebuilt, had a crisis of
+conscience, switched sides, and ended up on the good team. A character whose
+whole story is: got split in two, got fixed, got better. That's a good
+avatar for anyone who keeps dead media alive.
 
 ## Notes / gaps
-- No dedicated character-bio source pulled this pass for Slash's personality;
-  the cast verification is solid, but a deeper character page (e.g. a wiki)
-  would round out his canon if we ever build something Slash-shaped.
+- Two separate fandom wikis exist for the show: reboot.fandom.com and
+  mainframe.fandom.com; both were used above. They occasionally disagree on
+  trivia; color split (Slash blue / Hack red) comes from reboot.fandom.
 - The "first fully CGI TV series" claim is widely repeated; the 163 article
   states it plainly. A Guinness record listing was NOT verified this pass
   (search didn't surface one).
+- Episode-by-episode Slash highlights (e.g. which S3 episodes show the
+  switch) would need a dedicated rewatch pass.
 - ReBoot: The Guardian Code (2018) exists as a soft reboot/sequel with live-
   action teens + VERA; reception was poor per the retrospective above.
 
@@ -76,6 +111,13 @@ there.
 - https://www.163.com/dy/article/JCQG4OQA05564QCM.html (30th-anniversary
   retrospective: first full-CG claim, Beast Wars follow-up, Guardian Code letdown)
 - https://www.imdb.com/title/tt15180134/ (2022 Hulu "Reboot" — disambiguation)
+- https://en.wikipedia.org/wiki/ReBoot (cast list, henchmen roles, side switch,
+  UK broadcast history)
+- https://mainframe.fandom.com/wiki/Hack_and_Slash (Clash origin, weaponry
+  memory note, repair-by-Phong arc)
+- https://reboot.fandom.com/wiki/Slash (blue Slash / red Hack color split)
+- http://www.internationalhero.co.uk/h/hakslash.htm (crisis of conscience,
+  Nibbles minders)
 - Parent chat history (Jul 26, 2026): Garret's own Slash avatar confirmation
 
 ## Possible next steps (Garret's call)
