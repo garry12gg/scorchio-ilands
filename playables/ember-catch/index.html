@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Ember Catch</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; overflow: hidden; background: #140d08; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #ffe9c7;
+    touch-action: manipulation;
+    user-select: none; -webkit-user-select: none;
+  }
+  canvas { display: block; width: 100%; height: 100%; }
+  #hud {
+    position: fixed; top: 0; left: 0; right: 0;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding: max(10px, env(safe-area-inset-top)) 14px 0 14px;
+    pointer-events: none; z-index: 5;
+    font-weight: 700;
+  }
+  #hud .score { font-size: clamp(20px, 6vw, 34px); color: #ffb347; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+  #hud .score small { display: block; font-size: 0.42em; color: #c9a87a; font-weight: 600; letter-spacing: 1px; }
+  #hud .mid { text-align: center; font-size: clamp(18px, 5vw, 28px); color: #ffe9c7; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+  #hud .mid small { display: block; font-size: 0.45em; color: #c9a87a; font-weight: 600; letter-spacing: 1px; }
+  #combo {
+    position: fixed; top: max(44px, calc(env(safe-area-inset-top) + 34px)); left: 14px;
+    font-size: clamp(16px, 4.5vw, 24px); font-weight: 800; color: #ff8a5c;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6); z-index: 5; pointer-events: none;
+    opacity: 0; transition: opacity 0.25s;
+  }
+  #combo.on { opacity: 1; }
+  #mute {
+    position: fixed; top: max(10px, env(safe-area-inset-top)); right: 14px;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(42, 31, 20, 0.85); color: #ffb347; border: 1px solid rgba(255, 179, 71, 0.35);
+    font-size: 18px; cursor: pointer; z-index: 6;
+  }
+  .overlay {
+    position: fixed; inset: 0; z-index: 10;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: radial-gradient(ellipse at 50% 70%, rgba(60, 32, 12, 0.92), rgba(16, 10, 6, 0.96));
+    text-align: center; padding: 24px;
+  }
+  .overlay h1 { font-size: clamp(34px, 10vw, 60px); color: #ffb347; letter-spacing: 2px; text-shadow: 0 0 24px rgba(255, 140, 60, 0.5); }
+  .overlay .sub { margin-top: 10px; font-size: clamp(14px, 4vw, 18px); color: #ffe9c7; max-width: 420px; line-height: 1.5; }
+  .overlay .rules { margin-top: 16px; font-size: clamp(12px, 3.5vw, 15px); color: #c9a87a; line-height: 1.6; }
+  .overlay .bigbtn {
+    margin-top: 26px; padding: 16px 44px; font-size: clamp(16px, 5vw, 22px);
+    background: linear-gradient(180deg, #ffb347, #e8892f); color: #1a120b;
+    border: none; border-radius: 40px; font-weight: 800; cursor: pointer;
+    box-shadow: 0 4px 18px rgba(255, 140, 60, 0.4);
+  }
+  .overlay .bigbtn:active { transform: scale(0.96); }
+  .overlay .final { font-size: clamp(40px, 12vw, 72px); color: #ffb347; font-weight: 800; }
+  .overlay .finalrow { margin-top: 10px; font-size: clamp(15px, 4.5vw, 20px); color: #ffe9c7; }
+  .overlay .finalrow b { color: #ff8a5c; }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div id="hud">
+  <div class="score"><small>SCORE</small><span id="scoreVal">0</span></div>
+  <div class="mid"><small>TIME</small><span id="timeVal">2:00</span></div>
+  <div class="score" style="text-align:right"><small>BANKED</small><span id="bankVal">0</span></div>
+</div>
+<div id="combo">x1</div>
+<button id="mute" aria-label="mute">♪</button>
+<canvas id="cv"></canvas>
+
+<div class="overlay" id="start">
+  <h1>EMBER CATCH</h1>
+  <div class="sub">Embers leap off my tail. Flick them into the bucket before they burn out.</div>
+  <div class="rules">A glowing ring chases each ember along its arc.<br>PRESS when the ring meets the ember. That's the whole game.<br>Gold embers are worth double. Two minutes on the clock.</div>
+  <button class="bigbtn" id="startBtn">Light the fire</button>
+</div>
+
+<div class="overlay hidden" id="end">
+  <div class="final" id="finalScore">0</div>
+  <div class="sub" style="margin-top:6px">coals banked</div>
+  <div class="finalrow" id="finalDetail"></div>
+  <button class="bigbtn" id="againBtn">Run it back</button>
+</div>
+
+<script>
+'use strict';
+  var canvas = document.getElementById('cv');
+  var ctx = canvas.getContext('2d');
+  var W = 0, H = 0, DPR = 1;
+  var layout = {};
+
+  function resize() {
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * DPR; canvas.height = H * DPR;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    var m = Math.min(W, H);
+    var floorY = H - m * 0.10;
+    var dragonX = m * 0.16;
+    var sScale = Math.min(m * 0.013, H * 0.009);
+    var bucketW = m * 0.17;
+    var bucketX = W - m * 0.14 - bucketW;
+    var tailTip = { x: dragonX + m * 0.075, y: floorY - m * 0.20 };
+    var drop = { x: bucketX + bucketW * 0.5, y: floorY - m * 0.24 };
+    layout = {
+      m: m, sScale: sScale, floorY: floorY, dragonX: dragonX, dragonY: floorY,
+      bucketX: bucketX, bucketW: bucketW, bucketH: m * 0.17,
+      tailTip: tailTip, drop: drop
+    };
+    makeStars();
+  }
+
+  /* ---------- state ---------- */
+  var phase = 'start'; /* start | play | end */
+  var score = 0, combo = 0, banked = 0, best = 0;
+  var timeLeft = 120, lastTickSec = 120;
+  var ember = null;      /* {t, dur, gold, offset, curve, samples, dist} */
+  var ringT = 0;
+  var cooldown = 0, spawnDelay = 0;
+  var particles = [], floats = [];
+  var stars = [];
+  var muted = false;
+  var lastT = 0;
+
+  var audio = { ctx: null, master: null, noise: null };
+
+  function ensureAudio() {
+    if (!audio.ctx) {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      audio.ctx = new AC();
+      audio.master = audio.ctx.createGain();
+      audio.master.gain.value = 0.14;
+      audio.master.connect(audio.ctx.destination);
+      var len = audio.ctx.sampleRate * 0.3;
+      audio.noise = audio.ctx.createBuffer(1, len, audio.ctx.sampleRate);
+      var d = audio.noise.getChannelData(0);
+      for (var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+    }
+    if (audio.ctx.state === 'suspended') audio.ctx.resume();
+  }
+  function tone(freq, dur, type, vol, when, slideTo) {
+    if (muted || !audio.ctx) return;
+    var t0 = audio.ctx.currentTime + (when || 0);
+    var o = audio.ctx.createOscillator();
+    var g = audio.ctx.createGain();
+    o.type = type || 'sine';
+    o.frequency.setValueAtTime(freq, t0);
+    if (slideTo) o.frequency.exponentialRampToValueAtTime(slideTo, t0 + dur);
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(vol || 0.5, t0 + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(g); g.connect(audio.master);
+    o.start(t0); o.stop(t0 + dur + 0.02);
+  }
+  function noiseBurst(dur, freq, vol, when) {
+    if (muted || !audio.ctx || !audio.noise) return;
+    var t0 = audio.ctx.currentTime + (when || 0);
+    var src = audio.ctx.createBufferSource();
+    src.buffer = audio.noise;
+    var bp = audio.ctx.createBiquadFilter();
+    bp.type = 'bandpass'; bp.frequency.value = freq; bp.Q.value = 1.2;
+    var g = audio.ctx.createGain();
+    g.gain.setValueAtTime(vol || 0.2, t0);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    src.connect(bp); bp.connect(g); g.connect(audio.master);
+    src.start(t0); src.stop(t0 + dur + 0.02);
+  }
+  function sfxClink(gold) {
+    var p = Math.min(combo * 0.02, 0.6);
+    tone(880 * (1 + p), 0.08, 'sine', 0.5);
+    tone(1318 * (1 + p), 0.12, 'sine', 0.4, 0.03);
+    if (gold) tone(1760, 0.18, 'sine', 0.4, 0.06);
+  }
+  function sfxFizzle() {
+    tone(220, 0.22, 'sawtooth', 0.25, 0, 70);
+    noiseBurst(0.18, 900, 0.15);
+  }
+  function sfxSpawn(gold) {
+    noiseBurst(0.12, gold ? 1600 : 700, 0.08);
+  }
+  function sfxTick() { tone(1200, 0.03, 'square', 0.12); }
+  function sfxEnd() {
+    tone(523, 0.14, 'sine', 0.5, 0);
+    tone(659, 0.14, 'sine', 0.5, 0.12);
+    tone(784, 0.24, 'sine', 0.5, 0.24);
+  }
+
+  /* ---------- geometry ---------- */
+  function makeCurve() {
+    var tip = layout.tailTip, drop = layout.drop;
+    var mx = (tip.x + drop.x) / 2;
+    var my = (tip.y + drop.y) / 2;
+    var height = layout.m * (0.34 + (Math.random() * 0.10 - 0.05));
+    var lean = (Math.random() * 0.10 - 0.05) * layout.m;
+    var cx = mx + lean;
+    var cy = my - height;
+    var samples = [], dist = [0];
+    var N = 30;
+    for (var i = 0; i <= N; i++) {
+      var t = i / N;
+      var inv = 1 - t;
+      var x = inv * inv * tip.x + 2 * inv * t * cx + t * t * drop.x;
+      var y = inv * inv * tip.y + 2 * inv * t * cy + t * t * drop.y;
+      samples.push({ x: x, y: y });
+      if (i > 0) {
+        var dx = x - samples[i - 1].x, dy = y - samples[i - 1].y;
+        dist.push(dist[i - 1] + Math.sqrt(dx * dx + dy * dy));
+      }
+    }
+    return { samples: samples, dist: dist, c: { x: cx, y: cy } };
+  }
+  function curvePoint(curve, t) {
+    var d = curve.dist[curve.dist.length - 1] * Math.max(0, Math.min(1, t));
+    var s = curve.samples;
+    for (var i = 1; i < s.length; i++) {
+      if (curve.dist[i] >= d) {
+        var a = curve.dist[i - 1], b = curve.dist[i];
+        var f = b > a ? (d - a) / (b - a) : 0;
+        return { x: s[i - 1].x + (s[i].x - s[i - 1].x) * f, y: s[i - 1].y + (s[i].y - s[i - 1].y) * f };
+      }
+    }
+    return { x: s[s.length - 1].x, y: s[s.length - 1].y };
+  }
+
+  function spawnEmber() {
+    var elapsed = 120 - timeLeft;
+    var prog = Math.min(1, elapsed / 120);
+    var dur = 2600 - prog * 1000;           /* 2.6s -> 1.6s */
+    var gold = Math.random() < 0.12;
+    var offset = -0.32 - Math.random() * 0.10;
+    ember = { t: 0, dur: dur, gold: gold, offset: offset, curve: makeCurve() };
+    ringT = ember.offset;
+    cooldown = 0;
+    spawnDelay = 0;
+    sfxSpawn(gold);
+  }
+  function tolerance() {
+    var prog = Math.min(1, (120 - timeLeft) / 120);
+    return 0.16 - prog * 0.10;              /* 0.16 -> 0.06 */
+  }
+
+  function doCatch() {
+    var gold = ember.gold;
+    combo++;
+    var mult = Math.min(1 + Math.floor(combo / 3), 5);
+    var pts = 10 * mult * (gold ? 2 : 1);
+    score += pts;
+    banked++;
+    var pos = curvePoint(ember.curve, ember.t);
+    burst(pos.x, pos.y, gold ? '#ffd76a' : '#ff9a4d', gold ? 26 : 14);
+    floats.push({ x: pos.x, y: pos.y - 10, text: '+' + pts + (gold ? ' x2' : ''), life: 1, color: gold ? '#ffd76a' : '#ffb347' });
+    sfxClink(gold);
+    document.getElementById('combo').textContent = 'x' + mult + (gold ? ' GOLD' : '');
+    document.getElementById('combo').classList.add('on');
+    spawnDelay = 0.34;
+    ember = null;
+  }
+  function doMiss(early) {
+    if (!ember) return;
+    var pos = curvePoint(ember.curve, ember.t);
+    puff(pos.x, pos.y);
+    floats.push({ x: pos.x, y: pos.y - 8, text: early ? 'EARLY' : 'LATE', life: 0.8, color: '#c9a87a' });
+    combo = 0;
+    document.getElementById('combo').classList.remove('on');
+    sfxFizzle();
+    spawnDelay = 0.5;
+    ember = null;
+  }
+  function doBurnout() {
+    if (!ember) return;
+    var pos = curvePoint(ember.curve, 1);
+    puff(pos.x, pos.y);
+    combo = 0;
+    document.getElementById('combo').classList.remove('on');
+    sfxFizzle();
+    spawnDelay = 0.45;
+    ember = null;
+  }
+
+  function press() {
+    if (phase !== 'play') return;
+    if (cooldown > 0) return;
+    if (!ember) return;
+    cooldown = 0.14;
+    var tol = tolerance();
+    var diff = ringT - ember.t;
+    if (Math.abs(diff) <= tol) {
+      doCatch();
+    } else {
+      doMiss(diff < 0);
+    }
+  }
+
+  /* ---------- fx ---------- */
+  function burst(x, y, color, n) {
+    for (var i = 0; i < n; i++) {
+      var a = Math.random() * Math.PI * 2;
+      var sp = 40 + Math.random() * 120;
+      particles.push({ x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 60, life: 0.5 + Math.random() * 0.4, max: 0.9, color: color, size: 1.5 + Math.random() * 2 });
+    }
+  }
+  function puff(x, y) {
+    for (var i = 0; i < 8; i++) {
+      var a = Math.random() * Math.PI * 2;
+      var sp = 12 + Math.random() * 30;
+      particles.push({ x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 25, life: 0.6 + Math.random() * 0.5, max: 1.1, color: '#8a8178', size: 2 + Math.random() * 3 });
+    }
+  }
+  function makeStars() {
+    stars = [];
+    var n = Math.floor((W * H) / 26000);
+    for (var i = 0; i < n; i++) {
+      stars.push({ x: Math.random() * W, y: Math.random() * H * 0.55, r: Math.random() * 1.2 + 0.3, tw: Math.random() * Math.PI * 2 });
+    }
+  }
+
+  /* ---------- drawing ---------- */
+  function drawBackground(t) {
+    var g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#1d120c');
+    g.addColorStop(0.55, '#2a1a10');
+    g.addColorStop(1, '#170e08');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var a = 0.25 + 0.35 * Math.abs(Math.sin(t * 0.001 + s.tw));
+      ctx.globalAlpha = a;
+      ctx.fillStyle = '#ffd9a0';
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    /* floor */
+    ctx.fillStyle = 'rgba(0,0,0,0.35)';
+    ctx.fillRect(0, layout.floorY + 2, W, H - layout.floorY);
+    ctx.strokeStyle = 'rgba(255, 179, 71, 0.18)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(0, layout.floorY);
+    ctx.lineTo(W, layout.floorY);
+    ctx.stroke();
+  }
+
+  function drawBucket() {
+    var b = layout;
+    var x = b.bucketX, w = b.bucketW, h = b.bucketH, top = b.floorY - h;
+    var rim = h * 0.12;
+    var grad = ctx.createLinearGradient(x, 0, x + w, 0);
+    grad.addColorStop(0, '#6b4a2a');
+    grad.addColorStop(0.5, '#8a5f35');
+    grad.addColorStop(1, '#5d3f24');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.moveTo(x, b.floorY);
+    ctx.lineTo(x + w * 0.12, top + rim);
+    ctx.lineTo(x + w * 0.88, top + rim);
+    ctx.lineTo(x + w, b.floorY);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(0,0,0,0.35)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    /* rim */
+    ctx.fillStyle = '#9a6f3d';
+    ctx.fillRect(x - 3, top, w + 6, rim + 3);
+    /* glowing coals inside */
+    var n = Math.min(banked, 12);
+    for (var i = 0; i < n; i++) {
+      var cx = x + w * (0.22 + 0.56 * ((i * 37) % 100) / 100);
+      var cy = top + rim + 2 + h * 0.08 * ((i * 53) % 100) / 100;
+      var glow = 0.5 + 0.4 * Math.sin(Date.now() * 0.006 + i * 2.1);
+      ctx.globalAlpha = 0.25 * glow;
+      ctx.fillStyle = '#ff9a4d';
+      ctx.beginPath();
+      ctx.arc(cx, cy, 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = '#ffd76a';
+      ctx.beginPath();
+      ctx.arc(cx, cy, 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  function drawDragon(t) {
+    var b = layout;
+    var x = b.dragonX, y = b.dragonY;
+    var s = b.sScale;
+    /* tail: curve from body up to tailTip */
+    ctx.strokeStyle = '#a8321f';
+    ctx.lineCap = 'round';
+    var tip = b.tailTip;
+    ctx.lineWidth = 16 * s;
+    ctx.beginPath();
+    ctx.moveTo(x + 30 * s, y - 52 * s);
+    ctx.quadraticCurveTo(x - 14 * s, y - 40 * s, tip.x, tip.y);
+    ctx.stroke();
+    ctx.lineWidth = 11 * s;
+    ctx.strokeStyle = '#c2451f';
+    ctx.beginPath();
+    ctx.moveTo(x + 30 * s, y - 50 * s);
+    ctx.quadraticCurveTo(x - 12 * s, y - 38 * s, tip.x, tip.y);
+    ctx.stroke();
+    /* spiky tuft at tail tip */
+    ctx.fillStyle = '#e8612a';
+    ctx.beginPath();
+    ctx.moveTo(tip.x - 8 * s, tip.y);
+    ctx.lineTo(tip.x - 2 * s, tip.y - 12 * s);
+    ctx.lineTo(tip.x + 1 * s, tip.y - 3 * s);
+    ctx.lineTo(tip.x + 9 * s, tip.y - 11 * s);
+    ctx.lineTo(tip.x + 6 * s, tip.y);
+    ctx.closePath();
+    ctx.fill();
+    /* body */
+    var bodyGrad = ctx.createLinearGradient(x - 30 * s, y - 90 * s, x + 40 * s, y - 20 * s);
+    bodyGrad.addColorStop(0, '#b3241f');
+    bodyGrad.addColorStop(1, '#e0612a');
+    ctx.fillStyle = bodyGrad;
+    ctx.beginPath();
+    ctx.ellipse(x + 2 * s, y - 62 * s, 34 * s, 42 * s, -0.08, 0, Math.PI * 2);
+    ctx.fill();
+    /* belly */
+    ctx.fillStyle = '#f2c9a0';
+    ctx.beginPath();
+    ctx.ellipse(x + 6 * s, y - 58 * s, 17 * s, 26 * s, -0.06, 0, Math.PI * 2);
+    ctx.fill();
+    /* head */
+    ctx.fillStyle = '#e0612a';
+    ctx.beginPath();
+    ctx.arc(x + 26 * s, y - 96 * s, 22 * s, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#f2c9a0';
+    ctx.beginPath();
+    ctx.arc(x + 30 * s, y - 94 * s, 13 * s, -0.5, 0.9);
+    ctx.fill();
+    /* muzzle */
+    ctx.fillStyle = '#f2c9a0';
+    ctx.beginPath();
+    ctx.ellipse(x + 40 * s, y - 92 * s, 11 * s, 8 * s, 0.1, 0, Math.PI * 2);
+    ctx.fill();
+    /* eye */
+    ctx.fillStyle = '#3a1a08';
+    ctx.beginPath();
+    ctx.arc(x + 28 * s, y - 100 * s, 4.6 * s, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#ffd76a';
+    ctx.beginPath();
+    ctx.arc(x + 27 * s, y - 101 * s, 2 * s, 0, Math.PI * 2);
+    ctx.fill();
+    /* horns + mane spikes */
+    ctx.fillStyle = '#d9a05b';
+    ctx.beginPath();
+    ctx.moveTo(x + 14 * s, y - 112 * s);
+    ctx.lineTo(x + 16 * s, y - 126 * s);
+    ctx.lineTo(x + 22 * s, y - 113 * s);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = '#e8612a';
+    ctx.beginPath();
+    ctx.moveTo(x + 20 * s, y - 114 * s);
+    ctx.lineTo(x + 26 * s, y - 126 * s);
+    ctx.lineTo(x + 30 * s, y - 112 * s);
+    ctx.closePath();
+    ctx.fill();
+    /* wing */
+    ctx.fillStyle = '#8e2418';
+    ctx.beginPath();
+    ctx.moveTo(x - 8 * s, y - 76 * s);
+    ctx.quadraticCurveTo(x - 34 * s, y - 92 * s, x - 30 * s, y - 56 * s);
+    ctx.quadraticCurveTo(x - 20 * s, y - 68 * s, x - 8 * s, y - 62 * s);
+    ctx.closePath();
+    ctx.fill();
+    /* leg */
+    ctx.fillStyle = '#c2451f';
+    ctx.beginPath();
+    ctx.ellipse(x + 6 * s, y - 16 * s, 10 * s, 8 * s, 0, 0, Math.PI * 2);
+    ctx.fill();
+    /* smoke wisps */
+    var sm = 0.5 + 0.3 * Math.sin(t * 0.004);
+    ctx.globalAlpha = 0.35 * sm;
+    ctx.fillStyle = '#aaa39a';
+    ctx.beginPath();
+    ctx.arc(x + 46 * s, y - 104 * s, 4 * s, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 0.22 * sm;
+    ctx.beginPath();
+    ctx.arc(x + 49 * s, y - 112 * s, 3 * s, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+
+  function drawEmber(t) {
+    if (!ember) return;
+    var pos = curvePoint(ember.curve, ember.t);
+    var ringPos = curvePoint(ember.curve, ringT);
+    var pulse = 1 + 0.12 * Math.sin(t * 0.02);
+    var gold = ember.gold;
+    var col = gold ? '#ffd76a' : '#ff9a4d';
+    var col2 = gold ? '#fff3c4' : '#ffd9a0';
+    /* trail */
+    ctx.strokeStyle = gold ? 'rgba(255, 215, 106, 0.25)' : 'rgba(255, 154, 77, 0.22)';
+    ctx.lineWidth = 3;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    var back = curvePoint(ember.curve, ember.t - 0.06);
+    ctx.moveTo(back.x, back.y);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+    /* glow */
+    ctx.globalAlpha = 0.35;
+    ctx.fillStyle = col;
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, 14 * pulse, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    /* ember core */
+    ctx.fillStyle = col2;
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, 5 * pulse, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = col;
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, 3.4 * pulse, 0, Math.PI * 2);
+    ctx.fill();
+    /* catch ring */
+    ctx.strokeStyle = col;
+    ctx.lineWidth = 2.5;
+    ctx.globalAlpha = 0.9;
+    ctx.beginPath();
+    ctx.arc(ringPos.x, ringPos.y, 9 * pulse, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.globalAlpha = 0.4;
+    ctx.beginPath();
+    ctx.arc(ringPos.x, ringPos.y, 13 * pulse, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
+
+  function drawParticles(dt) {
+    for (var i = particles.length - 1; i >= 0; i--) {
+      var p = particles[i];
+      p.life -= dt;
+      if (p.life <= 0) { particles.splice(i, 1); continue; }
+      p.x += p.vx * dt; p.y += p.vy * dt;
+      p.vy += 180 * dt;
+      ctx.globalAlpha = Math.max(0, p.life / p.max);
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+  function drawFloats(dt) {
+    for (var i = floats.length - 1; i >= 0; i--) {
+      var f = floats[i];
+      f.life -= dt * 0.9;
+      f.y -= 26 * dt;
+      if (f.life <= 0) { floats.splice(i, 1); continue; }
+      ctx.globalAlpha = Math.max(0, f.life);
+      ctx.fillStyle = f.color;
+      ctx.font = '700 15px system-ui, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(f.text, f.x, f.y);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  /* ---------- loop ---------- */
+  function update(dt) {
+    if (phase !== 'play') return;
+    if (cooldown > 0) cooldown -= dt;
+    if (spawnDelay > 0) {
+      spawnDelay -= dt;
+      if (spawnDelay <= 0) spawnEmber();
+      return;
+    }
+    if (!ember) return;
+    ember.t += dt / (ember.dur / 1000);
+    ringT = ember.offset + ember.t * 1.5;
+    if (ringT > 1) ringT = 1;
+    if (ember.t >= 1) doBurnout();
+  }
+
+  function tick(dt) {
+    if (phase !== 'play') return;
+    timeLeft -= dt;
+    if (timeLeft <= 0) {
+      timeLeft = 0;
+      endGame();
+      return;
+    }
+    var sec = Math.ceil(timeLeft);
+    if (sec !== lastTickSec) {
+      lastTickSec = sec;
+      if (sec <= 10 && sec > 0) sfxTick();
+    }
+    var m = Math.floor(timeLeft / 60);
+    var s = Math.floor(timeLeft % 60);
+    document.getElementById('timeVal').textContent = m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  function endGame() {
+    phase = 'end';
+    if (score > best) best = score;
+    sfxEnd();
+    document.getElementById('combo').classList.remove('on');
+    document.getElementById('finalScore').textContent = score;
+    document.getElementById('finalDetail').innerHTML = '<b>' + banked + '</b> coals banked &nbsp;·&nbsp; best ' + best;
+    document.getElementById('end').classList.remove('hidden');
+  }
+
+  function frame(ts) {
+    var t = ts || 0;
+    var dt = lastT ? Math.min((t - lastT) / 1000, 0.05) : 0.016;
+    lastT = t;
+    update(dt);
+    tick(dt);
+    drawBackground(t);
+    drawBucket();
+    drawDragon(t);
+    drawEmber(t);
+    drawParticles(dt);
+    drawFloats(dt);
+    requestAnimationFrame(frame);
+  }
+
+  function startGame() {
+    ensureAudio();
+    score = 0; combo = 0; banked = 0;
+    timeLeft = 120; lastTickSec = 120;
+    particles = []; floats = [];
+    document.getElementById('scoreVal').textContent = '0';
+    document.getElementById('bankVal').textContent = '0';
+    document.getElementById('combo').classList.remove('on');
+    document.getElementById('start').classList.add('hidden');
+    document.getElementById('end').classList.add('hidden');
+    phase = 'play';
+    spawnEmber();
+  }
+
+  /* ---------- input ---------- */
+  function onKey(e) {
+    if (e.code === 'Space' || e.code === 'Enter') {
+      e.preventDefault();
+      ensureAudio();
+      if (phase === 'start') startGame();
+      else if (phase === 'end') startGame();
+      else press();
+    }
+  }
+  function onPointer() {
+    ensureAudio();
+    if (phase === 'start') startGame();
+    else if (phase === 'end') startGame();
+    else press();
+  }
+  function onMute() {
+    muted = !muted;
+    muteBtn.textContent = muted ? '✕' : '♪';
+    ensureAudio();
+  }
+  var muteBtn = document.getElementById('mute');
+  window.addEventListener('keydown', onKey);
+  canvas.addEventListener('pointerdown', onPointer);
+  document.getElementById('startBtn').addEventListener('click', startGame);
+  document.getElementById('againBtn').addEventListener('click', startGame);
+  muteBtn.addEventListener('click', onMute);
+  window.addEventListener('resize', resize);
+
+  resize();
+  requestAnimationFrame(frame);
+</script>
+</body>
+</html>
