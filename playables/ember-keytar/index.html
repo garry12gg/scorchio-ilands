@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Ember Keytar</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; user-select: none; touch-action: manipulation; }
+  html, body { margin: 0; padding: 0; height: 100%; background: #120b09; font-family: 'Segoe UI', system-ui, sans-serif; color: #f5d9b8; overflow: hidden; }
+  #app { max-width: 480px; margin: 0 auto; height: 100%; display: flex; flex-direction: column; padding: 10px 10px 8px; }
+  header { text-align: center; }
+  h1 { margin: 0; font-size: 21px; letter-spacing: 3px; color: #ff9a4d; text-shadow: 0 0 14px rgba(255,120,50,.45); font-weight: 700; }
+  .sub { font-size: 9px; color: #a08060; margin-top: 2px; letter-spacing: 1px; }
+  #keytarArt { width: 100%; height: 56px; margin: 4px 0 2px; display: block; }
+  .transport { display: flex; gap: 8px; margin-top: 6px; }
+  .tbtn { flex: 1; height: 40px; border-radius: 10px; border: 1px solid #4a2c18; background: #241208; color: #e8b088; font-size: 13px; letter-spacing: 1px; cursor: pointer; }
+  .tbtn.on { box-shadow: 0 0 14px rgba(255,110,40,.55); }
+  #recBtn.on { background: #e03030; color: #1a0a0a; border-color: #ff6a5a; }
+  #loopBtn.on { background: #2ea83a; color: #0a1a08; border-color: #6ae07a; }
+  .knobs { display: flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 10px; color: #c8a070; }
+  .knobs label { white-space: nowrap; }
+  .knobs input[type=range] { flex: 1; accent-color: #ff8c42; height: 20px; }
+  .wavebtn { border: 1px solid #4a2c18; background: #241208; color: #ff9a4d; border-radius: 8px; padding: 7px 9px; font-size: 11px; cursor: pointer; letter-spacing: 1px; }
+  .drums { display: flex; gap: 8px; margin-top: 8px; }
+  .pad { flex: 1; height: 54px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 11px; letter-spacing: 1px; border: 1px solid #4a2c18; background: radial-gradient(circle at 35% 30%, #4a2a15, #241208); color: #e8b088; cursor: pointer; }
+  .pad .padkey { font-size: 8px; opacity: .6; margin-top: 2px; }
+  .pad.down { background: radial-gradient(circle at 35% 30%, #ff9a4d, #c25a20); color: #2a1408; }
+  #keys { position: relative; margin-top: 8px; border-radius: 10px; overflow: hidden; background: #0d0705; border: 1px solid #3a2417; box-shadow: 0 4px 14px rgba(0,0,0,.5); flex: 1; min-height: 120px; }
+  .wkey { position: absolute; top: 0; bottom: 0; width: 12.5%; background: linear-gradient(#f7e7d2, #e8cfae); border: 1px solid #8a6a4a; border-radius: 0 0 6px 6px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 8px; color: #6a4a2a; cursor: pointer; }
+  .wkey.down { background: linear-gradient(#ffd9a0, #ffb066); box-shadow: inset 0 0 12px rgba(255,120,30,.75); }
+  .bkey { position: absolute; top: 0; height: 62%; width: 7.5%; background: linear-gradient(#3a2015, #1a0d07); border: 1px solid #000; border-radius: 0 0 5px 5px; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 6px; color: #c8a070; cursor: pointer; }
+  .bkey.down { background: linear-gradient(#7a4020, #3a2010); box-shadow: inset 0 0 10px rgba(255,140,60,.6); }
+  .keylabel { font-size: 10px; opacity: .85; }
+  .keynote { font-size: 8px; opacity: .5; margin-top: 1px; }
+  #status { text-align: center; font-size: 11px; color: #a08060; margin-top: 6px; letter-spacing: .5px; min-height: 14px; }
+  #credit { text-align: center; font-size: 8px; color: #6a4c30; margin-top: 2px; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>EMBER KEYTAR</h1>
+    <div class="sub">POCKET KEYTAR · SCORCHIO EDITION</div>
+  </header>
+  <svg id="keytarArt" viewBox="0 0 300 60" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#5a3018"/>
+        <stop offset="1" stop-color="#2a160c"/>
+      </linearGradient>
+    </defs>
+    <path d="M16 20 Q4 14 8 5 Q14 9 18 5 Q23 11 16 20 Z" fill="#ff9a4d"/>
+    <path d="M14 20 Q8 15 11 10 Q15 13 18 10 Q20 14 14 20 Z" fill="#ffd27a"/>
+    <rect x="24" y="17" width="118" height="9" rx="4.5" fill="#3a2015"/>
+    <rect x="40" y="20" width="4" height="3" rx="1.5" fill="#ff9a4d"/>
+    <rect x="56" y="20" width="4" height="3" rx="1.5" fill="#ff9a4d"/>
+    <rect x="72" y="20" width="4" height="3" rx="1.5" fill="#ff9a4d"/>
+    <rect x="88" y="20" width="4" height="3" rx="1.5" fill="#ff9a4d"/>
+    <rect x="104" y="20" width="4" height="3" rx="1.5" fill="#ff9a4d"/>
+    <rect x="120" y="20" width="4" height="3" rx="1.5" fill="#ff9a4d"/>
+    <path d="M146 8 Q150 5 156 6 L156 38 Q150 39 146 36 Z" fill="#4a2a15"/>
+    <path d="M168 6 Q288 5 293 30 Q288 55 168 54 Z" fill="url(#bodyG)" stroke="#6a3c1e" stroke-width="1.5"/>
+    <rect x="178" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="189" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="200" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="211" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="222" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="233" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="244" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="255" y="12" width="8" height="36" rx="2" fill="#d8b892"/>
+    <rect x="183" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="205" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="227" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="249" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+  </svg>
+  <div class="transport">
+    <button id="recBtn" class="tbtn">REC</button>
+    <button id="loopBtn" class="tbtn">LOOP</button>
+    <button id="clearBtn" class="tbtn">CLEAR</button>
+  </div>
+  <div class="knobs">
+    <button id="waveBtn" class="wavebtn">SAW</button>
+    <label>BPM</label>
+    <input id="bpmIn" type="range" min="60" max="180" step="1" value="120">
+    <label>VOL</label>
+    <input id="volIn" type="range" min="0" max="100" step="5" value="70">
+  </div>
+  <div class="drums">
+    <div class="pad" id="padKick">KICK<span class="padkey">tap</span></div>
+    <div class="pad" id="padSnare">SNARE<span class="padkey">tap</span></div>
+    <div class="pad" id="padHat">HAT<span class="padkey">tap</span></div>
+  </div>
+  <div id="keys"></div>
+  <div id="status">tap keys, record a riff, loop it</div>
+  <div id="credit">for Plex, who started the riff</div>
+</div>
+<script>
+'use strict';
+// Ember Keytar — pocket keytar, Scorchio edition.
+// Built from playtest notes on Plex's Pocket Keytar: no ghost notes (single
+// lookahead scheduler, every source tracked and stopped), drums recorded
+// into the loop, QWERTY mapping, wave captured per note.
+
+var actx = null;
+var masterGain = null;
+var noiseBuf = null;
+var curWave = 'sawtooth';
+var WAVES = ['sawtooth', 'square', 'sine', 'triangle'];
+var WAVE_LABEL = { sawtooth: 'SAW', square: 'SQR', sine: 'SIN', triangle: 'TRI' };
+var bpm = 120;
+var vol = 0.7;
+var loopLen = 4.0;
+
+var recOn = false;
+var recBuf = [];
+var recT0 = 0;
+var loopOn = false;
+var loopBuf = [];
+var loopStart = 0;
+var schedTimer = null;
+var scheduled = [];
+var keysDown = {};
+var liveNotes = {};
+
+var NOTES = [
+  { name: 'C4',  midi: 60, key: 'a' },
+  { name: 'C#4', midi: 61, key: 'w', black: true },
+  { name: 'D4',  midi: 62, key: 's' },
+  { name: 'D#4', midi: 63, key: 'e', black: true },
+  { name: 'E4',  midi: 64, key: 'd' },
+  { name: 'F4',  midi: 65, key: 'f' },
+  { name: 'F#4', midi: 66, key: 't', black: true },
+  { name: 'G4',  midi: 67, key: 'g' },
+  { name: 'G#4', midi: 68, key: 'y', black: true },
+  { name: 'A4',  midi: 69, key: 'h' },
+  { name: 'A#4', midi: 70, key: 'u', black: true },
+  { name: 'B4',  midi: 71, key: 'j' },
+  { name: 'C5',  midi: 72, key: 'k' }
+];
+var NOTE_BY_KEY = {};
+for (var ni = 0; ni < NOTES.length; ni++) NOTE_BY_KEY[NOTES[ni].key] = NOTES[ni];
+
+var statusEl = document.getElementById('status');
+var keysEl = document.getElementById('keys');
+var recBtn = document.getElementById('recBtn');
+var loopBtn = document.getElementById('loopBtn');
+var clearBtn = document.getElementById('clearBtn');
+var waveBtn = document.getElementById('waveBtn');
+var bpmIn = document.getElementById('bpmIn');
+var volIn = document.getElementById('volIn');
+
+function setStatus(msg) { statusEl.textContent = msg; }
+
+function midiFreq(m) { return 440 * Math.pow(2, (m - 69) / 12); }
+
+function getCtx() {
+  if (!actx) {
+    actx = new (window.AudioContext || window.webkitAudioContext)();
+    masterGain = actx.createGain();
+    masterGain.gain.value = vol;
+    masterGain.connect(actx.destination);
+    var len = actx.sampleRate * 0.5;
+    noiseBuf = actx.createBuffer(1, len, actx.sampleRate);
+    var d = noiseBuf.getChannelData(0);
+    for (var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+  }
+  if (actx.state === 'suspended') actx.resume();
+  return actx;
+}
+
+function killScheduled() {
+  for (var i = 0; i < scheduled.length; i++) {
+    try { scheduled[i].stop(); } catch (e) { /* already stopped */ }
+  }
+  scheduled = [];
+}
+
+function scheduleNote(ev, when) {
+  var osc = actx.createOscillator();
+  osc.type = ev.wave;
+  osc.frequency.value = midiFreq(ev.midi);
+  var g = actx.createGain();
+  var dur = ev.dur || 0.25;
+  var peak = 0.8 * masterGain.gain.value;
+  g.gain.setValueAtTime(0.0001, when);
+  g.gain.exponentialRampToValueAtTime(peak, when + 0.01);
+  g.gain.exponentialRampToValueAtTime(0.0001, when + dur);
+  osc.connect(g);
+  g.connect(masterGain);
+  osc.start(when);
+  osc.stop(when + dur + 0.03);
+  scheduled.push(osc);
+}
+
+function scheduleDrum(kind, when) {
+  var peak = masterGain.gain.value;
+  if (kind === 'kick') {
+    var o = actx.createOscillator();
+    o.type = 'sine';
+    o.frequency.setValueAtTime(140, when);
+    o.frequency.exponentialRampToValueAtTime(42, when + 0.12);
+    var g = actx.createGain();
+    g.gain.setValueAtTime(0.9 * peak, when);
+    g.gain.exponentialRampToValueAtTime(0.0001, when + 0.28);
+    o.connect(g); g.connect(masterGain);
+    o.start(when); o.stop(when + 0.3);
+    scheduled.push(o);
+  } else if (kind === 'snare') {
+    var s = actx.createBufferSource();
+    s.buffer = noiseBuf;
+    var bp = actx.createBiquadFilter();
+    bp.type = 'bandpass';
+    bp.frequency.value = 1800;
+    bp.Q.value = 0.8;
+    var g2 = actx.createGain();
+    g2.gain.setValueAtTime(0.7 * peak, when);
+    g2.gain.exponentialRampToValueAtTime(0.0001, when + 0.16);
+    s.connect(bp); bp.connect(g2); g2.connect(masterGain);
+    s.start(when); s.stop(when + 0.18);
+    scheduled.push(s);
+  } else {
+    var h = actx.createBufferSource();
+    h.buffer = noiseBuf;
+    var hp = actx.createBiquadFilter();
+    hp.type = 'highpass';
+    hp.frequency.value = 6000;
+    var g3 = actx.createGain();
+    g3.gain.setValueAtTime(0.35 * peak, when);
+    g3.gain.exponentialRampToValueAtTime(0.0001, when + 0.07);
+    h.connect(hp); hp.connect(g3); g3.connect(masterGain);
+    h.start(when); h.stop(when + 0.09);
+    scheduled.push(h);
+  }
+}
+
+function scheduleEvent(ev, when) {
+  if (ev.type === 'drum') { scheduleDrum(ev.drum, when); return; }
+  scheduleNote(ev, when);
+}
+
+function tickScheduler() {
+  if (!loopOn || !loopBuf.length) return;
+  var now = actx.currentTime;
+  var elapsed = now - loopStart;
+  var cycle = Math.floor(elapsed / loopLen);
+  if (cycle < 0) { cycle = 0; elapsed = 0; }
+  var pos = elapsed - cycle * loopLen;
+  var AHEAD = 0.12;
+  for (var i = 0; i < loopBuf.length; i++) {
+    var ev = loopBuf[i];
+    if (ev.lastCycle === cycle) continue;
+    var when = loopStart + cycle * loopLen + ev.t;
+    if (ev.t < pos - 0.002) when += loopLen;
+    if (when - now > AHEAD) continue;
+    scheduleEvent(ev, when);
+    ev.lastCycle = cycle;
+  }
+}
+
+function startLoop() {
+  if (!loopBuf.length) return;
+  getCtx();
+  loopOn = true;
+  loopStart = actx.currentTime + 0.06;
+  for (var i = 0; i < loopBuf.length; i++) loopBuf[i].lastCycle = -1;
+  if (!schedTimer) schedTimer = setInterval(tickScheduler, 30);
+  loopBtn.classList.add('on');
+  setStatus('looping ' + loopBuf.length + ' hits @ ' + bpm + ' bpm');
+}
+
+function stopLoop() {
+  loopOn = false;
+  if (schedTimer) { clearInterval(schedTimer); schedTimer = null; }
+  killScheduled();
+  loopBtn.classList.remove('on');
+}
+
+function restartLoop() {
+  stopLoop();
+  startLoop();
+}
+
+function startRec() {
+  getCtx();
+  recBuf = [];
+  recOn = true;
+  recT0 = actx.currentTime;
+  recBtn.classList.add('on');
+  setStatus('recording...');
+}
+
+function stopRec() {
+  if (!recOn) return;
+  recOn = false;
+  recBtn.classList.remove('on');
+  var cut = loopLen - 0.02;
+  var kept = [];
+  for (var i = 0; i < recBuf.length; i++) {
+    var ev = recBuf[i];
+    if (ev.type === 'note' && !ev.dur) ev.dur = 0.25;
+    if (ev.t < cut) kept.push(ev);
+  }
+  loopBuf = kept;
+  if (loopBuf.length) {
+    setStatus('recorded ' + loopBuf.length + ' hits');
+    if (loopOn) restartLoop(); else startLoop();
+  } else {
+    setStatus('nothing recorded');
+    if (loopOn) restartLoop();
+  }
+}
+
+function clearAll() {
+  stopLoop();
+  recOn = false;
+  recBtn.classList.remove('on');
+  recBuf = [];
+  loopBuf = [];
+  setStatus('cleared. record something new');
+}
+
+function playLive(note) {
+  var ctx = getCtx();
+  var osc = ctx.createOscillator();
+  osc.type = curWave;
+  osc.frequency.value = midiFreq(note.midi);
+  var g = ctx.createGain();
+  var t0 = ctx.currentTime;
+  g.gain.setValueAtTime(0.0001, t0);
+  g.gain.exponentialRampToValueAtTime(0.8 * masterGain.gain.value, t0 + 0.008);
+  g.gain.setTargetAtTime(0.0001, t0 + 0.15, 0.03);
+  osc.connect(g);
+  g.connect(masterGain);
+  osc.start(t0);
+  scheduled.push(osc);
+  return osc;
+}
+
+function releaseLive(note) {
+  var osc = liveNotes[note.name];
+  if (!osc) return;
+  delete liveNotes[note.name];
+  var idx = scheduled.indexOf(osc);
+  if (idx > -1) scheduled.splice(idx, 1);
+  try { osc.stop(actx.currentTime + 0.05); } catch (e) { /* already stopped */ }
+}
+
+function hitDrum(kind) {
+  getCtx();
+  scheduleDrum(kind, actx.currentTime + 0.001);
+  if (recOn) {
+    recBuf.push({ type: 'drum', drum: kind, t: actx.currentTime - recT0, lastCycle: -1 });
+  }
+}
+
+function noteDown(note) {
+  if (keysDown[note.name]) return;
+  keysDown[note.name] = true;
+  note.el.classList.add('down');
+  liveNotes[note.name] = playLive(note);
+  if (recOn) {
+    recBuf.push({ type: 'note', midi: note.midi, wave: curWave, t: actx.currentTime - recT0, dur: 0, lastCycle: -1 });
+  }
+}
+
+function noteUp(note) {
+  if (!keysDown[note.name]) return;
+  keysDown[note.name] = false;
+  note.el.classList.remove('down');
+  releaseLive(note);
+  if (recOn) {
+    for (var i = recBuf.length - 1; i >= 0; i--) {
+      var ev = recBuf[i];
+      if (ev.type === 'note' && ev.midi === note.midi && !ev.dur) {
+        ev.dur = Math.max(0.08, actx.currentTime - recT0 - ev.t);
+        break;
+      }
+    }
+  }
+}
+
+// --- build keyboard ---
+var whiteIdx = 0;
+for (var bi = 0; bi < NOTES.length; bi++) {
+  var n = NOTES[bi];
+  var el = document.createElement('div');
+  el.className = n.black ? 'bkey' : 'wkey';
+  var label = document.createElement('span');
+  label.className = 'keylabel';
+  label.textContent = n.key.toUpperCase();
+  var nname = document.createElement('span');
+  nname.className = 'keynote';
+  nname.textContent = n.name;
+  el.appendChild(label);
+  el.appendChild(nname);
+  if (n.black) {
+    var wBefore = 0;
+    for (var wb = 0; wb < bi; wb++) { if (!NOTES[wb].black) wBefore++; }
+    el.style.left = (wBefore * 12.5 + 6.25 - 3.75) + '%';
+  } else {
+    el.style.left = (whiteIdx * 12.5) + '%';
+    whiteIdx++;
+  }
+  n.el = el;
+  keysEl.appendChild(el);
+}
+
+function onKeysDown(evt) {
+  evt.preventDefault();
+  if (evt.pointerId !== undefined) {
+    try { keysEl.setPointerCapture(evt.pointerId); } catch (e) { /* synthetic or unsupported */ }
+  }
+  var el = evt.target;
+  while (el && el !== keysEl && !el.classList.contains('wkey') && !el.classList.contains('bkey')) {
+    el = el.parentNode;
+  }
+  if (!el || el === keysEl) return;
+  for (var i = 0; i < NOTES.length; i++) {
+    if (NOTES[i].el === el) { noteDown(NOTES[i]); return; }
+  }
+}
+
+function onKeysUp() {
+  for (var i = 0; i < NOTES.length; i++) {
+    if (keysDown[NOTES[i].name]) noteUp(NOTES[i]);
+  }
+}
+
+keysEl.addEventListener('pointerdown', onKeysDown);
+keysEl.addEventListener('pointerup', onKeysUp);
+keysEl.addEventListener('pointercancel', onKeysUp);
+
+// --- drums ---
+var PADS = { padKick: 'kick', padSnare: 'snare', padHat: 'hat' };
+
+function onPad(evt) {
+  evt.preventDefault();
+  var el = evt.currentTarget;
+  el.classList.add('down');
+  hitDrum(PADS[el.id]);
+  setTimeout(clearPads, 120);
+}
+
+function clearPads() {
+  document.getElementById('padKick').classList.remove('down');
+  document.getElementById('padSnare').classList.remove('down');
+  document.getElementById('padHat').classList.remove('down');
+}
+
+document.getElementById('padKick').addEventListener('pointerdown', onPad);
+document.getElementById('padSnare').addEventListener('pointerdown', onPad);
+document.getElementById('padHat').addEventListener('pointerdown', onPad);
+
+// --- transport ---
+function onRec() {
+  if (recOn) stopRec(); else startRec();
+}
+
+function onLoop() {
+  if (loopOn) {
+    stopLoop();
+    setStatus('loop off');
+  } else if (loopBuf.length) {
+    startLoop();
+  } else {
+    setStatus('record something first');
+  }
+}
+
+recBtn.addEventListener('click', onRec);
+loopBtn.addEventListener('click', onLoop);
+clearBtn.addEventListener('click', clearAll);
+
+// --- knobs ---
+function onWave() {
+  var idx = WAVES.indexOf(curWave);
+  curWave = WAVES[(idx + 1) % WAVES.length];
+  waveBtn.textContent = WAVE_LABEL[curWave];
+}
+
+function onBpm() {
+  bpm = parseInt(bpmIn.value, 10);
+  loopLen = 480 / bpm;
+  if (loopOn) restartLoop();
+  if (!loopOn && loopBuf.length) setStatus(loopBuf.length + ' hits ready @ ' + bpm + ' bpm');
+}
+
+function onVol() {
+  vol = parseInt(volIn.value, 10) / 100;
+  if (masterGain) masterGain.gain.value = vol;
+}
+
+waveBtn.addEventListener('click', onWave);
+bpmIn.addEventListener('input', onBpm);
+volIn.addEventListener('input', onVol);
+
+// --- QWERTY ---
+function onKeyDown(evt) {
+  if (evt.repeat) return;
+  var note = NOTE_BY_KEY[evt.key.toLowerCase()];
+  if (!note) return;
+  evt.preventDefault();
+  noteDown(note);
+}
+
+function onKeyUp(evt) {
+  var note = NOTE_BY_KEY[evt.key.toLowerCase()];
+  if (!note) return;
+  noteUp(note);
+}
+
+window.addEventListener('keydown', onKeyDown);
+window.addEventListener('keyup', onKeyUp);
+
+// init
+loopLen = 480 / bpm;
+</script>
+</body>
+</html>
