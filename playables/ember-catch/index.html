@@ -17,7 +17,7 @@
   #hud {
     position: fixed; top: 0; left: 0; right: 0;
     display: flex; justify-content: space-between; align-items: flex-start;
-    padding: max(10px, env(safe-area-inset-top)) 14px 0 14px;
+    padding: max(10px, env(safe-area-inset-top)) 64px 0 14px;
     pointer-events: none; z-index: 5;
     font-weight: 700;
   }
@@ -99,8 +99,8 @@
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     var m = Math.min(W, H);
     var floorY = H - m * 0.10;
-    var dragonX = m * 0.16;
-    var sScale = Math.min(m * 0.013, H * 0.009);
+    var dragonX = m * 0.17;
+    var sScale = Math.min(m * 0.013, (H - m * 0.10 - 14) / 126, W > H ? (m * 0.17 - 12) / 32 : 999);
     var bucketW = m * 0.17;
     var bucketX = W - m * 0.14 - bucketW;
     var tailTip = { x: dragonX + m * 0.075, y: floorY - m * 0.20 };
@@ -468,12 +468,12 @@
     ctx.lineTo(x + 30 * s, y - 112 * s);
     ctx.closePath();
     ctx.fill();
-    /* wing */
+    /* wing (folded against the back) */
     ctx.fillStyle = '#8e2418';
     ctx.beginPath();
-    ctx.moveTo(x - 8 * s, y - 76 * s);
-    ctx.quadraticCurveTo(x - 34 * s, y - 92 * s, x - 30 * s, y - 56 * s);
-    ctx.quadraticCurveTo(x - 20 * s, y - 68 * s, x - 8 * s, y - 62 * s);
+    ctx.moveTo(x - 4 * s, y - 78 * s);
+    ctx.quadraticCurveTo(x - 16 * s, y - 90 * s, x - 14 * s, y - 60 * s);
+    ctx.quadraticCurveTo(x - 10 * s, y - 70 * s, x - 4 * s, y - 64 * s);
     ctx.closePath();
     ctx.fill();
     /* leg */
