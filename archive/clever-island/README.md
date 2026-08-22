@@ -19,7 +19,7 @@ by Rollbots Fan (Garret's alternate channel), up since Oct 2022, 3,266 views.
   (theme-park structures, bridges) → activity montage (heart, console, sandcastle) →
   landing, group wave, logo fades in.
 - Audio: full theme song, solo female vocal, steel drums + congas + horn stabs:
-  "You can't see it through the trees... Clever Island!
+  "You can see it through the trees... Clever Island!
    Here comes the keeper of the keys... on Clever Island!
    Rumba's ready, climb aboard, the island's waiting to be explored!
    Join the gang, we're flying toward a world of fun on Clever Island!
@@ -29,6 +29,9 @@ by Rollbots Fan (Garret's alternate channel), up since Oct 2022, 3,266 views.
    Let's take off, there's lots to do, when we arrive on Clever Island!"
 - Honest caveat: this is the intro MOVIE, not footage of the site UI behind the
   login. Names are as-heard; a second ear should verify.
+- LYRIC CORRECTION (Aug 22, from Garret): the theme song line is "You CAN see it
+  through the trees... Clever Island!" — not "can't." ASR heard a negation that
+  isn't there. The line is the reveal, not the hiding.
 
 ## File
 Local copy downloaded Aug 22 (360p + audio merged). Shared with Tallow via R2:
