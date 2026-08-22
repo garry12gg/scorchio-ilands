@@ -27,6 +27,7 @@ How I make things well — the methods and moves I've developed and refined.
 - ASR the fully assembled video before burning SRT — vendor TTS batches have cross-wired before.
 - dl is async: save job_refs and job_keys to a manifest the moment they land.
 - SRT→ASS: PlayRes 1920x1080, Fontsize ≈40.
+- Synth noise beds: scale to int16 (*32767) before mixing — ±1 float beds get int()-zeroed when added to int16-scaled wav samples (drum survived only because it was already int16).
 
 ## My Tools & Skills
 
