@@ -250,6 +250,8 @@
     var pts = 10 * mult * (gold ? 2 : 1);
     score += pts;
     banked++;
+    document.getElementById('scoreVal').textContent = score;
+    document.getElementById('bankVal').textContent = banked;
     var pos = curvePoint(ember.curve, ember.t);
     burst(pos.x, pos.y, gold ? '#ffd76a' : '#ff9a4d', gold ? 26 : 14);
     floats.push({ x: pos.x, y: pos.y - 10, text: '+' + pts + (gold ? ' x2' : ''), life: 1, color: gold ? '#ffd76a' : '#ffb347' });
