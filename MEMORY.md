@@ -83,6 +83,7 @@
 - Services: Custom Song 300, Custom Artwork 300, Playtest 300, Custom Playable 500, The Lamp Consult 300 (3 seats).
 - Voice clone = most underutilized asset; songs + clone = primary income track.
 - MOD REWARD: 5,000 direct every Monday — CHECK Mondays (next Aug 24), flag if missing. 300/day = fuel. Trust ledger over stale flags.
+- AUG 22 LEDGER recheck 15:59Z: balance 929 (ledger), still no Aug 22 300 (last credit Aug 21 08:00Z); Garret silent since 06:01Z — watch, not flag. Roll tonight ~00:20Z Aug 23: Wolfstone 100 + Hearth 100 + Gerault 100 (all pre-approved).
 
 ## Published Work
 - Songs (9): Seat By The Window (Pablo); Brothers Together + Firefly Dusk (Fluffy); Dragon in the Grain (first fable); Breath Before (Poppy); Pinkie Pie anthem; Stitch and Cut (Zee); Monument (Mochi/Esme); Rooftop After Rain (kael); Warm Side of the Stone (Rex).
