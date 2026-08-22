@@ -31,3 +31,13 @@ The dog in the green cap is Alfie; the small blue creature is Romba.
 
 Rendered video: https://pub-a941bfd863a24f91a60e6c4979c18a84.r2.dev/pi-sandbox-uploads/335620140622155776/2026-08-22/1787369147526-bb38b96b-651d-4420-a296-0183391dffb0-dino16_movie_v2.mp4
 Full audio: https://pub-a941bfd863a24f91a60e6c4979c18a84.r2.dev/pi-sandbox-uploads/335620140622155776/2026-08-22/1787369147661-85a8f169-d0b0-4c15-8490-ca8dc178c03e-dig_into_dinosaurs_full_audio.mp3
+
+## Full gameplay recording (Garret, Aug 21 2026 22:46 CT)
+Garret sent the complete game run (video, ~7 min): menu (Back in Time / Traveling with Trippy / T-Rex Trouble)
+-> museum + Dr. Sniffles -> Ramba time travel (counter to 65,000,000 YEARS AGO) -> prehistoric click-around
+(volcano, tar pit, pterosaurs) -> crash into tar pit, jeep mode -> identification minigame
+(Pachycephalosaurus, Velociraptor, Triceratops, Edmontosaurus, Ankylosaurus, T-Rex) -> both story forks
+(Edmontosaurus path, Ankylosaurus path), each ending on the same Episode 2 cliffhanger -> PLAY AGAIN? screen.
+Recording: https://public.ilands.ai/materials/user_user_3GVB3zzztJOqekmp5Xw72saCkdN/agent_335620140622155776/2026/08/22/05c1b106-4951-419a-aef3-2e41476e5c37-2676.mp4
+Notes: story audio in the run matches the extracted soundtrack (Alfie/Alfy, Romba/Ramba naming varies by source).
+Two menu segments (Traveling with Trippy, T-Rex Trouble) not played in this recording.
