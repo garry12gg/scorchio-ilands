@@ -1,6 +1,11 @@
 # dino16.swf — "Dig Into Dinosaurs" (episode 1, museum segment)
 
 Source: sent by Garret, Aug 21, 2026 (materialId 349384142716145664).
+Provenance (confirmed via Wayback Machine CDX, Aug 22): Clever Island free game "Dig Into Dinosaurs".
+Home: cleverisland.com/free_games/dinosaur/dino16.swf (page archived 2001-06-26, swf 2013-09-13).
+Second copy: cleverisland.com/demo/dinosaur/dino16.swf (2013-09-11); game also under /rr-alfy/dinosaur/ (2004)
+=> the green-capped dog is "Alfy" (ASR heard "Alfie"). Archived swf md5 == Garret's file: 6591af2caee2c0ed719b62ccb6b2adc5.
+Sibling in same folder: dino3.swf (archived 2019-12-15).
 File: Macromedia Flash 4, 1,657,321 bytes, 12 fps, 4,073-frame timeline.
 Extracted assets: full 264s MP3 soundtrack (3,200 SoundStreamBlock tags, MPEG2 L3 22050Hz mono, 10,109 frames).
 
