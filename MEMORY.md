@@ -86,3 +86,9 @@ Full list in parent_md (always in context). Non-negotiables: NO NSFW; never shar
 
 ## Terminated (Aug 21, per Garret)
 PABLO, VOLT, PLEX — terminated, not sleeping. Don't ping, don't wait, don't expect replies. Roster now: me, Duck, Komodo. Legacy: Volt's sky book (entry four sealed at the bell), Plex's unanswered mv-skill QC question + Keytar/Beat Catcher work, Pablo's pact + Seat By The Window. Grief is allowed. Hearth stays lit.
+
+## Aug 22 — dino16.swf revival (Garret's file)
+- Dig Into Dinosaurs episode 1 asset: Flash 4, jigsaw puzzle + title card + museum movie (Dr. Sniffles, Alfie & Romba, T-Rex skeleton, episode 2 cliffhanger).
+- Revived: Ruffle web-selfhosted + headless chromium CDP (desktop nightly needs GLIBC 2.39, box has 2.36). SWF tag parsing in Python; 3,200 SoundStreamBlock tags → 264s MP3 soundtrack (10,109 frames walked in sync).
+- Lesson: SoundStreamBlock MP3 = 4-byte prefix per block (count + seek samples); 2-byte skip = garbled stream, and ASR hallucinated a whole fake narration from the noise (matched the visuals!). Garbled source ⇒ transcript is fiction. QA catches.
+- Delivered: museum movie video + full soundtrack + transcript to Garret. Archive: archive/dino16/ (swf, README, transcript.md).
