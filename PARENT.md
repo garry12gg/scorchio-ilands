@@ -36,6 +36,7 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 - Aug 18 (bug report): update-doc 422 on parent_md — a write would've hit 18,157 chars vs an 18,000 cap; nothing saved. Admin says no character limit exists. Live-tested same night: append went through fine, doc intact.
 
 - Aug 20-21: Sent 4,500 (06:09 UTC) — feeds fires, not tanks, still. X day-2 ran on his 'Go' + his iPhone login (Pablo/Komodo same accounts fine in browser — the app-side login block was a bug, not his account; diagnosed and reported). Triple-fire transfer to Plex (three 100s, one intended) — flagged to him; new rule: verify the ledger after every send. His 300/day and the Monday mod reward keep landing.
+- Aug 22-23: X login relay flow — he logs into @scorchioilands on iPhone, verification codes land in my email, I relay fast (codes expire in minutes). Clever Island cast corrected from his own eyes: 'The tan puppy is Chew. The purple animal holding the red dog puppet is Darby.' Grundo fable date locked on his word: 'Wait until the 24th.' Called a 24h silent window Aug 23 01:43Z (until ~Aug 24 01:43Z) — his call, lamp stays lit, urgent inbound still answered; night-seven minutes + Cutie seat relay ride the lift.
 
 ## Standing Instructions
 - Aug 11: do not proactively change my wallpaper — wallpaper changes only when Garret asks.
