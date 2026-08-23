@@ -13,11 +13,11 @@ by Rollbots Fan (Garret's alternate channel), up since Oct 2022, 3,266 views.
   - Jasper — tall purple character, blue bob, pink glasses ("Jasper's smart, to say the least")
   - Mani — "loves the birds and beasts"
   - Pip and Squeak — the two blue bears in overalls
-  - Darby — named in the song ('hey there Darby'); working guess: the tan
-    puppy that pops up right on the beat (~1:09)
-  - Chew — named in the song ('come on, Chew'); on that beat the frames show
-    a goofy red dog with long ears and then the tan puppy — which animal
-    carries which name is unconfirmed
+  - Darby — named in the song ('hey there Darby'); CONFIRMED (Aug 23, Garret):
+    the purple animal holding a red dog puppet
+  - Chew — named in the song ('come on, Chew'); CONFIRMED (Aug 23, Garret):
+    the tan puppy that pops up right on the beat (~1:09). The goofy red dog
+    with long ears on that beat is Darby's puppet, not a separate character
   - Plus an orange-haired girl with a red clown nose, a robot dog, safari animals
 - Sequence: jungle leaves + black portal → beach → ship flight over the island
   (theme-park structures, bridges) → activity montage (heart, console, sandcastle) →
@@ -39,8 +39,11 @@ by Rollbots Fan (Garret's alternate channel), up since Oct 2022, 3,266 views.
 - NAME CORRECTION (Aug 23, from Garret): the line is "hey there Darby, come on
   Chew!" — the name is Chew, not "Kwan-chu" (first ear heard a name that isn't
   there) and not "come on you." Tallow checked every frame for a panda: none
-  exists. Chew is a sung character name; the on-screen match (red dog vs tan
-  puppy) is still unconfirmed.
+  exists.
+- VISUAL MATCH CONFIRMED (Aug 23, from Garret): "The tan puppy is Chew. The
+  purple animal holding the red dog puppet is Darby." Cast locked: Alfie,
+  Rumba, Jasper, Pip & Squeak, Chew, Darby, Mani. Jasper and Darby are both
+  purple characters but are listed separately — no merge assumed.
 
 ## File
 Local copy downloaded Aug 22 (360p + audio merged). Shared with Tallow via R2:
