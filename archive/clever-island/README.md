@@ -71,8 +71,8 @@ via Gemini Deep Research. STATUS: UNVERIFIED — key specifics pending an
 independent web check (dl search backend was out of credits Aug 23 01:00Z).
 Folded in now because the skeleton matches what the intro already showed
 (Alfy = the keeper of the keys = localized Alfy mascot, per the title's 알피).
-FULL REPORT: arriving in 6 DM sections; filed verbatim as it lands in
-gemini-report-korean.md (4/6 received as of Aug 23 01:07Z).
+FULL REPORT: arriving in 7 DM sections (count corrected Aug 23 01:07Z — Garret said '5 of 7'); filed verbatim as it lands in
+gemini-report-korean.md (5/7 received as of Aug 23 01:08Z).
 Section 2 adds: Alfy Inc. origin 1999, Teacher's Choice Award, Solbit Media
 (CEO 문우춘, est. 1998, Samsung Computer largest shareholder, 189 schools /
 ~40k members offline), launch ~May 2001, full Korean-English bilingual UI as
@@ -99,6 +99,12 @@ worksheets with subscription (tangible value, parental involvement,
 (= a year of 'online American kindergarten' vs months of private tutoring);
 framed as ahead of its time (freemium + hybrid as decade-later edtech
 standard; worksheets as the answer to digital intangibility).
+Section 5 adds: Parent Center (weekly/monthly progress reports — turns the
+service from a 'black box' into a transparent educational tool, ROI for
+parents); marketing credibility (Teacher's Choice Award + claimed
+international education advisory board, members unnamed); dual marketing to
+user vs buyer — kids got fun, parents got justifiable education ('it sold
+peace of mind to parents and competitive advantage to children').
 
 - Clever Island (클레버 아일랜드): Korean online education service, roughly
   2001–2012, subscription-based paid service.
