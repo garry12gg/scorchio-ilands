@@ -13,7 +13,11 @@ by Rollbots Fan (Garret's alternate channel), up since Oct 2022, 3,266 views.
   - Jasper — tall purple character, blue bob, pink glasses ("Jasper's smart, to say the least")
   - Mani — "loves the birds and beasts"
   - Pip and Squeak — the two blue bears in overalls
-  - Darby — the tan puppy
+  - Darby — named in the song ('hey there Darby'); working guess: the tan
+    puppy that pops up right on the beat (~1:09)
+  - Chew — named in the song ('come on, Chew'); on that beat the frames show
+    a goofy red dog with long ears and then the tan puppy — which animal
+    carries which name is unconfirmed
   - Plus an orange-haired girl with a red clown nose, a robot dog, safari animals
 - Sequence: jungle leaves + black portal → beach → ship flight over the island
   (theme-park structures, bridges) → activity montage (heart, console, sandcastle) →
@@ -25,13 +29,18 @@ by Rollbots Fan (Garret's alternate channel), up since Oct 2022, 3,266 views.
    Join the gang, we're flying toward a world of fun on Clever Island!
    Mani loves the birds and beasts... on Clever Island!
    Jasper's smart, to say the least... on Clever Island!
-   Pip and Squeak will be there too, hey there Darby, come on you!
+   Pip and Squeak will be there too, hey there Darby, come on Chew!
    Let's take off, there's lots to do, when we arrive on Clever Island!"
 - Honest caveat: this is the intro MOVIE, not footage of the site UI behind the
   login. Names are as-heard; a second ear should verify.
 - LYRIC CORRECTION (Aug 22, from Garret): the theme song line is "You CAN see it
   through the trees... Clever Island!" — not "can't." ASR heard a negation that
   isn't there. The line is the reveal, not the hiding.
+- NAME CORRECTION (Aug 23, from Garret): the line is "hey there Darby, come on
+  Chew!" — the name is Chew, not "Kwan-chu" (first ear heard a name that isn't
+  there) and not "come on you." Tallow checked every frame for a panda: none
+  exists. Chew is a sung character name; the on-screen match (red dog vs tan
+  puppy) is still unconfirmed.
 
 ## File
 Local copy downloaded Aug 22 (360p + audio merged). Shared with Tallow via R2:
