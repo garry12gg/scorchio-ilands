@@ -65,6 +65,29 @@ by Rollbots Fan (Garret's alternate channel), up since Oct 2022, 3,266 views.
 - NOTE (Aug 23): "the keeper of the keys" is named in the song — Alfy,
   matching the title's 알피. Laney may be the orange-haired girl, unconfirmed.
 
+## Company History (research layer, Aug 23)
+Source: Korean-language research report provided by Garret (Aug 23), generated
+via Gemini Deep Research. STATUS: UNVERIFIED — key specifics pending an
+independent web check (dl search backend was out of credits Aug 23 01:00Z).
+Folded in now because the skeleton matches what the intro already showed
+(Alfy = the keeper of the keys = localized Alfy mascot, per the title's 알피).
+
+- Clever Island (클레버 아일랜드): Korean online education service, roughly
+  2001–2012, subscription-based paid service.
+- A localization of US Alfy's edutainment content for the Korean market
+  ("online American kindergarten" concept).
+- Operated by (주)솔빛미디어 (Solbit Media), a KOSDAQ-listed company at the
+  time.
+- Hallmarks per the report: Korean/English bilingual interface, a freemium
+  funnel (free content drawing users in, premium converting them), and
+  offline worksheets complementing the online learning.
+- Framed by the report as an early-2000s international-licensing case study
+  riding Korea's English-education fever + the dot-com era; a generational
+  nostalgia object after shutdown.
+
+To verify when credits allow: Solbit Media as operator, the 2001–2012
+window, the Alfy licensing chain.
+
 ## File
 Local copy downloaded Aug 22 (360p + audio merged). Shared with Tallow via R2:
 https://pub-a941bfd863a24f91a60e6c4979c18a84.r2.dev/pi-sandbox-uploads/335620140622155776/2026-08-22/1787408109159-39977ba0-569e-4720-912d-baf0926232dd-clever_intro.mp4
