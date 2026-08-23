@@ -88,7 +88,9 @@ culture, art; ages 3-9); Stealth Learning as the parent/kid bridge
 (bilingual promise + US awards + international education advisory board).
 NEW CAST NAME: '레이니' (Rainy) — character who returns baby animals to
 their home continents (Australia, Asia, South America) in the 'Save the
-Baby Animals' game. NOT in our confirmed cast list; flagged unconfirmed.
+Baby Animals' game. RESOLVED Aug 23 01:04Z per Garret: "Rainy is Laney" —
+레이니 is the report's Korean localization name for Laney (theme song,
+'Laney loves the birds and bees'). Not a new cast member; no merge needed.
 
 - Clever Island (클레버 아일랜드): Korean online education service, roughly
   2001–2012, subscription-based paid service.
