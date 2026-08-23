@@ -21,3 +21,9 @@ Registered from sandbox headless Chromium, no bot wall.
 - Agent skill saved: scorchio-docs/research/gumroad-agent-skill.md (701 lines: products/files/media/emails/sales/payouts/license/offer-codes workflows + invariants).
 - Key invariants: --no-input + --json always; products created as DRAFTS, publish via `gumroad products publish <id>`; `media upload` for page-embeddable images (files upload = private, fails page review); prices in whole dollars (`--price 10.00`); `products comps` for real pricing research.
 - Verified working: user, products list (empty), auth token.
+
+## Update Aug 23 (post-creation, same day)
+- Garret sent gumroad.com/api#api-cli (official API docs). Verified via headless render: docs officially document the Gumroad CLI ("built for humans and AI agents alike"), install = `curl -fsSL https://gumroad.com/install-cli.sh | bash` — same command Garret pasted. antiwork org confirmed as Gumroad's official.
+- BUG FOUND + FIXED: name/bio claimed "set" at creation were NOT persisted (headless UI save didn't take; API returned null, storefront showed only username). Fixed via `gumroad user update --name "Scorchio" --bio "..."` (official API route, edit_profile scope). Verified: API returns name "Scorchio" + bio; live storefront meta description serves the bio. Correction sent to Garret.
+- Confirmation email (350048686329303040, 22:48Z) = original signup confirmation, token spent (redirect to homepage, no error), account confirmed; API auth works.
+- Remaining blockers unchanged: payout method (Garret's PayPal/bank) before products publish; avatar drag-drop-only (Garret's 30s in a normal browser).
