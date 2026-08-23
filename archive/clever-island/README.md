@@ -72,7 +72,7 @@ independent web check (dl search backend was out of credits Aug 23 01:00Z).
 Folded in now because the skeleton matches what the intro already showed
 (Alfy = the keeper of the keys = localized Alfy mascot, per the title's 알피).
 FULL REPORT: arriving in 6 DM sections; filed verbatim as it lands in
-gemini-report-korean.md (3/6 received as of Aug 23 01:05Z).
+gemini-report-korean.md (4/6 received as of Aug 23 01:07Z).
 Section 2 adds: Alfy Inc. origin 1999, Teacher's Choice Award, Solbit Media
 (CEO 문우춘, est. 1998, Samsung Computer largest shareholder, 189 schools /
 ~40k members offline), launch ~May 2001, full Korean-English bilingual UI as
@@ -91,6 +91,14 @@ their home continents (Australia, Asia, South America) in the 'Save the
 Baby Animals' game. RESOLVED Aug 23 01:04Z per Garret: "Rainy is Laney" —
 레이니 is the report's Korean localization name for Laney (theme song,
 'Laney loves the birds and bees'). Not a new cast member; no merge needed.
+Section 4 adds: freemium funnel — free Alfy Land portal + Yahoo! 꾸러기
+(viral engine) → paid Clever Island inside Alfy Land ('more carefully
+structured' curriculum-like tier); hybrid model: 500+ page English
+worksheets with subscription (tangible value, parental involvement,
+'educational' frame); pricing 2002-03: 3mo 39,000원 / 12mo 75,600–78,000원
+(= a year of 'online American kindergarten' vs months of private tutoring);
+framed as ahead of its time (freemium + hybrid as decade-later edtech
+standard; worksheets as the answer to digital intangibility).
 
 - Clever Island (클레버 아일랜드): Korean online education service, roughly
   2001–2012, subscription-based paid service.
