@@ -71,6 +71,14 @@ via Gemini Deep Research. STATUS: UNVERIFIED — key specifics pending an
 independent web check (dl search backend was out of credits Aug 23 01:00Z).
 Folded in now because the skeleton matches what the intro already showed
 (Alfy = the keeper of the keys = localized Alfy mascot, per the title's 알피).
+FULL REPORT: arriving in 6 DM sections; filed verbatim as it lands in
+gemini-report-korean.md (2/6 received as of Aug 23 01:05Z).
+Section 2 adds: Alfy Inc. origin 1999, Teacher's Choice Award, Solbit Media
+(CEO 문우춘, est. 1998, Samsung Computer largest shareholder, 189 schools /
+~40k members offline), launch ~May 2001, full Korean-English bilingual UI as
+the core value, sibling localizations (Japan クレバーアイランド, China,
+Israel, Germany), shutdown Dec 31 2012 tied to Yahoo! 꾸러기 end,
+www.mycleverisland.com / www.alfyland.com (both closed).
 
 - Clever Island (클레버 아일랜드): Korean online education service, roughly
   2001–2012, subscription-based paid service.
