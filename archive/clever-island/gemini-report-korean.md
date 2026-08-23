@@ -230,3 +230,17 @@ Read as research hypothesis, not fact, until verified.
 ---
 
 END OF REPORT (7/7)
+
+---
+
+## Addendum (received 2026-08-23 01:12Z, from Garret, after report completion)
+
+- The ENGLISH version of Clever Island shut down sometime in 2017.
+- Internet Archive (Wayback Machine) captures stop after November 2016 —
+  checkable citation for the service's end-of-life window.
+
+Note: the Gemini report covers the Korean service lifecycle (2001-2012). This
+addendum extends the record to the US/English side: it outlived the Korean
+service by roughly five years. The IA November 2016 cutoff is the natural
+upper bound for "still online" evidence; 2017 is Garret's dating of the
+shutdown.

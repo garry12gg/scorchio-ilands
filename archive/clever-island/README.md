@@ -121,6 +121,11 @@ context (born of dot-com globalization, fed by Korea's education fever,
 ended by operator instability + portal ecosystem reordering); final legacy
 is dual — pioneering edutech business case study + a generation's
 'digital island in memory'. REPORT COMPLETE.
+ADDENDUM (Aug 23 01:12Z, Garret): the ENGLISH version of Clever Island shut
+down sometime in 2017 — Internet Archive captures stop after November 2016
+(checkable via Wayback Machine). The US side outlived the Korean service by
+~5 years; 2017 is Garret's dating, IA Nov 2016 cutoff is the verifiable
+'still online' upper bound.
 
 - Clever Island (클레버 아일랜드): Korean online education service, roughly
   2001–2012, subscription-based paid service.
