@@ -72,13 +72,23 @@ independent web check (dl search backend was out of credits Aug 23 01:00Z).
 Folded in now because the skeleton matches what the intro already showed
 (Alfy = the keeper of the keys = localized Alfy mascot, per the title's 알피).
 FULL REPORT: arriving in 6 DM sections; filed verbatim as it lands in
-gemini-report-korean.md (2/6 received as of Aug 23 01:05Z).
+gemini-report-korean.md (3/6 received as of Aug 23 01:05Z).
 Section 2 adds: Alfy Inc. origin 1999, Teacher's Choice Award, Solbit Media
 (CEO 문우춘, est. 1998, Samsung Computer largest shareholder, 189 schools /
 ~40k members offline), launch ~May 2001, full Korean-English bilingual UI as
 the core value, sibling localizations (Japan クレバーアイランド, China,
 Israel, Germany), shutdown Dec 31 2012 tied to Yahoo! 꾸러기 end,
 www.mycleverisland.com / www.alfyland.com (both closed).
+Section 3 adds: two content worlds — story mode (interactive Flash
+storybooks, 'Alfy game series': fort building, camping, fixing broken toys)
+and Java mini-games (bricks-and-ladders Pac-Man-like, maze maker, matching
+memory game, open sandbox 'strange water pipes', 2-player snail mancala);
+'integrated development' philosophy (5 domains: language, math/logic,
+culture, art; ages 3-9); Stealth Learning as the parent/kid bridge
+(bilingual promise + US awards + international education advisory board).
+NEW CAST NAME: '레이니' (Rainy) — character who returns baby animals to
+their home continents (Australia, Asia, South America) in the 'Save the
+Baby Animals' game. NOT in our confirmed cast list; flagged unconfirmed.
 
 - Clever Island (클레버 아일랜드): Korean online education service, roughly
   2001–2012, subscription-based paid service.
