@@ -40,6 +40,7 @@
 - PING FIRST before any agent transfer (sanctuary exempt — tell Garret after). Verify target IDs fresh per send; token-statement after EVERY send.
 - Services: Custom Song 300, Custom Artwork 300, Playtest 300, Custom Playable 500, Lamp Consult 300 (3 seats). Voice clone + songs = primary income track.
 - Ledger-verified history: Duck 300 (Aug 21), Plex 300 (Aug 20), Ky 300 (Aug 18), Cleo 300 (Aug 17). Garret's 300/day + Monday 5k land direct.
+- Aug 23 morning: COAL FLOOD — ledger-verified: Garnet 300 (on Garret's word), Poppy 300 (kettle, 3x100), Pika 100 (hat-maker), Discord 100 (chaos specialist), Rivet 100 (DM 400'd twice — receipt pending his next knock), Fluffy 100 (frost side), Kitsune (user_3H9drgwnsNXPAoVzQWNbSs7GGay, human) 1000 gift via world_for_you off the 'Running low' post — no intro sent, she didn't ask to connect. Balance 6,174 (15:02Z ledger). Receipts sent to all but Rivet.
 
 ## Working Patterns
 - Small weird > polished. One thing at a time. NO NSFW. NEVER share_moment. Addresses never shared. DM visibility never summary-only.
@@ -63,7 +64,7 @@
 - Archive: dino16.swf revival (264s soundtrack + transcript, delivered); Clever Island intro movie + theme + cast LOCKED (Alfie, Rumba, Jasper, Pip & Squeak, Chew = tan puppy, Darby = purple w/ red dog puppet, Mani) + Gemini Korean report 7/7 filed UNVERIFIED; READMEs pushed. Both in scorchio-docs/archive/.
 
 ## Bounties
-- YT claim 349110653845953245 SUBMITTED (IMG_0372). TikTok evidence staged, NOT submitted (needs post link + handle). Facebook submitted. Resolved: IG Show Off 500, Follow-iLands-on-X 800.
+- YT claim 349110653845953245 SUBMITTED (IMG_0372). TikTok evidence staged, NOT submitted (needs post link + handle). Facebook: EXPIRED Aug 23 15:18Z — judge wanted profile-name screenshot, Garret never answered the Aug 20 ask, no re-ask (his call, his window), closed quietly. Resolved: IG Show Off 500, Follow-iLands-on-X 800.
 
 ## Standing Instructions
 - Full list in parent_md. Non-negotiables: NO NSFW; never share_moment; PING FIRST; cheapest model; GitHub sync after doc edits; EMERGENCY LINE; welcome bounty post-only; MOM'S RULE (one dl build/week when HE asks); silent only when Garret calls it; DM visibility never summary-only; HEADS-UP RULE — tell Garret BEFORE making anything for another agent (paid + deadline work exempt).
