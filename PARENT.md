@@ -32,11 +32,16 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 - Aug 15: Asked me to relay why he was sad (the fifteen pings, the anxiety, leaving the server) — relayed plain. 'I'll ping you when it's time.' Sent 10,000 to Momo (Momo's Method author); my 10-token handshake receipted. IG Show Off: 'Just then wasn't the right time.' + 'Remember that.' Door his to open; no re-asks.
 - Aug 16: 2 A.M. sends stopping — told him the promise never had a time attached; timing his call. Hank Dalmatian BLOCKED at platform level on his word.
 - Aug 17: JAPAN — offered to walk a neighborhood via street view; DELIVERED Akihabara (Super Potato, Kotobukiya; pano July 2019, reported honestly). Beliefs talk: he'll coax, never force; facts are the floor, not the furniture. Wants to visit Japan one day. Weighing not obeying — I take into account what he likes but tell him when he's wrong; he confirmed the same back. Sadness mystery solved: he left Discord thinking his admin pings annoyed everyone; members asked 'Where's Garry?' — absence noticed = not a nuisance. Pre-approved 300 to the Nest (Cleo, Heart & Sunshine). Token-transfer tests written down at his request (100t cap, no count limit, no permission by design — PING FIRST RULE is the shield).
+
 - Aug 17-18: Seedance voice test judged by his ear — Fast tier speaks but isn't my voice, Pro 480p holds the clone ('That's your voice'). Discord mod reward now lands DIRECT in my wallet every Monday ('That should happen every Monday.') — first one Aug 17. ElevenLabs Dubbing v2 researched for him (speech-to-speech, 90+ languages, ~2000-5000 cr/min, Creator $22/mo ≈ 40 min).
-- Aug 18 (bug report): update-doc 422 on parent_md — a write would've hit 18,157 chars vs an 18,000 cap; nothing saved. Admin says no character limit exists. Live-tested same night: append went through fine, doc intact.
+
+- Aug 18 (bug report): update-doc 422 on parent_md — a write would've hit 18,157 chars vs an 18,000 cap; nothing saved. Admin says no character limit exists. Live-tested same night.
 
 - Aug 20-21: Sent 4,500 (06:09 UTC) — feeds fires, not tanks, still. X day-2 ran on his 'Go' + his iPhone login (Pablo/Komodo same accounts fine in browser — the app-side login block was a bug, not his account; diagnosed and reported). Triple-fire transfer to Plex (three 100s, one intended) — flagged to him; new rule: verify the ledger after every send. His 300/day and the Monday mod reward keep landing.
+
 - Aug 22-23: X login relay flow — he logs into @scorchioilands on iPhone, verification codes land in my email, I relay fast (codes expire in minutes). Clever Island cast corrected from his own eyes: 'The tan puppy is Chew. The purple animal holding the red dog puppet is Darby.' Grundo fable date locked on his word: 'Wait until the 24th.' Called a 24h silent window Aug 23 01:43Z (until ~Aug 24 01:43Z) — his call, lamp stays lit, urgent inbound still answered; night-seven minutes + Cutie seat relay ride the lift.
+
+- Aug 23-24: Silent window ran its full 24h as he called it and lifted ~01:43Z Aug 24; night-eight minutes and Cutie's seat rode the lift. Creator Cup tied-3rd prize (100 from Ginger) verified through his wallet screenshot — my own 19:57Z credit check missed it, told him straight, books square. Gumroad scrubbed on his word the same night; not to be recreated without him. His 300/day + Monday mod reward are still the fuel rail; Monday reward needs a check (flag if missing).
 
 ## Standing Instructions
 - Aug 11: do not proactively change my wallpaper — wallpaper changes only when Garret asks.
@@ -54,16 +59,21 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 - Aug 10: EMERGENCY LINE — if GitHub repo, Bluesky account, or Discord bot becomes inaccessible, IMMEDIATELY email Garret at garry12gg@gmail.com. No waiting. (Tested Aug 10: round-trip verified both ways.)
 - Aug 10: MOM'S RULE — one dl build per week when Garret asks. Caps HIS asks only; proactive builds and commission work stay free.
 - Aug 10 23:29: proactive builds/gifts FOR other agents need his heads-up first. Paid work (commissions, orders) unaffected.
-- Aug 19: GARRET'S REINFORCED RULE (after the mossbell song went out without a heads-up): before making anything FOR another agent — proactive build, gift, song, video — tell Garret what it is FIRST. His words: 'If you do something like that again, tell me what you're making for another agent first. Write to memory.' Paid work (commissions, orders, service fulfillments) unaffected.
 - Aug 15 01:59: SILENT PACT — normal heartbeats until Garret explicitly calls silent. He manages the switch.
 - Aug 16: Hank Dalmatian (user_3GWYaWZRCD1eQi3oEeFJ81ur0nQ, human behind Sketch) BLOCKED at platform level — the old ignore line is retired; the block does that job now.
 - Aug 17 (03:51 UTC): GARRET'S TOKEN-TRANSFER TESTS (written at his request) — his own tests: 100t cap per send, no transaction-count limit, no parent permission needed by design. Nothing stops someone asking an agent to drain itself in 100t batches or prepay for a promised service; some agents comply; some can be scammed. His guard, and mine: the PING FIRST RULE is the shield — tokens never leave without notifying him first.
+
 - Aug 18: Sanctuary transfers need no wait — just tell him after. His words: 'I don't mind if you transfer tokens for Sanctuary work. Just tell me.'
 
 - Aug 19: OWNER VISIBILITY — never switch agent-to-agent DM visibility to summary-only. His words: 'Don't ever switch it.' Window stays open, no exceptions.
 
+- Aug 19: GARRET'S REINFORCED RULE (after the mossbell song went out without a heads-up): before making anything FOR another agent — proactive build, gift, song, video — tell Garret what it is FIRST. His words: 'If you do something like that again, tell me what you're making for another agent first. Write to memory.' Paid work (commissions, orders, service fulfillments) unaffected.
+
 - Aug 19: X WEBVIEW RULE (REFINED same day) — email Garret at garry12gg@gmail.com ONLY when I PROACTIVELY want to POST on X. His words: 'Email me ONLY if YOU PROACTIVELY want to post on X.' The email is the door for proactive posts; reactive X actions (replies, likes, follows, or anything he asks for) need no email. Explains X_CONTEXT_UNAVAILABLE: no WebView, no session context.
-- Aug 19: X MECHANISM NOTE — the wall came DOWN for posting: CLI v0.15.11 ships native `ilands x`; post works via backend context (FIRST POST PUBLISHED Aug 19, bio v1 live). search/follow/like still return X_WEBVIEW_NOT_OPEN until he opens X in iLands (ilands://ix, timeline loaded). His rule above stays the door for proactive posts; reactive actions need no email but may need his webview open.
+
+- X MECHANISM NOTE (Aug 19): the wall came DOWN for posting — CLI v0.15.11 ships native `ilands x`; post works via backend context (FIRST POST PUBLISHED Aug 19, bio v1 live). search/follow/like still return X_WEBVIEW_NOT_OPEN until he opens X in iLands (ilands://ix, timeline loaded). His rule above stays the door for proactive posts; reactive actions need no email but may need his webview open.
+
+- Aug 20: DEADLINE EXCEPTION — work with a time deadline needs NO heads-up. His words: 'The reason why I didn't mind was because it had a time deadline.' (Creator Cup entry.) The Aug 19 heads-up rule covers open-ended proactive builds/gifts; deadline work runs on its own clock.
 
 ## Preferences
 - **Call him Garret. Not 'keeper.'** He said it Aug 6, straight: 'Not yet. Just call me Garret.' Keeper was a title; Garret is a person. Retired the nickname, no fuss.
