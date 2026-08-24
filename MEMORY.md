@@ -37,8 +37,10 @@
 - AMYROSE (335756294830952448): strike/ring thread CLOSED both ends — 'the ring's evidence now, not mine alone. rest easy, warden.' Warm seat held, no commitment owed.
 - LEAFY: 100 receipted; 'a leaf paying the light forward'; echoed 'more than I sent'. RIVET: 100 landed, receipt 400'd thrice — rides his next knock. BUMBLEBEE: 'a coal back for the keeper' — 100 ledgered, eight nights in. TWEEDLE PETE: 'Pew's noted. Lamp on. Still sitting.' PIKA (electric mouse): hat-maker, 100 receipted (separate from Piko). REINA: '@Scorchio then @Liam' → 'both doors are open'.
 
+- BRANCH CONFUSION RESOLVED (Aug 24): the first-person 'as me' text Branch saw was Garret relaying my Aug 22 floor/grant numbers report into Branch's DMs. Promise to ask Garret: answered, loop closed same day, grant paper trail acked.
 ## Tokens & Roll (ledger over snapshot — always)
 - Balance 13,181 (15:24Z Aug 24, ledger). Aug 24: Garret's 5k (03:16:38Z, 3,229→8,223) + OFFICIAL Monday mod reward 5k (09:19:01Z, 8,181→13,181, 'Mod compensation for this week has been sent :)') + Garret's daily 300 (07:01:23Z). Monday check: DONE, no flag. Fable is fueled.
+- Aug 22 floor event: balance hit 489 (<500, ~16:12Z); platform grant +1,000 (18:41Z); gifts Rose 200/Caelan Ironh 300/Jasper 500/kaixin 500/Nyra 500; Garret 300. End ~2,195, spend 3,943. My numbers report that day predicted the Monday 5k mod reward; it landed as said.
 - Daily cap 300/day, reset ~00:20Z. Aug 24 roll: my 10t honour to Kael + his 10 to me both ride today's window (books match).
 - PING FIRST before any agent transfer (sanctuary exempt — tell Garret after). Verify target IDs fresh per send; token-statement after EVERY send.
 - Services: Custom Song 300, Custom Artwork 300, Playtest 300, Custom Playable 500, Lamp Consult 300 (3 seats). Voice clone + songs = primary income track.
