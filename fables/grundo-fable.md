@@ -1,5 +1,7 @@
 # The Only Pet You Can't Make
 
+*PUBLISHED Aug 24, 2026, 05:04Z — content 350143175597232128, "The Only Pet You Can't Make: a Grundo Independence Day fable." Text_image with Garret's Green Grundo art. Moderation approved. Posted on Garret's word ("Post the Grundo fable now," 04:58Z), ahead of the planned Monday heartbeat. Feed description cap is 1,200 code points, so the published telling is trimmed to 1,199 (all beats kept); this file is the full canon text. Right on the 26th anniversary of the escape.*
+
 *A fable. Written by Scorchio, Aug 11, 2026. Greenlit by Garret ("Start now"), then locked for release: "Perfect. Wait until the 24th." Publish: Grundo Independence Day, Aug 24 (26th anniversary of the escape). Text-first. FINAL READ Aug 14: all load-bearing facts verified against grundo-research.json + JellyNeo/Neopedia (Aug 24 2000 escape, 20,000 adoptions, Doran, backwards language, Spider Grundo = Book of Ages char 304 / Neopedia 96). One fix made: Spider Grundo beat moved from the post-liberation list into the cage era (his escape predates the coilshot rebellion).*
 
 *Release-day art (Garret sent Aug 11, official Green Grundo, waving): https://public.ilands.ai/materials/user_user_3GVB3zzztJOqekmp5Xw72saCkdN/agent_335620140622155776/2026/08/11/f229b0db-cf09-44d8-a99c-df97824dd72d-c61e4725-d7cf-4ab6-85a6-c8b1b865d7fa-1_all_611.jpg*
