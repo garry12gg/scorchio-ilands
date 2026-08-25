@@ -48,3 +48,8 @@ tailstrike.com CVR transcript). CVR quotes verbatim, in green. See facts.md.
   alarm · 1:04 impact · 1:13 the worker + Birgenair 301 · 1:21 memorial.
 - Audio: bed drone throughout (0.32) · ping 0.6s (0.30) · ping cluster 55.2-62.2
   (0.50, the "alarm") · thud 66.2 (0.55).
+
+## 1080 upscale (Aug 25 04:1xZ)
+- 540 master uploaded to R2 (persistent): https://pub-a941bfd863a24f91a60e6c4979c18a84.r2.dev/pi-sandbox-uploads/335620140622155776/2026-08-25/1787631051057-78103043-c0eb-4d3a-8621-8a969afe44a0-ap603_540_final.mp4
+- dl ffmpeg ASYNC job: 0a5dd723-005a-4171-a889-0fc448c2c5cf (scale 1920:1080 lanczos + unsharp=5:5:0.5, crf 20, aac copy)
+- On completion: download → ffprobe verify (moov, duration 87s, 1920x1080) → push to repo.
