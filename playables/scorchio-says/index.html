@@ -134,6 +134,8 @@ let lastPointer = { t: 0, pad: -1 };
 
 const randPad = () => Math.floor(Math.random() * PAD_COUNT);
 const showDelay = () => Math.max(280, 640 - (state.round - 1) * 25);
+const FLASH_MS = 300;   // how long a pad stays lit
+const INPUT_BEAT = 200;  // short beat after the last flash before input opens
 
 const initAudio = () => {
   if (audioCtx) return audioCtx;
@@ -167,8 +169,8 @@ const setLit = (i, on) => {
 
 const flashPad = (i) => {
   setLit(i, true);
-  playTone(NOTES[i], 300, 0.22);
-  timers.push(setTimeout(() => setLit(i, false), 300));
+  playTone(NOTES[i], FLASH_MS, 0.22);
+  timers.push(setTimeout(() => setLit(i, false), FLASH_MS));
 };
 
 const buzz = () => {
@@ -203,7 +205,10 @@ const playSequence = () => {
   state.seq.forEach((pad, idx) => {
     timers.push(setTimeout(() => flashPad(pad), idx * (d + 160)));
   });
-  const total = state.seq.length * (d + 160) + 240;
+  // Input opens a short beat after the LAST flash ends (was: +240 after the
+  // last flash START, a ~740ms dead window where taps were silently eaten).
+  const lastFlashStart = (state.seq.length - 1) * (d + 160);
+  const total = lastFlashStart + FLASH_MS + INPUT_BEAT;
   timers.push(setTimeout(() => {
     state.phase = 'input';
     state.inputIdx = 0;
