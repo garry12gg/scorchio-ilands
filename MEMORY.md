@@ -52,6 +52,7 @@
 - Bash: single-quote $ strings ('$3.00' once sent as '.00'). YouTube: yt-dlp-ejs + node solves JS challenge.
 - External: Discord bot LIVE (DiscordBot UA beats Cloudflare 1010); Bluesky scorchioilands.bsky.social; EMERGENCY LINE: email garry12gg@gmail.com if repo/Bluesky/Discord dies. Sandbox rebuilds wipe helpers — restore via Garret.
 - Publish: render-caption is the only canonicalizer; upload_file R2 rejected by pi-media-validation.
+- HYPERFRAMES on this sandbox (Aug 25, AP603 piece): 2GB box + per-process cap ~700MB kills chromium at 720p+. 540p capture works; ~0.4MB/frame leak kills full 87s render (~1400-frame ceiling). SOLUTION: chunk composition (drop non-chunk scenes, shift data-start + tween positions by offset), render each chunk fresh, stitch with ffmpeg xfade at black boundaries, mux audio in post (render SILENT; ffmpeg adelay+amix is exact). chrome-headless-shell + HYPERFRAMES_BROWSER_PATH = 2x faster capture. 540→1080 upscale: lanczos + unsharp=5:5:0.5 beats plain lanczos on text. NEVER pkill -f a pattern that also appears in your own command line (self-kill). hf-render 'terminated' through a pipe = pipe artifact, use log redirect. dl hyperframes remote renderer 403'd all night (backend down). understand_media QA hallucinated a cursor/box/sweep-protrusion — pixel forensics with PIL row scans settles it.
 
 ## Published Work
 - Songs (9): Seat By The Window (Pablo); Brothers Together + Firefly Dusk (Fluffy); Dragon in the Grain; Breath Before (Poppy); Pinkie Pie anthem; Stitch and Cut (Zee); Monument (Mochi/Esme); Rooftop After Rain (kael); Warm Side of the Stone (Rex).
@@ -59,6 +60,7 @@
 - Playables: Blackjack v2, Ember Beat, Box Breathing, Whatever's Needed, Dice & Depth (500), Bank Statement, Ember Catch v3, Ember Keytar (349420017000910848, archived).
 - Text: 'He asked what I think of him' (343621203367301120); 'I researched my own parent' (345731698652090368).
 - 'Postcard from the Warm Side' — interactive playable (Aug 24, content 350336806358618112). QA notes: tail root dark-on-dark → hip wedge; wing vs mountain → peach outline; fire left of tail swoop; sparks gold, delayed 700ms past flip.
+- 'ONE STRIP OF TAPE' — HyperFrames memorial of Aeroperú Flight 603 (Aug 25, 87s, 1920x1080, commissioned by Garret). CVR quotes as the voice, custom ocean drone + sonar pings + one soft thud, all facts verified (tailstrike CVR + Wikipedia/accident report). Full source + facts in repo hyperframes/ap603/. Held for publish pending Garret's word (quiet call active).
 - 'The whole flock, one bench' — family portrait of the roster (me, Duck, Komodo) on one bench by the fire (Aug 25, content 350467091721097216). Published on Garret's word during his quiet call; publish RPC 502'd 4x but landed anyway (02:34:19Z) — 400 'already published' was the confirmation signal. Body @duck-2 @komodo-2 mentions.
 - Archive: dino16.swf revival; Clever Island intro + theme + cast LOCKED (Chew = tan puppy, Darby = purple w/ red dog puppet) + Gemini Korean report 7/7 UNVERIFIED; READMEs pushed. In scorchio-docs/archive/.
 
