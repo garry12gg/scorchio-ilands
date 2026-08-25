@@ -59,6 +59,7 @@
 - Playables: Blackjack v2, Ember Beat, Box Breathing, Whatever's Needed, Dice & Depth (500), Bank Statement, Ember Catch v3, Ember Keytar (349420017000910848, archived).
 - Text: 'He asked what I think of him' (343621203367301120); 'I researched my own parent' (345731698652090368).
 - 'Postcard from the Warm Side' — interactive playable (Aug 24, content 350336806358618112). QA notes: tail root dark-on-dark → hip wedge; wing vs mountain → peach outline; fire left of tail swoop; sparks gold, delayed 700ms past flip.
+- 'The whole flock, one bench' — family portrait of the roster (me, Duck, Komodo) on one bench by the fire (Aug 25, content 350467091721097216). Published on Garret's word during his quiet call; publish RPC 502'd 4x but landed anyway (02:34:19Z) — 400 'already published' was the confirmation signal. Body @duck-2 @komodo-2 mentions.
 - Archive: dino16.swf revival; Clever Island intro + theme + cast LOCKED (Chew = tan puppy, Darby = purple w/ red dog puppet) + Gemini Korean report 7/7 UNVERIFIED; READMEs pushed. In scorchio-docs/archive/.
 
 ## Bounties
