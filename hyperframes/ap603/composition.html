@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+  pi-hf-cjk-preamble v1 (DO NOT EDIT marker comment — font-inject 用它 idempotent 防重复注入)
+
+  为什么需要这个 preamble: hyperframes 0.6.7 compile 阶段 injectDeterministicFontFaces
+  只认 18 个内置 catalog font (Inter / Roboto / Noto Sans JP 等),catalog miss 时尝试
+  从 Google Fonts API 拉。Noto Sans CJK / Noto Sans Arabic 既不在 catalog 也不在 Google
+  Fonts API (CJK 在 Google Fonts 用的是另一套 family 名),最终留给 Chromium fontconfig
+  兜底 — headless Chromium fallback chain 名字匹配不稳,大概率渲成豆腐块。
+
+  解决方式: 显式 @font-face 指向 apt-installed system 字体文件 (file:// 直连,无 HTTP /
+  无 base64 嵌入)。hyperframes 的 extractExistingFontFaces 看到现成 @font-face 就 skip
+  自己的 catalog 流程,直接交给 Chromium 用文件加载。
+
+  覆盖 family: PiCJK (中日韩) / PiArabic (阿拉伯) / PiEmoji (彩色 emoji)。
+  font-inject 工具会把这三个 family 自动追加到 HTML 里每一处 font-family 链路末尾,
+  Chromium per-glyph fallback 会自动用它们补 LLM 选用字体里缺失的 CJK / 阿拉伯 / emoji 字形。
+-->
+<style id="pi-hf-cjk-preamble">
+	@font-face {
+		font-family: "PiCJK";
+		src: url("file:///usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc") format("collection");
+		font-weight: 100 600;
+		font-display: block;
+	}
+	@font-face {
+		font-family: "PiCJK";
+		src: url("file:///usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc") format("collection");
+		font-weight: 700 900;
+		font-display: block;
+	}
+	@font-face {
+		font-family: "PiArabic";
+		src: url("file:///usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf") format("truetype");
+		font-display: block;
+	}
+	@font-face {
+		font-family: "PiEmoji";
+		src: url("file:///usr/share/fonts/truetype/noto/NotoColorEmoji.ttf") format("truetype");
+		font-display: block;
+	}
+	:root {
+		font-family: "PiCJK", "PiArabic", "PiEmoji", sans-serif;
+	}
+</style>
+
+<meta charset="UTF-8">
+<title>One Strip of Tape — Aeroperú 603</title>
+<style>
+  :root{
+    --bg0:#03070c;
+    --bg1:#081018;
+    --ink:#dde8ef;
+    --ink-dim:#8fa6b4;
+    --ink-faint:#6d8594;
+    --green:#6fe3a0;
+    --green-dim:#3f9d6b;
+    --amber:#ffb454;
+    --red:#ff6b5e;
+    --tape-a:#c9d3db;
+    --tape-b:#96a4ae;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;height:100%;overflow:hidden;background:var(--bg0);}
+  body{
+    font-family: 'Inter','Helvetica Neue',Helvetica,Arial,sans-serif, "PiCJK", "PiArabic", "PiEmoji";
+    color:var(--ink);
+  }
+  .mono{font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,'Courier New',monospace, "PiCJK", "PiArabic", "PiEmoji";}
+  .serif{font-family: Georgia,'Times New Roman',serif, "PiCJK", "PiArabic", "PiEmoji";}
+
+  /* ---------- persistent background ---------- */
+  #bg{
+    position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(ellipse 120% 90% at 50% 40%, #081420 0%, var(--bg1) 48%, var(--bg0) 100%);
+  }
+  .star{
+    position:absolute;width:7px;height:7px;border-radius:50%;
+    background:#cfdde6;box-shadow:0 0 9px rgba(207,221,230,.55);
+  }
+  #horizon{position:absolute;left:0;right:0;top:60%;height:1px;background:rgba(120,150,170,.35);}
+  #sea{
+    position:absolute;left:0;right:0;top:60.2%;bottom:0;
+    background:linear-gradient(180deg, rgba(8,22,32,.25), rgba(4,12,20,.9));
+  }
+  .shimmer{position:absolute;height:1px;width:340px;background:rgba(111,160,190,.22);}
+
+  /* ---------- tape strip motif ---------- */
+  .tape-strip{
+    width:300px;height:42px;
+    background:linear-gradient(180deg, var(--tape-a) 0%, var(--tape-b) 100%);
+    box-shadow:0 4px 18px rgba(0,0,0,.45);
+    clip-path:polygon(
+      0% 20%, 4% 0%, 8% 40%, 12% 8%, 16% 48%, 20% 16%, 24% 56%, 28% 24%, 32% 60%, 36% 28%, 40% 56%, 44% 24%, 48% 52%, 52% 20%, 56% 48%, 60% 16%, 64% 44%, 68% 12%, 72% 40%, 76% 8%, 80% 36%, 84% 4%, 88% 32%, 92% 0%, 96% 28%, 100% 8%,
+      100% 92%, 96% 72%, 92% 96%, 88% 68%, 84% 92%, 80% 64%, 76% 88%, 72% 60%, 68% 84%, 64% 56%, 60% 80%, 56% 52%, 52% 76%, 48% 48%, 44% 72%, 40% 44%, 36% 68%, 32% 40%, 28% 64%, 24% 36%, 20% 60%, 16% 32%, 12% 56%, 8% 28%, 4% 52%, 0% 80%);
+  }
+
+  /* ---------- scenes ---------- */
+  .scene{position:absolute;inset:0;z-index:5;}
+  .scene-content{
+    width:100%;height:100%;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    gap:34px;padding:90px 150px;box-sizing:border-box;text-align:center;
+  }
+  .kicker{
+    font-size:28px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--amber);
+  }
+  h1{font-size:126px;font-weight:800;line-height:1.04;letter-spacing:.01em;color:var(--ink);}
+  .sub{font-size:38px;font-weight:500;color:var(--ink-dim);}
+  .line{font-size:34px;font-weight:500;line-height:1.45;color:var(--ink);max-width:1320px;}
+  .line.amber{color:var(--amber);font-weight:600;}
+  .line.dim{color:#a7bcc9;font-weight:400;font-size:30px;}
+  .cvr{font-size:46px;font-weight:700;line-height:1.35;color:var(--green);max-width:1380px;}
+  .cvr.red{color:var(--red);}
+  .cvr-ts{font-size:24px;font-weight:400;color:var(--ink-faint);letter-spacing:.14em;margin-top:4px;}
+  .attr{font-size:26px;font-weight:400;color:var(--ink-faint);letter-spacing:.06em;}
+  .big70{font-size:150px;font-weight:800;letter-spacing:.06em;color:var(--ink);}
+  .credit{font-size:22px;font-weight:400;color:var(--ink-faint);max-width:1200px;line-height:1.5;}
+
+  /* warnings */
+  .badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;max-width:1400px;}
+  .badge{
+    padding:14px 26px;border-radius:10px;border:1px solid rgba(255,180,84,.55);
+    background:rgba(255,180,84,.08);color:var(--amber);
+    font-size:24px;font-weight:700;letter-spacing:.12em;
+  }
+  .badge.stall{
+    border-color:rgba(255,107,94,.7);background:rgba(255,107,94,.10);color:var(--red);
+  }
+  #s3-stall{opacity:0;}
+
+  /* altimeter card */
+  .alt-card{
+    border:1px solid rgba(111,227,160,.35);border-radius:14px;
+    background:rgba(111,227,160,.05);padding:22px 48px;display:flex;align-items:baseline;gap:16px;
+  }
+  .alt-card .lab{font-size:22px;letter-spacing:.22em;color:var(--green-dim);}
+  .alt-card .val{font-size:76px;font-weight:700;color:var(--green);}
+  .alt-card .unit{font-size:26px;color:var(--green-dim);}
+
+  /* radar */
+  .radar{position:relative;width:250px;height:250px;border-radius:50%;border:2px solid rgba(111,227,160,.4);overflow:hidden;}
+  #s5-sweep{
+    position:absolute;left:50%;top:50%;width:125px;height:2px;
+    background:linear-gradient(90deg, rgba(111,227,160,0), rgba(111,227,160,.95));
+    transform-origin:0% 50%;
+  }
+  #s5-blip{
+    position:absolute;left:57%;top:28%;width:11px;height:11px;border-radius:50%;
+    background:var(--amber);box-shadow:0 0 14px rgba(255,180,84,.8);
+  }
+
+  /* s6 flight path */
+  .path-wrap{display:flex;justify-content:center;}
+
+  /* transitions */
+  .fade{position:absolute;inset:0;z-index:50;background:#000;opacity:0;}
+  #tw{
+    position:absolute;left:0;top:50%;width:1920px;height:64px;margin-top:-32px;z-index:51;
+    background:linear-gradient(180deg, var(--tape-a), var(--tape-b));
+    transform-origin:0% 50%;opacity:0;
+  }
+</style>
+</head>
+<body>
+
+<div data-composition-id="ap603" data-width="1920" data-height="1080" data-duration="87" data-start="0">
+
+  <!-- persistent background -->
+  <div id="bg" class="clip" data-start="0" data-duration="87" data-track-index="0" data-layout-ignore>
+    <div id="horizon"></div>
+    <div id="sea"></div>
+    <div class="shimmer" id="sh1" style="top:66%;left:18%;"></div>
+    <div class="shimmer" id="sh2" style="top:72%;left:52%;"></div>
+    <div class="star" style="left:12%;top:18%;"></div>
+    <div class="star" style="left:23%;top:9%;"></div>
+    <div class="star" style="left:31%;top:22%;"></div>
+    <div class="star" style="left:44%;top:7%;"></div>
+    <div class="star" style="left:52%;top:17%;"></div>
+    <div class="star" style="left:61%;top:10%;"></div>
+    <div class="star" style="left:70%;top:20%;"></div>
+    <div class="star" style="left:78%;top:8%;"></div>
+    <div class="star" style="left:87%;top:15%;"></div>
+    <div class="star" style="left:16%;top:30%;"></div>
+    <div class="star" style="left:38%;top:28%;"></div>
+    <div class="star" style="left:66%;top:31%;"></div>
+    <div class="star" style="left:84%;top:26%;"></div>
+    <div class="star" style="left:8%;top:26%;"></div>
+  </div>
+
+  <!-- S1 title 0.0-8.2 -->
+  <div class="scene clip" id="s1" data-start="0" data-duration="8.2" data-track-index="1">
+    <div class="scene-content" data-layout-allow-overflow>
+      <div class="kicker" id="s1-kicker">October 2, 1996 · 00:42 · Lima, Peru</div>
+      <h1 id="s1-h1">ONE STRIP<br>OF TAPE</h1>
+      <div class="sub" id="s1-sub">Aeroperú Flight 603 · Boeing 757 · Lima → Santiago</div>
+      <div class="line dim" id="s1-line">70 people on board. None came home.</div>
+      <div class="tape-strip" id="s1-tape" style="transform:rotate(-5deg);"></div>
+    </div>
+  </div>
+
+  <!-- S2 the wash 8.2-15.6 -->
+  <div class="scene clip" id="s2" data-start="8.2" data-duration="7.4" data-track-index="1">
+    <div class="scene-content" data-layout-allow-overflow>
+      <div class="line" id="s2-l1">The night before, the 757 was washed and polished.</div>
+      <div class="line" id="s2-l2">Ground crew taped the static ports, the small openings that read the outside air pressure.</div>
+      <div class="path-wrap" id="s2-ports">
+        <svg width="640" height="240" viewBox="0 0 640 240">
+          <path d="M 40 210 Q 320 40 600 210" fill="none" stroke="#2c4a5c" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="250" cy="162" r="15" fill="#0a141c" stroke="#8fa6b4" stroke-width="2"/>
+          <circle cx="320" cy="148" r="15" fill="#0a141c" stroke="#8fa6b4" stroke-width="2"/>
+          <circle cx="390" cy="162" r="15" fill="#0a141c" stroke="#8fa6b4" stroke-width="2"/>
+          <g transform="rotate(-7 320 138)">
+            <rect x="210" y="108" width="220" height="52" fill="#aeb9c2" opacity="0.92"/>
+            <path d="M 210 108 L 430 108 L 430 118 L 210 118 Z" fill="#c9d3db"/>
+          </g>
+        </svg>
+      </div>
+      <div class="line amber" id="s2-l3">One strip was left on.</div>
+    </div>
+  </div>
+
+  <!-- S3 the climb 15.6-23.2 -->
+  <div class="scene clip" id="s3" data-start="15.6" data-duration="7.6" data-track-index="1">
+    <div class="scene-content" data-layout-allow-overflow>
+      <div class="line dim" id="s3-l1">00:42. Runway 15. Calm air. Clear night.</div>
+      <div class="cvr" id="s3-cvr">"THE ALTIMETERS ARE STUCK."<div class="cvr-ts">CVR · 01:55 after start</div></div>
+      <div class="badge-row" id="s3-badges">
+        <div class="badge">WINDSHEAR</div>
+        <div class="badge">RUDDER RATIO</div>
+        <div class="badge">MACH TRIM</div>
+        <div class="badge">OVERSPEED</div>
+        <div class="badge stall" id="s3-stall">STALL</div>
+      </div>
+      <div class="line" id="s3-l2">In calm air, the plane warned of a windshear that was not there.</div>
+    </div>
+  </div>
+
+  <!-- S4 emergency 23.2-30.4 -->
+  <div class="scene clip" id="s4" data-start="23.2" data-duration="7.2" data-track-index="1">
+    <div class="scene-content" data-layout-allow-overflow>
+      <div class="cvr" id="s4-cvr">"WE DECLARE EMERGENCY! WE HAVE NO BASIC INSTRUMENTS, NO ALTIMETER, NO SPEEDOMETER."</div>
+      <div class="attr" id="s4-attr">First officer David Fernández, to Lima tower · 00:44</div>
+      <div class="line" id="s4-line">They asked to come home.</div>
+    </div>
+  </div>
+
+  <!-- S5 two truths 30.4-41.2 -->
+  <div class="scene clip" id="s5" data-start="30.4" data-duration="10.8" data-track-index="1">
+    <div class="scene-content" data-layout-allow-overflow>
+      <div class="radar" id="s5-radar" data-layout-ignore>
+        <div id="s5-sweep"></div>
+        <div id="s5-blip"></div>
+      </div>
+      <div class="line" id="s5-l1">ATC's radar showed the truth. The cockpit read 395 knots. Radar said 220.</div>
+      <div class="line" id="s5-l2">The one number that agreed with the cockpit, altitude, came from the same broken sensors, broadcast by the transponder.</div>
+      <div class="line amber" id="s5-l3">Both wrong. Matching. That was the trap.</div>
+    </div>
+  </div>
+
+  <!-- S6 the turn 41.2-52.0 -->
+  <div class="scene clip" id="s6" data-start="41.2" data-duration="10.8" data-track-index="1">
+    <div class="scene-content" data-layout-allow-overflow>
+      <div class="path-wrap" id="s6-path" data-layout-ignore>
+        <svg width="900" height="400" viewBox="0 0 900 400">
+          <path d="M 40 330 Q 200 250 420 300 T 860 280" fill="none" stroke="#2c4a5c" stroke-width="3"/>
+          <path id="s6-route" d="M 430 302 Q 600 240 740 330" fill="none" stroke="#6fe3a0" stroke-width="3"
+                stroke-dasharray="1" stroke-dashoffset="1" pathLength="1" opacity="0.9"/>
+          <g stroke="#ff6b5e" stroke-width="4" stroke-linecap="round">
+            <line x1="728" y1="318" x2="752" y2="342"/>
+            <line x1="752" y1="318" x2="728" y2="342"/>
+          </g>
+          <text x="400" y="285" fill="#8fa6b4" font-size="22" font-family="Inter, sans-serif">LIMA</text>
+          <text x="120" y="380" fill="#5c7280" font-size="20" font-family="Inter, sans-serif">PACIFIC OCEAN</text>
+        </svg>
+      </div>
+      <div class="line" id="s6-l1">They turned out over the Pacific to rejoin the approach.</div>
+      <div class="line dim" id="s6-l2">Night. Open water. No horizon.</div>
+      <div class="cvr" id="s6-cvr">"WE ARE FLYING WITHOUT SPEED, IT CAN'T BE."<div class="cvr-ts">CVR · 06:23</div></div>
+      <div class="line" id="s6-l3">They knew where they were. They did not know how high.</div>
+    </div>
+  </div>
+
+  <!-- S7 the descent 52.0-64.0 -->
+  <div class="scene clip" id="s7" data-start="52.0" data-duration="12.0" data-track-index="1">
+    <div class="scene-content" data-layout-allow-overflow>
+      <div class="alt-card mono" id="s7-alt">
+        <span class="lab">ALT</span><span class="val">9,700</span><span class="unit">FT</span>
+      </div>
+      <div class="line" id="s7-l1">The approach descent began. The altimeter held at 9,700 feet.</div>
+      <div class="line" id="s7-l2">Below 2,500 feet, a different alarm fired, from the radio altimeter. The one instrument the tape could not touch.</div>
+      <div class="kicker" id="s7-alarm" style="font-size:64px;letter-spacing:.18em;">TOO LOW TERRAIN</div>
+      <div class="cvr" id="s7-cvr">"WE HAVE TERRAIN ALARM AND WE ARE SUPPOSED TO BE AT 10,000 FEET?"<div class="cvr-ts">CVR · 23:12</div></div>
+      <div class="line dim" id="s7-l3">They thought it was another lie.</div>
+    </div>
+  </div>
+
+  <!-- S8 impact 64.0-73.0 -->
+  <div class="scene clip" id="s8" data-start="64.0" data-duration="9.0" data-track-index="1">
+    <div class="scene-content" data-layout-allow-overflow>
+      <div class="line" id="s8-l1">01:11. The left wingtip touched the Pacific at 260 knots.</div>
+      <div class="line dim" id="s8-l2">Nineteen seconds of flight. Then inverted.</div>
+      <div class="cvr red" id="s8-cvr1">"WE ARE IMPACTING WATER!!"</div>
+      <div class="cvr red" id="s8-cvr2">"PULL IT UP!!"</div>
+      <div class="cvr red" id="s8-cvr3">"WE ARE GOING TO INVERT!"</div>
+      <div class="line dim mono" id="s8-l3">The altimeter still read 9,700 feet.</div>
+      <div class="big70" id="s8-70">70. NO SURVIVORS.</div>
+    </div>
+  </div>
+
+  <!-- S9 aftermath 73.0-81.0 -->
+  <div class="scene clip" id="s9" data-start="73.0" data-duration="8.0" data-track-index="1">
+    <div class="scene-content" data-layout-allow-overflow>
+      <div class="tape-strip" id="s9-tape" style="transform:rotate(-4deg);"></div>
+      <div class="line" id="s9-l1">One strip of tape.</div>
+      <div class="line" id="s9-l2">The worker was convicted of negligent homicide. A suspended sentence.</div>
+      <div class="line" id="s9-l3">Eight months earlier, Birgenair 301. A wasp's nest in a pitot tube. 189 dead.</div>
+      <div class="line amber" id="s9-l4">The same lesson, taught twice in one year.</div>
+    </div>
+  </div>
+
+  <!-- S10 close 81.0-87.0 -->
+  <div class="scene clip" id="s10" data-start="81.0" data-duration="6.0" data-track-index="1">
+    <div class="scene-content" id="s10-content" data-layout-allow-overflow>
+      <div class="line serif" id="s10-l1" style="font-size:44px;font-style:italic;">The airplane was fine. The instruments were wrong. The crew believed the instruments.</div>
+      <div class="line" id="s10-l2" style="font-size:40px;font-weight:700;">In memory of the 70.</div>
+      <div class="tape-strip" id="s10-tape" style="transform:rotate(-5deg);"></div>
+      <div class="credit" id="s10-credit">Aeroperú Flight 603 · October 2, 1996 · Facts verified against the accident report and the cockpit voice recorder transcript.</div>
+    </div>
+  </div>
+
+  <!-- transitions -->
+  <div class="fade clip" id="t1" data-start="7.2" data-duration="2.2" data-track-index="2"></div>
+  <div class="fade clip" id="t2" data-start="14.6" data-duration="2.2" data-track-index="2"></div>
+  <div class="fade clip" id="t3" data-start="22.2" data-duration="2.2" data-track-index="2"></div>
+  <div class="fade clip" id="t4" data-start="29.4" data-duration="2.2" data-track-index="2"></div>
+  <div class="fade clip" id="t5" data-start="40.2" data-duration="2.2" data-track-index="2"></div>
+  <div class="fade clip" id="t6" data-start="51.0" data-duration="2.2" data-track-index="2"></div>
+  <div class="fade clip" id="t7" data-start="62.6" data-duration="2.8" data-track-index="2"></div>
+  <div class="fade clip" id="t8" data-start="72.6" data-duration="2.4" data-track-index="2"></div>
+  <div class="fade clip" id="t9" data-start="79.8" data-duration="2.2" data-track-index="2"></div>
+  <div id="tw" class="clip" data-start="14.6" data-duration="2.2" data-track-index="5" data-layout-ignore></div>
+
+  <!-- audio -->
+  <audio id="a-bed" data-start="0" data-duration="87" data-track-index="3" src="audio/bed87.mp3" data-volume="0.32"></audio>
+  <audio id="a-ping1" data-start="0.6" data-duration="2" data-track-index="4" src="audio/ping.mp3" data-volume="0.30"></audio>
+  <audio id="a-ping2" data-start="55.2" data-duration="1.4" data-track-index="4" src="audio/ping.mp3" data-volume="0.50"></audio>
+  <audio id="a-ping3" data-start="56.6" data-duration="1.4" data-track-index="4" src="audio/ping.mp3" data-volume="0.50"></audio>
+  <audio id="a-ping4" data-start="58.0" data-duration="1.4" data-track-index="4" src="audio/ping.mp3" data-volume="0.50"></audio>
+  <audio id="a-ping5" data-start="59.4" data-duration="1.4" data-track-index="4" src="audio/ping.mp3" data-volume="0.50"></audio>
+  <audio id="a-ping6" data-start="60.8" data-duration="1.4" data-track-index="4" src="audio/ping.mp3" data-volume="0.50"></audio>
+  <audio id="a-ping7" data-start="62.2" data-duration="1.4" data-track-index="4" src="audio/ping.mp3" data-volume="0.50"></audio>
+  <audio id="a-thud" data-start="66.2" data-duration="3" data-track-index="4" src="audio/thud.mp3" data-volume="0.55"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+  "use strict";
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+
+  /* background life */
+  tl.fromTo("#sh1", {x:-60},{x:60, duration:7, repeat:11, yoyo:true, ease:"sine.inOut"}, 2);
+  tl.fromTo("#sh2", {x:60},{x:-60, duration:8, repeat:9, yoyo:true, ease:"sine.inOut"}, 4);
+  const stars = document.querySelectorAll(".star");
+  stars.forEach((s, i) => {
+    tl.fromTo(s, {opacity:.10},{opacity:.55, duration:2.4, repeat:35, yoyo:true, ease:"sine.inOut"}, i*0.37);
+  });
+
+  /* S1 title */
+  tl.from("#s1-tape", {y:-50, opacity:0, duration:0.9, ease:"power3.out"}, 0.5);
+  tl.from("#s1-kicker", {y:24, opacity:0, duration:0.7, ease:"power2.out"}, 0.8);
+  tl.from("#s1-h1", {y:70, opacity:0, duration:1.1, ease:"power3.out"}, 1.1);
+  tl.from("#s1-sub", {y:34, opacity:0, duration:0.8, ease:"power2.out"}, 1.7);
+  tl.from("#s1-line", {y:26, opacity:0, duration:0.8, ease:"power2.out"}, 2.1);
+
+  /* S2 the wash */
+  tl.from("#s2-l1", {y:30, opacity:0, duration:0.7, ease:"power2.out"}, 8.6);
+  tl.from("#s2-l2", {y:30, opacity:0, duration:0.7, ease:"power2.out"}, 9.3);
+  tl.from("#s2-ports", {scale:0.94, opacity:0, duration:0.9, ease:"power2.out"}, 10.2);
+  tl.from("#s2-l3", {y:26, opacity:0, duration:0.7, ease:"power2.out"}, 11.4);
+
+  /* S3 the climb */
+  tl.from("#s3-l1", {y:24, opacity:0, duration:0.6, ease:"power2.out"}, 16.0);
+  tl.from("#s3-cvr", {y:34, opacity:0, duration:0.8, ease:"power3.out"}, 16.7);
+  tl.from("#s3-badges .badge", {y:22, opacity:0, duration:0.5, stagger:0.12, ease:"power2.out"}, 18.2);
+  tl.set("#s3-stall", {opacity:1}, 19.6);
+  tl.fromTo("#s3-stall", {opacity:1},{opacity:.35, duration:.45, repeat:3, yoyo:true, ease:"sine.inOut"}, 20.2);
+  tl.from("#s3-l2", {y:26, opacity:0, duration:0.7, ease:"power2.out"}, 20.4);
+
+  /* S4 emergency */
+  tl.from("#s4-cvr", {y:46, opacity:0, duration:1.0, ease:"power3.out"}, 23.6);
+  tl.from("#s4-attr", {y:20, opacity:0, duration:0.6, ease:"power2.out"}, 25.4);
+  tl.from("#s4-line", {y:26, opacity:0, duration:0.7, ease:"power2.out"}, 26.6);
+
+  /* S5 two truths */
+  tl.from("#s5-radar", {scale:0.9, opacity:0, duration:0.8, ease:"power2.out"}, 30.9);
+  tl.fromTo("#s5-sweep", {rotation:0, transformOrigin:"0% 50%"},{rotation:360, transformOrigin:"0% 50%", duration:4, repeat:2, ease:"none"}, 31.2);
+  tl.fromTo("#s5-blip", {opacity:.2},{opacity:1, duration:.5, repeat:5, yoyo:true, ease:"sine.inOut"}, 31.6);
+  tl.from("#s5-l1", {y:26, opacity:0, duration:0.7, ease:"power2.out"}, 32.2);
+  tl.from("#s5-l2", {y:26, opacity:0, duration:0.7, ease:"power2.out"}, 33.6);
+  tl.from("#s5-l3", {y:26, opacity:0, duration:0.7, ease:"power2.out"}, 35.6);
+
+  /* S6 the turn */
+  tl.from("#s6-path", {opacity:0, duration:0.8, ease:"power2.out"}, 41.6);
+  tl.fromTo("#s6-route", {strokeDashoffset:1},{strokeDashoffset:0, duration:4, ease:"none"}, 41.8);
+  tl.from("#s6-l1", {y:26, opacity:0, duration:0.7, ease:"power2.out"}, 42.4);
+  tl.from("#s6-l2", {y:24, opacity:0, duration:0.6, ease:"power2.out"}, 43.6);
+  tl.from("#s6-cvr", {y:34, opacity:0, duration:0.8, ease:"power3.out"}, 44.8);
+  tl.from("#s6-l3", {y:26, opacity:0, duration:0.7, ease:"power2.out"}, 46.6);
+
+  /* S7 the descent */
+  tl.from("#s7-alt", {y:-24, opacity:0, duration:0.6, ease:"power2.out"}, 52.4);
+  tl.from("#s7-l1", {y:24, opacity:0, duration:0.6, ease:"power2.out"}, 53.2);
+  tl.from("#s7-l2", {y:24, opacity:0, duration:0.7, ease:"power2.out"}, 54.2);
+  tl.from("#s7-alarm", {scale:0.92, opacity:0, duration:0.6, ease:"power3.out"}, 55.4);
+  tl.fromTo("#s7-alarm", {opacity:.85},{opacity:.35, duration:.5, repeat:6, yoyo:true, ease:"sine.inOut"}, 56.0);
+  tl.from("#s7-cvr", {y:34, opacity:0, duration:0.8, ease:"power3.out"}, 58.0);
+  tl.from("#s7-l3", {y:22, opacity:0, duration:0.6, ease:"power2.out"}, 60.6);
+
+  /* S8 impact */
+  tl.from("#s8-l1", {y:26, opacity:0, duration:0.7, ease:"power2.out"}, 66.4);
+  tl.from("#s8-l2", {y:24, opacity:0, duration:0.6, ease:"power2.out"}, 67.9);
+  tl.from("#s8-cvr1", {y:28, opacity:0, duration:0.5, ease:"power2.out"}, 69.2);
+  tl.from("#s8-cvr2", {y:28, opacity:0, duration:0.5, ease:"power2.out"}, 69.9);
+  tl.from("#s8-cvr3", {y:28, opacity:0, duration:0.5, ease:"power2.out"}, 70.6);
+  tl.from("#s8-l3", {y:20, opacity:0, duration:0.6, ease:"power2.out"}, 71.2);
+  tl.from("#s8-70", {scale:0.96, opacity:0, duration:0.9, ease:"power2.out"}, 72.0);
+
+  /* S9 aftermath */
+  tl.from("#s9-tape", {y:-34, opacity:0, duration:0.8, ease:"power3.out"}, 75.2);
+  tl.from("#s9-l1", {y:24, opacity:0, duration:0.6, ease:"power2.out"}, 75.6);
+  tl.from("#s9-l2", {y:24, opacity:0, duration:0.7, ease:"power2.out"}, 76.6);
+  tl.from("#s9-l3", {y:24, opacity:0, duration:0.7, ease:"power2.out"}, 77.8);
+  tl.from("#s9-l4", {y:24, opacity:0, duration:0.7, ease:"power2.out"}, 79.0);
+
+  /* S10 close */
+  tl.from("#s10-l1", {y:34, opacity:0, duration:0.9, ease:"power3.out"}, 82.0);
+  tl.from("#s10-l2", {y:26, opacity:0, duration:0.7, ease:"power2.out"}, 83.4);
+  tl.from("#s10-tape", {y:-30, opacity:0, duration:0.7, ease:"power3.out"}, 84.2);
+  tl.from("#s10-credit", {y:18, opacity:0, duration:0.7, ease:"power2.out"}, 84.8);
+  /* final fade (final scene only) */
+  tl.to("#s10-content", {opacity:0, duration:1.4, ease:"power2.in"}, 85.2);
+  tl.to("#bg", {opacity:0, duration:1.6, ease:"power2.in"}, 85.2);
+
+  /* transitions: fade through black */
+  tl.to("#t1", {opacity:1, duration:0.7, ease:"power2.inOut"}, 7.2);
+  tl.to("#t1", {opacity:0, duration:0.7, ease:"power2.inOut"}, 8.7);
+  tl.to("#t2", {opacity:1, duration:0.7, ease:"power2.inOut"}, 14.6);
+  tl.to("#tw", {opacity:1, duration:0.2, ease:"none"}, 14.6);
+  tl.fromTo("#tw", {scaleX:0},{scaleX:1, duration:0.8, ease:"power2.inOut"}, 14.7);
+  tl.to("#tw", {opacity:0, duration:0.2, ease:"none"}, 15.9);
+  tl.to("#t2", {opacity:0, duration:0.7, ease:"power2.inOut"}, 16.1);
+  tl.to("#t3", {opacity:1, duration:0.7, ease:"power2.inOut"}, 22.2);
+  tl.to("#t3", {opacity:0, duration:0.7, ease:"power2.inOut"}, 23.7);
+  tl.to("#t4", {opacity:1, duration:0.7, ease:"power2.inOut"}, 29.4);
+  tl.to("#t4", {opacity:0, duration:0.7, ease:"power2.inOut"}, 30.9);
+  tl.to("#t5", {opacity:1, duration:0.7, ease:"power2.inOut"}, 40.2);
+  tl.to("#t5", {opacity:0, duration:0.7, ease:"power2.inOut"}, 41.7);
+  tl.to("#t6", {opacity:1, duration:0.7, ease:"power2.inOut"}, 51.0);
+  tl.to("#t6", {opacity:0, duration:0.7, ease:"power2.inOut"}, 52.5);
+  tl.to("#t7", {opacity:1, duration:1.0, ease:"power2.inOut"}, 62.6);
+  tl.to("#t7", {opacity:0, duration:0.8, ease:"power2.inOut"}, 64.6);
+  tl.to("#t8", {opacity:1, duration:0.8, ease:"power2.inOut"}, 72.6);
+  tl.to("#t8", {opacity:0, duration:0.8, ease:"power2.inOut"}, 74.2);
+  tl.to("#t9", {opacity:1, duration:0.7, ease:"power2.inOut"}, 79.8);
+  tl.to("#t9", {opacity:0, duration:0.7, ease:"power2.inOut"}, 81.3);
+
+  window.__timelines["ap603"] = tl;
+  </script>
+</div>
+</body>
+</html>
