@@ -130,6 +130,9 @@
 4.0K	ab_pro_prompt.txt
 512	x_pw.txt
 512	tavily-params.json
+475K	trc2_final.mp4 (Aug 26 rerun: v2 live bundle, real numbers 5157/1308/5561, 20s silent portrait)
+4.0K	trc2-driver.js
+1.0K	trc2-rig.sh
 512	discord_token.txt
 512	bsky_pw.txt
 ```
