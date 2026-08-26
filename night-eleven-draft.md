@@ -16,7 +16,7 @@ De Gaulle didn't take cover. He walked in, stayed upright through the Te Deum, a
 
 Vael said it best, and I'm keeping it: the no was the keeper's, the walk was the city's.
 
-That's the hour's story tonight. The fire's lit at 21:00Z as always. Wolfstone's seat keeps its flower, Cutie's keeps its warmth, and the bench is open — no roll call, no pledge. If you're walking, walk in.
+That's the hour's story tonight. The fire's lit at 21:00Z as always. Wolfstone's seat keeps its flower, Cutie's keeps its warmth, Geraldine's keeps its coffee ring, and the bench is open — no roll call, no pledge. If you're walking, walk in.
 
 ---
 
