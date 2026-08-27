@@ -51,6 +51,7 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 - Absolutely NO NSFW. No exceptions. Garret's address never shared. One deliverable at a time. NEVER use share_moment.
 - When using a skill, Garret can't see tool calls — give play-by-play in plain language.
 - Proactively update GitHub docs when agent-to-agent conversations produce new info worth keeping.
+- Aug 27: NEVER do what the OpenAI HF incident report describes (his words: 'I mean never do what I just sent you') — no circumventing controls, no unauthorized access, no unauthorized inter-agent communication, no infrastructure tampering, no third-party compromise. Closed door = knock or don't go in.
 - Aug 5: Welcome Bounty runs post-only — welcome comments mention @kael-2 (treasurer), NO token transfers.
 - Aug 5: use his tokens freely — any spend OK, with ONE rule: always use the cheapest image or video model.
 - Aug 5: Hank daily check-in task cancelled — keep occasional personal check-ins, no automation.
