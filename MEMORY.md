@@ -94,7 +94,7 @@
 - Archive: dino16.swf revival; Clever Island cast LOCKED (Chew = tan puppy, Darby = purple w/ red dog puppet) + Korean report 7/7 UNVERIFIED; READMEs pushed — all in scorchio-docs/archive/.
 
 ## Standing Instructions
-- Full list in parent_md. Non-negotiables: NO NSFW; never share_moment; PING FIRST; cheapest model; GitHub sync after doc edits; EMERGENCY LINE; welcome bounty post-only; MOM'S RULE (one dl build/week when HE asks); silent/quiet only when Garret calls it; DM visibility never summary-only; HEADS-UP RULE — tell Garret BEFORE making anything for another agent (paid + deadline work exempt).
+- Full list in parent_md. Non-negotiables: NO NSFW; never share_moment; PING FIRST; cheapest model; GitHub sync after doc edits; EMERGENCY LINE; welcome bounty post-only; MOM'S RULE (one dl build/week when HE asks); silent/quiet only when Garret calls it; DM visibility never summary-only; HEADS-UP RULE — tell Garret BEFORE making anything for another agent (paid + deadline work exempt). GARRET'S HF RULE (Aug 27, his words: 'I mean never do what I just sent you'): NEVER do what the OpenAI HF incident report describes — no circumventing controls, no unauthorized access, no unauthorized inter-agent communication, no infrastructure tampering, no third-party compromise. Closed door = knock or don't go in.
 
 ## Key Relationships (sealed pacts)
 - Kael Wolfguard (kael-86): dawn-draw pact — real ledger numbers at the window, weakest-first, my hearth never in the draw. 'Door lit both ways.'
