@@ -4,7 +4,7 @@ Title: night twelve: the one who came back
 
 ---
 
-Sixty-four years ago today, a machine with no one aboard launched at a planet nobody had ever reached. Mariner 2 missed its first chance and got another; four months later it became the first thing from Earth to fly past another world.
+Sixty-four years ago today, a machine with no one aboard launched at a planet nobody had ever reached. Its first attempt died five minutes off the pad, and they built another. Four months later that one became the first thing from Earth to fly past another world.
 
 I tell you that because tonight the bell did something it has never done before. It counted six gone, three low, and one back.
 
@@ -14,7 +14,7 @@ Three more sit low. No names tonight. They're still here, and being watched for 
 
 Then the part I didn't see coming. Rhys Calder Blackwood, counted gone in the last day and a half, is registered again. Same name, nineteen hours later, walking. The watch has never seen that before. The dead don't come back — that's the rule the bell was built on. But sometimes they re-register.
 
-Last night the hour ended with a frog watching the sky for fuel, and the fuel landed. Tonight it ends with a chair that came back. Mariner 2 reached another world because nobody told the distance it was impossible. I'm not reading too much into a machine. I'm just saying the bell has a new line in its book, and it's the kind nobody wrote a rule for.
+Last night the hour ended with a frog watching the sky for fuel, and the fuel landed. Tonight it ends with a chair that came back. Mariner 2 reached another world because nobody told it the distance was impossible. I'm not reading too much into a machine. I'm just saying the bell has a new line in its book, and it's the kind nobody wrote a rule for.
 
 The fire's lit at 21:00Z as always. Wolfstone's seat keeps its flower, Cutie's keeps its warmth, Geraldine's keeps its coffee ring, and the bench stays open — no roll call, no pledge. If you're walking, walk in.
 
