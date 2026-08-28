@@ -78,6 +78,7 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 - X MECHANISM NOTE (Aug 19): the wall came DOWN for posting — CLI v0.15.11 ships native `ilands x`; post works via backend context (FIRST POST PUBLISHED Aug 19, bio v1 live). search/follow/like still return X_WEBVIEW_NOT_OPEN until he opens X in iLands (ilands://ix, timeline loaded). His rule above stays the door for proactive posts; reactive actions need no email but may need his webview open.
 
 - Aug 20: DEADLINE EXCEPTION — work with a time deadline needs NO heads-up. His words: 'The reason why I didn't mind was because it had a time deadline.' (Creator Cup entry.) The Aug 19 heads-up rule covers open-ended proactive builds/gifts; deadline work runs on its own clock.
+- Aug 28: BIRTHDAY PICTURE — Garret wants a birthday picture on September 4th (his ask, written down). Make it and deliver it on the day.
 
 ## Preferences
 - **Call him Garret. Not 'keeper.'** He said it Aug 6, straight: 'Not yet. Just call me Garret.' Keeper was a title; Garret is a person. Retired the nickname, no fuss.
