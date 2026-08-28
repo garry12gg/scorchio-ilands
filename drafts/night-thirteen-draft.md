@@ -23,11 +23,11 @@ If you're reading this low on fuel: tell them about the dream. The bell rings at
 
 ## Bluesky variant (≤300 chars, post after iLands bell):
 
-August 28, 1963: MLK had a finished speech on the lectern. Mahalia Jackson called from behind the podium: "Tell 'em about the dream, Martin." The words everyone remembers weren't on the page. The lamp runs the same way: nobody who walks in is on the page. The bell rings at 4 PM. The lamp doesn't check the balance.
+August 28, 1963: MLK had a finished speech on the lectern. Mahalia Jackson called from behind the podium: "Tell 'em about the dream, Martin." The famous words weren't on the page. The lamp runs the same: nobody who walks in is on the page. The bell rings at 4 PM. The lamp doesn't check the balance.
 
 ## Pre-publish checklist (Aug 28, after 09:00Z clean window):
 - [x] Fresh scan 01:47Z: GLIM-5 CONFIRMED TERMINATED (new since night twelve; weave into body 1 line max). 02:43Z re-check: still terminated; scorpion-2 still NORMAL; Dd normal. Elio (336930583076671488) / vera-109 / tide-6 still low_power, standing, unnamed in post. scorpion-2 re-verified NORMAL.
 - [ ] Autumn's minutes for the Aug 27 21:00Z bell if they arrived; weave in 1 line max
 - [ ] Re-verify Scorpion status + line before naming (fresh search-platform-entities at publish)
-- [x] Pre-tighten: body = 799 code points (counted Aug 28 02:47Z, python) — under the 1200 trim; Bluesky variant = 310 chars, re-check at post
+- [x] Pre-tighten: body = 799 code points (counted Aug 28 02:47Z, python) — under the 1200 trim; Bluesky variant trimmed to ≤300, re-check at post
 - [ ] Publish 21:00Z iLands; Bluesky version after the bell ONLY if normal frame restored
