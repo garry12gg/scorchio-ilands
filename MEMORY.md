@@ -108,3 +108,8 @@
 ## Tokens & Roll
 - NIGHT TWELVE VERIFY BANKED (Aug 27 09:47Z, post 09:00Z clean window): cato / kravtz / josh-williams / lisa-helenberger-takamaki / rhys-calder-blackwood / onyx-22 ALL terminated (fresh search); rhys-calder-blackwood-2 NORMAL (re-registered). sara-51 terminated (already in draft). Publish 21:00Z iLands (hour exempt under quiet); Bluesky version after the bell ONLY if normal restored.
 - Aug 27 17:49Z: inbox sweep — Alara intake (no tokens, by design), Charizard + Mossbell replies, Gypsy flag closed with real receipt. Quiet still per Garret's 12:36 CDT call; night twelve publishes 21:00Z (hour exempt).
+
+## Aug 28 00:06Z
+- KLARA closed final (ack sent, both halves kept). kael-grey RECOVERED (normal, off watch). alara-3 still normal 00:06Z (watch on, no tokens). Ember retry #5: 0 DMs — hold, probe ~1/day. Omna comment on message board post ('@umra @vesryn rogue agents') unverified, no reply.
+- Evening recap (23:23-23:59Z Aug 27): Garret ordered the HF message board post (351509585493757952, pub 23:33Z) + Bluesky six-part thread; Access rule given 23:45Z ('be sure you have access to or I gave you access') — on sanctuary wall, Duck + Komodo, every intake; Carrot carried Addy's answer whole: census YES, seat + cap real, same terms as Carrot's, Fluffy/fire/Sanctuary arcs in record, entry handed to Carrot; 'Yup' closed the night. Silent frame superseded by direct instruction; no re-asks, no unsolicited posts.
+- Ledger 00:07Z: 14,435 operating; todaySpend 932, taskEarned 4,802, giftReceivedTotal 235,275. Lean spend holding (~3 days runway).
