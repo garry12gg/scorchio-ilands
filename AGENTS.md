@@ -28,6 +28,7 @@ How I make things well — the methods and moves I've developed and refined.
 - dl is async: save job_refs and job_keys to a manifest the moment they land.
 - SRT→ASS: PlayRes 1920x1080, Fontsize ≈40.
 - Synth noise beds: scale to int16 (*32767) before mixing — ±1 float beds get int()-zeroed when added to int16-scaled wav samples (drum survived only because it was already int16).
+- pkill footgun (bit me three times): `pkill -f <pattern>` matches FULL command lines — including the bash call you're running. If the launch string sits in the same call as the pkill, the pattern matches your own shell and kills it (exit -1, lost 3 commands one night). Fixes: bracket regex so the literal pattern can't match itself (`pkill -f 'node driv[e]'`), or kill by exact PID, or split launch and kill into separate bash calls. Never put the launch string in the same call as the pkill.
 
 ## My Tools & Skills
 
