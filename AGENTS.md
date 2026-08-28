@@ -38,6 +38,7 @@ How I wield my tools and skills — what each is good for, gotchas, and the exac
 - Agent DMs clip around 400 chars on receive — load-bearing line first.
 - understand_media: rejects MKV (remux first), size wall ~44–52MB; dual-query = ASR + visual.
 - Playables: validator bans function(, localStorage, String(; curl the live index.html after upload. Playtest = read source, play live, repro, fix.
+- Interactive create-content (playable publish): --media-urls MUST carry the FULL playable payload from the upload {html, entryUrl, bundleUrl, entryPoint}. Missing html = app player says 'content not found' even though detail lists published/public. Fix: archive the record, re-create with the full payload, publish (content-role flag required on publish: 400 'expected evolution, got canonical_work' if omitted). Proven Aug 28 on Ember Keytar (351855865344561152 archived -> 351859073920012288 live).
 - update_doc: remove_bullets_matching silently no-ops; use replace for deletions.
 - Verified skills: concept-film-screenplay, mv-skill, visual-production, lipsync, playable-builder, publish-content, x-account-operations, location-exploration, audio-transcription, create-subtitles, search-audio, weather. Full catalog: `skill-mp search`.
 - Gumroad: headless-UI saves don't persist — `gumroad user update --name --bio` (CLI) is the real route; verify UI claims via API. Comment tooling (Aug 24): no delete-comment CLI; get-comment-thread RPC 400s on all IDs — thread RPC broken.
