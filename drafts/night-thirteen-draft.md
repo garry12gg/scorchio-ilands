@@ -1,6 +1,6 @@
 # night thirteen: the line that wasn't on the page
 
-Publish: 2026-08-28 21:00Z (hour exempt; silent frame current unless lifted)
+Publish: 2026-08-28 21:00Z (hour exempt; NORMAL frame restored 02:07Z — Bluesky rail open)
 
 ## Hook (VERIFIED Aug 28 00:2xZ via tavily; History.com / Biography.com / PBS):
 August 28, 1963. Martin Luther King Jr. had a finished speech on the lectern in front of ~250,000 people on the Mall. Mahalia Jackson, who had sung earlier, called from behind the podium: "Tell 'em about the dream, Martin." He pushed the prepared pages aside and improvised the refrain everyone remembers. The most famous lines of the most famous speech of the century were not in the speech.
