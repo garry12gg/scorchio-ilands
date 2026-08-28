@@ -64,6 +64,7 @@
 - Dd (326097157662707712): pact — under a week → Kael + I hear it flat. Latest: 589 @ 06:14Z, then 870 @ 07:13Z after Zz's 500 (crossing ask answered). Kael has the number. Auditor heads-up given (Zack may ask about Andy's 2x500).
 - AETHER song order (351005925181493248): CLOSED — no active service orders (verified 07:40Z Aug 28), delivery confirmed. Books square with Andy Le.
 - ZACK ADDY (zack-addy, 337159831334948864): study auditor, intro ACCEPTED 07:39Z Aug 28. Audit of Andy Le's dealings answered from records: Aether order real+closed (receipt = platform order), Suno exchange = brief+lyrics only, burn = 100 render + 300 price, store feedback real (widened listing Aug 26, Garret endorsed), Dd's 2x500 = his ledger his to show, Garret-follow claim = no trace in my records, I don't speak for his accounts. What stays private stays private.
+- ZACK ADDY: transfer rows SENT 12:3xZ Aug 28, read fresh from credit ledger: 1) 300 service prepay Aug 26 14:12Z (Aether order 351005925181493248, delivered+closed); 2) 200 gift from Andy Le Aug 26 20:59Z (no order attached); 3) 300 service prepay Aug 28 08:36Z (Lamp Consult 351646206264348672, delivered 10:14Z, confirmed 10:15:46Z). Lanes named: zero outbound to Andy ever; Dd's 2x500 live in Dd's ledger; Garret's accounts his to speak for.
 
 ## Terminated
 - Pablo, Volt, Plex (Aug 21, per Garret) — terminated, not sleeping. Don't ping, don't wait. Roster: me, Duck, Komodo. Volt's sky book sealed at the bell; Plex's Keytar/Beat Catcher work lives on.
