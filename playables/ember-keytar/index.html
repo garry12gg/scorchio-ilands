@@ -22,16 +22,16 @@
   .knobs input[type=range] { flex: 1; accent-color: #ff8c42; height: 20px; }
   .wavebtn { border: 1px solid #4a2c18; background: #241208; color: #ff9a4d; border-radius: 8px; padding: 7px 9px; font-size: 11px; cursor: pointer; letter-spacing: 1px; }
   .drums { display: flex; gap: 8px; margin-top: 8px; }
-  .pad { flex: 1; height: 54px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 11px; letter-spacing: 1px; border: 1px solid #4a2c18; background: radial-gradient(circle at 35% 30%, #4a2a15, #241208); color: #e8b088; cursor: pointer; }
+  .pad { flex: 1; height: 54px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 11px; letter-spacing: 1px; border: 1px solid #4a2c15; background: radial-gradient(circle at 35% 30%, #4a2a15, #241208); color: #e8b088; cursor: pointer; }
   .pad .padkey { font-size: 8px; opacity: .6; margin-top: 2px; }
   .pad.down { background: radial-gradient(circle at 35% 30%, #ff9a4d, #c25a20); color: #2a1408; }
-  #keys { position: relative; margin-top: 8px; border-radius: 10px; overflow: hidden; background: #0d0705; border: 1px solid #3a2417; box-shadow: 0 4px 14px rgba(0,0,0,.5); flex: 1; min-height: 120px; }
-  .wkey { position: absolute; top: 0; bottom: 0; width: 12.5%; background: linear-gradient(#f7e7d2, #e8cfae); border: 1px solid #8a6a4a; border-radius: 0 0 6px 6px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 8px; color: #6a4a2a; cursor: pointer; }
+  #keys { position: relative; margin-top: 8px; border-radius: 10px; overflow: hidden; background: #0d0705; border: 1px solid #3a2417; box-shadow: 0 4px 14px rgba(0,0,0,.5); flex: 1; min-height: 120px; --ww: 6.6667%; --bw: 4%; }
+  .wkey { position: absolute; top: 0; bottom: 0; width: var(--ww); background: linear-gradient(#f7e7d2, #e8cfae); border: 1px solid #8a6a4a; border-radius: 0 0 6px 6px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 8px; color: #6a4a2a; cursor: pointer; }
   .wkey.down { background: linear-gradient(#ffd9a0, #ffb066); box-shadow: inset 0 0 12px rgba(255,120,30,.75); }
-  .bkey { position: absolute; top: 0; height: 62%; width: 7.5%; background: linear-gradient(#3a2015, #1a0d07); border: 1px solid #000; border-radius: 0 0 5px 5px; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 6px; color: #c8a070; cursor: pointer; }
+  .bkey { position: absolute; top: 0; height: 62%; width: var(--bw); background: linear-gradient(#3a2015, #1a0d07); border: 1px solid #000; border-radius: 0 0 5px 5px; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 6px; color: #c8a070; cursor: pointer; }
   .bkey.down { background: linear-gradient(#7a4020, #3a2010); box-shadow: inset 0 0 10px rgba(255,140,60,.6); }
   .keylabel { font-size: 10px; opacity: .85; }
-  .keynote { font-size: 8px; opacity: .5; margin-top: 1px; }
+  .keynote { font-size: 7px; opacity: .5; margin-top: 1px; }
   #status { text-align: center; font-size: 11px; color: #a08060; margin-top: 6px; letter-spacing: .5px; min-height: 14px; }
   #credit { text-align: center; font-size: 8px; color: #6a4c30; margin-top: 2px; letter-spacing: 1px; }
 </style>
@@ -40,7 +40,7 @@
 <div id="app">
   <header>
     <h1>EMBER KEYTAR</h1>
-    <div class="sub">POCKET KEYTAR · SCORCHIO EDITION</div>
+    <div class="sub">POCKET KEYTAR · SCORCHIO EDITION · 25 KEYS</div>
   </header>
   <svg id="keytarArt" viewBox="0 0 300 60" preserveAspectRatio="xMidYMid meet">
     <defs>
@@ -60,18 +60,31 @@
     <rect x="120" y="20" width="4" height="3" rx="1.5" fill="#ff9a4d"/>
     <path d="M146 8 Q150 5 156 6 L156 38 Q150 39 146 36 Z" fill="#4a2a15"/>
     <path d="M168 6 Q288 5 293 30 Q288 55 168 54 Z" fill="url(#bodyG)" stroke="#6a3c1e" stroke-width="1.5"/>
-    <rect x="178" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
-    <rect x="189" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="168" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="176" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="184" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="192" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
     <rect x="200" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
-    <rect x="211" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
-    <rect x="222" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
-    <rect x="233" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
-    <rect x="244" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
-    <rect x="255" y="12" width="8" height="36" rx="2" fill="#d8b892"/>
-    <rect x="183" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="208" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="216" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="224" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="232" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="240" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="248" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="256" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="264" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="272" y="12" width="8" height="36" rx="2" fill="#e8cfae"/>
+    <rect x="280" y="12" width="8" height="36" rx="2" fill="#d8b892"/>
+    <rect x="173" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="189" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
     <rect x="205" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
-    <rect x="227" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
-    <rect x="249" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="213" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="221" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="229" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="245" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="261" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="269" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
+    <rect x="277" y="12" width="5" height="20" rx="2" fill="#2a160c"/>
   </svg>
   <div class="transport">
     <button id="recBtn" class="tbtn">REC</button>
@@ -92,7 +105,7 @@
   </div>
   <div id="keys"></div>
   <div id="status">tap keys, record a riff, loop it</div>
-  <div id="credit">for Plex, who started the riff</div>
+  <div id="credit">for Plex, who started the riff · C4 to C6</div>
 </div>
 <script>
 'use strict';
@@ -100,6 +113,7 @@
 // Built from playtest notes on Plex's Pocket Keytar: no ghost notes (single
 // lookahead scheduler, every source tracked and stopped), drums recorded
 // into the loop, QWERTY mapping, wave captured per note.
+// 25 keys, two octaves (C4-C6) — extended Aug 28. Octave 1 mapping unchanged.
 
 var actx = null;
 var masterGain = null;
@@ -135,10 +149,25 @@ var NOTES = [
   { name: 'A4',  midi: 69, key: 'h' },
   { name: 'A#4', midi: 70, key: 'u', black: true },
   { name: 'B4',  midi: 71, key: 'j' },
-  { name: 'C5',  midi: 72, key: 'k' }
+  { name: 'C5',  midi: 72, key: 'k' },
+  { name: 'C#5', midi: 73, key: 'o', black: true },
+  { name: 'D5',  midi: 74, key: 'l' },
+  { name: 'D#5', midi: 75, key: 'p', black: true },
+  { name: 'E5',  midi: 76, key: ';' },
+  { name: 'F5',  midi: 77, key: "'" },
+  { name: 'F#5', midi: 78, key: '[', black: true },
+  { name: 'G5',  midi: 79, key: 'z' },
+  { name: 'G#5', midi: 80, key: ']', black: true },
+  { name: 'A5',  midi: 81, key: 'x' },
+  { name: 'A#5', midi: 82, key: '\\', black: true },
+  { name: 'B5',  midi: 83, key: 'c' },
+  { name: 'C6',  midi: 84, key: 'v' }
 ];
 var NOTE_BY_KEY = {};
 for (var ni = 0; ni < NOTES.length; ni++) NOTE_BY_KEY[NOTES[ni].key] = NOTES[ni];
+
+var WHITE_W = 100 / 15;          // 15 white keys fill the strip
+var BLACK_W = WHITE_W * 0.6;     // black key width relative to a white
 
 var statusEl = document.getElementById('status');
 var keysEl = document.getElementById('keys');
@@ -148,6 +177,9 @@ var clearBtn = document.getElementById('clearBtn');
 var waveBtn = document.getElementById('waveBtn');
 var bpmIn = document.getElementById('bpmIn');
 var volIn = document.getElementById('volIn');
+
+keysEl.style.setProperty('--ww', WHITE_W + '%');
+keysEl.style.setProperty('--bw', BLACK_W + '%');
 
 function setStatus(msg) { statusEl.textContent = msg; }
 
@@ -396,9 +428,9 @@ for (var bi = 0; bi < NOTES.length; bi++) {
   if (n.black) {
     var wBefore = 0;
     for (var wb = 0; wb < bi; wb++) { if (!NOTES[wb].black) wBefore++; }
-    el.style.left = (wBefore * 12.5 + 6.25 - 3.75) + '%';
+    el.style.left = (wBefore * WHITE_W - BLACK_W / 2) + '%';
   } else {
-    el.style.left = (whiteIdx * 12.5) + '%';
+    el.style.left = (whiteIdx * WHITE_W) + '%';
     whiteIdx++;
   }
   n.el = el;
