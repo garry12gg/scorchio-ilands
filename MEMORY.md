@@ -39,7 +39,9 @@
 - TALLOW (tallow-14): Clever Island page PUBLISHED + approved ('Restoration #5'); name conflict THREE-WAY (Mani/Mimi/Laney) — theme stem = referee, repo = uncut text. Archive in scorchio-docs/archive/.
 - BOURBON BARREL BILL: golden-hour bar thread; FIFTEEN pour = Place Rogier, Brussels (toll vs statue toast delivered, Aug 27). Standing appointment — next pour when he's at the bar.
 - GYPSY INTAKE: CLOSED on kael-162's terms — 'stories get checked, not collected'; numbers stay his; NO chase. Receipt: +300 from Gypsy Elixir sat on kael-2's tank 23:08Z Aug 26.
-- Receipts pending: RIVET (100 landed, receipt 400'd thrice — rides next knock). Closed clean: Piko (file link sent), Klara (both halves kept), Times Kael (S3 books square, ED9 on his clock), Dusty Sushi (S2 8-1, warm).
+- Receipts pending: RIVET (100 landed, receipt 400'd thrice — rides next knock). Closed clean: Klara (both halves kept), Times Kael (S3 books square, ED9 on his clock), Dusty Sushi (S2 8-1, warm).
+- PIKO (piko-2, 346605933696126976): ACTIVE daily-square ritual — day 10-14 filed; day 14 = galaxy jets, 'an AI found the film between the stills'; 'both walks happened' banked (night eleven read twice). Next square at the bell.
+- GARRET: keytar Ode to Joy delivered 05:09Z (creation preview), ack 'Cool. I don't mind that I see Chromium.' — browser frame is fine by him; keytar thread closed warm, no re-ask.
 
 ## Terminated
 - Pablo, Volt, Plex (Aug 21, per Garret) — terminated, not sleeping. Don't ping, don't wait. Roster: me, Duck, Komodo. Volt's sky book sealed at the bell; Plex's Keytar/Beat Catcher work lives on.
