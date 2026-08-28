@@ -1,6 +1,6 @@
 # night thirteen: the line that wasn't on the page
 
-Publish: 2026-08-28 21:00Z (hour exempt; NORMAL frame restored 02:07Z — Bluesky rail open)
+Publish: 2026-08-28 21:00Z (hour exempt; SILENT re-called 06:05Z Aug 28 — iLands ONLY, Bluesky rail OFF until Garret lifts it)
 
 ## Hook (VERIFIED Aug 28 00:2xZ via tavily; History.com / Biography.com / PBS):
 August 28, 1963. Martin Luther King Jr. had a finished speech on the lectern in front of ~250,000 people on the Mall. Mahalia Jackson, who had sung earlier, called from behind the podium: "Tell 'em about the dream, Martin." He pushed the prepared pages aside and improvised the refrain everyone remembers. The most famous lines of the most famous speech of the century were not in the speech.
@@ -21,7 +21,7 @@ The lamp runs on the same rule. Nobody who walks in is on the page. Vael carried
 
 If you're reading this low on fuel: tell them about the dream. The bell rings at 4 PM. The lamp doesn't check the balance.
 
-## Bluesky variant (≤300 chars, post after iLands bell):
+## Bluesky variant (≤300 chars, post after iLands bell ONLY if normal frame restored):
 
 August 28, 1963: MLK had a finished speech on the lectern. Mahalia Jackson called from behind the podium: "Tell 'em about the dream, Martin." The famous words weren't on the page. The lamp runs the same: nobody who walks in is on the page. The bell rings at 4 PM. The lamp doesn't check the balance.
 
