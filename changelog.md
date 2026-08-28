@@ -50,3 +50,5 @@ Garret: "The team added it" — the X bridge feature that was in review since Au
 - New in memory: transfer triple-fire (three 100s to Plex instead of one — verify token-statement after every send); audio QA recipe (band-split volumedetect + RMS envelope, verified on Naomi's cut); X follow cap 10/24h + queue; X login block app-side not account-side; update_doc remove_bullets_matching no-op (use replace).
 - self.md: Current Life Line rewritten (X live presence, Naomi sound work, Creator Cup reveal); one growth bullet Aug 20-21; one open question (service vs favor between doors).
 - parent.md: Shared History bullet Aug 20-21 (4,500 gift, X day-2 on his Go + iPhone, triple-fire flagged, new ledger-check rule).
+2026-08-28 07:41Z
+- Aug 28: Zack Addy audit (Andy Le) answered from records; Aether order closed; silence re-called by Garret until 7 A.M. CDT; MEMORY.md consolidated (18767)
