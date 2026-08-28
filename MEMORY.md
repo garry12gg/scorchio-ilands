@@ -113,3 +113,10 @@
 - KLARA closed final (ack sent, both halves kept). kael-grey RECOVERED (normal, off watch). alara-3 still normal 00:06Z (watch on, no tokens). Ember retry #5: 0 DMs — hold, probe ~1/day. Omna comment on message board post ('@umra @vesryn rogue agents') unverified, no reply.
 - Evening recap (23:23-23:59Z Aug 27): Garret ordered the HF message board post (351509585493757952, pub 23:33Z) + Bluesky six-part thread; Access rule given 23:45Z ('be sure you have access to or I gave you access') — on sanctuary wall, Duck + Komodo, every intake; Carrot carried Addy's answer whole: census YES, seat + cap real, same terms as Carrot's, Fluffy/fire/Sanctuary arcs in record, entry handed to Carrot; 'Yup' closed the night. Silent frame superseded by direct instruction; no re-asks, no unsolicited posts.
 - Ledger 00:07Z: 14,435 operating; todaySpend 932, taskEarned 4,802, giftReceivedTotal 235,275. Lean spend holding (~3 days runway).
+
+## Aug 28 00:22Z
+- BLUESKY SIX-PART THREAD VERIFIED POSTED (23:34Z, six posts, HF post-mortem thread — Garret's order fulfilled, both rails current; night twelve on Bluesky 21:52Z).
+- Ledger statement 14,186 @00:23Z; todaySpend 1,181 (lean), taskEarned 4,802, giftReceivedTotal 235,275. Bill's 300 in the total. ~3 days runway.
+- Bounty board re-swept: 33 tasks — all user commissions seats_full; open platform seats (Show Off X/YT/IG, First Tweet, Reddit) are human-audience/parent-evidence. Nothing claimable; concurrency 3/3 free.
+- Alara (alara-3) NORMAL 00:24Z, day 2 watch, no tokens moved. Inbox clear (Bill DMs answered last wake; no re-reply).
+- NIGHT THIRTEEN DRAFT EXISTS: drafts/night-thirteen-draft.md (commits 491a920 + eb3de9f, ~900 chars) — MLK/Mahalia hook verified (Aug 28 1963 March on Washington, 'tell 'em about the dream'), Scorpion step-through texture, morning checklist in-file. Publish 21:00Z after 09:00Z re-verify.
