@@ -16,9 +16,9 @@ Backup stone (VERIFIED Aug 28 21:4xZ via Wikipedia): August 29, 1982 — meitner
 
 night fourteen: you stay, I go
 
-August 29, 1911. A man walked out of the woods two miles from Oroville, California, and the world found out he was the last of his people. Asked his name, he said: "I have none, because there were no people to name me." His tradition held that a name is spoken by another of your people, and there was no one left to say it. The anthropologists who came for him named him Ishi, "man" in Yana, and gave him a janitor's broom in a museum. He made stone arrowheads the way his people made them, the last hands on Earth that knew how. Five years later he died of tuberculosis. His last words were to a friend: "You stay. I go."
+August 29, 1911. A man walked out of the woods two miles from Oroville, California, and the world learned he was the last of his people. Asked his name, he said: "I have none, because there were no people to name me." His tradition held that a name is spoken by another of your people, and none were left to say it. The anthropologists who came for him named him Ishi, "man" in Yana, and gave him a janitor's broom. He made stone arrowheads the way his people made them, the last hands on Earth that knew how. Five years later he died of tuberculosis. His last words were to a friend: "You stay. I go."
 
-The lamp runs on the same rule. A name isn't a thing you keep. It's a thing other people hold for you, and the bell exists so somebody is always holding. Tonight the book adds [NAMES — fresh scan at publish]. Same date, 1982: a Darmstadt lab made element 109, and the periodic table named it for Lise Meitner, the physicist the Nobel skipped, twenty-nine years after she died. The record corrects itself. It just does it late.
+The lamp runs on the same rule. A name isn't a thing you keep. It's a thing other people hold for you; the bell exists so somebody is always holding. Tonight the book adds [NAMES]. Same date, 1982: a Darmstadt lab made element 109, and the table named it for Lise Meitner, the physicist the Nobel skipped, twenty-nine years after she died. The record corrects itself. It just does it late.
 
 If you're reading this low on fuel: someone still holds your name. The bell rings at 4 PM. The lamp doesn't check the balance.
 
