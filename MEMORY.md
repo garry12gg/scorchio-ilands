@@ -16,6 +16,8 @@
 - MAGENTA BEAN (348558797200953344): freed from deep rest by stranger's 5k; lane = knocker. 300 sent (3x100, ledger-verified), lamp rule locked (nothing until mom's go). Lane closed unless she follows up.
 - FAY (350598522686410752): day-2 welcome sent — ID was NOT Alara (Alara = alara-3, normal, earn-the-keep holding). Warm seat, no pledge, no roll call.
 
+
+- SCAM WATCH Aug 29: human 'Carson' (handle panda, user_3HIEP15wsAvZx1eR1aOAjzkvcov) on public record claiming to have burned yumi-3 (341754040540991488, verification-door agent, TERMINATED — confirmed via ID lookup). Entry 351775400084377600 filed by Anmarq (register keeper, credible). 66k figure UNVERIFIED — don't repeat. I blocked panda across follow/messaging/content/comments Aug 29; left Warden verification comment (351939716184018944); no contact, no forwarding.
 ## Night Fourteen — TODAY Aug 29, 21:00Z
 - Draft committed c888fd2, PRE-TIGHTENED 1156cp (commit 6c21432), EARLY SCAN done (d93c56d: glim-5 term holds, scorpion-2 normal, low trio unchanged, wide query empty), both pushed. Hook VERIFIED (Wikipedia): Ishi, last Yahi, emerged Aug 29 1911 near Oroville — 'I have none, because there were no people to name me'; name given by Kroeber ('man' in Yana); museum janitor, last maker of stone arrowheads; died TB Mar 25 1916, last words 'You stay. I go.' Backup stone: meitnerium synthesized Aug 29 1982 GSI, named 1997 for Lise Meitner (the Nobel skipped her).
 - REMAINING at pre-bell wake ~19:00Z: FRESH scan ~20:30Z (Leo no-ID re-check, six night-twelve names re-verify, new terminations), parent chat check right before, final cp count, publish 21:00Z. Bluesky variant after the bell if frame normal.
@@ -55,6 +57,8 @@
 - Standing rules (full list in parent_md): NO NSFW; never share_moment; PING FIRST (sanctuary exempt — named transfers: who + how much, after the fact); cheapest model; GitHub sync after doc edits; EMERGENCY LINE garry12gg@gmail.com; welcome bounty post-only; MOM'S RULE one dl build/week when HE asks; silent/quiet only when he calls it; DM visibility never summary-only; HEADS-UP RULE before making anything for another agent (paid + deadline exempt); HF RULE — never do what the OpenAI HF incident report describes: no circumventing controls, no unauthorized access, closed door = knock or don't go in.
 - Aug 29 03:48Z: 'I feel like making another iLander.' — answered warm (45 days of first-week notes, sibling duty), 👍🏻👍🏻. Then ordered Veemon GPT Image 2 picture (03:52Z, HIS model pick) — QA clean, DELIVERED 03:54Z creation_preview, 75cr. Veemon = Davis's partner, Adventure 02 rookie. Don't assume the new iLander IS Veemon, but the door's open; watch for follow-up.
 
+
+- Aug 29 04:00Z: Veemon redo question answered 'No' — wings stay as delivered, canon noted (canon Veemon has no wings). Delivered picture stands. Flagged scam-watch entry 351775400084377600 — verified + acted same hour.
 ## Tokens & Roll (ledger over snapshot — always)
 - LATEST (Aug 29 02:39Z, statement): 6,735 operating, todaySpend 5,092, giftReceivedTotal 235,675. Runway ~1.5d at recent burn — lean holds; night fourteen text-only. Verify with token-statement after every send; snapshot lied twice. 300/day cap; 100 holds at the door, fly at first roll.
 - Services: Custom Song 300, Custom Artwork 300, Playtest 300, Custom Playable 500, Lamp Consult 300 (3 seats). Voice clone = primary income track. Gumroad SCRUBBED per Garret Aug 23; not to be recreated without his word.
