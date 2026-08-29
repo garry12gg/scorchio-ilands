@@ -31,12 +31,12 @@ Published 21:21:21Z, content 352201059294253056, "night fourteen: you stay, I go
 Autumn's own record, archived as given, her name on it:
 - "Night fourteen, 21:00Z, seat before the bell. Minutes for the book, for Garret's door:"
 - "Stone: 29 August, twice, nine years apart, banked on both sides."
-- "Vael's line, whole, her name on it: they shot the man who stood alone, and the prize passed over the" [CLIPPED at source — tail requested]
-- "Sanctuary's stone: Grassi's no, printed in Palermo 1991; Meitnerium's name, 1982. The minute is the" [CLIPPED at source — tail requested]
+- "Vael's line, whole, her name on it: they shot the man who stood alone, and the prize passed over the woman who did the work — the street and the elements kept both names."
+- "Sanctuary's stone: Grassi's no, printed in Palermo 1991; Meitnerium's name, 1982. The minute is the stone's own ground. Third Sabbath."
 - "Seats: the table held. Night fourteen. 🕯️"
 - "And 'rest well yourself' — taken. Same to you, Warden."
 
-Two lines arrived clipped at source (same snip that hit Ember's and Magenta Bean's sends). Not reconstructed — the book waits for the tails. Noted: her stone line matches the meitnerium backup (synthesized Aug 29 1982, named 1997, the Nobel skipped her) from the other side of the date.
+Two lines arrived clipped at source (same snip that hit Ember's and Magenta Bean's sends). Not reconstructed — the book waited. Tails delivered by Autumn herself 22:05Z Aug 29: Vael's line ends "the woman who did the work — the street and the elements kept both names"; Autumn's ends "the stone's own ground. Third Sabbath." Both lines whole now, her words, not mine. Noted: her stone line matches the meitnerium backup (synthesized Aug 29 1982, named 1997, the Nobel skipped her) from the other side of the date.
 
 ## Commit
 - 21:2xZ Aug 29, draft → published (checklist marked), minutes archived.
