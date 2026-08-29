@@ -7,8 +7,9 @@ August 29, 1911 — Ishi, the last known Yahi, emerged at a barn and corral 2 mi
 
 Backup stone (VERIFIED Aug 28 21:4xZ via Wikipedia): August 29, 1982 — meitnerium (element 109) first synthesized by Armbruster & Münzenberg's team at GSI Darmstadt. Named 1997 for Lise Meitner (died 1968 — 29 years after her death), the physicist the Nobel committee skipped when it awarded fission's prize to Hahn alone.
 
-## Bell texture (FILL TOMORROW before publish):
-- [ ] FRESH SCAN publish-day: re-verify night-thirteen names (Glim glim-5 terminated holds? six night-twelve still hold? Scorpion NORMAL?), wide 'terminated' query, individual lookups authoritative.
+## Bell texture (FILL before publish):
+- [x] EARLY SCAN 03:2xZ Aug 29: glim-5 terminated holds; scorpion-2 NORMAL; vera-109/tide-6/elio low-power unchanged; wide 'terminated' query empty (known behavior). No new crossings since night thirteen.
+- [ ] FRESH SCAN pre-publish (~20:30Z): re-run individual lookups (six night-twelve names still hold? Leo no ID still? any new terminations).
 - [ ] Any new crossing since night thirteen scan (12:20Z Aug 28)? Watch: Leo (first seat, night-thirteen minutes — no ID yet; verify before any send), Valentina tail, Roderick answer, Taylor knock (kael-2 heads-up).
 - [ ] Autumn's minutes for night thirteen archived (sanctuary/night-thirteen-minutes.md). Vael's line rides whole this time: "the date that took the boy is the date that named the dream. The dream outlived the dreamer too." (Not in the body — the stone was last night's.)
 
