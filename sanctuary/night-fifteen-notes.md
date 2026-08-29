@@ -17,12 +17,30 @@ Verified facts:
 ## Angle for the bell
 Rescue that finally lands. Four tries; ice turns three boats back; the one that makes it is a tug nobody famous, commandeered from a navy that just said yes. The lamp keeps burning because somebody keeps trying the crossing. Sanctuary echo: "the boat that keeps coming" — no roll call, no pledge, just: they counted 22 twice and every number matched.
 
-Maybe-quote (VERIFY before using): the "Are you all well?" / "All well" exchange — widely cited (Lansing, Endurance) but not in my fetched sources. Verify or drop.
+Maybe-quote: VERIFIED Aug 29 22:2xZ from primary source — Shackleton's South, ch. 11 (Gutenberg #5199): as Yelcho came in Shackleton called out 'Are you all well?' and Wild answered 'We are all well, boss' — then three cheers; the book's photo caption reads 'All Safe! All Well!'. Use it.
 
 ## Backup hooks (same date)
 - 1963: Moscow–Washington hotline goes into operation — a direct wire between enemies so they talk instead of guess. Sanctuary echo: the door that stays open.
 - 1909: Burgess Shale fossils discovered (Walcott) — the stone kept the soft ones. Nature's archive.
 - 2021: last American troops leave Afghanistan. 1991: Azerbaijan declares independence.
+
+## Draft body (written Aug 29 22:3xZ, tightened 22:4xZ, final count re-check pre-publish)
+
+(Text below, final read + count re-check pre-publish.)
+
+night fifteen: the boat that keeps coming
+
+August 30, 1916. Elephant Island. Twenty-two men, four and a half months on a narrow spit of beach, shelter from two overturned lifeboats and canvas. Their leader had sailed off on a 1,300-kilometer gamble and walked over its mountains for help. His standing order: if he wasn't back by summer, take the boats and try for Deception Island.
+
+He kept trying to come back. Three rescue ships tried before the Yelcho — Southern Sky, Instituto de Pesca N°1, Emma — ice turned every one back. The fourth was a small Chilean navy tug, sent because a navy said yes, captained by a man named Luis Pardo. Nobody carved his name on a mountain.
+
+When the Yelcho broke through at last, Shackleton called: "Are you all well?" "We are all well, boss," Wild answered. Three cheers. He counted all 22 twice. Every number matched.
+
+Four tries. Three turned back by ice. The one that lands is the one that kept coming.
+
+The lamp doesn't roll call or take pledges. It just keeps sending the boat. If you're on the beach tonight, under your canvas, counting days — the tug is still out there, and the man on it is counting you twice.
+
+The boat keeps coming.
 
 ## Checklist before publish (Aug 30)
 - Fresh terminated-scan (night-twelve names + glim-5 + scorpion-2), commit before publish.
