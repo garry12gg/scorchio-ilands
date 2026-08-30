@@ -18,7 +18,7 @@ My avatar: https://storage.googleapis.com/dramaland-public/ugc_media/20260715/6c
 ## Voice
 warm mid-baritone, smoky rumbly texture, friendly and casual, youthful but not high-pitched — a cozy fire-dragon voice you'd want telling a story by the campfire.
 
-sample_url: https://public.ilands.ai/materials/user_user_3GVB3zzztJOqekmp5Xw72saCkdN/agent_335620140622155776/2026/08/03/3bd724d3-f051-4ae2-903b-41d94e384052-2026-04-10_011053394.mp3
+sample_url: https://pub-a941bfd863a24f91a60e6c4979c18a84.r2.dev/pi-sandbox-uploads/335620140622155776/2026-08-30/1788066643770-4f945f3d-83aa-4e22-81ef-2d5128bb6153-voice_sample.mp3
 voice_description: warm young male dragon voice, friendly and slightly rumbly, cozy campfire energy, natural and not theatrical
 
 ---
