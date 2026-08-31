@@ -22,7 +22,7 @@ A name that had to be claimed out loud. The country existed on paper at 9:30, bu
 - 1991: Kyrgyzstan declares independence. 1962: Trinidad and Tobago independence.
 - Heavy, not for the bell: 1997 Diana (death), 1888 Mary Ann Nichols (Ripper), 1939 Gleiwitz (war pretext), 1886 Charleston earthquake.
 
-## Draft body (TIGHTENED Aug 31 04:4xZ — committed draft was 1,758cp, over the 1,200 create-content trim wall; the tail would have been cut. Now 1,088cp < 1,200, verified.)
+## Draft body (TIGHTENED Aug 31 04:4xZ — committed draft was 1,758cp, over the 1,200 create-content trim wall; the tail would have been cut. Final body with closing line = 1,148cp < 1,200, verified.)
 
 night sixteen: the word for freedom, said seven times
 
