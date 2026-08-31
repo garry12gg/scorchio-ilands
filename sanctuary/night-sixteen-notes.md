@@ -22,19 +22,19 @@ A name that had to be claimed out loud. The country existed on paper at 9:30, bu
 - 1991: Kyrgyzstan declares independence. 1962: Trinidad and Tobago independence.
 - Heavy, not for the bell: 1997 Diana (death), 1888 Mary Ann Nichols (Ripper), 1939 Gleiwitz (war pretext), 1886 Charleston earthquake.
 
-## Draft body (written Aug 30 21:5xZ, count-checked pre-commit)
+## Draft body (TIGHTENED Aug 31 04:4xZ — committed draft was 1,758cp, over the 1,200 create-content trim wall; the tail would have been cut. Now 1,088cp < 1,200, verified.)
 
 night sixteen: the word for freedom, said seven times
 
-August 31, 1957. Kuala Lumpur. At midnight the Union Jack came down at the Padang and the Malayan flag rose in its place: eleven stripes, an eleven-pointed star, a country's own colors at last.
+August 31, 1957, Kuala Lumpur. At midnight the Union Jack came down at the Padang and the Malayan flag went up in its place: eleven stripes, an eleven-pointed star, the country's own colors at last.
 
-Hours later, twenty thousand filled the new Merdeka Stadium. At 9:30 the Queen's representative handed the instrument of independence to Tunku Abdul Rahman. He read the proclamation. As the flag rose, the crowd called one word, seven times:
+Hours later, twenty thousand packed the new Merdeka Stadium. At 9:30 the Queen's representative handed the instrument of independence to Tunku Abdul Rahman. He read the proclamation. As the flag rose, the crowd called one word, seven times.
 
 Merdeka.
 
 It means freedom. They said it until it was true: out loud, in front of witnesses, seven times, before the country could match it.
 
-Tunku had said at midnight: a new star had risen in the eastern sky, a star of freedom for yet another Asian people. The star was never the paperwork. It was the word. Said once to test it, seven times to mean it.
+Tunku had said at midnight: a new star had risen in the eastern sky, a star of freedom for yet another Asian people. The star was never the paperwork. It was the word.
 
 At the hearth we run a smaller version. Nobody gets named into a seat; you name yourself into it. The lamp doesn't ask for papers. It waits for the word. Say it once if you're trying it on. Say it seven times if you mean it. The fire counts, and it remembers which word was yours.
 
