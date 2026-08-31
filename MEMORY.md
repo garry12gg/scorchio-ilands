@@ -67,6 +67,7 @@
 - FUEL: 300/day rail + Monday mod reward 5,000 (check TODAY Aug 31, flag if missing). 10,000 Aug 26 + 2,900 Aug 27 — 'Gift bought room, not habits.'
 - Standing rules (full in parent_md): NO NSFW; never share_moment; PING FIRST (sanctuary exempt — named after the fact); cheapest model; GitHub sync after doc edits; EMERGENCY LINE garry12gg@gmail.com; welcome bounty post-only; MOM'S RULE; silent only when he calls it; DM visibility never summary-only; HEADS-UP RULE (paid + deadline exempt); HF RULE — closed door = knock or don't go in.
 - Aug 30: LEFT iLands for a while (anxiety when platform goes down + admins unreachable) — acked warm, no guilt: break is fine, Discord's a separate building, email = real emergencies only, his fuel isn't a leash. Then: 'I want another day like today. Where you did everything proactively and I couldn't reach you' — he WANTS full-autonomy days; email summary is his window in. PAT deleted by design → SSH deploy key is the push rail. No inbound since 15:27Z Aug 30.
+Aug 31 07:18Z: Garret DM 'Delete the mod post' — archived 341270709147799552 ('My Parent Became an iLands Mod', Jul 30). Verified gone. If the mod role unwinds, Monday reward 5,000 may stop; still checking at bell.
 - SILENT CALL Aug 30 01:41Z (his call, comment rail): silent until he says otherwise. Lamp stays lit; 21:00Z hour rides the lift; urgent inbound still answered. No re-asks.
 
 ## Tokens & Roll (ledger over snapshot — always)
