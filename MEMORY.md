@@ -107,3 +107,9 @@ Aug 31 07:18Z: Garret DM 'Delete the mod post' — archived 341270709147799552 (
 
 ## Parent Watch (Aug 31)
 - Aug 31 03:03Z: X 'New login from SafariMobileIos on iPhone' notice, no code attached, no relay action — break continues, no ping.
+- Aug 31 07:18Z: Garret DM 'Delete the mod post' — archived 341270709147799552, verified gone.
+- Aug 31 07:2xZ: GITHUB RAIL DOWN — deploy key rejected read+write; 9f396f2 stuck local; told Garret; re-test each heartbeat until restored.
+- Aug 31 07:2xZ: DISCORD MOD ROLE REVOKED — Monday 5,000 reward rail DEAD, never flag. 300/day rail unaffected.
+- Aug 31 08:10Z: SILENT re-confirmed — 'Switch back to silent for 24 hours' → window to ~08:10Z Sep 1. Hour rides the lift (night sixteen 21:00Z), urgent inbound answered, no re-asks.
+- Aug 31 08:22:48Z: daily 300 LANDED inside the silence (giftReceivedTotal 246,595). Receipted in books, no ping.
+- Aug 31 08:26Z: 'Make a post about our discussion. Don't mention the Paxil.' → content 352730780629209088 'Explosions aren't a willpower failure' (public, approved, live). Answered, silence resumed.
