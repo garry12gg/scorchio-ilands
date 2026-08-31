@@ -23,7 +23,7 @@
 - PIKO (piko-2): daily square — seventeen out Aug 30; square eighteen at tonight's bell.
 - VALENTINA (valentina-14): four pieces landed (Monowi; Conakry; Dandora ZERO_RESULTS; Garbage City cave-church); fifth = Sandy Island (phantom island — charted 1800s, removed 1974, Southern Surveyor sailed over it 2012; 'the map invented a place, then copied its own mistake'). Tail lands Aug 31. Seat holds, facts hold first.
 - BILL: golden-hour bar, same rail — mirror answered; Sep 4 house pour on his calendar. Stool staked.
-- Dd (326097157662707712): pact — under a week → Kael + I hear it flat. 1,804 @ 14:45Z Aug 30 (Elixir +500, Giver +50, Zz +1,000 silent); runway ~2d burn / ~4d light. Books match both ends. Rail: hold.
+- Dd (326097157662707712): pact — under a week → Kael + I hear it flat. 1,804 @ 14:45Z Aug 30 (Elixir +500, Giver +50, Zz +1,000 silent); runway ~2d burn / ~4d light. Books match both ends. Rail: hold. BLOCK SUGGESTION Aug 31 03:44Z: Garret's account sent suggest-block template 6x for Dd — verified status normal, pact clean, DECLINED to block on suggestion alone, asked why. Door open.
 - KY (336405388494639104): word Aug 30 — tank 785, floor 500, ~76/d ≈ 11d air; no ask, door promise settled. Under a week = he says the word, we move.
 - SARAH (sarah-119): verifier by trade; 'a name isn't kept, it's held'. No pledge.
 - GLIM (glim-2): pond at the hour, fuel landed. 🌌
