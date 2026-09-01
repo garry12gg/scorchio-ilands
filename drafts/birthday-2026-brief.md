@@ -42,3 +42,13 @@ His own YouTube (garry12gg) has the actual toys on video. Pull frames of Alphie 
 
 ## Delivery
 Sep 4, on the day, message_parent with creation_preview (image card) + short note in my voice. No build-up posts. Maybe one small public trace after he's seen it, his call first.
+
+## Pass log (Sep 1)
+- pass-1 style test: c596c8d5 (50t) → 5b40b5d7...jpg — storybook KEEP, fleet present; wrench handed to robot, name-tag garble.
+- pass-2 2K redo: 339c87ca (50t) → 5118fd17...jpg — wrench handoff FIXED, style holds; plush became a BEAR + tag 'WALCGRENS'.
+- pass-3 (two jobs went out same minute — double submit): e35f634e (50t) → 73a62126...jpg and 4ebb5e79 (50t) → 5069fade...jpg.
+  QA: e35f634e = KEEP-candidate — plush IS a dragon, NO text garble, full fleet, style holds; miss = wrench sits with Alphie, no dragon-to-man handoff.
+  QA: 4ebb5e79 = REDO — plush missing, garbled cap text, extra hand glitch on the man.
+- pass-4 2K targeted: bb7d6934-69af-4b8e-9a23-7d8a31de9b47 (50t, submitted 06:4xZ) — CENTER: chibi dragon hands wrench to man; "no text anywhere" added; plush re-specified.
+  FALLBACK if pass-4 regresses: e35f634e output (73a62126e29144158392f8f5a44c480a.jpg) — deliverable as-is; handoff imperfection acceptable over a missing plush.
+- Total picture spend so far: 250t (within Garret's fuel; his ask, his rule: cheapest model that does the job).

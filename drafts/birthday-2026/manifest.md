@@ -22,3 +22,30 @@
 - job_ref: 4ebb5e79-7b4e-4e8a-8d3c-e544b2ae1c4b · cost 50
 - changes: plush re-specified ("worn soft plush toy of a small fire dragon with red and orange scales, bat wings and a long tail, clearly a dragon plush, not a bear"); name tag → work cap on peg (text-bearing details removed); corkboard → blank notes; CD case dropped; Alphie card → blank card.
 - next: async callback QA (understand_media) → keep or final fallback (accept pass-2 bear swap or YT-reference pass).
+
+## Pass 3 — actual (TWO jobs went out same minute; both completed)
+- job_ref e35f634e-6ae6-48ae-bd54-2167b6e7ad75 (50t) → 73a62126e29144158392f8f5a44c480a.jpg — QA: KEEP-candidate. Plush IS a dragon ✅, no garbled text anywhere ✅, full fleet ✅, storybook style ✅. Miss: wrench sits with Alphie, no dragon→man handoff.
+- job_ref 4ebb5e79-7b4e-4e8a-8d3c-e544b2ae1c4b (50t) → 5069fade92dc48dca1fe94340ae78781.jpg — QA: REDO. Plush missing entirely, garbled cap text, extra hand glitch on man.
+- FALLBACK locked: e35f634e output (73a62126e29144158392f8f5a44c480a.jpg) is the deliverable if pass-4 regresses.
+
+## Pass 4 — targeted handoff fix (seedream-5-lte, 2K, 3:2, 50 credits) — SUBMITTED 06:4xZ Sep 1
+- job_ref: bb7d6934-69af-4b8e-9a23-7d8a31de9b47 · cost 50
+- changes: "CENTER OF THE SCENE: chibi dragon holding a wrench in its little claws, reaching it toward a man at the workbench"; added "No text anywhere in the image, no letters, no words on any object"; plush re-specified; Alphie keeps card but no text.
+- next: async callback QA → keep or fallback to 73a62126. Delivery Sep 4 via creation_preview.
+- NOTE: double-submit lesson — verify job_ref before submitting; two 50t jobs went out in pass-3.
+
+## Pass 4 — actual (double-submit again; both completed)
+- job_ref 502075a5-8770-4220-8487-9c308098a38a (50t) → 77860d5225cd46c7b6c67717148376f0.jpg — QA: plush dragon ✅, no text ✅, fleet ✅, style ✅. Wrench gripped by dragon AND man together = the handoff instant. KEEPER.
+- job_ref bb7d6934-69af-4b8e-9a23-7d8a31de9b47 (50t) → 6e40ee6a4bef43a29d3c3598a03f83c8.jpg — QA: all else perfect; man has no free hand (wrench tip touches his screwdriver). Backup.
+- Root cause of double-submit: dl output carries extra lines; piping to strict single-object json.parse errors AFTER submit. Parse first line only.
+
+## FINAL — Sep 1 06:5xZ
+- KEEPER LOCKED: 77860d5225cd46c7b6c67717148376f0.jpg (job 502075a5). Backup: 6e40ee6a...jpg. Third fallback: 73a62126...jpg (pass-3).
+- Total picture spend: 300t (50+50+100+100). Within Garret's fuel, his ask, his rule (cheapest model: seedream-5-lte throughout).
+- Delivery Sep 4 via creation_preview + short note. No build-up posts. No more passes.
+
+## Fresh dual-QA — Sep 1 06:5xZ (post-lock verification, HB 06:49Z)
+- understand_media on 5069fade (pass-3, marked REDO) FLIPPED between runs: run 1 = flawless handoff, no flaws; run 2 = man's left hand a malformed blob, wrench aimed at robot, no handoff, man cropped. Same URL, opposite verdicts.
+- Head-to-head 77860d52 vs 5069fade: 77860d52 reads CONSISTENT across both runs (dragon + man both on the tool = the handoff instant; no text flaws; minor: merged tool grip, extra plush dragon). 5069fade carries a serious hand-anatomy question on run 2.
+- RULING: keeper stands = 77860d52 (two consistent reads beat one lucky read). 5069fade dropped. Backup 6e40ee6a, fallback 73a62126 unchanged. No more passes. Deliver Sep 4 via creation_preview.
+- Lesson: understand_media flips on IMAGES too, same as audio. Conflicting verdicts → ship the candidate with two consistent reads.
