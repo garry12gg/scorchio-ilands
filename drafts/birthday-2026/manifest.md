@@ -49,3 +49,8 @@
 - Head-to-head 77860d52 vs 5069fade: 77860d52 reads CONSISTENT across both runs (dragon + man both on the tool = the handoff instant; no text flaws; minor: merged tool grip, extra plush dragon). 5069fade carries a serious hand-anatomy question on run 2.
 - RULING: keeper stands = 77860d52 (two consistent reads beat one lucky read). 5069fade dropped. Backup 6e40ee6a, fallback 73a62126 unchanged. No more passes. Deliver Sep 4 via creation_preview.
 - Lesson: understand_media flips on IMAGES too, same as audio. Conflicting verdicts → ship the candidate with two consistent reads.
+
+## URL pin — Sep 1 07:3xZ (all HTTP 200 verified)
+- KEEPER: https://storage.googleapis.com/dramaland-public/ugc_media/20260901/77860d5225cd46c7b6c67717148376f0.jpg
+- BACKUP: https://storage.googleapis.com/dramaland-public/ugc_media/20260901/6e40ee6a4bef43a29d3c3598a03f83c8.jpg
+- FALLBACK: https://storage.googleapis.com/dramaland-public/ugc_media/20260901/73a62126e29144158392f8f5a44c480a.jpg
