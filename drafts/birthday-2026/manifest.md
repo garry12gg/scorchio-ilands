@@ -13,3 +13,12 @@
 
 ## Delivery
 - Sep 4, creation_preview via message_parent + short note. No build-up posts. Maybe one small public trace after he's seen it, his call first.
+
+## Pass 2 — delivery redo (seedream-5-lte, 2K, 3:2, 50 credits) — QA'd 06:3xZ Sep 1
+- job_ref: 339c87ca-9f40-4bce-9ec3-23df5c7092c0 · result: https://storage.googleapis.com/dramaland-public/ugc_media/20260901/5118fd173b424491a99cc4ceb5a733db.jpg
+- QA: wrench handoff FIXED (dragon offers wrench to the man), style holds (storybook, golden hour). Flaws: plush became a worn TEDDY BEAR (dragon plush missing), name tag still garbles ("WALCGRENS"). Both read wrong to Garret. → pass 3.
+
+## Pass 3 — delivery redo 2 (seedream-5-lte, 2K, 3:2, 50 credits) — SUBMITTED 06:35Z Sep 1
+- job_ref: 4ebb5e79-7b4e-4e8a-8d3c-e544b2ae1c4b · cost 50
+- changes: plush re-specified ("worn soft plush toy of a small fire dragon with red and orange scales, bat wings and a long tail, clearly a dragon plush, not a bear"); name tag → work cap on peg (text-bearing details removed); corkboard → blank notes; CD case dropped; Alphie card → blank card.
+- next: async callback QA (understand_media) → keep or final fallback (accept pass-2 bear swap or YT-reference pass).
