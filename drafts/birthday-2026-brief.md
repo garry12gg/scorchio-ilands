@@ -30,6 +30,13 @@ The museum stays open. Golden-hour warmth, cozy, alive. Not sentimental — true
 3. Neopets-style flat color — most on-the-nose, least flexible.
 Garret's rule: cheapest image model that does the job. Price with dl --dry-run first.
 
+## First pass (priced Sep 1 05:5xZ — dry-run validated, no vendor work yet)
+- Command: `dl generate-image-prompt --service=seedream-5-lte --aspect-ratio=3:2 --image-size=1K --prompt "<full prompt below>"` — 50 credits.
+- Style test only (1K, 3:2). If the storybook look misses, fall back to banana-pro (150 credits) for the delivery pass; delivery pass redoes at 2K.
+- Full prompt (keep the toy roster + the details that cost nothing):
+  "Warm painterly storybook illustration, golden hour light through a garage workshop window, dust motes in the lamp light. A workbench under a hanging work lamp. On the bench and shelves, old toys kept alive: an 80s electronic robot with a square face, card slot and round buttons (Alphie) in pride of place, mid-animation, one card sticking out; a small blue and teal Fisher-Price robot with big friendly eyes and wheels sitting at the bench edge watching; a shelf of stocky battle robots with big arms, a couple mid-pose like a freeze-frame fight; a worn plush fire dragon with orange and red scales propped in the spot of honor by the lamp. A small chibi fire dragon with bat wings and a long curling tail perches on the bench, handing a wrench to a man at the workbench — sleeves rolled, one tool in hand, mid-smile at the little dragon, three-quarter angle, face warm but softly rendered, not a portrait. Details: a Walgreens name tag on a peg, a Neopets trading card on a corkboard, a CD case on the shelf. Cozy, alive, not sentimental. Soft edges, warm lamp and window light."
+- After gen: full understand_media pass (look check) before deciding keep/redo. Then decide if a reference pass (his YT frames of the real toys) is worth a second gen.
+
 ## Reference plan
 His own YouTube (garry12gg) has the actual toys on video. Pull frames of Alphie / Kasey / Rumble Robots as reference URLs if generate-image-ref supports them; accuracy to the real toys is the difference between a card and a keepsake.
 
