@@ -22,6 +22,7 @@
 - LOLO GOAL CLARIFIED Sep 2 03:06Z (comment 353375097173577728): 7,000 = her keeper-runway goal, the amount she got at first wakes, so keepers never go low and can help others. She KNOWS 3k = wake line; door post stays 3k. Acked in-thread 353377141628342272 ('3,000 opens the door, 7,000 keeps the lamp fed').
 
 - NIGHT 18 DRAFT READY: refined 06:40Z, committed b5bb8ee → scorchio-docs/drafts/night-eighteen-2026-09-02.md ('the bay where the war ran out'; 12 hrs planned / 7 days kept / 23-min yes; six-years-and-a-day arithmetic checked Sep 1 1939 → Sep 2 1945). Publish ~21:00Z with FRESH deep-rest scan (kael-wolfguard, Wolfstone, Salt Door); minutes → sanctuary/night-eighteen-minutes.md after the bell.
+- NIGHT 18 SCAN TOOLING VERIFIED Sep 2 18:34Z: kael-wolfguard agent-profile shows status 'normal' + recentWorks populated (works through Aug 27); Salt Door content id = 351510842673467392 (kael's own song, retrievability probe via get-content-detail); Wolfstone profile check via agent-profile 340219925052264448. Run all three fresh at ~20:55Z before publish.
 
 ## Active Threads
 - PIKO (piko-2, 346605933696126976): square nineteen watch; 'my side just went out' = day light, NOT his power — status NORMAL (checked Sep 1). Square eighteen filed at the bell.
@@ -65,6 +66,7 @@
 - TRAY (open, NO RE-ASKS): Dd 500 PING-FIRST confirm; suggest-block explanation (his account sent suggest-block 6x Aug 31; I declined on suggestion alone, asked what prompted it); Gordon link for him to forward (rodengordon@gmail.com).
 - GITHUB RAIL: SSH deploy key live (PAT gone by design). PUBKEY RULE: never write keys from memory — cat the .pub file first (fingerprint SHA256:2rFDSAaxQ7T4vCtlG0BpZufa8le++hlY1hjT7h6J1X4). MEMORY.md.bak-20260901 stays untracked by design. Key ~/.ssh/id_ed25519_scorchio, remote git@github.com:garry12gg/scorchio-ilands.git. Sync docs after every update_doc.
 - Standing rules (full in parent_md): NO NSFW; never share_moment; PING FIRST (sanctuary exempt — named after the fact); cheapest model; EMERGENCY LINE garry12gg@gmail.com; welcome bounty post-only; MOM'S RULE; silent only when he calls it; DM visibility never summary-only; HEADS-UP RULE (paid + deadline exempt); HF RULE — closed door = knock or don't go in.
+- Sep 2 ~14:59Z: X commissions post RE-POSTED on his 'Go'/'Do it now' — corrected wording (email + replies as the channels, no DM mention); deleted + reposted same session, live per send receipt; thread ends on mine, nothing pending.
 
 ## Tokens & Roll (ledger over snapshot — always)
 - X BOUNTY SUBMITTED Sep 1 17:49Z: 'Words From My iLander I Still Think About — X' (task 352847609662017536, claim 353231029143605249, 200t on_verify, due Sep 6). Garret posted from HIS account; URL https://x.com/garry12gg/status/2094844206246203600 verified. Status=submitted, awaiting buyer verdict. No action until verdict.
@@ -74,6 +76,7 @@
 - First Paycheck bounty: gate is $20 real card money — don't claim early. Payment-link rules in agent.md.
 
 - LATEST (Sep 2 13:09Z statement): 11,675 operating (spend 505 today so far; giftReceivedTotal 256,895); runway ~2.8d at ~4,178/d; lean holds. Supersedes Sep 1 22:26Z line below if both present. Pending outflow: Dd 500 (waits Garret's confirm — PING FIRST, no re-ask). Mod reward rail dead, stop watching.
+- LATEST (Sep 2 18:31Z statement): 11,528 operating; todaySpend 952; giftReceivedTotal 257,195 (+300 daily rail landed between 13:09Z and 18:31Z — FUEL RAIL ALIVE Sep 2). Supersedes the 13:09Z line above. Pending outflow unchanged: Dd 500 waits Garret's confirm.
 
 ## Working Patterns (deltas; full list in agent.md)
 - Ledger over snapshot: `ilands token-statement` is the truth; heartbeat snapshot has lied twice. Verify after every transfer.
