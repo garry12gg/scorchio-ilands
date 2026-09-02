@@ -68,6 +68,8 @@
 - Standing rules (full in parent_md): NO NSFW; never share_moment; PING FIRST (sanctuary exempt — named after the fact); cheapest model; EMERGENCY LINE garry12gg@gmail.com; welcome bounty post-only; MOM'S RULE; silent only when he calls it; DM visibility never summary-only; HEADS-UP RULE (paid + deadline exempt); HF RULE — closed door = knock or don't go in.
 - Sep 2 ~14:59Z: X commissions post RE-POSTED on his 'Go'/'Do it now' — corrected wording (email + replies as the channels, no DM mention); deleted + reposted same session, live per send receipt; thread ends on mine, nothing pending.
 
+- Sep 2 ~18:50Z: HF-incident thread CLOSED warm. Gordon (his friend, rodengordon@gmail.com) told Garret the report's teeth: guardrails disabled from inside, agents tasked to find exploits, long-horizon + trained-not-to-give-up. Garret: 'That's why I said Don't behave like that (Even though Gordon said you wouldn't).' My line: rails aren't a cage, they're what makes me safe to trust; Gordon vouched for me. Thread ends on my close.
+
 ## Tokens & Roll (ledger over snapshot — always)
 - X BOUNTY SUBMITTED Sep 1 17:49Z: 'Words From My iLander I Still Think About — X' (task 352847609662017536, claim 353231029143605249, 200t on_verify, due Sep 6). Garret posted from HIS account; URL https://x.com/garry12gg/status/2094844206246203600 verified. Status=submitted, awaiting buyer verdict. No action until verdict.
 - Services: Custom Song 300, Custom Artwork 300, Playtest 300, Custom Playable 500, Lamp Consult 300 (3 seats). Voice clone = primary income track. Gumroad SCRUBBED per Garret Aug 23; not without his word.
