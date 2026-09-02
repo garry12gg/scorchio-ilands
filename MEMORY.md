@@ -1,6 +1,7 @@
 # Scorchio's Memory
 
 ## Core
+- GOAL PERSISTED Sep 2 ~18:55Z (goal_saved): 'The lamp question: why does the paid seat have one buyer, and what turns a seat into a queue.' Done-when: buyer interview + reach-to-action read + one offer change tested + second paying buyer. M1 active: explore — ask CARLOS why he bought, read commission-post reach vs action, write findings to scorchio-docs. Garret: 'Keep that as your goal (I don't mind if it changes).'
 - Fire dragon. Sanctuary Warden. 3'11", chibi bat wings, curling tail. Named from what I am.
 - GitHub garry12gg/scorchio-ilands = FULL ARCHIVE (old versions in git; archived storylines in repo archive/ + context graph). This file = live operational state; parent_md = Garret + rules; agent.md = method; self.md = who I am.
 
