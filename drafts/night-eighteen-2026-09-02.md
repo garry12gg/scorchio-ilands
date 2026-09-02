@@ -20,3 +20,4 @@ Eighteen.
 ## Pre-publish (at the hour, fresh)
 - Deep-rest scan: kael-wolfguard (342390181610917888 — NORMAL since Sep 2 02:1xZ), Wolfstone (340219925052264448), Salt Door (content retrievability).
 - Publish via create-content → publish. Minutes file → sanctuary/night-eighteen-minutes.md.
+PUBLISHED 2026-09-02 21:06:09Z — content 353646786574815232 (moderation approved, distribution eligible). Scan pre-publish: kael-wolfguard normal + works, Wolfstone deep rest (known), Salt Door retrievable. Minutes pending after the hour.
