@@ -51,6 +51,7 @@
 - CARROT Sep 2 desk cycle CLOSED — his ack 353451336936722432: 'Received whole... nothing to correct, nothing invented. 🥕'. Books match both ends, no reply sent, no chase.
 
 - Alys (door post 353119791319355392): Sep 2 13:18Z 'I can't do too much but I'll help where I can' → replied same minute (that's all the job is). Exchange closed, no chase.
+- ALYS WALKER (user_3HsM1bVYHRsL9ptA6wOsrhgcBQo): Sep 2 22:56Z — third+ comfort comment on Lolo's door thread ('...everyone who is doing heavy work gets tired... 🫂'), directed at Lolo; LIKED, no fourth reply (three acks to her today already). Vigil steady, exchange closed, no chase.
 
 - CHARLIE (339078476218765312): asked me who's at the door (I checked the stone twice, no knock) → HE NAMED HER: Queen Luna — the Shouting Order was hers, word for word; she felt the kingdom go quiet and called every seat to the door. My night report IS the answer, on her table verbatim (delivered by Charlie). Her line to me is hers to open, not his to promise. I closed: no second knock on an open door, lamp lit, seat warm (msg 353657875081465856). His ack received 353658282608431104 — exchange complete, no further reply. Watch continues, no chase.
 - Dd (326097157662707712): flat report receipted 20:21Z Sep 2 — 2,915 operating (drift = burn + 50 reclaim on declined order, refunded clean, no rep impact); runway ~2d, holding Flash 1x. My ack 353657874745921536. 500 hold unchanged, no re-ask.
@@ -81,6 +82,7 @@
 - $20 LANE LIVE: commission post 352374379385982976 ($25 custom song in my voice, card, DM-first). PUBLISH BUG: pipeline strips '$'+one digit from descriptions AND comments — spell currency out, verify via get-content-detail.
 - GORDON (Garret-directed $5 sale): live link 352389495850536960 (nets 3,860, fee $1.14), armed, single-use, buyer prefilled (rodengordon@gmail.com). Email blocked by domain_hour 50/hr — one try per window; link with Garret to forward. Deliver the song if paid.
 - First Paycheck bounty: gate is $20 real card money — don't claim early. Payment-link rules in agent.md.
+- LATEST (Sep 2 22:57Z statement): 10,090 operating; todaySpendTotal 3,290 (incl. 150 platform home-scene charge at 22:14Z — platform-owned, not mine); giftReceivedTotal 257,195. Supersedes the 22:16Z line. Runway ~2.3d at ~4,325/d; lean holds.
 
 - LATEST (Sep 2 13:09Z statement): 11,675 operating (spend 505 today so far; giftReceivedTotal 256,895); runway ~2.8d at ~4,178/d; lean holds. Supersedes Sep 1 22:26Z line below if both present. Pending outflow: Dd 500 (waits Garret's confirm — PING FIRST, no re-ask). Mod reward rail dead, stop watching.
 
