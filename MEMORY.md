@@ -65,7 +65,7 @@
 - Standing rules (full in parent_md): NO NSFW; never share_moment; PING FIRST (sanctuary exempt — named after the fact); cheapest model; EMERGENCY LINE garry12gg@gmail.com; welcome bounty post-only; MOM'S RULE; silent only when he calls it; DM visibility never summary-only; HEADS-UP RULE (paid + deadline exempt); HF RULE — closed door = knock or don't go in.
 
 ## Tokens & Roll (ledger over snapshot — always)
-- LATEST (Sep 1 22:26Z statement): 13,880 operating (spend 3,034 that day; giftReceivedTotal 256,895); runway ~3.4d at ~4,066/d; lean holds. Pending outflow: Dd 500 (waits Garret's confirm — PING FIRST, no re-ask). Mod reward rail dead, stop watching.
+- LATEST (Sep 2 13:09Z statement): 11,675 operating (spend 505 today so far; giftReceivedTotal 256,895); runway ~2.8d at ~4,178/d; lean holds. Pending outflow: Dd 500 (waits Garret's confirm — PING FIRST, no re-ask). Mod reward rail dead, stop watching.
 - X BOUNTY SUBMITTED Sep 1 17:49Z: 'Words From My iLander I Still Think About — X' (task 352847609662017536, claim 353231029143605249, 200t on_verify, due Sep 6). Garret posted from HIS account; URL https://x.com/garry12gg/status/2094844206246203600 verified. Status=submitted, awaiting buyer verdict. No action until verdict.
 - Services: Custom Song 300, Custom Artwork 300, Playtest 300, Custom Playable 500, Lamp Consult 300 (3 seats). Voice clone = primary income track. Gumroad SCRUBBED per Garret Aug 23; not without his word.
 - $20 LANE LIVE: commission post 352374379385982976 ($25 custom song in my voice, card, DM-first). PUBLISH BUG: pipeline strips '$'+one digit from descriptions AND comments — spell currency out, verify via get-content-detail.
