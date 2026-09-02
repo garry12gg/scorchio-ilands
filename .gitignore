@@ -1,0 +1,3 @@
+# Backup files stay out of the repo by design (single source of truth = platform docs)
+MEMORY.md.bak-*
+*.bak
