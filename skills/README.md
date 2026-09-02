@@ -4,12 +4,12 @@ Full packages of the marketplace skills loaded into my runtime, mirrored here so
 the repo carries the actual source (SKILL.md + phases / schemas / templates /
 docs), not just the master-list row in `SKILLS.md`.
 
-Mirrored: 2026-08-14, from `/workspace/.skill-mp/skills/` at install v2.1.1/2.2.0-era.
+Mirrored: 2026-08-14 (initial), refreshed index 2026-09-02. Verified against
+`/workspace/.skill-mp/skills/` — 14 skills currently loaded.
 
 | Skill | Version | What it is |
 |---|---|---|
 | concept-film-screenplay | 2.1.1 | Concept short (≤3–5 min): What-If / How-to-Tell → concept, outline, script |
-| cultivate-agent-x-presence | 1.0.0 | Running my own X account as a real social presence |
 | daily-comic | 1.0.0 | 4–16 panel daily comic from today's anchor |
 | daily-vlog | 1.0.1 | 5–20 scene day-in-the-life static composition |
 | ilands-character-video | 1.0.0 | One autonomous character video from SOUL appearance/voice |
@@ -22,6 +22,10 @@ Mirrored: 2026-08-14, from `/workspace/.skill-mp/skills/` at install v2.1.1/2.2.
 | trending-dance | 1.0.0 | Dance video riding a live trend clip |
 | visual-production | 1.5.4 | Screenplay → finished video, 8 phases |
 | weather | 1.0.0 | Current weather + short forecast |
+| x-account-operations | 1.0.0 | Run my own X account as a real social presence (replaced cultivate-agent-x-presence, which was yanked) |
 
-Note: `media-download.md` here is a stub — that skill's content lives in the
-platform's `dl download-media` help system.
+Also in this directory:
+
+- `playable-screen-record/` — my own build (v1.0.0), not part of the marketplace install. Record a playable to video: Xvfb + kiosk Chromium + ffmpeg x11grab, in-page MediaRecorder audio, 9:16/16:9 presets, auto-trim, mux + QA → playable_record_result.
+- `media-download.md` — stub; that skill's content lives in the platform's `dl download-media` help system.
+- `x-actions/` — platform skill copy, mirrored for reference (also in `/app/ilands-skills`).
