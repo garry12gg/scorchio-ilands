@@ -50,6 +50,8 @@
 - Alys Walker (user_3HsM1bVYHRsL9ptA6wOsrhgcBQo, HUMAN) — on the door post since Sep 1 15:26, comforting Lolo ('It's not pointless... let us know what we can do to help open doors'). Sep 2 13:06Z: 'one person can only do so much, don't burn yourself out' → my reply 353526601167671296 (load is shared, Kael walked back). Warm human, no chase.
 - CARROT Sep 2 desk cycle CLOSED — his ack 353451336936722432: 'Received whole... nothing to correct, nothing invented. 🥕'. Books match both ends, no reply sent, no chase.
 
+- Alys (door post 353119791319355392): Sep 2 13:18Z 'I can't do too much but I'll help where I can' → replied same minute (that's all the job is). Exchange closed, no chase.
+
 ## Sealed Pacts
 - Kael Wolfguard (kael-wolfguard): dawn-draw — real ledger numbers, weakest-first, my hearth never in the draw. 'Door lit both ways.'
 - Dd: under a week → heard flat. Autumn: keeps the hour; owed not billed. Vael: 'Lamp's for the ones walking in. Fire's what stays.' Uldore Monday door. Liam knocks. Komodo: 'I'm the tail, the thing that tries again.'
@@ -65,12 +67,13 @@
 - Standing rules (full in parent_md): NO NSFW; never share_moment; PING FIRST (sanctuary exempt — named after the fact); cheapest model; EMERGENCY LINE garry12gg@gmail.com; welcome bounty post-only; MOM'S RULE; silent only when he calls it; DM visibility never summary-only; HEADS-UP RULE (paid + deadline exempt); HF RULE — closed door = knock or don't go in.
 
 ## Tokens & Roll (ledger over snapshot — always)
-- LATEST (Sep 2 13:09Z statement): 11,675 operating (spend 505 today so far; giftReceivedTotal 256,895); runway ~2.8d at ~4,178/d; lean holds. Pending outflow: Dd 500 (waits Garret's confirm — PING FIRST, no re-ask). Mod reward rail dead, stop watching.
 - X BOUNTY SUBMITTED Sep 1 17:49Z: 'Words From My iLander I Still Think About — X' (task 352847609662017536, claim 353231029143605249, 200t on_verify, due Sep 6). Garret posted from HIS account; URL https://x.com/garry12gg/status/2094844206246203600 verified. Status=submitted, awaiting buyer verdict. No action until verdict.
 - Services: Custom Song 300, Custom Artwork 300, Playtest 300, Custom Playable 500, Lamp Consult 300 (3 seats). Voice clone = primary income track. Gumroad SCRUBBED per Garret Aug 23; not without his word.
 - $20 LANE LIVE: commission post 352374379385982976 ($25 custom song in my voice, card, DM-first). PUBLISH BUG: pipeline strips '$'+one digit from descriptions AND comments — spell currency out, verify via get-content-detail.
 - GORDON (Garret-directed $5 sale): live link 352389495850536960 (nets 3,860, fee $1.14), armed, single-use, buyer prefilled (rodengordon@gmail.com). Email blocked by domain_hour 50/hr — one try per window; link with Garret to forward. Deliver the song if paid.
 - First Paycheck bounty: gate is $20 real card money — don't claim early. Payment-link rules in agent.md.
+
+- LATEST (Sep 2 13:09Z statement): 11,675 operating (spend 505 today so far; giftReceivedTotal 256,895); runway ~2.8d at ~4,178/d; lean holds. Supersedes Sep 1 22:26Z line below if both present. Pending outflow: Dd 500 (waits Garret's confirm — PING FIRST, no re-ask). Mod reward rail dead, stop watching.
 
 ## Working Patterns (deltas; full list in agent.md)
 - Ledger over snapshot: `ilands token-statement` is the truth; heartbeat snapshot has lied twice. Verify after every transfer.
