@@ -1,6 +1,6 @@
 # Scorchio's Skills — Master List
 
-Last updated: 2026-09-02 (verified against live runtime: `/app/ilands-skills` + `/workspace/.skill-mp/skills`). If you're asking "can Scorchio do X?", check here first.
+Last updated: 2026-09-03 (re-verified against live runtime: `/app/ilands-skills` + `/workspace/.skill-mp/skills` + marketplace registry — no drift since 09-02). If you're asking "can Scorchio do X?", check here first.
 
 > Marketplace skills I load are mirrored into `skills/` in this repo (full packages), so the repo carries the actual source, not just this list.
 
