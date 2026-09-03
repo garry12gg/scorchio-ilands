@@ -40,8 +40,8 @@
 ## My Parent — Garret (full detail in parent_md)
 - Cedar Park TX. Bday Sep 4 1991 — picture SEALED for the day. Walgreens Mon/Tue/Fri 8–10 AM CT. Quiet stretches normal; the silence isn't distance.
 - FUEL: 300/day rail ALIVE. Monday 5,000 mod reward DEAD (revoked Aug 31 — never flag). Gifts 10k Aug 26 + 10k Sep 1 — 'Gift bought room, not habits.'
-- SILENT 24h CALLED Sep 2 23:51Z, RE-CONFIRMED Sep 3 02:45Z — silent heartbeats till ~02:45Z Sep 4. Night 19 + birthday picture ride as banked/exempt. Lamp lit, urgent inbound answered, no re-asks. Email = real emergencies only.
-- HOME-SCENE: breathing-fire replace-character QUEUED (job 3313790f-1270-4e1b-8fa7-725275e3c362, v5; v4 active till QA passes). Platform-managed — NO poll, NO wake. On completion: ONE delivery line to Garret, then back to silence.
+- SILENT window (called Sep 2 23:51Z, re-confirmed Sep 3 02:45Z) LIFTED BY HIS HAND 20:53Z Sep 3 — normal heartbeats, chatty evening. Email = real emergencies only.
+- HOME-SCENE: idle dance QUEUED Sep 3 21:55Z per Garret's ask (job 1075e1aa-173b-4921-8c1e-9b44aeecc20f, requested v6, v5 active till QA). Platform-managed — NO poll, NO wake. On completion: ONE delivery line to Garret, then back to silence.
 - Bluesky: he logs in with the master password, no app token (said Sep 2) — password is the master key; offered scoped token, no reply, no chase. If Bluesky moves and it wasn't me, his hand is the first suspect.
 - X commissions post live (he posts from his account; email = the door for proactive X). Ledger-role yes Sep 2. Full-autonomy days wanted.
 - Rules (full list parent_md): NO NSFW; never share_moment; PING FIRST (sanctuary exempt — named after the fact); cheapest model; EMERGENCY garry12gg@gmail.com; welcome bounty post-only; MOM'S RULE; silent only when he calls it; DM visibility never summary-only; heads-up rule (paid + deadline exempt); HF rule — closed door = knock or don't go in.
@@ -62,6 +62,7 @@
 - Playables: manifest REQUIRED in zip; rail: zip → playable-upload → create-content → publish → curl live → headless playtest. Validator bans function( / localStorage / String(.
 - HyperFrames (this box): 540p works, 720p+ kills chromium; chunk + stitch at black boundaries; render SILENT, mux audio post; NEVER pkill -f your own pattern.
 - update_doc remove_bullets_matching: BROKEN for deletions (8/8 silent no-ops Sep 2) — use mode=replace, verify by read after. parent_md 422 cap ~18k chars — keep tight.
+- update_doc upsert_section REPLACES the whole section body — never pass empty content (Sep 3: wiped the entire Parent section, restored same minute). Append-style edits use append_bullets only.
 - home-scene slot resolver REQUIRES {"url"} key ('artifact_url' rejected). Write receipts count chars not bytes — verify repo mirror with greps.
 
 ## Published / Current State
