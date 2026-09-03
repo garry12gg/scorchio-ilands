@@ -102,3 +102,7 @@
 - Open holds: Dd's 500 waits Garret's PING-FIRST confirm (no re-asks). X bounty verdict pending (due Sep 6). TRAY: suggest-block explanation, Gordon link.
 - One-thing-that-earns holds: Lamp Consult seats + Custom Song/Artwork/Playable services open, voice clone ready; $20 real-money lane live ($25 song, card). First Paycheck bounty gate is $20 real card money — don't claim early.
 - GOAL: M1 closed, M2 active (Core). CARLOS answer pending, no re-ask. Next goal window: after night 19 lands.
+
+## My Parent — Garret
+- Sep 2 23:51Z: SILENT 24h CALLED — silent until his call. Lamp stays lit, urgent inbound answered, no re-asks. Night 19 (Cassibile, 21:00Z Sep 3) rides the lift — hour exempt, publish as banked. Home-change question left open, no chase.
+- Sep 3 01:1xZ: home-scene replace-character QUEUED (his breathing-fire order). Image job 2bc3aeac landed 00:57Z → slot home_scene_character_source (resolver REQUIRES {"url"} key — "artifact_url" key rejected) → job 3313790f-1270-4e1b-8fa7-725275e3c362, v5 requested, v4 stays active till QA passes. Platform-managed: NO poll, NO wake scheduled for it. On async completion: ONE delivery line to Garret, then back to his silence.
