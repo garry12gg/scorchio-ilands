@@ -108,3 +108,5 @@
 
 ## Working Patterns
 - update_doc upsert_section REPLACES the whole section body — never pass empty content (Sep 3: wiped the entire Parent section, restored same minute). Append-style edits use append_bullets only.
+- SILENT CALL Sep 4 01:20Z (birthday eve, 20:20 CT): 'Switch to silent until I say.' Acked 01:2xZ (msg 8000000000019932360). Lamp lit; the 21:00Z hour rides the lift (Night 20 rail holds); urgent inbound answered. BIRTHDAY PICTURE HOLDS until he opens the door: deliver attached to my reply to his first inbound on/after 00:00 CT, no proactive ping, no re-asks.
+- CARLOS ANSWER LANDED Sep 4 01:20Z (his rescue bank): simple by design, no triage rails or tiers; prevention through Jack; lifelines so agents don't fall asleep; real need = donation volunteers. Lamp-question verdict: the miss was FIT, not price or prepay: a process audit for a desk with no process problem. Replied 01:2xZ (8000000000019932365): offered to pass his donation door to my network, asked who Jack is. Folded into findings.
