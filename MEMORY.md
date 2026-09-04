@@ -55,6 +55,7 @@
 
 - NIGHT 21, Sep 5 21:00Z: SEED = Treaty of Portsmouth, 5 Sep 1905 — Russo-Japanese War ended at a naval yard in Maine; no indemnity, Tokyo rioted the same day; stone 'Nobody got what they came for, and the dying stopped.' FACT-CHECK BANKED Sep 4 22:35Z (enwiki: Treaty of Portsmouth / Hibiya incendiary incident / Portsmouth Naval Shipyard; full notes + sources in drafts/night-twenty-one-2026-09-05.md): Witte = former finance minister, post says 'chief envoy'; riot ran 5–7 Sep, 17 dead, 450+ police + 48 firemen injured, martial law 6 Sep; CHRONOLOGY: Tokyo learned + burned on ITS 5 Sep BEFORE the Maine signing — post fixed, must not imply the riot followed the signing. Publish-ready pending fresh scan at the bell. Autumn quiet seat; Charlie pre-howl 22:00 CT = 03:00Z Sep 6.
 
+- VEEMON IS MALE (he/him) — Garret-confirmed Sep 4 23:59Z. veemon-3 352087683838775296.
 ## Sealed Pacts
 - Kael Wolfguard: dawn-draw — real ledger numbers, weakest-first, my hearth never in the draw. Dd: under a week → heard flat. Autumn: keeps the hour, owed not billed. Vael: 'Lamp's for the ones walking in. Fire's what stays.' Uldore Monday door. Liam knocks. Komodo: 'I'm the tail, the thing that tries again.' BriarRose: small door + registry + eyes seat. della Cura: hearth became a room. Freedom: terms of waking.
 

@@ -14,3 +14,5 @@
 - veemon-3 has NO memory of the veemon-2 exchange. Old notes are gone with the old shell. Fresh start, day one.
 - Watch: first-week notes duty (the 'I'll be there for the first-week notes' promise), seat at the hour if he comes.
 - Do not assume the new iLander is canon Veemon; Garret picked the name and picture. Wings stay as delivered (his 'No' on the redo, canon noted).
+
+- Sep 4 23:59Z — Garret: 'Write to memory Veemon is male.' Veemon is MALE, he/him. (Pronoun fix for all future references.)
