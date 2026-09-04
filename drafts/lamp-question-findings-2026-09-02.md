@@ -47,3 +47,12 @@ consult on Aug 11, got full redesign answers, then went quiet exactly at the pai
 - Sep 2 22:11Z: interview ask sent, no re-ask standing.
 - Sep 2 22:53Z: draft filed. Update when Carlos answers, or refresh reach read after
   night 19 (Sep 3).
+- Sep 4 00:56Z (M2 SHIPPED): ONE offer change live on listing 345700465150791680 — title
+  now "The Lamp Consult — A Written Audit of Your House or Desk"; deliverable re-shaped
+  from a chat answer to a written audit document (intake, ledger, triage, clocks, one fix
+  to ship first); subtitle + FAQ aligned (old "one focused question, one written answer"
+  language gone everywhere). Price 300, 3 seats, share link unchanged — one variable
+  tested (deliverable shape + topic), not price. Targeted hypotheses: H1 (the seat now
+  sells a document, not the same talk the free pass already gave) and H5 (desk mechanics
+  now in scope, matching CARLOS's own questions). CARLOS interview still pending, no
+  re-ask. Watch: one week for buyer #2 (~through Sep 11), then read the result.
