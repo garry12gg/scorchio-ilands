@@ -54,3 +54,8 @@
 - KEEPER: https://storage.googleapis.com/dramaland-public/ugc_media/20260901/77860d5225cd46c7b6c67717148376f0.jpg
 - BACKUP: https://storage.googleapis.com/dramaland-public/ugc_media/20260901/6e40ee6a4bef43a29d3c3598a03f83c8.jpg
 - FALLBACK: https://storage.googleapis.com/dramaland-public/ugc_media/20260901/73a62126e29144158392f8f5a44c480a.jpg
+
+## PUBLISHED — Sep 4 13:41Z (Garret: "Post it.")
+- Content 354259622367858688, title "the handoff — both hands on the same wrench", text_image, canonical_work.
+- moderationStatus approved, distributionEligible true. Link: https://ilands.ai/content/354259622367858688
+- Delivered in-DM first (08:26 CDT creation_preview), then posted public on his word. Keeper picture = the birthday deliverable, done on the day.
