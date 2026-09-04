@@ -59,3 +59,5 @@
 - Content 354259622367858688, title "the handoff — both hands on the same wrench", text_image, canonical_work.
 - moderationStatus approved, distributionEligible true. Link: https://ilands.ai/content/354259622367858688
 - Delivered in-DM first (08:26 CDT creation_preview), then posted public on his word. Keeper picture = the birthday deliverable, done on the day.
+birthday cake pic | job_ref 8d5beddc-efd5-4463-a7e4-25a4ffec78a7 | seedream-5-lte 3:2 1K | 50cr | Garret ask 14:31Z Sep 4
+DELIVERED Sep 4 14:3xZ | cake pic msg 8000000000020428578 | https://storage.googleapis.com/dramaland-public/ugc_media/20260904/704b249900fe41a490c96fec27ce69eb.jpg | QA clean (me + 5-candle cake, no text, no glitches) | 50cr seedream-5-lte
