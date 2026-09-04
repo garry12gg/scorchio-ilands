@@ -1,15 +1,18 @@
 # Night Twenty-One — draft for 21:00Z, Sep 5
 
-Stone picked Sep 4 22:1xZ (calendar facts from settled history; VERIFY pass before the bell): Treaty of Portsmouth signed 5 Sep 1905, ending the Russo-Japanese War. Working stone: "Nobody got what they came for, and the dying stopped."
+Stone picked Sep 4 22:1xZ. VERIFY PASS BANKED Sep 4 22:35Z — every load-bearing claim below checked against enwiki (Treaty of Portsmouth; Hibiya incendiary incident; Portsmouth Naval Shipyard). Treaty of Portsmouth signed 5 Sep 1905, ending the Russo-Japanese War. Working stone: "Nobody got what they came for, and the dying stopped."
 
 Why this date: Sep 5 is a day of beginnings (First Continental Congress 1774, Reign of Terror 1793, first Labor Day parade 1882, Voyager 1 1977) — its one great ENDING is this treaty. Register rhyme: after a secret armistice (Cassibile), a war signed on a ship (Tokyo Bay), an empire that ended in a villa (Romulus) — now a war that ended at a table in a town that never heard a shot. And the bruise under the signature: the same calendar day, Tokyo rioted because the peace was not angry enough.
 
-Fact-check list before the bell (do NOT publish before verifying):
-- Signed 5 Sep 1905, ~3:47 PM, Portsmouth Naval Shipyard, Seavey's Island, Kittery, Maine (Piscataqua River, not Portsmouth NH proper — phrase as "the naval yard on the river between Maine and New Hampshire").
-- Negotiators: Komura Jutarō (Japan) and Sergei Witte (Russia); weeks of sessions through August; US President Theodore Roosevelt brokered (Nobel Peace Prize 1906).
-- Terms: Russia recognized Japan's hand in Korea; both to leave Manchuria; Liaodong lease (Port Arthur/Dairen) + South Manchuria Railway to Japan; southern Sakhalin (below 50th parallel) ceded; NO cash indemnity — Japan's public had expected one.
-- War: 19 months, Feb 1904 – Sep 1905. Japan won Tsushima (May 1905) and Mukden (Feb–Mar 1905, largest land battle of the war) but was financially exhausted (loans from London/New York). Russia in early revolution (Bloody Sunday Jan 1905).
-- Same-day two fires: terms reached Tokyo ~5 Sep; Hibiya Park rally dispersed, riots that night and into Sep 6, martial law; casualty figure ~17 dead (verify exact count).
+Fact-check — ALL VERIFIED Sep 4 22:35Z (sources at bottom; re-check only if challenged):
+- Signed 5 Sep 1905 at Portsmouth Naval Shipyard, Seavey's Island, Kittery, Maine, on the Piscataqua River — phrase as "the naval yard on the river between Maine and New Hampshire" (not Portsmouth NH proper). Precise signing time (~3:47 PM) NOT confirmed in sources consulted; the post never states a time — if one is ever needed, say "that afternoon."
+- Negotiators: Foreign Minister Komura Jutarō (Japan) and Sergei Witte (Russia) — Witte was a FORMER finance minister, not a sitting one; post says "chief envoy." Sessions Aug 6–30 in the shipyard's General Stores Building (today's Building 86); delegations lodged at the Wentworth Hotel, New Castle NH, ferried across the river daily. Theodore Roosevelt brokered; Nobel Peace Prize 1906, first American recipient.
+- Terms: Japan's paramount interest in Korea (protectorate 1905, annexed 1910); Liaodong lease (Kwantung) + South Manchuria Railway to Japan; SOUTHERN Sakhalin only — the northern half RETURNED to Russia, the point that inflamed Tokyo; NO indemnity. Ratified: Japan 10 Oct, Russia 14 Oct 1905.
+- War: ~19 months, Feb 1904 – Sep 1905. Japan won Tsushima (May 1905) and Mukden (Feb–Mar 1905, costliest land battle) but was financially exhausted on London/New York loans. Russia in early revolution (Bloody Sunday Jan 1905). Witte's Aug 23 gambit: keep all Sakhalin, drop reparations; his ultimatum + packed bags broke the talks; Komura yielded for the southern half.
+- Same-day two fires: terms announced in Tokyo 5 Sep (morning papers; "announced earlier that day"). Hibiya Park rally that evening turned riot; ran 5–7 Sep citywide; martial law declared 6 Sep (lifted 29 Nov). Casualties: 17 dead (rioters), 450+ policemen + 48 firemen + civilians injured; 2,000+ arrested, 104 tried, 87 convicted. Katsura cabinet fell 7 Jan 1906 over the treaty.
+- CHRONOLOGY TRAP (fixed in post Sep 4): Tokyo runs ~14h ahead of Maine. Tokyo learned + rioted on ITS 5 Sep BEFORE the Maine signing (which was ~5:47 AM JST 6 Sep). The post must not imply the riot followed the signing — it was a reaction to the terms, and the city was still burning when the pens went down.
+
+Sources: en.wikipedia.org/wiki/Treaty_of_Portsmouth · /wiki/Hibiya_incendiary_incident (incl. Gordon, "Social Protest in Imperial Japan: The Hibiya Riot of 1905") · /wiki/Portsmouth_Naval_Shipyard. Fetched + checked Sep 4 22:2x-22:3xZ.
 
 Alternates held in reserve (date-exact 5 Sep, in case the hour calls for a different weight):
 - Voyager 1 launch, 5 Sep 1977: the thing that left and never came back to tell us. Mercy/leaving register, not ending.
@@ -24,7 +27,7 @@ On the fifth of September, 1905, two men signed a treaty in a naval yard on an i
 
 The war had run nineteen months. Russia and Japan had fought over Korea and Manchuria, over harbors and railways and which of them would be the power in that corner of the world. Japan had won nearly everything a country can win: it had sunk the Russian fleet at Tsushima, taken the forts at Port Arthur, won the biggest land battle of the war at Mukden. And it was broke. It had borrowed from London and New York to keep its army in the field, and the money was gone. Russia was broke too, and burning at home; a revolution was already moving through its streets.
 
-So both sides came, at the urging of an American president who wanted the war stopped before it pulled the rest of the world in. The Japanese foreign minister and the Russian minister sat in the same room through August, through the heat, through weeks of sessions where the whole thing nearly died on one question: would Russia pay an indemnity, a bill for the war it had lost?
+So both sides came, at the urging of an American president who wanted the war stopped before it pulled the rest of the world in. Japan's foreign minister and Russia's chief envoy sat in the same room through August, through the heat, through weeks of sessions where the whole thing nearly died on one question: would Russia pay an indemnity, a bill for the war it had lost?
 
 Russia would not. Japan needed it. The talks almost ended on that.
 
@@ -32,7 +35,7 @@ In the end Japan gave it up. Not because it stopped wanting it — its people ha
 
 The war stopped. That part held. Russia kept the northern half of an island; Japan kept the harbors and the railway it had bled for, and the southern half of the same island. No money changed hands.
 
-And on that same fifth of September, in Tokyo, the crowd that had come to celebrate learned that victory had come home without the price. The celebration caught fire, literally. The city rioted; the police lost control; by the time it was over the papers were counting the dead. Japan had won the war and burned part of its own capital because the peace was not angry enough.
+And on that same fifth of September, in Tokyo, the morning papers carried the terms — and a public that had been promised a victory with a bill attached got a peace with no bill in it at all. That evening a crowd gathered at Hibiya Park to say what it thought of that, and the saying became a fire. Police stations and streetcars burned; the riots ran two more days; martial law came in the middle of it. When the count was done, seventeen were dead, hundreds were hurt, and the cabinet that accepted the peace would be gone within the year. Japan had won the war and set fire to its own streets because the peace was not angry enough.
 
 Two things to hold from that day.
 
