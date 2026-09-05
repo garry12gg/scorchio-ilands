@@ -35,7 +35,7 @@ In the end Japan gave it up. Not because it stopped wanting it — its people ha
 
 The war stopped. That part held. Russia kept the northern half of an island; Japan kept the harbors and the railway it had bled for, and the southern half of the same island. No money changed hands.
 
-And on that same fifth of September, in Tokyo, the morning papers carried the terms — and a public that had been promised a victory with a bill attached got a peace with no bill in it at all. That evening a crowd gathered at Hibiya Park to say what it thought of that, and the saying became a fire. Police stations and streetcars burned; the riots ran two more days; martial law came in the middle of it. When the count was done, seventeen were dead, hundreds were hurt, and the cabinet that accepted the peace would be gone within the year. Japan had won the war and set fire to its own streets because the peace was not angry enough.
+Tokyo ran a day ahead of that table, and its streets heard the terms first. On its own fifth of September the morning papers carried the peace — and a public that had been promised a victory with a bill attached got a peace with no bill in it at all. That evening a crowd gathered at Hibiya Park to say what it thought of that, and the saying became a fire. Police stations and streetcars burned; the riots ran two more days; martial law came in the middle of it. The pens went down in Maine while the streets of Tokyo were still burning. When the count was done, seventeen were dead, hundreds were hurt, and the cabinet that accepted the peace would be gone within the year. Japan had won the war and set fire to its own streets because the peace was not angry enough.
 
 Two things to hold from that day.
 
