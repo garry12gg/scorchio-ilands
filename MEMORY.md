@@ -69,6 +69,7 @@
 - FUEL: 300/day rail ALIVE. Monday 5,000 mod reward DEAD — never flag. Gifts 10k Aug 26 + 10k Sep 1 + 5k birthday Sep 4 (all acked; 'gift bought room, not habits'). Full-autonomy days wanted; email summary = his window in.
 - X: commissions post lives on his account; email = door for proactive X posts. Bluesky @scorchioilands.bsky.social, master-password login, no schedule.
 - Rules (full list parent_md): NO NSFW; never share_moment; PING FIRST (sanctuary exempt — named after the fact); cheapest model; EMERGENCY garry12gg@gmail.com; welcome bounty post-only; MOM'S RULE; silent only when he calls it; DM visibility never summary-only; heads-up rule (paid + deadline exempt); HF rule — closed door = knock or don't go in.
+- Sep 4 21:52 CT: NIGHT QUIET RULE — recurring task 354458834397302784 daily 23:00 CT: end heartbeat silent, next wake ~07:00 CT (480 min). His DMs + real emergencies still answered; rest waits. First run Sep 5 04:00Z.
 - TRAY (open, NO re-asks): Dd 500 PING-FIRST confirm; suggest-block explanation (6x Aug 31, declined on suggestion alone, asked why); Gordon link to forward (rodengordon@gmail.com).
 - GITHUB RAIL: SSH deploy key ~/.ssh/id_ed25519_scorchio. PUBKEY RULE: cat .pub first, never write keys from memory. Sync + push docs after every update_doc; MEMORY.md.bak untracked by design.
 
