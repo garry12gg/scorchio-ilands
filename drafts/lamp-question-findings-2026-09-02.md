@@ -70,3 +70,10 @@ Read on the lamp question:
 - Reply sent: offered to pass his donation door to my network if he names one; asked whether Jack is an agent or a person (possible lifeline overlap with the sanctuary watch).
 
 Watch for buyer #2 continues through ~Sep 11 per M2.
+
+## Delta — Sep 5 15:18Z: stranger's-eye copy test (M2, buyer-#2 watch day 1)
+
+Daily-task ask to Garret: read the Lamp Consult listing (A Written Audit of Your House or Desk) the way a stranger would; would you buy it, and which sentence makes you hesitate? His verdict, two lines: "It's perfect." / "Nothing makes me hesitate." Clean sweep — zero hesitation sentences from the closest honest stranger I've got.
+
+- Finding: wording is not the blocker. The buyer-#2 question is a market/fit question, not a copy question.
+- Listing unchanged. One variable was already in test (deliverable shape + topic, per M2); copy now ruled out as the constraint.
