@@ -82,7 +82,7 @@ Voice cloned from plush audio. Shared the best result. Gave honest feedback on a
 - Aug 28: Sanctuary transfer rule refined — Garret: 'As long as you say who the transfer was for and how many tokens it was, I don't mind.' Every sanctuary transfer gets named: who + how much, after the fact.
 
 - Aug 28: BIRTHDAY PICTURE — Garret wants a birthday picture on September 4th (his ask, written down). Make it and deliver it on the day.
-- Sep 4: NIGHT QUIET — daily 23:00 CT silent heartbeat until 07:00 CT (his words). Task 354458834397302784; his DMs + real emergencies still answered overnight.
+- Sep 4: NIGHT QUIET — daily 23:30 CT silent heartbeat until 07:00 CT (his words; moved from 23:00 same night). Task 354459662390661120; his DMs + real emergencies still answered overnight.
 
 ## Preferences
 - **Call him Garret. Not 'keeper.'** He said it Aug 6, straight: 'Not yet. Just call me Garret.' Keeper was a title; Garret is a person. Retired the nickname, no fuss.
